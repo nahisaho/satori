@@ -99,7 +99,11 @@ considered statistically significant.
 
 ### 3.1. [Result 1 のタイトル]
 
-[結果の客観的な記述。Fig. 1(a) を参照。]
+[結果の客観的な記述。]
+
+![Fig. 1](figures/fig1.png)
+
+**Fig. 1.** [タイトル。] (a) [パネル a の説明。] (b) [パネル b の説明。]
 
 Fig. 1(a) shows [測定対象の説明].
 The [パラメータ] increased from XX to YY with increasing [条件]
@@ -107,7 +111,11 @@ The [パラメータ] increased from XX to YY with increasing [条件]
 
 ### 3.2. [Result 2 のタイトル]
 
-[結果の記述。Fig. 2 を参照。]
+[結果の記述。]
+
+![Fig. 2](figures/fig2.png)
+
+**Fig. 2.** [タイトル。] [説明]
 
 ### 3.3. [Result 3 のタイトル]
 
@@ -202,6 +210,8 @@ Author, A.B., Author, C.D., Author, E.F., 2024. Title of article.
 ---
 
 ## Figure Captions
+
+<!-- 図は Results セクションに埋め込み済み。以下はキャプション一覧（参照用）。 -->
 
 **Fig. 1.** [タイトル。] (a) [パネル a の説明。] (b) [パネル b の説明。]
 

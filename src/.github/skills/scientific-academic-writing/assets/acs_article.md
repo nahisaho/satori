@@ -83,7 +83,11 @@ at an accelerating voltage of XX kV.
 
 ### [Subsection 1: 結果のテーマ]
 
-[結果の記述と解釈を織り交ぜる。Figure 1a,b を参照。]
+[結果の記述と解釈を織り交ぜる。]
+
+![Figure 1](figures/figure1.png)
+
+**Figure 1.** [タイトル。] (a) [パネル a の説明。] (b) [パネル b の説明。]
 
 As shown in Figure 1a, [結果の記述].
 This result is consistent with [先行研究の結果],⁶ suggesting that
@@ -91,11 +95,20 @@ This result is consistent with [先行研究の結果],⁶ suggesting that
 
 ### [Subsection 2: 結果のテーマ]
 
-[結果の記述と解釈。Figure 2 を参照。]
+[結果の記述と解釈。]
+
+![Figure 2](figures/figure2.png)
+
+**Figure 2.** [タイトル。] [説明]
 
 ### [Subsection 3: 結果のテーマ]
 
-[結果の記述と解釈。Figure 3 を参照。]
+[結果の記述と解釈。]
+
+![Figure 3](figures/figure3.png)
+
+**Figure 3.** [タイトル。] [説明]
+
 Additional characterization data are provided in the
 Supporting Information (Figure S1, Table S1).
 
@@ -163,6 +176,8 @@ The authors thank [謝辞の対象] for [貢献内容].
 ---
 
 ## Figure Captions
+
+<!-- 図は Results and Discussion セクションに埋め込み済み。以下はキャプション一覧（参照用）。 -->
 
 **Figure 1.** [タイトル（太字）。] [詳細な説明。]
 (a) [パネル a の説明。]

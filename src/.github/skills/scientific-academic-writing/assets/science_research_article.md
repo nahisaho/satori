@@ -55,15 +55,23 @@ Author A¹*, Author B¹†, Author C²
 
 ### [Result 1 のタイトル]
 
-[結果の記述 (Fig. 1A)。定量値を含む。]
+[結果の記述。定量値を含む。]
+
+![Fig. 1](figures/fig1.png)
+
+**Fig. 1. [タイトル].** (**A**) [パネル A の説明。] (**B**) [パネル B の説明。] (**C**) [パネル C の説明。] Error bars indicate mean ± SD (n = XX).
 
 ### [Result 2 のタイトル]
 
-[結果の記述 (Fig. 1, B and C)。]
+[結果の記述。]
 
 ### [Result 3 のタイトル]
 
-[結果の記述 (Fig. 2)。補足は (fig. S1) で参照。]
+[結果の記述。補足は (fig. S1) で参照。]
+
+![Fig. 2](figures/fig2.png)
+
+**Fig. 2. [タイトル].** [説明]
 
 ---
 
@@ -147,6 +155,8 @@ References (XX–YY)
 ---
 
 ## Figure Captions
+
+<!-- 図は Results セクションに埋め込み済み。以下はキャプション一覧（参照用）。 -->
 
 **Fig. 1. [タイトル（太字）].** [説明。]
 (**A**) [パネル A の説明。]

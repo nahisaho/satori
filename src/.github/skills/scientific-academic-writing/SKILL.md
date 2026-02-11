@@ -305,7 +305,59 @@ We have revised the manuscript accordingly (page X, lines YY-ZZ).
 **Response**: [回答]
 ```
 
-### 8. Supplementary Information 構成
+### 8. 図の埋め込みワークフロー
+
+論文作成時、解析で生成した図を原稿内に埋め込む。`figures/` ディレクトリに
+保存された画像ファイルを自動的に検出し、Markdown の画像構文で本文に挿入する。
+
+```markdown
+## 図の埋め込みルール
+
+### 基本手順
+1. `figures/` ディレクトリを走査し、生成済みの画像ファイル一覧を取得する
+2. 各図を Results セクションの該当箇所に `![Figure N](figures/filename.png)` で埋め込む
+3. Figure Captions / Figure Legends セクションにも同じ画像を配置する
+4. Supplementary の図は `![Figure SN](figures/filename.png)` で埋め込む
+
+### 画像埋め込み構文
+
+#### 本文中（Results セクション）
+- 結果の記述と共に図を直接埋め込む
+- キャプションは図の直下に記述する
+
+![Figure 1](figures/fig1_overview.png)
+**Figure 1.** [図の説明]
+
+#### マルチパネル図
+- composite figure は 1 つの画像として埋め込む
+- パネルの説明はキャプション内で (a), (b), (c) で記述する
+
+![Figure 2](figures/fig2_composite.png)
+**Figure 2.** [図全体の説明。]
+(a) [パネル a]。(b) [パネル b]。(c) [パネル c]。
+
+### ジャーナル別の図参照 + 埋め込み
+
+| ジャーナル | 埋め込み例 |
+|---|---|
+| Nature 系 | `![Fig. 1](figures/fig1.png)` + `**Fig. 1 \| [タイトル].**` |
+| Science 系 | `![Fig. 1](figures/fig1.png)` + `**Fig. 1. [タイトル].**` |
+| ACS 系 | `![Figure 1](figures/figure1.png)` + `**Figure 1.** [説明]` |
+| IEEE 系 | `![Fig. 1](figures/fig1.png)` + `**Fig. 1.** [説明]` |
+| Elsevier 系 | `![Fig. 1](figures/fig1.png)` + `**Fig. 1.** [説明]` |
+| Qiita | `![代替テキスト](./figures/Fig1_description.png)` |
+
+### figures/ ディレクトリの走査
+
+論文執筆時、以下の手順で図を収集する:
+1. ワークスペース内の `figures/` ディレクトリを検索
+2. `.png`, `.svg`, `.pdf` ファイルを一覧取得
+3. ファイル名から図番号・内容を推定（例: `violin_hardness.png` → 硬さの Violin Plot）
+4. Results の記述順に合わせて Figure 番号を割り当て
+5. 本文中の該当箇所に画像を埋め込み、キャプションを生成
+```
+
+### 9. Supplementary Information 構成
 
 ```markdown
 ## Supplementary Information テンプレート

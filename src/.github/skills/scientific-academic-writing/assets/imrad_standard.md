@@ -77,17 +77,30 @@ Author A¹*, Author B², Author C¹
 ### 3.1 [Result 1 のタイトル]
 
 [客観的な結果の記述。図表を参照しながら定量的に述べる]
-(Figure 1, Table 1)
+
+![Figure 1](figures/fig1_result1.png)
+
+**Figure 1.** [一文目: 図全体の説明。] (a) [パネル a の説明。] (b) [パネル b の説明。]
+
+(Table 1)
 
 ### 3.2 [Result 2 のタイトル]
 
 [客観的な結果の記述]
-(Figure 2, Table 2)
+
+![Figure 2](figures/fig2_result2.png)
+
+**Figure 2.** [キャプション]
+
+(Table 2)
 
 ### 3.3 [Result 3 のタイトル]
 
 [客観的な結果の記述]
-(Figure 3)
+
+![Figure 3](figures/fig3_result3.png)
+
+**Figure 3.** [キャプション]
 
 ---
 
@@ -159,6 +172,8 @@ The data that support the findings of this study are available from the correspo
 ---
 
 ## Figure Captions
+
+<!-- 図は Results セクションに埋め込み済み。以下はキャプション一覧（参照用）。 -->
 
 **Figure 1.** [一文目: 図全体の説明（太字推奨）] [パネルごとの説明: (a) ..., (b) ..., (c) ...]
 

@@ -108,14 +108,22 @@ The proposed method was implemented in [language/framework].
 
 ### *B. [実験 1 のタイトル]*
 
-[結果の記述。Fig. 1(a) を参照。]
+[結果の記述。]
+
+![Fig. 1](figures/fig1.png)
+
+**Fig. 1.** [タイトル。] (a) [パネル a の説明。] (b) [パネル b の説明。]
 
 As shown in Fig. 1, the proposed method achieves [結果].
 TABLE I summarizes the quantitative comparison.
 
 ### *C. [実験 2 のタイトル]*
 
-[結果の記述。Fig. 2 を参照。]
+[結果の記述。]
+
+![Fig. 2](figures/fig2.png)
+
+**Fig. 2.** [タイトル。] [説明]
 
 ### *D. Computational Complexity*
 
@@ -164,6 +172,8 @@ The authors would like to thank [謝辞の対象] for [貢献内容].
 ---
 
 ## Figure Captions
+
+<!-- 図は本文セクションに埋め込み済み。以下はキャプション一覧（参照用）。 -->
 
 **Fig. 1.** [タイトル。] (a) [パネル a の説明。] (b) [パネル b の説明。]
 

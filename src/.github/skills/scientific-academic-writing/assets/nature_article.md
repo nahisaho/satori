@@ -45,15 +45,23 @@ Here we report [本研究のアプローチと主要な発見を 1-2 文で予�
 
 ### [Result 1 のタイトル — 発見内容を反映]
 
-[結果の記述。Fig. 1a を参照。定量値 ± 誤差を明記。]
+[結果の記述。定量値 ± 誤差を明記。]
+
+![Fig. 1](figures/fig1.png)
+
+**Fig. 1 | [タイトル].** **a**, [パネル a の説明]。**b**, [パネル b の説明]。Data are mean ± s.e.m. (n = XX).
 
 ### [Result 2 のタイトル]
 
-[結果の記述。Fig. 1b,c を参照。]
+[結果の記述。]
 
 ### [Result 3 のタイトル]
 
-[結果の記述。Fig. 2 を参照。統計情報: mean ± s.e.m., n = XX, P = X.XX。]
+[結果の記述。統計情報: mean ± s.e.m., n = XX, P = X.XX。]
+
+![Fig. 2](figures/fig2.png)
+
+**Fig. 2 | [タイトル].** [説明]
 
 ---
 
@@ -147,6 +155,8 @@ The authors declare no competing interests.
 ---
 
 ## Figure Legends
+
+<!-- 図は Results セクションに埋め込み済み。以下はキャプション一覧（参照用）。 -->
 
 **Fig. 1 | [タイトル（太字・簡潔）].** [詳細な説明。]
 **a**, [パネル a の説明].
