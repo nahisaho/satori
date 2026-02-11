@@ -1,0 +1,29 @@
+{
+  "name": "@nahisahona/satori",
+  "version": "0.1.0",
+  "description": "SATORI — Agent Skills for Science. GitHub Copilot Agent Skills collection for scientific data analysis.",
+  "main": "index.js",
+  "bin": {
+    "satori": "./bin/satori.js"
+  },
+  "files": [
+    "bin/",
+    "src/.github/"
+  ],
+  "scripts": {
+    "test": "node bin/satori.js init --dry-run"
+  },
+  "keywords": [
+    "copilot",
+    "agent-skills",
+    "science",
+    "data-analysis",
+    "github-copilot"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nahisaho/satori.git"
+  }
+}
