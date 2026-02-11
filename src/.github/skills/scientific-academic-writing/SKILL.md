@@ -12,6 +12,22 @@ description: |
 科学技術・学術論文の執筆を支援するスキル。ジャーナル形式に応じた構成テンプレート、
 セクション別の文章パターン、引用・図表参照の規約を提供する。
 
+## SATORI バージョン参照ルール
+
+**重要**: 論文原稿内で SATORI のバージョンに言及する場合（Authors, Acknowledgements,
+AI Disclosure 等）、バージョン番号をハードコードしてはならない。
+必ず `package.json` の `version` フィールドを読み取り、実際の値を使用すること。
+
+```
+✅ 正しい例: GitHub Copilot Agent (SATORI v0.5.1)  ← package.json から取得
+❌ 誤った例: GitHub Copilot Agent (SATORI v0.2.0)  ← 古いバージョンのハードコード
+```
+
+取得手順:
+1. ワークスペースの `package.json` を読み取る
+2. `version` フィールドの値を取得する
+3. 原稿内で `SATORI v{version}` の形式で記載する
+
 ## When to Use
 
 - 学術論文の草稿を作成するとき
@@ -357,7 +373,67 @@ We have revised the manuscript accordingly (page X, lines YY-ZZ).
 5. 本文中の該当箇所に画像を埋め込み、キャプションを生成
 ```
 
-### 9. Supplementary Information 構成
+### 9. AI 使用開示 (AI Usage Disclosure)
+
+多くのジャーナルが生成 AI の使用開示を義務化している。
+AI はオーサーシップの要件を満たさないため、**著者として記載しない**。
+
+```markdown
+## AI 使用開示の記載場所（ジャーナル別）
+
+| ジャーナル | 記載場所 | ポリシー |
+|---|---|---|
+| Nature 系 | Methods セクション末尾 | 必須 (2023年〜) |
+| Science 系 | Acknowledgements | 必須 |
+| ACS 系 | Methods or Acknowledgements | 推奨 |
+| IEEE 系 | Acknowledgements | 推奨 |
+| Elsevier 系 | 専用 AI Disclosure セクション | 必須 (2024年〜) |
+```
+
+#### AI 使用開示テンプレート
+
+**注意**: バージョン番号は package.json から動的に取得すること。
+
+```markdown
+## Methods セクション末尾（Nature 系）
+
+**Use of AI tools**: This study used GitHub Copilot Agent with SATORI
+skills (v{package.json の version}) for [具体的な用途: data analysis /
+figure generation / manuscript drafting / literature review].
+All AI-generated content was reviewed and verified by the authors,
+who take full responsibility for the content of this publication.
+
+## Acknowledgements（Science / ACS / IEEE 系）
+
+The authors acknowledge the use of GitHub Copilot Agent with SATORI
+skills (v{package.json の version}) for [具体的な用途].
+All outputs were critically reviewed and validated by the authors.
+
+## AI Disclosure セクション（Elsevier 系）
+
+During the preparation of this work, the authors used GitHub Copilot
+Agent with SATORI skills (v{package.json の version}) for [具体的な用途].
+After using this tool, the authors reviewed and edited the content as
+needed and take full responsibility for the content of the publication.
+```
+
+#### Authors セクションのルール
+
+```markdown
+## AI をオーサーに含める場合の注意
+
+❌ 禁止: AI ツールをオーサーとして記載してはならない
+   (ICMJE ガイドライン: オーサーシップには説明責任が必要)
+
+❌ 誤り:
+   Author A¹, GitHub Copilot Agent (SATORI v0.2.0)¹, Author B²
+
+✅ 正しい:
+   Author A¹*, Author B²
+   （AI 使用は Methods / Acknowledgements / AI Disclosure に記載）
+```
+
+### 10. Supplementary Information 構成
 
 ```markdown
 ## Supplementary Information テンプレート
