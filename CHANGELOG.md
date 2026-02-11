@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.5.0] - 2026-02-12
+
+### Added
+- **scientific-peer-review-response** スキル (#11): 査読コメント構造化 (Major/Minor/Editorial 自動分類)・ポイントバイポイント回答レター生成・改訂版カバーレター・コメント-改訂マッピング
+- **scientific-revision-tracker** スキル (#12): 改訂履歴追跡・バージョンスナップショット・差分検出・変更マークアップ (Markdown/LaTeX/プレーンテキスト)・トレーサビリティ検証
+- **scientific-paper-quality** スキル (#13): 可読性スコア (Flesch-Kincaid/Gunning Fog)・IMRAD バランス分析・語彙品質 (冗長表現/過剰主張検出)・ジャーナル適合性チェック・再現可能性チェック・総合品質スコアカード
+
+### Changed
+- **README.md**: スキル数を 32→35 に更新、カテゴリ A を 10→13 種に拡張、パイプラインフローに査読対応・改訂追跡・品質評価フェーズを追加
+- スキル番号を再付番 (B-H カテゴリ: #11-32 → #14-35)
+
 ## [0.4.0] - 2025-06-13
 
 ### Added
@@ -46,6 +57,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - 8 カテゴリ (A-H) のスキル分類体系
 - 7 種のジャーナルテンプレート (IMRaD, Nature, Science, ACS, IEEE, Elsevier, Qiita)
 
+[0.5.0]: https://github.com/nahisaho/satori/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/nahisaho/satori/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/nahisaho/satori/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/nahisaho/satori/compare/v0.1.0...v0.2.0
