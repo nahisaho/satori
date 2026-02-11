@@ -4,13 +4,13 @@
 
 ## Overview
 
-このディレクトリには、Exp-01〜13 で蓄積した科学データ解析技法を Agent Skills として体系化した **27 個**のスキルを格納しています。Copilot がプロンプトの文脈に応じて適切なスキルを自動ロードし、各実験で確立した解析パターンを再利用します。
+このディレクトリには、Exp-01〜13 で蓄積した科学データ解析技法を Agent Skills として体系化した **28 個**のスキルを格納しています。Copilot がプロンプトの文脈に応じて適切なスキルを自動ロードし、各実験で確立した解析パターンを再利用します。
 
 スキルは **8 つの中区分**に分類されています。
 
 | 中区分 | スキル数 | 概要 |
 |---|:---:|---|
-| A. 基盤・ワークフロー | 5 | パイプライン構築・前処理・データ生成・論文図表・学術論文執筆 |
+| A. 基盤・ワークフロー | 6 | パイプライン構築・前処理・データ生成・論文図表・学術論文執筆・仮説立案 |
 | B. 統計・探索的解析 | 3 | EDA・仮説検定・次元削減 |
 | C. 機械学習・モデリング | 3 | 回帰・分類・特徴量重要度 |
 | D. 実験計画・プロセス最適化 | 2 | DOE・応答曲面法・ベイズ最適化 |
@@ -23,7 +23,7 @@
 
 ## Skills 一覧
 
-### A. 基盤・ワークフロー（5 種）
+### A. 基盤・ワークフロー（6 種）
 
 全 Exp に共通する横断的な基盤スキル。
 
@@ -34,6 +34,7 @@
 | 3 | [scientific-data-simulation](scientific-data-simulation/SKILL.md) | 物理/化学/生物ベースの合成データ生成 | 06-09, 12, 13 |
 | 4 | [scientific-publication-figures](scientific-publication-figures/SKILL.md) | 論文品質図表・rcParams・カラーパレット・マルチパネル | 10, 11-13 |
 | 5 | [scientific-academic-writing](scientific-academic-writing/SKILL.md) | 学術論文執筆・ジャーナル別テンプレート・Cover Letter・査読対応 | 汎用 |
+| 6 | [scientific-hypothesis-pipeline](scientific-hypothesis-pipeline/SKILL.md) | プロンプトから仮説立案・PICO/PECO 構造化・解析パイプライン自動生成 | 汎用 |
 
 ### B. 統計・探索的解析（3 種）
 
@@ -41,9 +42,9 @@
 
 | # | Skill | 説明 | 参照 Exp |
 |---|---|---|---|
-| 6 | [scientific-eda-correlation](scientific-eda-correlation/SKILL.md) | 探索的データ解析・相関ヒートマップ・分布可視化 | 02, 12, 13 |
-| 7 | [scientific-statistical-testing](scientific-statistical-testing/SKILL.md) | 仮説検定・多重比較・エンリッチメント・ベイズ推論 | 03, 04, 06, 07 |
-| 8 | [scientific-pca-tsne](scientific-pca-tsne/SKILL.md) | PCA / t-SNE / UMAP 次元削減・クラスタリング | 02, 03, 07, 11, 13 |
+| 7 | [scientific-eda-correlation](scientific-eda-correlation/SKILL.md) | 探索的データ解析・相関ヒートマップ・分布可視化 | 02, 12, 13 |
+| 8 | [scientific-statistical-testing](scientific-statistical-testing/SKILL.md) | 仮説検定・多重比較・エンリッチメント・ベイズ推論 | 03, 04, 06, 07 |
+| 9 | [scientific-pca-tsne](scientific-pca-tsne/SKILL.md) | PCA / t-SNE / UMAP 次元削減・クラスタリング | 02, 03, 07, 11, 13 |
 
 ### C. 機械学習・モデリング（3 種）
 
@@ -51,9 +52,9 @@
 
 | # | Skill | 説明 | 参照 Exp |
 |---|---|---|---|
-| 9 | [scientific-ml-regression](scientific-ml-regression/SKILL.md) | マルチターゲット回帰・モデル比較・レーダーチャート | 05, 12, 13 |
-| 10 | [scientific-ml-classification](scientific-ml-classification/SKILL.md) | 分類 ML・ROC・PR 曲線・混同行列・PDP・Volcano | 03, 05 |
-| 11 | [scientific-feature-importance](scientific-feature-importance/SKILL.md) | Tree-based & Permutation 特徴量重要度・PDP | 05, 12, 13 |
+| 10 | [scientific-ml-regression](scientific-ml-regression/SKILL.md) | マルチターゲット回帰・モデル比較・レーダーチャート | 05, 12, 13 |
+| 11 | [scientific-ml-classification](scientific-ml-classification/SKILL.md) | 分類 ML・ROC・PR 曲線・混同行列・PDP・Volcano | 03, 05 |
+| 12 | [scientific-feature-importance](scientific-feature-importance/SKILL.md) | Tree-based & Permutation 特徴量重要度・PDP | 05, 12, 13 |
 
 ### D. 実験計画・プロセス最適化（2 種）
 
@@ -61,8 +62,8 @@
 
 | # | Skill | 説明 | 参照 Exp |
 |---|---|---|---|
-| 12 | [scientific-doe](scientific-doe/SKILL.md) | 田口直交表・CCD/Box-Behnken・ANOVA 因子効果・ベイズ最適化 | 汎用 |
-| 13 | [scientific-process-optimization](scientific-process-optimization/SKILL.md) | 応答曲面法 (ML-RSM)・パレート最適化・プロセスウィンドウ | 12, 13 |
+| 13 | [scientific-doe](scientific-doe/SKILL.md) | 田口直交表・CCD/Box-Behnken・ANOVA 因子効果・ベイズ最適化 | 汎用 |
+| 14 | [scientific-process-optimization](scientific-process-optimization/SKILL.md) | 応答曲面法 (ML-RSM)・パレート最適化・プロセスウィンドウ | 12, 13 |
 
 ### E. 信号・スペクトル・時系列（3 種）
 
@@ -70,9 +71,9 @@
 
 | # | Skill | 説明 | 参照 Exp |
 |---|---|---|---|
-| 14 | [scientific-spectral-signal](scientific-spectral-signal/SKILL.md) | スペクトル前処理・フィルタリング・ピーク検出 | 11 |
-| 15 | [scientific-biosignal-processing](scientific-biosignal-processing/SKILL.md) | ECG R波/HRV・EEG バンドパワー/ERP・EMG バースト・Poincaré | 08 |
-| 16 | [scientific-time-series](scientific-time-series/SKILL.md) | STL 分解・SARIMA 予測・変化点検出・FFT 周期解析・Granger 因果 | 汎用 |
+| 15 | [scientific-spectral-signal](scientific-spectral-signal/SKILL.md) | スペクトル前処理・フィルタリング・ピーク検出 | 11 |
+| 16 | [scientific-biosignal-processing](scientific-biosignal-processing/SKILL.md) | ECG R波/HRV・EEG バンドパワー/ERP・EMG バースト・Poincaré | 08 |
+| 17 | [scientific-time-series](scientific-time-series/SKILL.md) | STL 分解・SARIMA 予測・変化点検出・FFT 周期解析・Granger 因果 | 汎用 |
 
 ### F. 生命科学・オミクス（5 種）
 
@@ -80,11 +81,11 @@
 
 | # | Skill | 説明 | 参照 Exp |
 |---|---|---|---|
-| 17 | [scientific-bioinformatics](scientific-bioinformatics/SKILL.md) | scRNA-seq・PPI ネットワーク・バルク RNA-seq | 01, 04 |
-| 18 | [scientific-metabolomics](scientific-metabolomics/SKILL.md) | PLS-DA/VIP スコア・Pareto スケーリング・パスウェイ濃縮 | 07 |
-| 19 | [scientific-sequence-analysis](scientific-sequence-analysis/SKILL.md) | RSCU/CAI コドン解析・アラインメント・系統樹・ORF/CpG 島 | 09 |
-| 20 | [scientific-multi-omics](scientific-multi-omics/SKILL.md) | CCA 正準相関・SNF ネットワーク融合・パスウェイ統合・マルチオミクスクラスタ | 汎用 |
-| 21 | [scientific-network-analysis](scientific-network-analysis/SKILL.md) | ネットワーク構築・中心性・コミュニティ・PSP パス図 | 04, 07, 13 |
+| 18 | [scientific-bioinformatics](scientific-bioinformatics/SKILL.md) | scRNA-seq・PPI ネットワーク・バルク RNA-seq | 01, 04 |
+| 19 | [scientific-metabolomics](scientific-metabolomics/SKILL.md) | PLS-DA/VIP スコア・Pareto スケーリング・パスウェイ濃縮 | 07 |
+| 20 | [scientific-sequence-analysis](scientific-sequence-analysis/SKILL.md) | RSCU/CAI コドン解析・アラインメント・系統樹・ORF/CpG 島 | 09 |
+| 21 | [scientific-multi-omics](scientific-multi-omics/SKILL.md) | CCA 正準相関・SNF ネットワーク融合・パスウェイ統合・マルチオミクスクラスタ | 汎用 |
+| 22 | [scientific-network-analysis](scientific-network-analysis/SKILL.md) | ネットワーク構築・中心性・コミュニティ・PSP パス図 | 04, 07, 13 |
 
 ### G. 化学・材料・イメージング（3 種）
 
@@ -92,9 +93,9 @@
 
 | # | Skill | 説明 | 参照 Exp |
 |---|---|---|---|
-| 22 | [scientific-cheminformatics](scientific-cheminformatics/SKILL.md) | RDKit 分子記述子・Tanimoto・構造アラート・Lipinski | 02, 05 |
-| 23 | [scientific-materials-characterization](scientific-materials-characterization/SKILL.md) | Thornton-Anders SZM・XRD Scherrer・Tauc プロット | 11, 12, 13 |
-| 24 | [scientific-image-analysis](scientific-image-analysis/SKILL.md) | Otsu/Watershed セグメンテーション・粒径分布・GLCM テクスチャ・蛍光合成 | 汎用 |
+| 23 | [scientific-cheminformatics](scientific-cheminformatics/SKILL.md) | RDKit 分子記述子・Tanimoto・構造アラート・Lipinski | 02, 05 |
+| 24 | [scientific-materials-characterization](scientific-materials-characterization/SKILL.md) | Thornton-Anders SZM・XRD Scherrer・Tauc プロット | 11, 12, 13 |
+| 25 | [scientific-image-analysis](scientific-image-analysis/SKILL.md) | Otsu/Watershed セグメンテーション・粒径分布・GLCM テクスチャ・蛍光合成 | 汎用 |
 
 ### H. 臨床・疫学・メタ科学（3 種）
 
@@ -102,9 +103,9 @@
 
 | # | Skill | 説明 | 参照 Exp |
 |---|---|---|---|
-| 25 | [scientific-survival-clinical](scientific-survival-clinical/SKILL.md) | Kaplan-Meier・Cox PH・検出力分析・安全性解析 | 03, 06 |
-| 26 | [scientific-causal-inference](scientific-causal-inference/SKILL.md) | PSM 傾向スコア・IPW・DID・RDD・DAG 共変量選択・Rosenbaum 感度分析 | 汎用 |
-| 27 | [scientific-meta-analysis](scientific-meta-analysis/SKILL.md) | 固定/ランダム効果モデル・Forest/Funnel プロット・Egger 検定・サブグループ | 汎用 |
+| 26 | [scientific-survival-clinical](scientific-survival-clinical/SKILL.md) | Kaplan-Meier・Cox PH・検出力分析・安全性解析 | 03, 06 |
+| 27 | [scientific-causal-inference](scientific-causal-inference/SKILL.md) | PSM 傾向スコア・IPW・DID・RDD・DAG 共変量選択・Rosenbaum 感度分析 | 汎用 |
+| 28 | [scientific-meta-analysis](scientific-meta-analysis/SKILL.md) | 固定/ランダム効果モデル・Forest/Funnel プロット・Egger 検定・サブグループ | 汎用 |
 
 ---
 
