@@ -411,3 +411,26 @@ We have revised the manuscript accordingly (page X, lines YY-ZZ).
 | `assets/ieee_transactions.md` | IEEE Transactions |
 | `assets/elsevier_article.md` | Elsevier 系ジャーナル |
 | `assets/qiita_technical_article.md` | Qiita 技術記事（AI for Science シリーズ） |
+
+### 参照スキル
+
+| スキル | 連携 |
+|---|---|
+| `scientific-hypothesis-pipeline` | `docs/hypothesis.md` を読み込み、Introduction の研究仮説・Methods の解析計画に自動反映 |
+| `scientific-critical-review` | 草稿完成後のセルフレビュー。投稿前に必ず実行を推奨 |
+| `scientific-publication-figures` | `figures/` の図表を原稿に埋め込み |
+| `scientific-pipeline-scaffold` | `results/analysis_summary.json` から数値・統計結果を参照 |
+| `scientific-statistical-testing` | 統計的主張の正確な記述に使用 |
+
+### パイプライン上の位置づけ
+
+```
+hypothesis-pipeline → pipeline-scaffold → academic-writing → critical-review
+  (仮説定義)         (解析実行)         (草稿作成)         (レビュー・修正)
+```
+
+論文執筆時には以下のファイルを参照する:
+- `docs/hypothesis.md` — 仮説定義（Introduction / Methods に反映）
+- `docs/workflow_design.md` — 解析ワークフロー（Methods に反映）
+- `results/analysis_summary.json` — 解析結果サマリー（Results に反映）
+- `figures/*.png` — 図表（本文中に `![Figure N](figures/...)` で埋め込み）

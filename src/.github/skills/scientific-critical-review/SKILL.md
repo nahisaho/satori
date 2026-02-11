@@ -486,7 +486,7 @@ def save_review_report(review_data, filepath=None):
     from pathlib import Path
     
     if filepath is None:
-        filepath = Path("manuscript") / "review_report.md"
+        filepath = BASE_DIR / "manuscript" / "review_report.md"
     filepath.parent.mkdir(parents=True, exist_ok=True)
     
     scores = review_data.get("scores", {})
@@ -549,12 +549,12 @@ def save_review_json(review_data, filepath=None):
     from pathlib import Path
     
     if filepath is None:
-        filepath = Path("manuscript") / "review_report.json"
+        filepath = BASE_DIR / "manuscript" / "review_report.json"
     filepath.parent.mkdir(parents=True, exist_ok=True)
     
     # 仮説ファイルがあれば参照を埋め込む
     hypothesis_ref = None
-    hypothesis_path = Path("docs") / "hypothesis.json"
+    hypothesis_path = BASE_DIR / "docs" / "hypothesis.json"
     if hypothesis_path.exists():
         with open(hypothesis_path, "r", encoding="utf-8") as f:
             hypothesis_ref = json.load(f).get("hypothesis")
@@ -593,7 +593,7 @@ def save_revised_manuscript(original_path, revisions, output_path=None):
     from pathlib import Path
     
     if output_path is None:
-        output_path = Path("manuscript") / "manuscript_revised.md"
+        output_path = BASE_DIR / "manuscript" / "manuscript_revised.md"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     
     # 元の原稿を読み込み
@@ -626,7 +626,7 @@ def save_revision_diff(revisions, filepath=None):
     from pathlib import Path
     
     if filepath is None:
-        filepath = Path("manuscript") / "revision_diff.md"
+        filepath = BASE_DIR / "manuscript" / "revision_diff.md"
     filepath.parent.mkdir(parents=True, exist_ok=True)
     
     content = f"""# 修正差分レポート

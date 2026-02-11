@@ -2,9 +2,28 @@
 
 **SATORI** は、科学データ解析のための **GitHub Copilot Agent Skills** コレクションです。
 
+[![npm version](https://img.shields.io/npm/v/@nahisaho/satori)](https://www.npmjs.com/package/@nahisaho/satori)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENCE)
+
 ## Overview
 
 このディレクトリには、Exp-01〜13 で蓄積した科学データ解析技法を Agent Skills として体系化した **29 個**のスキルを格納しています。Copilot がプロンプトの文脈に応じて適切なスキルを自動ロードし、各実験で確立した解析パターンを再利用します。
+
+### パイプラインフロー
+
+```
+hypothesis-pipeline → pipeline-scaffold → academic-writing → critical-review
+  (仮説定義)         (解析実行)         (草稿作成)         (レビュー・修正)
+```
+
+各ステップで生成されるファイルが次のステップに自動的に引き継がれます：
+
+| フェーズ | 生成ファイル | 参照先 |
+|---|---|---|
+| 仮説立案 | `docs/hypothesis.{md,json}`, `docs/workflow_design.{md,json}` | → scaffold, writing |
+| 解析実行 | `results/analysis_summary.json`, `figures/*.png` | → writing |
+| 草稿作成 | `manuscript/manuscript.md` | → critical-review |
+| レビュー | `manuscript/review_report.{md,json}`, `manuscript/manuscript_revised.md` | — |
 
 スキルは **8 つの中区分**に分類されています。
 
@@ -110,6 +129,21 @@
 
 ---
 
+## インストール
+
+```bash
+# npx でワンコマンドインストール
+npx @nahisaho/satori init
+
+# またはグローバルインストール
+npm install -g @nahisaho/satori
+satori init
+```
+
+`.github/skills/` がカレントディレクトリにコピーされ、Copilot Agent Mode で即座に利用できます。
+
+---
+
 ## 使い方
 
 ### GitHub Copilot Agent Mode / Copilot CLI での利用
@@ -142,8 +176,10 @@ Skills は `.github/skills/` に配置されているため、Copilot が自動�
 │   ├── scientific-data-preprocessing/
 │   ├── scientific-data-simulation/
 │   ├── scientific-publication-figures/
-│   └── scientific-academic-writing/
-│       └── assets/   ← ジャーナル別テンプレート 7 種
+│   ├── scientific-academic-writing/
+│   │   └── assets/   ← ジャーナル別テンプレート 7 種
+│   ├── scientific-hypothesis-pipeline/
+│   └── scientific-critical-review/
 │
 │── [B] 統計・探索的解析
 │   ├── scientific-eda-correlation/

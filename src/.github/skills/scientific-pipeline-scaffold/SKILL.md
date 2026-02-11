@@ -87,6 +87,14 @@ def main():
     print("Exp-XX: [実験タイトル]")
     print("=" * 60)
 
+    # ──── Step 0: 仮説・ワークフロー定義の保存 ────
+    print("\n[Step 0] 仮説・ワークフロー定義の保存...")
+    # → scientific-hypothesis-pipeline スキル参照
+    # save_hypothesis_markdown(HYPOTHESIS)
+    # save_hypothesis_json(HYPOTHESIS)
+    # save_workflow_design(HYPOTHESIS, workflow_steps)
+    # save_workflow_json(HYPOTHESIS, workflow_steps)
+
     # ──── Step 1: データ読み込み / 生成 ────
     print("\n[Step 1] データ読み込み...")
     # df = pd.read_csv(DATA_DIR / "dataset.csv")
@@ -109,10 +117,20 @@ def main():
     print("\n[Step 5] 可視化...")
     # → scientific-publication-figures スキル参照
 
-    # ──── Step 6: サマリー ────
+    # ──── Step 6: 仮説判定 ────
+    print("\n[Step 6] 仮説判定...")
+    # → scientific-hypothesis-pipeline スキル参照
+    # hypothesis_verdict = evaluate_hypothesis(result, HYPOTHESIS)
+
+    # ──── Step 7: サマリー ────
     elapsed = time.time() - start_time
-    print(f"\n[Step 6] サマリー生成... (elapsed: {elapsed:.1f}s)")
+    print(f"\n[Step 7] サマリー生成... (elapsed: {elapsed:.1f}s)")
     # → generate_summary() 呼び出し
+
+    # ──── Step 8: 論文執筆・レビュー ────
+    print("\n[Step 8] 論文執筆・レビュー...")
+    # → scientific-academic-writing スキルで草稿作成
+    # → scientific-critical-review スキルでレビュー・修正
 
     print("\n" + "=" * 60)
     print(f"完了！ ({elapsed:.1f} 秒)")
@@ -325,6 +343,21 @@ Exp-XX/
 ```
 
 ## References
+
+### 参照スキル
+
+| スキル | 連携 |
+|---|---|
+| `scientific-hypothesis-pipeline` | Step 0: 仮説立案・ワークフロー設計の保存 |
+| `scientific-data-preprocessing` | Step 1/3: データ読み込み・前処理 |
+| `scientific-eda-correlation` | Step 2: 探索的データ解析・相関分析 |
+| `scientific-ml-regression` | Step 4: 回帰モデル学習 |
+| `scientific-ml-classification` | Step 4: 分類モデル学習 |
+| `scientific-publication-figures` | Step 5: 論文品質の図表生成 |
+| `scientific-academic-writing` | Step 8: 論文執筆 |
+| `scientific-critical-review` | Step 8: 草稿の批判的レビュー・修正 |
+
+### Exp 参照
 
 - **全 13 実験**: ディレクトリ構造、シード管理、warnings 抑制
 - **Exp-12, 13**: `main()` + 実行時間計測 + JSON サマリー + 総括パネル

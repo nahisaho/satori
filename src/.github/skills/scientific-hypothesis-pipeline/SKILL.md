@@ -778,5 +778,6 @@ def manage_hypotheses(hypotheses_list):
 | `scientific-ml-classification` | 分類モデル（仮説が分類型の場合） |
 | `scientific-publication-figures` | 論文品質の図表生成 |
 | `scientific-academic-writing` | 論文執筆（仮説検証結果の論文化） |
+| `scientific-critical-review` | 論文草稿の批判的レビュー（仮説と結論の整合性検証） |
 
 ```
