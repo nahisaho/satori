@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.4.0] - 2025-06-13
+
+### Added
+- **scientific-supplementary-generator** スキル (#8): Supplementary Information 自動生成・SI 図表整理・本文-SI 相互参照検証・ジャーナル別 SI フォーマット対応 (Nature/Science/ACS/IEEE/Elsevier)
+- **scientific-latex-formatter** スキル (#9): Markdown→LaTeX 変換・ジャーナルテンプレート適用 (Nature/Science/ACS/IEEE/Elsevier/RevTeX)・数式/図表/引用の LaTeX 構文変換・BibTeX 生成
+- **scientific-citation-checker** スキル (#10): 引用文献の自動検索・網羅性チェック・整合性検証 (孤立参考文献/未解決引用/重複検出)・引用カバレッジ分析
+
+### Changed
+- **README.md**: スキル数を 29→32 に更新、カテゴリ A を 7→10 種に拡張、パイプラインフローテーブルに引用検証・SI 生成・LaTeX 変換フェーズを追加
+- スキル番号を再付番 (B-H カテゴリ: #8-29 → #11-32)
+
 ## [0.3.0] - 2026-02-11
 
 ### Added
@@ -35,6 +46,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - 8 カテゴリ (A-H) のスキル分類体系
 - 7 種のジャーナルテンプレート (IMRaD, Nature, Science, ACS, IEEE, Elsevier, Qiita)
 
+[0.4.0]: https://github.com/nahisaho/satori/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/nahisaho/satori/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/nahisaho/satori/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/nahisaho/satori/releases/tag/v0.1.0
