@@ -71,11 +71,17 @@ SATORI — Agent Skills for Science
 Usage:
   satori init [--force] [--dry-run]   Install .github/ skills into current directory
   satori help                         Show this help message
+  satori --version, -v                Show version number
 
 Options:
   --force     Overwrite existing .github/ directory
   --dry-run   Preview what would be installed without making changes
 `);
+}
+
+function showVersion() {
+  const pkg = require(path.join(PACKAGE_ROOT, 'package.json'));
+  console.log(pkg.version);
 }
 
 switch (COMMAND) {
@@ -87,6 +93,11 @@ switch (COMMAND) {
   case '-h':
   case undefined:
     showHelp();
+    break;
+  case '--version':
+  case '-v':
+  case 'version':
+    showVersion();
     break;
   default:
     console.error(`Unknown command: ${COMMAND}`);
