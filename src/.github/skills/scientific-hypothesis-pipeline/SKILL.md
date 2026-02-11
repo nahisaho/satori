@@ -99,6 +99,118 @@ description: |
 - H₁ᵦ: [副次仮説 2]
 ```
 
+## 3.1 仮説定義のファイル保存
+
+仮説を立案した時点で、以下の 2 形式でファイルに永続化する。
+これにより、後続のパイプライン・レビュー・論文執筆で仮説を参照可能にする。
+
+### 3.1.1 Markdown 形式（人間可読）
+
+`docs/hypothesis.md` に保存する。
+
+```python
+def save_hypothesis_markdown(hypothesis, filepath=None):
+    """
+    仮説定義を Markdown ファイルとして保存する。
+    
+    Args:
+        hypothesis: dict — HYPOTHESIS 定義
+        filepath: Path — 保存先（デフォルト: docs/hypothesis.md）
+    """
+    import datetime
+    
+    if filepath is None:
+        filepath = BASE_DIR / "docs" / "hypothesis.md"
+    filepath.parent.mkdir(parents=True, exist_ok=True)
+    
+    content = f"""# 研究仮説定義書
+
+> 生成日時: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}
+
+## フレームワーク: {hypothesis['framework']}
+
+| 要素 | 内容 |
+|---|---|
+| **P** (Population) | {hypothesis['population']} |
+| **{'I' if hypothesis['framework'] == 'PICO' else 'E'}** ({'Intervention' if hypothesis['framework'] == 'PICO' else 'Exposure'}) | {hypothesis['intervention_or_exposure']} |
+| **C** (Comparison) | {hypothesis['comparison']} |
+| **O** (Outcome) | {hypothesis['outcome']} |
+
+## 仮説
+
+- **研究仮説 (H₁)**: {hypothesis['H1']}
+- **帰無仮説 (H₀)**: {hypothesis['H0']}
+
+## 統計パラメータ
+
+- 有意水準 α = {hypothesis['alpha']}
+- 目標検出力 = {hypothesis['power_target']}
+"""
+    # 副次仮説があれば追加
+    if hypothesis.get('sub_hypotheses'):
+        content += "\n## 副次仮説\n\n"
+        for sub_id, sub_desc in hypothesis['sub_hypotheses'].items():
+            content += f"- **{sub_id}**: {sub_desc}\n"
+    
+    with open(filepath, "w", encoding="utf-8") as f:
+        f.write(content)
+    
+    print(f"  → 仮説定義書を保存: {filepath}")
+    return filepath
+```
+
+### 3.1.2 JSON 形式（機械可読）
+
+`docs/hypothesis.json` に保存する。パイプライン・レビュースキルが参照する。
+
+```python
+def save_hypothesis_json(hypothesis, filepath=None):
+    """
+    仮説定義を JSON ファイルとして保存する。
+    後続スキル（critical-review, academic-writing）が参照する。
+    """
+    import datetime
+    
+    if filepath is None:
+        filepath = BASE_DIR / "docs" / "hypothesis.json"
+    filepath.parent.mkdir(parents=True, exist_ok=True)
+    
+    data = {
+        "version": "1.0",
+        "created_at": datetime.datetime.now().isoformat(),
+        "hypothesis": hypothesis,
+    }
+    
+    with open(filepath, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False, default=str)
+    
+    print(f"  → 仮説定義 JSON を保存: {filepath}")
+    return filepath
+```
+
+### 3.1.3 既存仮説ファイルの読み込み
+
+```python
+def load_hypothesis(filepath=None):
+    """
+    保存済みの仮説定義を読み込む。
+    パイプライン再実行時やレビュー時に使用。
+    """
+    if filepath is None:
+        filepath = BASE_DIR / "docs" / "hypothesis.json"
+    
+    if not filepath.exists():
+        print(f"  ⚠ 仮説ファイルが見つかりません: {filepath}")
+        return None
+    
+    with open(filepath, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    
+    print(f"  → 仮説定義を読み込み: {filepath}")
+    print(f"    H₁: {data['hypothesis']['H1']}")
+    return data['hypothesis']
+```
+
 ## 4. 仮説から解析手法への自動マッピング
 
 ```markdown
@@ -120,6 +232,132 @@ description: |
 | 因果推論 | 連続/二値 | 混合 | PSM / DiD / IV | causal-inference |
 | 用量応答 | 連続 | 連続 | RSM / GP | process-optimization |
 | 次元削減 | 高次元 | — | PCA / t-SNE / UMAP | pca-tsne |
+```
+
+## 4.1 ワークフロー設計のファイル保存
+
+パイプライン設計（ワークフロー）を `docs/workflow_design.md` と
+`docs/workflow_design.json` に永続化する。これにより設計の変更履歴を Git で追跡し、
+論文の Methods セクション執筆時に正確なワークフローを参照できる。
+
+### 4.1.1 ワークフロー Markdown 保存
+
+```python
+def save_workflow_design(hypothesis, steps, filepath=None):
+    """
+    パイプラインのワークフロー設計を Markdown ファイルとして保存する。
+    
+    Args:
+        hypothesis: dict — 仮説定義
+        steps: list[dict] — パイプラインステップ
+            各ステップ: {"id": "step_1", "name": "データ読み込み",
+                         "skill": "data-preprocessing", "params": {...},
+                         "inputs": [...], "outputs": [...]}
+        filepath: Path — 保存先（デフォルト: docs/workflow_design.md）
+    """
+    import datetime
+    
+    if filepath is None:
+        filepath = BASE_DIR / "docs" / "workflow_design.md"
+    filepath.parent.mkdir(parents=True, exist_ok=True)
+    
+    content = f"""# ワークフロー設計書
+
+> 生成日時: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}
+
+## 検証対象の仮説
+
+- **H₁**: {hypothesis['H1']}
+- **H₀**: {hypothesis['H0']}
+
+## パイプライン概要
+
+```
+"""
+    # フローチャート生成
+    for i, step in enumerate(steps):
+        prefix = "├─" if i < len(steps) - 1 else "└─"
+        content += f"  {prefix} Step {i+1}: {step['name']}\n"
+        if step.get('skill'):
+            content += f"  │   └─ Skill: {step['skill']}\n"
+    
+    content += "```\n\n## ステップ詳細\n\n"
+    
+    for i, step in enumerate(steps):
+        content += f"""### Step {i+1}: {step['name']}
+
+| 項目 | 内容 |
+|---|---|
+| **使用スキル** | {step.get('skill', 'N/A')} |
+| **入力** | {', '.join(step.get('inputs', ['—']))} |
+| **出力** | {', '.join(step.get('outputs', ['—']))} |
+| **パラメータ** | {step.get('params', '—')} |
+
+"""
+    
+    with open(filepath, "w", encoding="utf-8") as f:
+        f.write(content)
+    
+    print(f"  → ワークフロー設計書を保存: {filepath}")
+    return filepath
+```
+
+### 4.1.2 ワークフロー JSON 保存
+
+```python
+def save_workflow_json(hypothesis, steps, filepath=None):
+    """
+    パイプラインのワークフロー設計を JSON として保存する。
+    パイプラインの再構築・修正時に参照する。
+    """
+    import datetime
+    
+    if filepath is None:
+        filepath = BASE_DIR / "docs" / "workflow_design.json"
+    filepath.parent.mkdir(parents=True, exist_ok=True)
+    
+    data = {
+        "version": "1.0",
+        "created_at": datetime.datetime.now().isoformat(),
+        "hypothesis_ref": {
+            "H1": hypothesis["H1"],
+            "H0": hypothesis["H0"],
+            "framework": hypothesis["framework"],
+        },
+        "pipeline": {
+            "total_steps": len(steps),
+            "steps": steps,
+        },
+    }
+    
+    with open(filepath, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False, default=str)
+    
+    print(f"  → ワークフロー設計 JSON を保存: {filepath}")
+    return filepath
+```
+
+### 4.1.3 既存ワークフロー設計の読み込み
+
+```python
+def load_workflow_design(filepath=None):
+    """
+    保存済みのワークフロー設計を読み込む。
+    パイプラインの再実行・修正時に使用。
+    """
+    if filepath is None:
+        filepath = BASE_DIR / "docs" / "workflow_design.json"
+    
+    if not filepath.exists():
+        print(f"  ⚠ ワークフロー設計ファイルが見つかりません: {filepath}")
+        return None
+    
+    with open(filepath, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    
+    print(f"  → ワークフロー設計を読み込み: {filepath}")
+    print(f"    ステップ数: {data['pipeline']['total_steps']}")
+    return data
 ```
 
 ## 5. パイプラインコード自動生成
@@ -207,6 +445,41 @@ def main():
     print("Hypothesis-Driven Analysis Pipeline")
     print(f"H₁: {HYPOTHESIS['H1']}")
     print("=" * 60)
+
+    # ──── Step 0: 仮説・ワークフロー設計の保存 ────
+    print("\n[Step 0] 仮説・ワークフロー定義の保存...")
+    save_hypothesis_markdown(HYPOTHESIS)
+    save_hypothesis_json(HYPOTHESIS)
+
+    # ワークフロー設計の定義
+    workflow_steps = [
+        {"id": "step_1", "name": "データ読み込み / 生成",
+         "skill": "data-preprocessing", "inputs": ["raw data"],
+         "outputs": ["data/dataset.csv"]},
+        {"id": "step_2", "name": "データ品質チェック",
+         "skill": "data-preprocessing", "inputs": ["data/dataset.csv"],
+         "outputs": ["results/data_quality.json"]},
+        {"id": "step_3", "name": "探索的データ解析",
+         "skill": "eda-correlation", "inputs": ["data/dataset.csv"],
+         "outputs": ["figures/eda_*.png"]},
+        {"id": "step_4", "name": "前処理",
+         "skill": "data-preprocessing", "inputs": ["data/dataset.csv"],
+         "outputs": ["data/dataset_processed.csv"]},
+        {"id": "step_5", "name": "仮説検証",
+         "skill": "[自動選択]", "inputs": ["data/dataset_processed.csv"],
+         "outputs": ["results/test_results.json"]},
+        {"id": "step_6", "name": "結果の可視化",
+         "skill": "publication-figures", "inputs": ["results/"],
+         "outputs": ["figures/*.png"]},
+        {"id": "step_7", "name": "仮説判定",
+         "skill": "hypothesis-pipeline", "inputs": ["results/test_results.json"],
+         "outputs": ["results/hypothesis_verdict.json"]},
+        {"id": "step_8", "name": "サマリー生成",
+         "skill": "pipeline-scaffold", "inputs": ["results/"],
+         "outputs": ["results/analysis_summary.json"]},
+    ]
+    save_workflow_design(HYPOTHESIS, workflow_steps)
+    save_workflow_json(HYPOTHESIS, workflow_steps)
 
     # ──── Step 1: データ読み込み / 生成 ────
     print("\n[Step 1] データ読み込み...")
@@ -481,13 +754,17 @@ def manage_hypotheses(hypotheses_list):
 
 ### Output Files
 
-| ファイル | 形式 |
-|---|---|
-| `exp_analysis.py` | 仮説駆動パイプラインスクリプト |
-| `results/analysis_summary.json` | 仮説検証結果を含む JSON サマリー |
-| `figures/*.png` | 解析結果の図表 |
-| `results/hypothesis_tests.csv` | 検定結果一覧 |
-| `results/power_analysis.csv` | 検出力分析結果 |
+| ファイル | 形式 | 生成タイミング |
+|---|---|---|
+| `docs/hypothesis.md` | 仮説定義書（Markdown） | Phase 2 完了時 |
+| `docs/hypothesis.json` | 仮説定義（JSON） | Phase 2 完了時 |
+| `docs/workflow_design.md` | ワークフロー設計書（Markdown） | Phase 3 完了時 |
+| `docs/workflow_design.json` | ワークフロー設計（JSON） | Phase 3 完了時 |
+| `exp_analysis.py` | 仮説駆動パイプラインスクリプト | Phase 4 完了時 |
+| `results/analysis_summary.json` | 仮説検証結果を含む JSON サマリー | 実行完了時 |
+| `figures/*.png` | 解析結果の図表 | 実行完了時 |
+| `results/hypothesis_tests.csv` | 検定結果一覧 | 実行完了時 |
+| `results/power_analysis.csv` | 検出力分析結果 | 実行完了時 |
 
 ### 参照スキル
 
