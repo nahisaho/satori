@@ -6,6 +6,10 @@ description: |
   代謝酵素表現型判定 (PM/IM/NM/RM/UM)、FDA 薬理ゲノムバイオマーカー、
   投与量レコメンデーション、PGx レポート生成を統合した
   個別化薬物療法支援パイプライン。
+tu_tools:
+  - key: fda_pharmacogenomic_biomarkers
+    name: FDA PGx Biomarkers
+    description: FDA 薬理ゲノミクスバイオマーカーテーブル
 ---
 
 # Scientific Pharmacogenomics

@@ -3,6 +3,10 @@ name: scientific-biothings-idmapping
 description: |
   BioThings API (MyGene.info, MyVariant.info, MyChem.info) を活用した
   遺伝子・変異・化合物の横断的 ID マッピングおよびアノテーション統合スキル。
+tu_tools:
+  - key: biothings
+    name: BioThings
+    description: MyGene/MyVariant/MyChem 統合アノテーション API
 ---
 
 # Scientific BioThings ID Mapping

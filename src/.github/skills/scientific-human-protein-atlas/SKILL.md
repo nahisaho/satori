@@ -4,6 +4,10 @@ description: |
   Human Protein Atlas (HPA) 統合スキル。組織/細胞タンパク質発現、
   がん予後バイオマーカー、RNA 発現プロファイル、細胞内局在、
   タンパク質相互作用の包括的検索・解析パイプライン。
+tu_tools:
+  - key: hpa
+    name: Human Protein Atlas
+    description: 組織/細胞タンパク質発現・RNA 発現・がん予後
 ---
 
 # Scientific Human Protein Atlas

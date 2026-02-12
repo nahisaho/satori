@@ -8,6 +8,9 @@ tu_tools:
   - key: hca_tools
     name: Human Cell Atlas Tools
     description: HCA データポータル プロジェクト・バンドル・ファイル検索
+  - key: cellxgene_census
+    name: CELLxGENE Census
+    description: 大規模シングルセルアトラスデータアクセス API
 ---
 
 # Scientific Human Cell Atlas

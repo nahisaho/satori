@@ -5,6 +5,40 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.21.0] - 2025-07-26
+
+### Added
+- **Phase 13: 6 新スキル + 8 既存 TU key 追加** — ToolUniverse & K-Dense ギャップ分析に基づく v0.21.0 科学スキル拡張 (154→160 スキル、TU 連携 114→124)
+
+#### Track A: 既存スキル TU key 追加 (8 件)
+- **scientific-human-cell-atlas** に `tu_tools: cellxgene_census` (CELLxGENE Census 大規模シングルセルアトラス API) を追加 (既存 hca_tools に併記)
+- **scientific-drug-repurposing** に `tu_tools: pharos` (IDG Pharos/TCRD ターゲットナレッジベース) を追加
+- **scientific-pharmacogenomics** に `tu_tools: fda_pharmacogenomic_biomarkers` (FDA 薬理ゲノミクスバイオマーカーテーブル) を追加
+- **scientific-human-protein-atlas** に `tu_tools: hpa` (組織/細胞タンパク質発現・RNA 発現・がん予後) を追加
+- **scientific-variant-effect-prediction** に `tu_tools: spliceai, cadd` (スプライシング効果予測、統合アノテーション枯渇スコア) を追加
+- **scientific-gtex-tissue-expression** に `tu_tools: gtex_v2` (GTEx Portal REST API v2 組織特異的発現・eQTL) を追加 — 空配列から更新
+- **scientific-biothings-idmapping** に `tu_tools: biothings` (MyGene/MyVariant/MyChem 統合アノテーション API) を追加
+- **scientific-protein-structure-analysis** に `tu_tools: proteinsplus` (タンパク質結合部位検出・構造解析ツール群) を追加
+
+#### Track B: 新規スキル (6 件、うち 3 件 TU 連携)
+- **T. シングルセル・空間・エピゲノミクス（12→13 種）**
+  - **scientific-cellxgene-census** スキル (#155): CELLxGENE Census API 大規模シングルセルアトラスデータアクセス・細胞型分布・遺伝子発現マトリクス・cellxgene_census = TU ツール連携
+- **J. 創薬・ファーマコロジー（8→9 種）**
+  - **scientific-pharos-targets** スキル (#156): Pharos/TCRD IDG GraphQL API ターゲット TDL 分類・疾患関連・リガンドアクティビティ検索・pharos = TU ツール連携
+- **L. 精密医療・臨床意思決定（5→6 種）**
+  - **scientific-clingen-curation** スキル (#157): ClinGen API 遺伝子-疾患バリディティ・投与量感受性・臨床アクショナビリティ・clingen = TU ツール連携
+- **Z. 科学テキストマイニング（2→3 種）**
+  - **scientific-clinical-nlp** スキル (#158): MedSpaCy/scispaCy 臨床テキスト NER・否定文検出 (NegEx)・セクション分類・ICD-10/SNOMED-CT リンキング
+- **F. 生命科学・オミクス（24→26 種）**
+  - **scientific-hgnc-nomenclature** スキル (#159): HGNC REST API 遺伝子命名法・公式シンボル検索・エイリアス/旧シンボル解決・遺伝子ファミリー
+  - **scientific-metabolomics-network** スキル (#160): 代謝物相関ネットワーク構築 (GGM/WGCNA)・KEGG パスウェイグラフ・ハブ代謝物同定・パスウェイエンリッチメント
+
+### Changed
+- ToolUniverse SMCP 連携スキル: 114→124 (+3 新規 TU 連携: cellxgene_census, pharos, clingen + 7 既存 TU key 追加: pharos, fda_pharmacogenomic_biomarkers, hpa, spliceai/cadd, gtex_v2, biothings, proteinsplus)
+- README.md: 全カウント・カテゴリ表・スキル一覧・ディレクトリツリー・TU 連携図を更新
+- カテゴリ数: 26 (A-Z) — 変更なし
+- カテゴリ展開: F(24→26), J(8→9), L(5→6), T(12→13), Z(2→3)
+
 ## [0.20.0] - 2025-07-25
 
 ### Added

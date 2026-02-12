@@ -5,6 +5,10 @@ description: |
   パラダイムに準拠し、7 つの戦略（ターゲット型、化合物型、疾患駆動型、メカニズム型、
   ネットワーク型、表現型、構造型）で候補を体系的に探索。
   「ドラッグリポジショニングして」「既存薬の新規適応を探して」で発火。
+tu_tools:
+  - key: pharos
+    name: Pharos
+    description: IDG Pharos/TCRD ターゲットナレッジベース
 ---
 
 # Scientific Drug Repurposing

@@ -6,6 +6,10 @@ description: |
   ToolUniverse の Protein Structure Retrieval と claude-scientific-skills の
   PDB/AlphaFold スキルを統合。
   「タンパク質の構造を解析して」「PDB 構造を調べて」「ドッキング準備して」で発火。
+tu_tools:
+  - key: proteinsplus
+    name: ProteinsPlus
+    description: タンパク質結合部位検出・構造解析ツール群
 ---
 
 # Scientific Protein Structure Analysis

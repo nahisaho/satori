@@ -3,8 +3,11 @@ name: scientific-gtex-tissue-expression
 description: |
   GTEx 組織発現スキル。GTEx Portal REST API v2 による
   組織特異的遺伝子発現パターン解析・eQTL ルックアップ・
-  多組織比較。直接 API (ToolUniverse 非連携)。
-tu_tools: []
+  多組織比較。ToolUniverse 連携: gtex_v2。
+tu_tools:
+  - key: gtex_v2
+    name: GTEx v2
+    description: GTEx Portal REST API v2 組織特異的発現・eQTL
 ---
 
 # Scientific GTEx Tissue Expression

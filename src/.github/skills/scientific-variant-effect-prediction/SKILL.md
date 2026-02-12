@@ -6,6 +6,13 @@ description: |
   3 大予測ツールを統合したコンセンサス病原性評価パイプライン。
   Ensembl VEP 連携、バリアントフィルタリング、優先順位付け対応。
   9 の ToolUniverse SMCP ツールと連携。
+tu_tools:
+  - key: spliceai
+    name: SpliceAI
+    description: スプライシングバリアント効果予測
+  - key: cadd
+    name: CADD
+    description: 統合アノテーション依存性枯湇スコア
 ---
 
 # Scientific Variant Effect Prediction
