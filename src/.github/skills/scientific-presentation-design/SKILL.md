@@ -316,3 +316,22 @@ def create_workflow_schematic(steps, title="Workflow"):
 3. **カラーバリアフリー**: viridis/cividis 系パレットを推奨
 4. **3 メートルルール**: ポスターは遠距離から読めること
 5. **10-20-30 ルール**: 10 slides, 20 min, 30pt font (Kawasaki)
+
+## References
+
+### Output Files
+
+| ファイル | 形式 | 生成タイミング |
+|---|---|---|
+| `presentation/slides.md` | プレゼンテーション原稿（Markdown） | スライド構成完了時 |
+| `presentation/poster.tex` | ポスターテンプレート（LaTeX） | ポスター設計完了時 |
+| `figures/workflow_schematic.png` | ワークフロー模式図（PNG） | 図表生成完了時 |
+
+### 参照スキル
+
+| スキル | 連携 |
+|---|---|
+| `scientific-publication-figures` | ← Figure 生成・カラーパレット |
+| `scientific-academic-writing` | ← 研究テキスト・要旨 |
+| `scientific-clinical-decision-support` | ← 臨床結果の発表素材 |
+| `scientific-latex-formatter` | ← LaTeX フォーマット支援 |

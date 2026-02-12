@@ -227,3 +227,24 @@ def network_proximity(drug_targets, disease_genes, ppi_network):
 3. **ネガティブエビデンスも記載**: 過去の失敗臨床試験を確認
 4. **用量を検討**: リポジショニングでは用量が異なる場合がある
 5. **ランダム化比較で検証**: 最終的な有効性は RCT で確認
+
+## References
+
+### Output Files
+
+| ファイル | 形式 | 生成タイミング |
+|---|---|---|
+| `results/repurposing_candidates.json` | リポジショニング候補リスト（JSON） | 多基準スコアリング完了時 |
+| `results/repurposing_report.md` | リポジショニング評価レポート（Markdown） | 全解析完了時 |
+| `results/network_proximity.json` | ネットワーク近接スコア（JSON） | ネットワーク解析完了時 |
+
+### 参照スキル
+
+| スキル | 連携 |
+|---|---|
+| `scientific-drug-target-profiling` | ← ターゲット情報の利用 |
+| `scientific-admet-pharmacokinetics` | ← ADMET フィルタリング済み化合物 |
+| `scientific-network-analysis` | ← 疾患-薬物ネットワーク構築 |
+| `scientific-deep-research` | ← 文献エビデンス収集 |
+| `scientific-clinical-decision-support` | → 候補薬の臨床意思決定 |
+| `scientific-academic-writing` | → 研究成果の論文化 |

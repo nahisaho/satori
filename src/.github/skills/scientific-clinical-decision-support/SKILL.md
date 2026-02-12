@@ -264,3 +264,25 @@ Clinical decisions must be made by qualified healthcare professionals.
 3. **患者個別因子を考慮**: 年齢、腎機能、薬物相互作用
 4. **臨床試験を常に検索**: 標準治療不適の場合の選択肢
 5. **免責事項を記載**: AI ツールは臨床判断の代替ではない
+
+## References
+
+### Output Files
+
+| ファイル | 形式 | 生成タイミング |
+|---|---|---|
+| `results/clinical_decision_report.md` | 臨床意思決定レポート（Markdown） | 全解析完了時 |
+| `results/clinical_recommendation.json` | 推奨事項データ（JSON） | GRADE 評価完了時 |
+| `results/trial_matches.json` | 臨床試験マッチング結果（JSON） | 試験検索完了時 |
+
+### 参照スキル
+
+| スキル | 連携 |
+|---|---|
+| `scientific-variant-interpretation` | ← バリアント解釈結果の臨床応用 |
+| `scientific-drug-repurposing` | ← リポジショニング候補の臨床評価 |
+| `scientific-survival-clinical` | ← 生存解析・臨床試験データ |
+| `scientific-meta-analysis` | ← メタアナリシスのエビデンス統合 |
+| `scientific-deep-research` | ← 最新エビデンスの収集 |
+| `scientific-presentation-design` | → 臨床結果のプレゼンテーション |
+| `scientific-academic-writing` | → 研究成果の論文化 |

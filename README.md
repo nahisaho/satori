@@ -19,6 +19,21 @@ hypothesis-pipeline → pipeline-scaffold → academic-writing → critical-revi
   (品質評価)    (改訂追跡)       (査読対応)         (ジャーナル)
 ```
 
+**ドメイン特化パイプライン（J-O）**
+
+```
+research-methodology → grant-writing → hypothesis-pipeline    ← [O→A 研究計画]
+                                              ↓
+drug-target-profiling → admet-pharmacokinetics ─→ drug-repurposing
+  (標的同定)           (ADMET/PK 評価)        (リポジショニング)
+        ↓                                            ↓
+protein-structure-analysis → protein-design → lab-automation
+  (構造解析)               (de novo 設計)   (実験自動化)
+                                                     ↓
+variant-interpretation → clinical-decision-support → presentation-design
+  (バリアント解釈)       (臨床意思決定)            (学会発表)
+```
+
 各ステップで生成されるファイルが次のステップに自動的に引き継がれます：
 
 | フェーズ | 生成ファイル | 参照先 |
@@ -33,6 +48,17 @@ hypothesis-pipeline → pipeline-scaffold → academic-writing → critical-revi
 | 改訂追跡 | `manuscript/manuscript_tracked.md`, `manuscript/revision_summary.json` | → paper-quality |
 | 品質評価 | `manuscript/quality_report.json` | → latex-formatter |
 | LaTeX 変換 | `manuscript/manuscript.tex`, `manuscript/references.bib` | — |
+| 標的プロファイリング | `results/target_profile_report.md`, `results/target_profile.json` | → admet-pk, protein-structure, drug-repurposing |
+| ADMET/PK 評価 | `results/admet_profile.json`, `results/pk_model.json` | → drug-repurposing, clinical-decision |
+| ドラッグリポジショニング | `results/repurposing_candidates.json`, `results/network_proximity.json` | → clinical-decision |
+| 構造解析 | `results/structure_analysis.json`, `results/binding_sites.json` | → protein-design, cheminformatics |
+| タンパク質設計 | `results/design_candidates.json`, `results/esm_scores.json` | → lab-automation, admet-pk |
+| バリアント解釈 | `results/variant_classification.json`, `results/pgx_report.json` | → clinical-decision |
+| 臨床意思決定 | `results/clinical_recommendation.json`, `results/trial_matches.json` | → presentation, writing |
+| 実験室自動化 | `protocols/protocol.py`, `results/qc_report.json` | → data-preprocessing |
+| プレゼンテーション | `presentation/slides.md`, `presentation/poster.tex` | — |
+| 研究方法論 | `docs/methodology_design.md`, `docs/study_design.json` | → grant-writing, doe |
+| グラント | `grants/specific_aims.md`, `grants/research_strategy.md` | → hypothesis-pipeline |
 
 スキルは **15 の中区分**に分類されています。
 

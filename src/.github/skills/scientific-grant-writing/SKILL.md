@@ -282,3 +282,22 @@ BUDGET_JUSTIFICATION_TEMPLATE = """
 3. **Preliminary Data を重視**: Feasibility の証拠が採択率を大きく左右
 4. **ページ制限の 95% を使う**: 短すぎるのも減点対象
 5. **Broader Impacts を忘れない**: 社会的インパクトの記述（NSF）
+
+## References
+
+### Output Files
+
+| ファイル | 形式 | 生成タイミング |
+|---|---|---|
+| `grants/specific_aims.md` | Specific Aims ページ（Markdown） | Aims 策定完了時 |
+| `grants/research_strategy.md` | Research Strategy（Markdown） | 全セクション完了時 |
+| `grants/budget.json` | 予算計画（JSON） | 予算見積完了時 |
+
+### 参照スキル
+
+| スキル | 連携 |
+|---|---|
+| `scientific-research-methodology` | ← 研究デザイン・方法論の提供 |
+| `scientific-hypothesis-pipeline` | ← 仮説定義・課題設定 |
+| `scientific-deep-research` | ← 文献レビュー・先行研究調査 |
+| `scientific-academic-writing` | ← アカデミックライティングスキル |

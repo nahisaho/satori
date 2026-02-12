@@ -290,3 +290,23 @@ def pgx_recommendation(gene, phenotype, drug):
 3. **機能研究を重視**: 計算予測よりも実験的エビデンスが優先
 4. **ClinVar は星評価を確認**: 3-4 星のエントリが最も信頼性が高い
 5. **PGx は CPIC レベルを確認**: Level A/B のみ臨床実装
+
+## References
+
+### Output Files
+
+| ファイル | 形式 | 生成タイミング |
+|---|---|---|
+| `results/variant_report.md` | バリアント解釈レポート（Markdown） | 全解析完了時 |
+| `results/variant_classification.json` | ACMG/AMP 分類データ（JSON） | 分類完了時 |
+| `results/pgx_report.json` | 薬理ゲノミクスレポート（JSON） | PGx 評価完了時 |
+
+### 参照スキル
+
+| スキル | 連携 |
+|---|---|
+| `scientific-bioinformatics` | ← ゲノムデータ・バリアントコール |
+| `scientific-sequence-analysis` | ← 配列コンテキスト・保存度情報 |
+| `scientific-data-preprocessing` | ← バリアントデータの前処理・正規化 |
+| `scientific-clinical-decision-support` | → バリアント解釈結果の臨床意思決定 |
+| `scientific-academic-writing` | → 研究成果の論文化 |

@@ -313,3 +313,23 @@ BIAS_TYPES = {
 3. **Pilot study**: 本研究前にパイロットで feasibility 確認
 4. **バイアスを列挙**: 排除できないバイアスは limitation に明記
 5. **再現性を設計**: プロトコル・データ・コードの公開計画を含める
+
+## References
+
+### Output Files
+
+| ファイル | 形式 | 生成タイミング |
+|---|---|---|
+| `docs/methodology_design.md` | 方法論設計ドキュメント（Markdown） | デザイン完了時 |
+| `docs/study_design.json` | 研究デザイン構造化データ（JSON） | デザイン完了時 |
+| `docs/ethics_checklist.md` | 倫理チェックリスト（Markdown） | チェック完了時 |
+
+### 参照スキル
+
+| スキル | 連携 |
+|---|---|
+| `scientific-hypothesis-pipeline` | ← 仮説に基づく方法論設計 |
+| `scientific-deep-research` | ← 先行研究の方法論調査 |
+| `scientific-grant-writing` | → 方法論を研究計画書に組み込み |
+| `scientific-doe` | → 研究デザインに基づく実験計画 |
+| `scientific-academic-writing` | → Methods セクション執筆 |

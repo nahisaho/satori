@@ -298,3 +298,24 @@ def detect_binding_sites(pdb_id):
 3. **pLDDT < 50 領域は信用しない**: ディスオーダー領域の可能性大
 4. **複数構造の比較**: 異なるコンフォメーションをキャプチャ
 5. **リガンド情報を活用**: 共結晶リガンドから pharmacophore を推定
+
+## References
+
+### Output Files
+
+| ファイル | 形式 | 生成タイミング |
+|---|---|---|
+| `results/structure_report.md` | 構造解析レポート（Markdown） | 全解析完了時 |
+| `results/structure_analysis.json` | 構造データ（JSON） | 品質評価完了時 |
+| `results/binding_sites.json` | 結合部位データ（JSON） | ポケット解析完了時 |
+
+### 参照スキル
+
+| スキル | 連携 |
+|---|---|
+| `scientific-drug-target-profiling` | ← ターゲットタンパク質の構造解析依頼 |
+| `scientific-bioinformatics` | ← 配列・ドメイン情報 |
+| `scientific-sequence-analysis` | ← アミノ酸配列解析結果 |
+| `scientific-protein-design` | → 構造に基づく de novo タンパク質設計 |
+| `scientific-cheminformatics` | → 結合部位情報を分子ドッキングに利用 |
+| `scientific-academic-writing` | → 研究成果の論文化 |

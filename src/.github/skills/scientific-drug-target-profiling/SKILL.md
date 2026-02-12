@@ -302,3 +302,26 @@ def grade_disease_association(target_id, disease_id, evidence_sources):
 3. **Evidence Tier を明記**: すべての疾患アソシエーションに T1-T4 を付与
 4. **安全性を最初に確認**: Essential gene の場合は早期に Go/No-Go 判断
 5. **構造情報を優先**: PDB 実験構造 > AlphaFold 予測 > Homology model
+
+## References
+
+### Output Files
+
+| ファイル | 形式 | 生成タイミング |
+|---|---|---|
+| `results/target_profile_report.md` | ターゲットプロファイルレポート（Markdown） | 全解析完了時 |
+| `results/target_profile.json` | 構造化プロファイルデータ（JSON） | 全解析完了時 |
+| `results/druggability_matrix.json` | ドラッガビリティマトリクス（JSON） | Druggability 評価完了時 |
+
+### 参照スキル
+
+| スキル | 連携 |
+|---|---|
+| `scientific-hypothesis-pipeline` | ← 仮説定義からターゲット同定への入力 |
+| `scientific-deep-research` | ← 文献深層調査で標的エビデンス収集 |
+| `scientific-bioinformatics` | ← ゲノム・プロテオームデータ提供 |
+| `scientific-network-analysis` | ← PPI ネットワーク・パスウェイ情報 |
+| `scientific-admet-pharmacokinetics` | → ターゲットに対する化合物の ADMET 評価 |
+| `scientific-protein-structure-analysis` | → ターゲットタンパク質の構造解析 |
+| `scientific-drug-repurposing` | → ターゲットベースのリポジショニング |
+| `scientific-academic-writing` | → 研究成果の論文化 |

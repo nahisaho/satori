@@ -280,3 +280,23 @@ EXPRESSION_SYSTEMS = {
 3. **保守的な変異から始める**: Consensus mutations を優先
 4. **実験フィードバック**: 設計-テスト-学習サイクルを計画
 5. **スケール意識**: 計算コストと精度のトレードオフを明示
+
+## References
+
+### Output Files
+
+| ファイル | 形式 | 生成タイミング |
+|---|---|---|
+| `results/design_report.md` | 設計レポート（Markdown） | 全設計完了時 |
+| `results/design_candidates.json` | 設計候補データ（JSON） | スクリーニング完了時 |
+| `results/esm_scores.json` | ESM スコアデータ（JSON） | 変異スキャン完了時 |
+
+### 参照スキル
+
+| スキル | 連携 |
+|---|---|
+| `scientific-protein-structure-analysis` | ← ターゲット構造データの提供 |
+| `scientific-sequence-analysis` | ← 配列・進化情報 |
+| `scientific-lab-automation` | → 設計タンパク質の発現・精製プロトコル |
+| `scientific-admet-pharmacokinetics` | → タンパク質治療薬の PK 評価 |
+| `scientific-academic-writing` | → 研究成果の論文化 |

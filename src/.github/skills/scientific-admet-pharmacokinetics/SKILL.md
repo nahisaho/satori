@@ -339,3 +339,23 @@ def one_compartment_pk(dose, ka, ke, vd, time_points):
 3. **既知化合物で Benchmark**: 同クラスの承認薬と比較して判断
 4. **構造アラートは参考情報**: PAINS ヒットでも偽陽性の可能性を考慮
 5. **PK パラメータは in vivo 補正**: allometric scaling で動物種間換算
+
+## References
+
+### Output Files
+
+| ファイル | 形式 | 生成タイミング |
+|---|---|---|
+| `results/admet_profile.json` | ADMET プロファイル（JSON） | 全 5 段階評価完了時 |
+| `results/admet_report.md` | ADMET 評価レポート（Markdown） | 全解析完了時 |
+| `results/pk_model.json` | PK モデルパラメータ（JSON） | PK モデリング完了時 |
+
+### 参照スキル
+
+| スキル | 連携 |
+|---|---|
+| `scientific-drug-target-profiling` | ← ターゲットに結合する化合物の ADMET 評価 |
+| `scientific-cheminformatics` | ← 分子記述子・構造情報の提供 |
+| `scientific-drug-repurposing` | → ADMET 通過化合物のリポジショニング候補評価 |
+| `scientific-clinical-decision-support` | → PK パラメータの臨床応用 |
+| `scientific-academic-writing` | → 研究成果の論文化 |

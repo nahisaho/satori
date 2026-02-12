@@ -251,3 +251,23 @@ def create_protocol_io_entry(protocol_data):
 3. **Dead volume を計算**: リザーバの dead volume を考慮した余裕量
 4. **ピペッティング精度を検証**: 蛍光色素/重量法で実測値を確認
 5. **バージョン管理**: プロトコルの変更を Git で追跡
+
+## References
+
+### Output Files
+
+| ファイル | 形式 | 生成タイミング |
+|---|---|---|
+| `protocols/protocol.py` | 自動化プロトコル（Python） | プロトコル設計完了時 |
+| `protocols/sop.md` | SOP テンプレート（Markdown） | SOP 作成完了時 |
+| `results/qc_report.json` | QC レポート（JSON） | バリデーション完了時 |
+
+### 参照スキル
+
+| スキル | 連携 |
+|---|---|
+| `scientific-protein-design` | ← 設計タンパク質の発現・精製プロトコル |
+| `scientific-doe` | ← 実験計画に基づく自動化プロトコル設計 |
+| `scientific-process-optimization` | ← 最適化パラメータの実装 |
+| `scientific-data-preprocessing` | → 自動取得データの前処理 |
+| `scientific-academic-writing` | → 自動化手法の Methods 記載 |
