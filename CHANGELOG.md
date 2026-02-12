@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.13.0] - 2026-02-18
+
+### Added
+- **10 新スキル (7 カテゴリ拡張)** を追加 — ToolUniverse & K-Dense-AI/claude-scientific-skills ギャップ分析に基づく Phase 5 ドメイン拡張 (86→96 スキル、TU 連携 50→59)
+- **A. 基盤・ワークフロー（14→15 種）**
+  - **scientific-biothings-idmapping** スキル (#91): MyGene.info 遺伝子アノテーション・MyVariant.info 変異アノテーション・MyChem.info 化合物アノテーション・クロス DB ID マッピング (Entrez↔Ensembl↔UniProt↔RefSeq)・バッチ統合アノテーション・biothings (7) = 7 TU ツール連携
+- **F. 生命科学・オミクス（9→12 種）**
+  - **scientific-human-protein-atlas** スキル (#88): HPA 組織/細胞タンパク質発現・RNA 発現プロファイル (HPA/GTEx/FANTOM5)・がん予後バイオマーカー・細胞内局在・タンパク質相互作用・hpa (14) = 14 TU ツール連携
+  - **scientific-genome-sequence-tools** スキル (#90): dbSNP rsID 変異アレル頻度・BLAST 相同性検索 (blastn/blastp)・NCBI Nucleotide 配列フェッチ・GDC がんゲノミクス体細胞変異/CNV/発現・dbsnp (3)/blast (2)/ncbi_nucleotide (3)/gdc (7) = 15 TU ツール連携
+  - **scientific-noncoding-rna** スキル (#92): Rfam RNA ファミリー検索/Infernal cmscan・RNAcentral ncRNA 統合 DB・共分散モデル取得・構造マッピング・系統樹・rfam (7)/rnacentral (2) = 9 TU ツール連携
+- **J. 創薬・ファーマコロジー（4→6 種）**
+  - **scientific-pharmacology-targets** スキル (#89): BindingDB 結合親和性・GPCRdb GPCR プロファイリング・GtoPdb 薬理学データ・BRENDA 酵素阻害剤・Pharos/TCRD 未解明ターゲット TDL 分類・bindingdb (4)/gpcrdb (5)/gtopdb (8)/brenda (1)/pharos (4) = 22 TU ツール連携
+  - **scientific-compound-screening** スキル (#94): ZINC 購入可能化合物ライブラリ検索・SMILES 類似性検索・Lipinski フィルタ・VS 前処理パイプライン・zinc (4) = 4 TU ツール連携
+- **K. 構造生物学・タンパク質工学（4→5 種）**
+  - **scientific-structural-proteomics** スキル (#93): EMDB クライオ EM 構造・PDBe 構造品質/実験/二次構造・Proteins API ドメイン/変異/ゲノムマッピング・Complex Portal 複合体・DeepGO 機能予測・EVE 変異効果スコア・emdb (7)/pdbe_api (10)/proteins_api (10)/complex_portal (2)/deepgo (1)/eve (2) = 32 TU ツール連携
+- **Q. 腫瘍学・疾患研究（3→4 種）**
+  - **scientific-rare-disease-genetics** スキル (#87): OMIM 遺伝子-疾患マッピング・Orphanet 希少疾患分類・DisGeNET GDA スコア・IMPC マウス表現型・統合希少疾患遺伝子プロファイリング・omim (4)/orphanet (5)/disgenet (5)/impc (4) = 18 TU ツール連携
+- **R. 量子・先端計算（5→6 種）**
+  - **scientific-healthcare-ai** スキル (#96): PyHealth 臨床 ML パイプライン (MIMIC-III)・Transformer/RETAIN/GRU モデル・FlowIO フローサイトメトリー FCS 解析・医療コードマッピング (ICD-10/SNOMED/ATC)・K-Dense 参照 (pyhealth/flowio)
+- **W. システム生物学（1→2 種）**
+  - **scientific-metabolic-modeling** スキル (#95): BiGG Models ゲノムスケール代謝モデル検索/反応/代謝物・BioModels SBML リポジトリ検索/取得・統合代謝モデル探索・bigg_models (7)/biomodels_tools (5) = 12 TU ツール連携
+
+### Changed
+- ToolUniverse SMCP 連携スキル: 50→59 (+9 スキル、133+ 新規 TU ツール統合)
+- README.md: 全カウント・カテゴリ表・スキル一覧・ディレクトリツリー・TU 連携図を更新
+
 ## [0.12.0] - 2026-02-17
 
 ### Added
