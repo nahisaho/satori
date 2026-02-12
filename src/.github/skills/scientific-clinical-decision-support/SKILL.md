@@ -275,6 +275,20 @@ Clinical decisions must be made by qualified healthcare professionals.
 | `results/clinical_recommendation.json` | 推奨事項データ（JSON） | GRADE 評価完了時 |
 | `results/trial_matches.json` | 臨床試験マッチング結果（JSON） | 試験検索完了時 |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| ClinicalTrials | `search_clinical_trials` | 臨床試験検索 |
+| ClinicalTrials | `clinical_trials_get_details` | 試験詳細取得 |
+| PharmGKB | `PharmGKB_get_dosing_guidelines` | PGx 用量ガイドライン |
+| PharmGKB | `PharmGKB_get_clinical_annotations` | 臨床アノテーション |
+| CPIC | `CPIC_get_guidelines` | CPIC ガイドライン |
+| DGIdb | `DGIdb_get_drug_gene_interactions` | 薬物-遺伝子相互作用 |
+| PubMed | `PubMed_search_articles` | エビデンス検索 |
+
 ### 参照スキル
 
 | スキル | 連携 |

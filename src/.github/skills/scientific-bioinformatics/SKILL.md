@@ -212,6 +212,19 @@ def metabolomics_preprocessing(df, metabolite_cols, group_col=None):
 | `figures/umap_clusters.png` | PNG |
 | `figures/network_visualization.png` | PNG |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| MyGene | `MyGene_get_gene_annotation` | 遺伝子アノテーション |
+| UniProt | `UniProt_search` | タンパク質検索 |
+| KEGG | `kegg_get_pathway_info` | パスウェイ情報取得 |
+| Reactome | `Reactome_map_uniprot_to_pathways` | UniProt→パスウェイマッピング |
+| GO | `GO_get_annotations_for_gene` | GO アノテーション |
+| GEO | `geo_search_datasets` | 発現データセット検索 |
+
 #### 参照実験
 
 - **Exp-01**: scRNA-seq（Scanpy + PyDESeq2 + KEGG）

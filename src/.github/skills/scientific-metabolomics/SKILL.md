@@ -321,6 +321,19 @@ def metabolite_correlation_network(df, metabolite_cols, method="spearman",
 | `figures/vip_barplot.png` | PNG |
 | `figures/metabolite_network.png` | PNG |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| HMDB | `HMDB_search` | 代謝物検索 |
+| HMDB | `HMDB_get_metabolite` | 代謝物詳細取得 |
+| HMDB | `HMDB_get_diseases` | 代謝物-疾患関連 |
+| KEGG | `kegg_get_pathway_info` | 代謝パスウェイ情報 |
+| MetaCyc | `MetaCyc_search_pathways` | 代謝経路検索 |
+| MetabolomicsWB | `MetabolomicsWorkbench_search_compound_by_name` | 代謝物データベース検索 |
+
 #### 参照実験
 
 - **Exp-07**: PLS-DA + VIP、Pareto スケーリング、パスウェイ濃縮、相関ネットワーク

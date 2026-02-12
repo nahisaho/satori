@@ -367,6 +367,20 @@ def generate_disease_report(disease_name, gwas_df, gda_df, hpo_df,
 | `results/disease_research_report.md` | 疾患研究レポート（Markdown） | レポート生成時 |
 | `results/gwas_significant_loci.json` | GWAS 有意 loci（JSON） | GWAS 検索完了時 |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| OpenTargets | `OpenTargets_get_disease_id_description_by_name` | 疾患 ID・記述取得 |
+| OpenTargets | `OpenTargets_get_associated_targets_by_disease_efoId` | 疾患関連ターゲット |
+| EFO/OLS | `OSL_get_efo_id_by_disease_name` | EFO ID 解決 |
+| HPO | `get_HPO_ID_by_phenotype` | 表現型→HPO マッピング |
+| Monarch | `Monarch_get_gene_diseases` | 遺伝子-疾患関連 |
+| ClinVar | `clinvar_search_variants` | 病原性バリアント検索 |
+| ClinicalTrials | `search_clinical_trials` | 疾患関連臨床試験 |
+
 ### 参照スキル
 
 | スキル | 連携 |

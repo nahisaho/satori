@@ -293,6 +293,18 @@ BUDGET_JUSTIFICATION_TEMPLATE = """
 | `grants/research_strategy.md` | Research Strategy（Markdown） | 全セクション完了時 |
 | `grants/budget.json` | 予算計画（JSON） | 予算見積完了時 |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| PubMed | `PubMed_search_articles` | 先行研究検索 |
+| PubMed | `PubMed_get_cited_by` | 被引用構造分析 |
+| EuropePMC | `EuropePMC_search_articles` | ヨーロッパ文献検索 |
+| Crossref | `Crossref_search_works` | DOI・出版情報検索 |
+| OpenAlex | `OpenAlex_Guidelines_Search` | オープンアクセス文献検索 |
+
 ### 参照スキル
 
 | スキル | 連携 |

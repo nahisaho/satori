@@ -384,6 +384,19 @@ def protein_properties(protein_seq):
 | `figures/phylogenetic_tree.png` | PNG |
 | `figures/hydrophobicity_profile.png` | PNG |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| BLAST | `BLAST_protein_search` | タンパク質相同性検索 |
+| BLAST | `BLAST_nucleotide_search` | 核酸相同性検索 |
+| UniProt | `UniProt_get_sequence_by_accession` | アミノ酸配列取得 |
+| NCBI | `NCBI_get_sequence` | ヌクレオチド配列取得 |
+| InterPro | `InterProScan_scan_sequence` | 配列ドメインスキャン |
+| InterPro | `InterPro_get_protein_domains` | ドメインアノテーション |
+
 #### 参照実験
 
 - **Exp-09**: コドン使用頻度、ペアワイズアラインメント、系統解析、ORF 探索、CpG 島検出

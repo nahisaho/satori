@@ -350,6 +350,20 @@ def one_compartment_pk(dose, ka, ke, vd, time_points):
 | `results/admet_report.md` | ADMET 評価レポート（Markdown） | 全解析完了時 |
 | `results/pk_model.json` | PK モデルパラメータ（JSON） | PK モデリング完了時 |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| ADMET-AI | `ADMETAI_predict_BBB_penetrance` | BBB 透過性予測 |
+| ADMET-AI | `ADMETAI_predict_CYP_interactions` | CYP 相互作用予測 |
+| ADMET-AI | `ADMETAI_predict_toxicity` | 毒性予測 |
+| ADMET-AI | `ADMETAI_predict_bioavailability` | バイオアベイラビリティ予測 |
+| PubChem | `PubChem_get_compound_properties_by_CID` | 化合物物性取得 |
+| ChEMBL | `ChEMBL_get_molecule` | 分子情報取得 |
+| ChEMBL | `ChEMBL_get_activity` | バイオアッセイデータ |
+
 ### 参照スキル
 
 | スキル | 連携 |

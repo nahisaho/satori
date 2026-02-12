@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.9.0] - 2026-02-14
+
+### Added
+- **ToolUniverse MCP ツール連携**: 22 スキル（HIGH 13 + MEDIUM 9）の SKILL.md に `### 利用可能ツール` セクションを追加 — [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で 1,200 以上の外部科学データベースツール（ClinVar, gnomAD, OncoKB, CIViC, FAERS, UniProt, ChEMBL, PubMed 等）への参照を記載
+  - **HIGH（13 スキル）**: variant-interpretation, precision-oncology, disease-research, drug-target-profiling, drug-repurposing, pharmacovigilance, clinical-decision-support, protein-structure-analysis, admet-pharmacokinetics, protein-design, bioinformatics, multi-omics, metabolomics
+  - **MEDIUM（9 スキル）**: deep-research, cheminformatics, sequence-analysis, citation-checker, meta-analysis, network-analysis, graph-neural-networks, survival-clinical, grant-writing
+
+### Changed
+- **README.md**: Overview に ToolUniverse MCP 連携の説明を追加、ファイル入出力セクションに「ToolUniverse MCP ツール連携」サブセクションを追加（アーキテクチャ図付き）
+
 ## [0.8.0] - 2026-02-13
 
 ### Added

@@ -295,6 +295,19 @@ def multiomics_clustering(fused_similarity, n_clusters, labels_true=None):
 | `figures/snf_heatmap.png` | PNG |
 | `figures/multiomics_umap.png` | PNG |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| HPA | `HPA_get_rna_expression_by_source` | 組織別 RNA 発現 |
+| GEO | `geo_search_datasets` | オミクスデータセット検索 |
+| CELLxGENE | `CELLxGENE_get_expression_data` | 単一細胞発現データ |
+| Reactome | `Reactome_map_uniprot_to_pathways` | パスウェイマッピング |
+| KEGG | `kegg_get_pathway_info` | パスウェイ情報 |
+| UniProt | `UniProt_search` | タンパク質検索 |
+
 #### 依存パッケージ
 
 ```

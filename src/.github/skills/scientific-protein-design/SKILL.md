@@ -291,6 +291,19 @@ EXPRESSION_SYSTEMS = {
 | `results/design_candidates.json` | 設計候補データ（JSON） | スクリーニング完了時 |
 | `results/esm_scores.json` | ESM スコアデータ（JSON） | 変異スキャン完了時 |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| UniProt | `UniProt_get_entry_by_accession` | タンパク質エントリ取得 |
+| UniProt | `UniProt_get_sequence_by_accession` | アミノ酸配列取得 |
+| InterPro | `InterPro_get_protein_domains` | ドメインアノテーション |
+| Proteins API | `proteins_api_get_features` | タンパク質特徴情報 |
+| Proteins API | `proteins_api_get_variants` | 既知変異体情報 |
+| AlphaMissense | `AlphaMissense_get_residue_scores` | 残基レベル耐性予測 |
+
 ### 参照スキル
 
 | スキル | 連携 |

@@ -677,3 +677,18 @@ confidence_score: XX%
   ]
 }
 ```
+
+## References
+
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| PubMed | `PubMed_search_articles` | 文献検索 |
+| PubMed | `PubMed_get_cited_by` | 被引用構造分析 |
+| EuropePMC | `EuropePMC_search_articles` | ヨーロッパ文献検索 |
+| Crossref | `Crossref_search_works` | 出版情報検索 |
+| OpenAlex | `OpenAlex_Guidelines_Search` | オープンアクセス文献 |
+| ArXiv | `ArXiv_search_papers` | プレプリント検索 |

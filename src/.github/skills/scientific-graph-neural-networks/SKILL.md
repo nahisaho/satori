@@ -370,6 +370,18 @@ def scaffold_split(dataset, train_ratio=0.8, val_ratio=0.1):
 | `figures/gnn_training_curve.png` | 学習曲線プロット | トレーニング完了時 |
 | `figures/gnn_explanation.png` | GNNExplainer 可視化 | 解釈性分析時 |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| PubChem | `PubChem_get_compound_properties_by_CID` | 分子物性取得 |
+| ChEMBL | `ChEMBL_get_molecule` | 分子情報取得 |
+| ChEMBL | `ChEMBL_get_activity` | バイオアッセイデータ |
+| UniProt | `UniProt_get_entry_by_accession` | タンパク質グラフ構築用 |
+| BindingDB | `BindingDB_get_ligands_by_uniprot` | リガンド-ターゲットデータ |
+
 ### 参照スキル
 
 | スキル | 連携 |

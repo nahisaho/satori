@@ -190,6 +190,19 @@ def scaffold_analysis(smiles_list, names=None):
 | `figures/chemical_space_pca.png` | PNG |
 | `figures/similarity_heatmap.png` | PNG |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| PubChem | `PubChem_get_CID_by_compound_name` | 化合物名→CID 変換 |
+| PubChem | `PubChem_get_compound_properties_by_CID` | 化合物物性取得 |
+| PubChem | `PubChem_search_compounds_by_similarity` | 類似化合物検索 |
+| ChEMBL | `ChEMBL_search_molecules` | 分子検索 |
+| ChEMBL | `ChEMBL_get_molecule` | 分子情報取得 |
+| ZINC | `ZINC_search_by_smiles` | SMILES ベース検索 |
+
 #### 参照実験
 
 - **Exp-02**: EGFR 阻害剤 SAR 解析（記述子、Tanimoto、MCS、Scaffold）

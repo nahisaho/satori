@@ -397,6 +397,20 @@ def generate_mtb_report(patient_id, variants, civic_data, oncokb_data,
 | `results/mtb_report.md` | MTB レポート（Markdown） | レポート生成時 |
 | `results/variant_actionability.json` | バリアント臨床的意義（JSON） | アノテーション完了時 |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| OncoKB | `OncoKB_annotate_variant` | 体細胞変異の臨床的アノテーション |
+| OncoKB | `OncoKB_get_cancer_genes` | がん遺伝子リスト取得 |
+| CIViC | `civic_search_evidence_items` | 臨床エビデンス検索 |
+| CIViC | `civic_get_variant` | バリアント臨床解釈 |
+| COSMIC | `COSMIC_get_mutations_by_gene` | 体細胞変異頻度データ |
+| GDC | `GDC_get_mutation_frequency` | TCGA 変異頻度 |
+| ClinicalTrials | `search_clinical_trials` | 腫瘍学臨床試験マッチング |
+
 ### 参照スキル
 
 | スキル | 連携 |

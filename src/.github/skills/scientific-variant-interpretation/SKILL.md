@@ -301,6 +301,20 @@ def pgx_recommendation(gene, phenotype, drug):
 | `results/variant_classification.json` | ACMG/AMP 分類データ（JSON） | 分類完了時 |
 | `results/pgx_report.json` | 薬理ゲノミクスレポート（JSON） | PGx 評価完了時 |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| ClinVar | `clinvar_search_variants` | バリアントの病原性分類検索 |
+| gnomAD | `gnomad_get_gene_constraints` | 遺伝子制約メトリクス（pLI / LOEUF） |
+| ClinGen | `ClinGen_get_gene_validity` | 遺伝子-疾患の妥当性評価 |
+| AlphaMissense | `AlphaMissense_get_variant_score` | ミスセンス病原性予測スコア |
+| PharmGKB | `PharmGKB_search_variants` | 薬理ゲノミクスバリアント検索 |
+| CADD | `CADD_get_variant_score` | バリアント有害性スコア |
+| MyVariant | `MyVariant_get_variant_annotation` | 統合バリアントアノテーション |
+
 ### 参照スキル
 
 | スキル | 連携 |

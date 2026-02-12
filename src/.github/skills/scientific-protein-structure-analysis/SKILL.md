@@ -309,6 +309,19 @@ def detect_binding_sites(pdb_id):
 | `results/structure_analysis.json` | 構造データ（JSON） | 品質評価完了時 |
 | `results/binding_sites.json` | 結合部位データ（JSON） | ポケット解析完了時 |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| UniProt | `UniProt_get_entry_by_accession` | タンパク質エントリ取得 |
+| InterPro | `InterPro_get_protein_domains` | ドメインアノテーション |
+| InterPro | `InterProScan_scan_sequence` | 配列ドメインスキャン |
+| BindingDB | `BindingDB_get_ligands_by_uniprot` | リガンド結合データ |
+| Proteins API | `proteins_api_get_features` | タンパク質特徴情報 |
+| AlphaMissense | `AlphaMissense_get_protein_scores` | 残基レベル病原性予測 |
+
 ### 参照スキル
 
 | スキル | 連携 |

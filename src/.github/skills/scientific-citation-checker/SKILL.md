@@ -418,6 +418,18 @@ def run_citation_check(manuscript_path, citation_style="numeric", filepath=None)
 |---|---|---|
 | `manuscript/citation_report.json` | JSON レポート | チェック完了時 |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| PubMed | `PubMed_search_articles` | 引用元論文の実在確認 |
+| PubMed | `PubMed_get_article` | 論文メタデータ取得 |
+| Crossref | `Crossref_get_work` | DOI バリデーション |
+| Crossref | `Crossref_search_works` | 出版情報検索 |
+| EuropePMC | `EuropePMC_search_articles` | ヨーロッパ文献確認 |
+
 ### 検出項目一覧
 
 | チェック項目 | 説明 | 重要度 |

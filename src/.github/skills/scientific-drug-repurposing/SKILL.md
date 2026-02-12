@@ -238,6 +238,20 @@ def network_proximity(drug_targets, disease_genes, ppi_network):
 | `results/repurposing_report.md` | リポジショニング評価レポート（Markdown） | 全解析完了時 |
 | `results/network_proximity.json` | ネットワーク近接スコア（JSON） | ネットワーク解析完了時 |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| ChEMBL | `ChEMBL_search_drugs` | 薬物検索 |
+| ChEMBL | `ChEMBL_get_drug_mechanisms` | 薬物作用機序 |
+| OpenTargets | `OpenTargets_get_associated_drugs_by_disease_efoId` | 疾患関連薬物 |
+| DGIdb | `DGIdb_get_drug_gene_interactions` | 薬物-遺伝子相互作用 |
+| ClinicalTrials | `search_clinical_trials` | 臨床試験マッチング |
+| FAERS | `FAERS_count_reactions_by_drug_event` | 有害事象データ |
+| PubMed | `PubMed_search_articles` | リポジショニング文献 |
+
 ### 参照スキル
 
 | スキル | 連携 |

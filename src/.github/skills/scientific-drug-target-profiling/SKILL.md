@@ -313,6 +313,20 @@ def grade_disease_association(target_id, disease_id, evidence_sources):
 | `results/target_profile.json` | 構造化プロファイルデータ（JSON） | 全解析完了時 |
 | `results/druggability_matrix.json` | ドラッガビリティマトリクス（JSON） | Druggability 評価完了時 |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| UniProt | `UniProt_get_entry_by_accession` | タンパク質エントリ取得 |
+| UniProt | `UniProt_get_function_by_accession` | タンパク質機能情報 |
+| ChEMBL | `ChEMBL_get_target` | ターゲット情報取得 |
+| ChEMBL | `ChEMBL_get_target_activities` | ターゲット活性データ |
+| OpenTargets | `OpenTargets_get_associated_targets_by_disease_efoId` | 疾患-ターゲット関連 |
+| DGIdb | `DGIdb_get_gene_druggability` | ドラッガビリティ評価 |
+| DGIdb | `DGIdb_get_drug_gene_interactions` | 薬物-遺伝子相互作用 |
+
 ### 参照スキル
 
 | スキル | 連携 |

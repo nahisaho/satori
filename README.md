@@ -7,7 +7,7 @@
 
 ## Overview
 
-このディレクトリには、Exp-01〜13 で蓄積した科学データ解析技法を Agent Skills として体系化した **56 個**のスキルを格納しています。Copilot がプロンプトの文脈に応じて適切なスキルを自動ロードし、各実験で確立した解析パターンを再利用します。
+このディレクトリには、Exp-01〜13 で蓄積した科学データ解析技法を Agent Skills として体系化した **56 個**のスキルを格納しています。Copilot がプロンプトの文脈に応じて適切なスキルを自動ロードし、各実験で確立した解析パターンを再利用します。22 のスキルは [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で 1,200 以上の外部科学データベースツールとも連携可能です。
 
 ### パイプラインフロー
 
@@ -86,6 +86,23 @@ quantum-computing → bayesian-statistics → graph-neural-networks
 | 説明可能 AI | `results/xai_report.json`, `figures/shap_summary.png` | → clinical-decision |
 | 深層学習 | `results/dl_training_log.json`, `models/model.onnx` | → GNN, medical-imaging |
 | 医用イメージング | `results/imaging_report.{md,json}`, `results/radiomics_features.json` | → precision-oncology |
+
+### ToolUniverse MCP ツール連携
+
+22 のスキル（HIGH 13 + MEDIUM 9）は、[ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP サーバー経由で 1,200 以上の外部科学ツールを利用可能です。各 SKILL.md 内の `### 利用可能ツール` セクションに対応ツールが記載されています。
+
+```
+SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・計算)
+┌──────────────────────┐        ┌─────────────────────────────┐
+│ pharmacovigilance    │───MCP──│ FAERS, FDA Labels, DailyMed │
+│ precision-oncology   │───MCP──│ OncoKB, CIViC, COSMIC, GDC  │
+│ disease-research     │───MCP──│ OpenTargets, HPO, Monarch    │
+│ drug-target-profiling│───MCP──│ UniProt, ChEMBL, DGIdb       │
+│ variant-interpretation│──MCP──│ ClinVar, gnomAD, ClinGen     │
+│ admet-pharmacokinetics│──MCP──│ ADMET-AI, PubChem, ChEMBL    │
+│ ... (22 skills total) │       │ ... (1,200+ tools)           │
+└──────────────────────┘        └─────────────────────────────┘
+```
 
 スキルは **19 の中区分**に分類されています。
 

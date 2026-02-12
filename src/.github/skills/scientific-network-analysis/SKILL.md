@@ -250,6 +250,19 @@ def psp_path_diagram(ps_corr, sp_corr, pp_corr,
 | `figures/network_visualization.png` | PNG |
 | `figures/psp_path_diagram.png` | PNG |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| STRING | `STRING_get_protein_interactions` | タンパク質相互作用ネットワーク |
+| IntAct | `intact_search_interactions` | 分子相互作用検索 |
+| IntAct | `intact_get_interaction_network` | PPI ネットワーク取得 |
+| Reactome | `Reactome_map_uniprot_to_pathways` | パスウェイマッピング |
+| KEGG | `kegg_get_pathway_info` | パスウェイ情報 |
+| GO | `GO_get_annotations_for_gene` | GO アノテーション |
+
 #### 参照実験
 
 - **Exp-04**: PPI ネットワーク（71 タンパク質、4 種中心性、Louvain コミュニティ）

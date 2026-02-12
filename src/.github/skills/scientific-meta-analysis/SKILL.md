@@ -344,6 +344,17 @@ def cumulative_meta_analysis(studies_df, sort_by="year", model="random"):
 | `figures/funnel_plot.png` | PNG |
 | `figures/cumulative_meta.png` | PNG |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| PubMed | `PubMed_search_articles` | メタアナリシス対象文献検索 |
+| PubMed | `PubMed_get_article` | 論文メタデータ取得 |
+| EuropePMC | `EuropePMC_search_articles` | ヨーロッパ文献検索 |
+| Crossref | `Crossref_search_works` | 出版情報検索 |
+
 #### 依存パッケージ
 
 ```

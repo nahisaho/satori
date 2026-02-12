@@ -233,6 +233,18 @@ def bayesian_sequential_update(successes_list, trials_list,
 | `figures/cox_ph_forest.png` | PNG |
 | `figures/bayesian_update.png` | PNG |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| ClinicalTrials | `search_clinical_trials` | 臨床試験検索 |
+| ClinicalTrials | `clinical_trials_get_details` | 試験詳細取得 |
+| FAERS | `FAERS_count_reactions_by_drug_event` | 有害事象データ |
+| GDC | `GDC_search_cases` | TCGA 臨床データ |
+| PubMed | `PubMed_search_articles` | 臨床文献検索 |
+
 #### 参照実験
 
 - **Exp-03**: Kaplan-Meier + Cox PH（がん生存解析）

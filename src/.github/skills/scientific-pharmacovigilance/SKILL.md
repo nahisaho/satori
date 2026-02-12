@@ -489,6 +489,21 @@ def generate_pv_report(target_drug, signals_df, ebgm_df, output_dir="results"):
 | `figures/pv_temporal_trend.png` | 時系列トレンド図 | トレンド分析時 |
 | `figures/pv_demographics.png` | 人口統計分布図 | 層別化分析時 |
 
+### 利用可能ツール
+
+> [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で利用可能な外部ツール。
+
+| カテゴリ | 主要ツール | 用途 |
+|---|---|---|
+| FAERS | `FAERS_count_reactions_by_drug_event` | 有害事象カウント |
+| FAERS | `FAERS_calculate_disproportionality` | PRR/ROR/IC 不均衡分析 |
+| FAERS | `FAERS_stratify_by_demographics` | 年齢・性別・国別層別化 |
+| FDA | `FDA_get_adverse_reactions_by_drug_name` | 添付文書副作用情報 |
+| DailyMed | `DailyMed_search_spls` | 添付文書検索 |
+| DailyMed | `DailyMed_parse_adverse_reactions` | 副作用テーブル抽出 |
+| PharmGKB | `PharmGKB_get_dosing_guidelines` | PGx 用量ガイドライン |
+| CPIC | `CPIC_get_guidelines` | CPIC ガイドライン取得 |
+
 ### 参照スキル
 
 | スキル | 連携 |
