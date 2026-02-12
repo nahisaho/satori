@@ -5,6 +5,34 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.11.0] - 2026-02-16
+
+### Added
+- **10 新スキル (既存 9 カテゴリ拡張)** を追加 — ToolUniverse & K-Dense-AI/claude-scientific-skills ギャップ分析に基づく Phase 3 ドメイン拡張 (66→76 スキル)
+- **E. 信号・スペクトル・時系列（3→4 種）**
+  - **scientific-neuroscience-electrophysiology** スキル (#67): SpikeInterface/Kilosort4 スパイクソート・Allen Institute 品質基準・MNE-Python EEG (前処理/ERP/マイクロステート)・NeuroKit2 ECG HRV/EDA 解析・脳機能結合 (wPLI/グラフ理論)
+- **F. 生命科学・オミクス（5→7 種）**
+  - **scientific-proteomics-mass-spectrometry** スキル (#68): pyOpenMS LC-MS/MS 前処理・ペプチド ID (FDR)・タンパク質定量 (LFQ/TMT/SILAC/iBAQ)・PTM マッピング・matchms スペクトル類似度・GNPS 分子ネットワーク・PRIDE/UniProt/KEGG/Reactome ツール連携
+  - **scientific-gene-expression-transcriptomics** スキル (#69): GEO データセット取得 (GEOparse)・PyDESeq2 差次発現解析・GTEx 組織発現/eQTL 照会・GSEA/ORA 遺伝子セット濃縮解析・geo/GTEx/ExpressionAtlas/ArrayExpress (24 ツール) 連携
+- **G. 化学・材料・イメージング（3→4 種）**
+  - **scientific-computational-materials** スキル (#70): pymatgen 結晶構造操作・対称性解析・Materials Project API 照会・相図凸包解析・電子バンド構造/DOS 可視化・VASP/QE 入出力
+- **H. 臨床・疫学・メタ科学（3→4 種）**
+  - **scientific-clinical-trials-analytics** スキル (#71): ClinicalTrials.gov API v2 多基準検索・試験詳細取得・競合ランドスケープ解析・AE/アウトカム抽出・バルクエクスポート・ClinicalTrials (7)/FDA (2) ツール連携
+- **M. 実験室自動化・データ管理（1→2 種）**
+  - **scientific-lab-data-management** スキル (#72): Benchling ELN/DNA 設計/レジストリ・DNAnexus ゲノミクス PaaS・OMERO バイオイメージング管理・Protocols.io プロトコル共有
+- **N. 科学プレゼンテーション・図式（1→2 種）**
+  - **scientific-scientific-schematics** スキル (#73): CONSORT フロー図・NN アーキテクチャ図・分子パスウェイ図 (Mermaid)・TikZ 出版品質ベクター図
+- **O. 研究計画・グラント・規制（2→3 種）**
+  - **scientific-regulatory-science** スキル (#74): FDA Orange Book 承認履歴/特許/排他性・510(k) 医療機器クリアランス・ISO 13485 設計管理/CAPA・USPTO 特許検索・FDA_OrangeBook (6)/FAERS ツール連携
+- **P. ファーマコビジランス・薬理ゲノミクス（1→2 種）**
+  - **scientific-pharmacogenomics** スキル (#75): PharmGKB 遺伝子-薬物相互作用・CPIC ガイドライン・Star アレルアノテーション・代謝型判定 (PM/IM/NM/RM/UM)・FDA PGx バイオマーカー・PharmGKB (7)/FDA (3)/OpenTargets (1) ツール連携
+- **T. シングルセル・空間・エピゲノミクス（2→3 種）**
+  - **scientific-epigenomics-chromatin** スキル (#76): ChIP-seq MACS2/MACS3 ピークコール・ATAC-seq NFR 検出・WGBS/RRBS DMR 検出・ChromHMM 15 状態モデル・Hi-C TAD/A-B コンパートメント・DiffBind 差次的結合・ChIPAtlas (4)/JASPAR (3)/SCREEN (1)/ENCODE (3) ツール連携
+
+### Changed
+- **README.md**: スキル数を 66→76 に更新、カテゴリ数 26 (変更なし, 既存カテゴリ拡張)、ToolUniverse 連携スキル数を 32→42 に更新、各カテゴリのスキル数・説明・ディレクトリ構造・ファイル I/O テーブルを更新
+- **docs/GAP_ANALYSIS_v0.11.md**: v0.11.0 ギャップ分析ドキュメント新規追加
+
 ## [0.10.0] - 2026-02-15
 
 ### Added
