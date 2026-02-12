@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.15.0] - 2026-02-20
+
+### Added
+- **10 新スキル (3 カテゴリ拡張)** を追加 — ToolUniverse & K-Dense ギャップ分析に基づく Phase 7 科学スキル拡張 (106→116 スキル、TU 連携 66→70)
+- **F. 生命科学・オミクス（14→18 種）**
+  - **scientific-ensembl-genomics** スキル (#108): Ensembl REST API 遺伝子検索・配列取得・VEP バリアント効果予測 (SIFT/PolyPhen/CADD)・クロスリファレンス ID 変換・ホモロジー検索 (オーソログ/パラログ)・制御領域・遺伝子ツリー・ensembl (16) = 16 TU ツール連携
+  - **scientific-string-network-api** スキル (#109): STRING v12 PPI ネットワーク・BioGRID 実験的 PPI・STITCH 化学-タンパク質相互作用・NetworkX トポロジー解析・コミュニティ検出・機能濃縮・ppi (2)/stitch (3) = 5 TU ツール連携
+  - **scientific-expression-comparison** スキル (#110): EBI Expression Atlas ベースライン発現・差次的発現検索・実験メタデータ・組織横断比較マトリクス・ヒートマップ・expression_atlas (4) = 4 TU ツール連携
+  - **scientific-model-organism-db** スキル (#111): FlyBase/WormBase/ZFIN/RGD/MGI 直接 REST API・種間オーソログ検索・表現型データ・TU 外スキル (直接 API)
+- **G. 化学・材料・イメージング（4→8 種）**
+  - **scientific-chembl-assay-mining** スキル (#107): ChEMBL REST API ターゲット検索・バイオアクティビティデータ・アッセイ検索・SAR 解析・選択性プロファイリング・類似性検索・ATC 分類・構造アラート・ChEMBL (19) = 19 TU ツール連携
+  - **scientific-md-simulation** スキル (#112): MDAnalysis トラジェクトリ解析・RMSD/RMSF/回転半径/水素結合/SASA・OpenFF 力場パラメータ化・K-Dense: mdanalysis, openff
+  - **scientific-advanced-imaging** スキル (#114): Cellpose 深層学習セルセグメンテーション・CellProfiler 形態学的プロファイリング・Cell Painting 5ch 解析・napari 3D 可視化・K-Dense: cellprofiler, napari, cellpose
+  - **scientific-deep-chemistry** スキル (#115): DeepChem GCN/MPNN/AttentiveFP 分子特性予測・MoleculeNet ベンチマーク・ChemBERTa 分子表現学習・K-Dense: deepchem
+- **T. シングルセル・空間・エピゲノミクス（4→6 種）**
+  - **scientific-perturbation-analysis** スキル (#113): pertpy 摂動解析・Augur 摂動応答性スコアリング・scGen 摂動予測・scIB 統合ベンチマーク・摂動シグネチャ抽出・K-Dense: pertpy, scib
+  - **scientific-scvi-integration** スキル (#116): scVI 変分オートエンコーダ統合・scANVI 半教師有りアノテーション・totalVI CITE-seq 結合解析・SOLO ダブレット検出・確率的差次的発現・K-Dense: scvi-tools
+
+### Changed
+- ToolUniverse SMCP 連携スキル: 66→70 (+4 スキル、~44 新規 TU ツール統合)
+- K-Dense 新規カバー: mdanalysis, openff, cellprofiler, napari, cellpose, deepchem, pertpy, scib, scvi-tools (+9)
+- README.md: 全カウント・カテゴリ表・スキル一覧・ディレクトリツリー・TU 連携図を更新
+
 ## [0.14.0] - 2026-02-19
 
 ### Added
