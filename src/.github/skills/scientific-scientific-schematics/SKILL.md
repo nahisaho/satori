@@ -325,11 +325,11 @@ def generate_tikz_figure(tikz_code, output_file="figures/tikz_figure.tex",
 
 | スキル | 関連 |
 |---|---|
-| `scientific-visualization` | データ可視化全般 |
+| `scientific-publication-figures` | データ可視化全般 |
 | `scientific-clinical-trials-analytics` | CONSORT 図のデータソース |
 | `scientific-grant-writing` | 研究計画図 |
 | `scientific-network-analysis` | ネットワーク図 |
-| `scientific-presentation` | プレゼン素材 |
+| `scientific-presentation-design` | プレゼン素材 |
 
 ### 依存パッケージ
 

@@ -300,3 +300,5 @@ Clinical decisions must be made by qualified healthcare professionals.
 | `scientific-deep-research` | ← 最新エビデンスの収集 |
 | `scientific-presentation-design` | → 臨床結果のプレゼンテーション |
 | `scientific-academic-writing` | → 研究成果の論文化 |
+| `scientific-clinical-trials-analytics` | ← 臨床試験マッチング・競合解析 |
+| `scientific-pharmacogenomics` | ← PGx バイオマーカー・投与量調整 |

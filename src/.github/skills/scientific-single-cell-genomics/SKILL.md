@@ -355,6 +355,8 @@ def sc_visualization_panel(adata, deg_df=None, save_dir="figures"):
 | [scientific-network-analysis](../scientific-network-analysis/SKILL.md) | 遺伝子制御ネットワーク |
 | [scientific-deep-learning](../scientific-deep-learning/SKILL.md) | scVI / scGPT 等の深層学習モデル |
 | [scientific-pca-tsne](../scientific-pca-tsne/SKILL.md) | 次元削減手法 |
+| [scientific-gene-expression-transcriptomics](../scientific-gene-expression-transcriptomics/SKILL.md) | バルク RNA-seq 差次発現 |
+| [scientific-epigenomics-chromatin](../scientific-epigenomics-chromatin/SKILL.md) | エピゲノム-発現統合 |
 
 #### 依存パッケージ
 

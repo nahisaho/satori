@@ -313,3 +313,5 @@ BUDGET_JUSTIFICATION_TEMPLATE = """
 | `scientific-hypothesis-pipeline` | ← 仮説定義・課題設定 |
 | `scientific-deep-research` | ← 文献レビュー・先行研究調査 |
 | `scientific-academic-writing` | ← アカデミックライティングスキル |
+| `scientific-scientific-schematics` | ← 研究計画図・フロー図生成 |
+| `scientific-regulatory-science` | ← 規制戦略セクション |

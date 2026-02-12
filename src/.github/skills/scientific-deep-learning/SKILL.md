@@ -373,3 +373,4 @@ def export_model(model, sample_input, export_dir="models"):
 | `scientific-image-analysis` | ← 画像データの CNN 応用 |
 | `scientific-medical-imaging` | → 医用画像の DL モデル |
 | `scientific-quantum-computing` | ← 量子-古典ハイブリッド ML |
+| `scientific-neuroscience-electrophysiology` | ← 神経デコーディング・スパイクソート DL |

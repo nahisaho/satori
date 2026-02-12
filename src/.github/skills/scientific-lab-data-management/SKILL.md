@@ -324,10 +324,10 @@ def fork_protocol(original_protocol_id, modifications):
 | スキル | 関連 |
 |---|---|
 | `scientific-bioinformatics` | ゲノミクスデータ解析 |
-| `scientific-imaging-analysis` | 顕微鏡画像解析 |
+| `scientific-image-analysis` | 顯微鏡画像解析 |
 | `scientific-gene-expression-transcriptomics` | RNA-seq データ管理 |
 | `scientific-single-cell-genomics` | scRNA-seq データ管理 |
-| `scientific-data-analysis` | データ前処理 |
+| `scientific-data-preprocessing` | データ前処理 |
 
 ### 依存パッケージ
 

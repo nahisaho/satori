@@ -373,3 +373,4 @@ def one_compartment_pk(dose, ka, ke, vd, time_points):
 | `scientific-drug-repurposing` | → ADMET 通過化合物のリポジショニング候補評価 |
 | `scientific-clinical-decision-support` | → PK パラメータの臨床応用 |
 | `scientific-academic-writing` | → 研究成果の論文化 |
+| `scientific-regulatory-science` | → FDA 規制申請・承認履歴 |

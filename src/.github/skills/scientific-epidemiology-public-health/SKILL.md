@@ -326,6 +326,7 @@ def blocks_all_backdoor(G, X, Y, Z):
 | [scientific-meta-analysis](../scientific-meta-analysis/SKILL.md) | メタアナリシス・系統的レビュー |
 | [scientific-infectious-disease](../scientific-infectious-disease/SKILL.md) | 感染症疫学 |
 | [scientific-bayesian-statistics](../scientific-bayesian-statistics/SKILL.md) | ベイズ空間モデル |
+| [scientific-clinical-trials-analytics](../scientific-clinical-trials-analytics/SKILL.md) | 臨床試験レジストリ |
 
 #### 依存パッケージ
 

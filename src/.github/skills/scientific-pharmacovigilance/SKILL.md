@@ -514,3 +514,6 @@ def generate_pv_report(target_drug, signals_df, ebgm_df, output_dir="results"):
 | `scientific-admet-pharmacokinetics` | ← 毒性予測・代謝経路情報 |
 | `scientific-clinical-decision-support` | → シグナル情報の臨床意思決定への反映 |
 | `scientific-deep-research` | ← 安全性文献の深層リサーチ |
+| `scientific-clinical-trials-analytics` | ← 臨床試験データベース照会 |
+| `scientific-regulatory-science` | → FDA/FAERS 規制データ統合 |
+| `scientific-pharmacogenomics` | ← PGx 代謝型別安全性評価 |

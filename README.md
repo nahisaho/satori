@@ -23,15 +23,24 @@ hypothesis-pipeline → pipeline-scaffold → academic-writing → critical-revi
 
 ```
 research-methodology → grant-writing → hypothesis-pipeline    ← [O→A 研究計画]
+        │                    ↑                   ↓
+regulatory-science ───┘    scientific-schematics
+  (FDA/ISO/特許)         (研究計画図)
                                               ↓
 drug-target-profiling → admet-pharmacokinetics ─→ drug-repurposing
   (標的同定)           (ADMET/PK 評価)        (リポジショニング)
-        ↓                                            ↓
+        ↓                        │                    ↓
 protein-structure-analysis → protein-design → lab-automation
   (構造解析)               (de novo 設計)   (実験自動化)
+                                                     │
+                                              lab-data-management
+                                              (Benchling/DNAnexus/OMERO)
                                                      ↓
 variant-interpretation → clinical-decision-support → presentation-design
   (バリアント解釈)       (臨床意思決定)            (学会発表)
+        ↑
+pharmacogenomics
+  (PGx 代謝型)
 ```
 
 各ステップで生成されるファイルが次のステップに自動的に引き継がれます：
@@ -41,17 +50,23 @@ variant-interpretation → clinical-decision-support → presentation-design
 ```
 pharmacovigilance ← admet-pharmacokinetics       ← [P 安全性監視]
   (市販後安全性)     (前臨床 ADMET)                   ↓
+        │                                   regulatory-science
+        │                                   (FDA/ISO/特許)
+        ↓                                          ↓
 precision-oncology → clinical-decision-support → medical-imaging
   (腫瘍プロファイル)  (臨床意思決定)            (画像診断)
-        ↓                                           ↓
+        ↓              ↑                          ↓
 disease-research → variant-interpretation      → deep-learning
   (疾患-遺伝子)    (バリアント解釈)            (DL フレームワーク)
+                        ↑                          ↓
+              pharmacogenomics              neuroscience-electrophysiology
+              (PGx 代謝型)                (スパイクソート/EEG/HRV)
                                                      ↓
 quantum-computing → bayesian-statistics → graph-neural-networks
   (量子計算)       (ベイズ推論)          (GNN 分子予測)
-                                               ↓
-                  explainable-ai ← deep-learning ← [R 先端計算]
-                  (XAI 説明可能性)  (DL パイプライン)
+        │                                     ↓
+computational-materials  explainable-ai ← deep-learning ← [R 先端計算]
+  (pymatgen/VASP)        (XAI 説明可能性)  (DL パイプライン)
 ```
 
 **次世代オミクス・疫学パイプライン（T-Z）**
@@ -60,7 +75,15 @@ quantum-computing → bayesian-statistics → graph-neural-networks
 single-cell-genomics → spatial-transcriptomics     ← [T シングルセル・空間]
   (scRNA-seq QC)       (Visium/MERFISH)
         ↓                     ↓
-immunoinformatics → infectious-disease             ← [U 免疫・感染症]
+epigenomics-chromatin → gene-expression-transcriptomics
+  (ChIP-seq/ATAC/WGBS)   (GEO/GTEx/DESeq2)
+        │                     │
+        └─────────────┬─────┘
+                          ↓
+proteomics-mass-spectrometry → multi-omics      ← [F オミクス統合]
+  (LC-MS/MS/PTM/GNPS)         (統合解析)
+                                    ↓
+immuninformatics → infectious-disease             ← [U 免疫・感染症]
   (エピトープ予測)    (AMR・系統解析)
         ↓                     ↓
 microbiome-metagenomics → environmental-ecology    ← [V マイクロバイオーム・環境]
@@ -69,8 +92,11 @@ microbiome-metagenomics → environmental-ecology    ← [V マイクロバイ�
 systems-biology           population-genetics       ← [W+Y モデル・集団]
   (SBML/FBA/GRN)           (Fst/ADMIXTURE)
         ↓                     ↓
-epidemiology-public-health → text-mining-nlp       ← [X+Z 疫学・NLP]
+epidemiolog-public-health → text-mining-nlp        ← [X+Z 疫学・NLP]
   (RR/OR/空間クラスタ)       (NER/KG/BERTopic)
+        ↑
+clinical-trials-analytics
+  (ClinicalTrials.gov)
 ```
 
 | フェーズ | 生成ファイル | 参照先 |

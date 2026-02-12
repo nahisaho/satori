@@ -245,6 +245,17 @@ def bayesian_sequential_update(successes_list, trials_list,
 | GDC | `GDC_search_cases` | TCGA 臨床データ |
 | PubMed | `PubMed_search_articles` | 臨床文献検索 |
 
+### 参照スキル
+
+| スキル | 連携 |
+|---|---|
+| `scientific-causal-inference` | ← 傾向スコア・因果推論 |
+| `scientific-meta-analysis` | ← 統合解析・エビデンス統合 |
+| `scientific-statistical-testing` | ← 仮説検定・多重比較 |
+| `scientific-clinical-trials-analytics` | ← ClinicalTrials.gov 試験データ |
+| `scientific-pharmacovigilance` | → AE データの安全性解析 |
+| `scientific-clinical-decision-support` | → 生存解析結果の臨床応用 |
+
 #### 参照実験
 
 - **Exp-03**: Kaplan-Meier + Cox PH（がん生存解析）

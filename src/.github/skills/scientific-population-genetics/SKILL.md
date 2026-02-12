@@ -330,6 +330,8 @@ def selection_scan(haplotype_matrix, positions, method="ihs"):
 | [scientific-disease-research](../scientific-disease-research/SKILL.md) | 疾患-遺伝子関連 |
 | [scientific-statistical-testing](../scientific-statistical-testing/SKILL.md) | 統計検定 |
 | [scientific-pca-tsne](../scientific-pca-tsne/SKILL.md) | 次元削減 |
+| [scientific-pharmacogenomics](../scientific-pharmacogenomics/SKILL.md) | PGx 集団頻度差 |
+| [scientific-epigenomics-chromatin](../scientific-epigenomics-chromatin/SKILL.md) | エピゲノム集団差 |
 
 #### 依存パッケージ
 

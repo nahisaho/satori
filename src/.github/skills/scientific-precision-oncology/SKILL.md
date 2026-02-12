@@ -422,3 +422,4 @@ def generate_mtb_report(patient_id, variants, civic_data, oncokb_data,
 | `scientific-drug-target-profiling` | ← 標的ドラッガビリティ評価 |
 | `scientific-disease-research` | ← がん種の疫学・遺伝的背景 |
 | `scientific-deep-research` | ← 腫瘍学最新文献リサーチ |
+| `scientific-pharmacogenomics` | ← PGx 代謝型・投与量調整 |

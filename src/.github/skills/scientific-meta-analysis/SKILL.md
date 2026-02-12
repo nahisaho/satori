@@ -355,6 +355,16 @@ def cumulative_meta_analysis(studies_df, sort_by="year", model="random"):
 | EuropePMC | `EuropePMC_search_articles` | ヨーロッパ文献検索 |
 | Crossref | `Crossref_search_works` | 出版情報検索 |
 
+### 参照スキル
+
+| スキル | 連携 |
+|---|---|
+| `scientific-survival-clinical` | ← 生存解析・値引 HR |
+| `scientific-statistical-testing` | ← 仮説検定・効果量算出 |
+| `scientific-deep-research` | ← 系統的文献検索 |
+| `scientific-clinical-trials-analytics` | ← 臨床試験結果の統合 |
+| `scientific-academic-writing` | → メタアナリシス論文化 |
+
 #### 依存パッケージ
 
 ```

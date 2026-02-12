@@ -343,10 +343,10 @@ def parse_vasp_output(vasprun_file="vasprun.xml"):
 
 | スキル | 関連 |
 |---|---|
-| `scientific-quantum-chemistry` | DFT / 量子化学計算 |
-| `scientific-molecular-dynamics` | 分子動力学シミュレーション |
-| `scientific-visualization` | 構造可視化 |
-| `scientific-data-analysis` | 材料データ統計解析 |
+| `scientific-quantum-computing` | 量子計算・VQE・量子化学 |
+| `scientific-cheminformatics` | 分子記述子・構造解析 |
+| `scientific-publication-figures` | 構造・相図可視化 |
+| `scientific-materials-characterization` | XRD・SEM・実験材料特性 |
 
 ### 依存パッケージ
 

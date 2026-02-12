@@ -324,3 +324,4 @@ def pgx_recommendation(gene, phenotype, drug):
 | `scientific-data-preprocessing` | ← バリアントデータの前処理・正規化 |
 | `scientific-clinical-decision-support` | → バリアント解釈結果の臨床意思決定 |
 | `scientific-academic-writing` | → 研究成果の論文化 |
+| `scientific-pharmacogenomics` | ← Star アレル・代謝型・薬理ゲノミクス |
