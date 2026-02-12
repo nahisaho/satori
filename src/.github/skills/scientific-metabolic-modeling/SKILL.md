@@ -4,6 +4,10 @@ description: |
   代謝モデリングスキル。BiGG Models ゲノムスケール代謝モデル、
   BioModels SBML リポジトリを統合した代謝ネットワーク解析・
   モデル検索パイプライン。
+tu_tools:
+  - key: biomodels
+    name: BioModels
+    description: SBML モデルリポジトリ (EBI)
 ---
 
 # Scientific Metabolic Modeling

@@ -5,6 +5,10 @@ description: |
   T 細胞/B 細胞エピトープマッピング・抗体構造解析（CDR ループ）・
   免疫レパトア解析（TCR/BCR クロノタイプ）・ワクチン候補設計・
   IEDB/IMGT/SAbDab データベース統合パイプライン。
+tu_tools:
+  - key: iedb
+    name: IEDB
+    description: 免疫エピトープデータベース
 ---
 
 # Scientific Immunoinformatics

@@ -5,6 +5,10 @@ description: |
   ショットガンメタゲノム解析（MetaPhlAn / HUMAnN）・α/β 多様性・
   差次存在量解析（DESeq2 / ANCOM-BC）・機能的プロファイリング・
   組成データ解析（CoDA）パイプライン。
+tu_tools:
+  - key: mgnify
+    name: MGnify
+    description: EBI メタゲノミクス解析プラットフォーム
 ---
 
 # Scientific Microbiome & Metagenomics

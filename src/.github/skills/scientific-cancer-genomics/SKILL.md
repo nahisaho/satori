@@ -7,6 +7,13 @@ description: |
   変異シグネチャー解析、遺伝子依存性 (essentiality) 評価、
   コピー数変化・がん種横断解析パイプライン。
   13 の ToolUniverse SMCP ツールと連携。
+tu_tools:
+  - key: cosmic
+    name: COSMIC
+    description: がん体細胞変異カタログ
+  - key: cbioportal
+    name: cBioPortal
+    description: がんゲノミクスポータル
 ---
 
 # Scientific Cancer Genomics

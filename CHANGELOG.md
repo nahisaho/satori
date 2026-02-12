@@ -5,6 +5,44 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.20.0] - 2025-07-25
+
+### Added
+- **Phase 12: 6 新スキル + 12 既存 TU key 追加** — ToolUniverse & K-Dense ギャップ分析に基づく v0.20.0 科学スキル拡張 (148→154 スキル、TU 連携 99→114)
+
+#### Track A: 既存スキル TU key 追加 (12 件)
+- **scientific-cancer-genomics** に `tu_tools: cosmic, cbioportal` (がん体細胞変異カタログ、がんゲノミクスポータル) を追加
+- **scientific-precision-oncology** に `tu_tools: oncokb` (精密腫瘍学アノテーション) を追加
+- **scientific-immunoinformatics** に `tu_tools: iedb` (免疫エピトープデータベース) を追加
+- **scientific-microbiome-metagenomics** に `tu_tools: mgnify` (EBI メタゲノミクス解析プラットフォーム) を追加
+- **scientific-cell-line-resources** に `tu_tools: cellosaurus` (細胞株データベース ExPASy) を追加
+- **scientific-string-network-api** に `tu_tools: ppi` (タンパク質・化学物質相互作用ネットワーク) を追加
+- **scientific-metabolic-modeling** に `tu_tools: biomodels` (SBML モデルリポジトリ EBI) を追加
+- **scientific-chembl-assay-mining** に `tu_tools: chembl` (創薬生理活性データベース EBI) を追加
+- **scientific-pharmacology-targets** に `tu_tools: bindingdb, gtopdb, brenda` (結合親和性・GtoPdb・酵素動態) を追加
+- **scientific-drug-target-profiling** に `tu_tools: dgidb` (薬物-遺伝子相互作用データベース) を追加
+- **scientific-admet-pharmacokinetics** に `tu_tools: pubchem` (化合物・物質・生理活性アッセイ) を追加
+- **scientific-metabolomics** に `tu_tools: hmdb` (ヒトメタボロームデータベース) を追加
+
+#### Track B: 新規スキル (6 件、うち 3 件 TU 連携)
+- **G. 化学・材料・イメージング（8→9 種）**
+  - **scientific-stitch-chemical-network** スキル (#154): STITCH REST API 化学物質-タンパク質相互作用検索・信頼度スコアリング・ネットワーク薬理学・ポリファーマコロジー解析・stitch = TU ツール連携
+- **H. 臨床・疫学・メタ科学（5→6 種）**
+  - **scientific-biobank-cohort** スキル (#151): UK Biobank/BBJ/All of Us 大規模コホートデータ解析・フェノタイプ辞書検索・GWAS サマリー統計処理・PheWAS パイプライン
+- **Q. 腫瘍学・疾患研究（8→10 種）**
+  - **scientific-monarch-ontology** スキル (#149): Monarch Initiative REST API 疾患-遺伝子-表現型オントロジー・HPO フェノタイピング・エンティティ検索・monarch = TU ツール連携
+  - **scientific-gdc-portal** スキル (#150): NCI Genomic Data Commons REST API プロジェクト横断検索・ケースメタデータ・体細胞変異 (SSM)・gdc = TU ツール連携
+- **T. シングルセル・空間・エピゲノミクス（11→12 種）**
+  - **scientific-spatial-multiomics** スキル (#152): MERFISH/CODEX 空間マルチオミクス統合・マルチモーダルアライメント・空間共検出解析・近傍グラフ空間コミュニティ検出
+- **W. システム生物学（3→4 種）**
+  - **scientific-metabolic-flux** スキル (#153): 13C/15N 安定同位体代謝フラックス解析・EMU モデリング・MID フィッティング・フラックス推定パイプライン
+
+### Changed
+- ToolUniverse SMCP 連携スキル: 99→114 (+3 新規 TU 連携: monarch, gdc, stitch + 12 既存 TU key 追加: cosmic, cbioportal, oncokb, iedb, mgnify, cellosaurus, ppi, biomodels, chembl, bindingdb/gtopdb/brenda, dgidb, pubchem, hmdb)
+- README.md: 全カウント・カテゴリ表・スキル一覧・ディレクトリツリー・TU 連携図を更新
+- カテゴリ数: 26 (A-Z) — 変更なし
+- カテゴリ展開: G(8→9), H(5→6), Q(8→10), T(11→12), W(3→4)
+
 ## [0.19.0] - 2025-07-24
 
 ### Added

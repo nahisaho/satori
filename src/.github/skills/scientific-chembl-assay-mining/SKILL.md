@@ -5,6 +5,10 @@ description: |
   アッセイ検索・バイオアクティビティデータ取得・IC50/Ki/EC50 SAR 解析・
   ターゲット-化合物マッピング・選択性プロファイリング・ATC 分類検索・
   構造アラート検出パイプライン。
+tu_tools:
+  - key: chembl
+    name: ChEMBL
+    description: 創薬生理活性データベース (EBI)
 ---
 
 # Scientific ChEMBL Assay Mining

@@ -5,6 +5,10 @@ description: |
   代謝パスウェイ濃縮解析（Fisher exact test）、代謝物相関ネットワーク、
   Volcano プロット/箱ひげ図による差次代謝物同定パイプライン。
   Scientific Skills Exp-07 で確立したパターン。
+tu_tools:
+  - key: hmdb
+    name: HMDB
+    description: ヒトメタボロームデータベース
 ---
 
 # Scientific Metabolomics Analysis

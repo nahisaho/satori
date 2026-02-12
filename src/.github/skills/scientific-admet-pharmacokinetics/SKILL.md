@@ -5,6 +5,10 @@ description: |
   包括的予測パイプライン。DeepChem/ADMET-AI/PyTDC を活用した分子特性予測、
   PK/PD モデリング、ドラッグライクネス最適化、リード最適化戦略を提供。
   「ADMET 予測して」「薬物動態を評価して」「lead optimization して」で発火。
+tu_tools:
+  - key: pubchem
+    name: PubChem
+    description: 化合物・物質・生理活性アッセイデータベース
 ---
 
 # Scientific ADMET & Pharmacokinetics

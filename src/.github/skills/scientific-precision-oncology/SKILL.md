@@ -4,6 +4,10 @@ description: |
   精密腫瘍学スキル。CIViC・OncoKB・cBioPortal・COSMIC・GDC/TCGA を統合し、
   腫瘍ゲノムプロファイリング・分子標的選定・バイオマーカー評価・治療推奨を支援。
   「がんゲノム解析して」「腫瘍プロファイリングして」「OncoKB で検索して」で発火。
+tu_tools:
+  - key: oncokb
+    name: OncoKB
+    description: 精密腫瘍学アノテーション
 ---
 
 # Scientific Precision Oncology

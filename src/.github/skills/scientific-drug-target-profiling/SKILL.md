@@ -5,6 +5,10 @@ description: |
   を活用したドラッグターゲットインテリジェンス。ドラッガビリティ評価、安全性プロファイリング、
   ターゲット-疾患アソシエーション、競合パイプライン分析を統合的に実行。
   「ターゲット評価して」「druggability 分析して」「標的タンパク質を調べて」で発火。
+tu_tools:
+  - key: dgidb
+    name: DGIdb
+    description: 薬物-遺伝子相互作用データベース
 ---
 
 # Scientific Drug Target Profiling

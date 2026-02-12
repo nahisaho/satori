@@ -4,6 +4,10 @@ description: |
   細胞株リソーススキル。Cellosaurus 細胞株データベース検索、
   STR プロファイルマッチング、コンタミネーション検出、
   細胞株メタデータ (由来組織・疾患・種) 取得パイプライン。
+tu_tools:
+  - key: cellosaurus
+    name: Cellosaurus
+    description: 細胞株データベース (ExPASy)
 ---
 
 # Scientific Cell Line Resources

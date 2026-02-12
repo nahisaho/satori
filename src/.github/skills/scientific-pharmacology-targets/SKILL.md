@@ -4,6 +4,16 @@ description: |
   薬理学的ターゲットプロファイリングスキル。BindingDB 結合親和性、
   GPCRdb GPCR 構造-活性、GtoPdb 薬理学、BRENDA 酵素動態、
   Pharos 未解明ターゲット(TDL)の統合解析パイプライン。
+tu_tools:
+  - key: bindingdb
+    name: BindingDB
+    description: 結合親和性データベース
+  - key: gtopdb
+    name: GtoPdb
+    description: Guide to PHARMACOLOGY
+  - key: brenda
+    name: BRENDA
+    description: 酵素動態データベース
 ---
 
 # Scientific Pharmacology Targets

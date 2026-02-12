@@ -4,6 +4,10 @@ description: |
   STRING/BioGRID/STITCH ネットワーク解析スキル。STRING タンパク質相互作用
   ネットワーク直接 API、BioGRID 実験的 PPI、STITCH 化学-タンパク質ネットワーク、
   ネットワークトポロジー解析・コミュニティ検出・機能濃縮統合パイプライン。
+tu_tools:
+  - key: ppi
+    name: STRING/BioGRID PPI
+    description: タンパク質・化学物質相互作用ネットワーク
 ---
 
 # Scientific STRING Network API
