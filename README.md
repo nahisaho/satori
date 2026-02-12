@@ -7,7 +7,7 @@
 
 ## Overview
 
-このディレクトリには、Exp-01〜13 で蓄積した科学データ解析技法を Agent Skills として体系化した **56 個**のスキルを格納しています。Copilot がプロンプトの文脈に応じて適切なスキルを自動ロードし、各実験で確立した解析パターンを再利用します。22 のスキルは [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で 1,200 以上の外部科学データベースツールとも連携可能です。
+このディレクトリには、Exp-01〜13 で蓄積した科学データ解析技法を Agent Skills として体系化した **66 個**のスキルを格納しています。Copilot がプロンプトの文脈に応じて適切なスキルを自動ロードし、各実験で確立した解析パターンを再利用します。32 のスキルは [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で 1,200 以上の外部科学データベースツールとも連携可能です。
 
 ### パイプラインフロー
 
@@ -54,6 +54,25 @@ quantum-computing → bayesian-statistics → graph-neural-networks
                   (XAI 説明可能性)  (DL パイプライン)
 ```
 
+**次世代オミクス・疫学パイプライン（T-Z）**
+
+```
+single-cell-genomics → spatial-transcriptomics     ← [T シングルセル・空間]
+  (scRNA-seq QC)       (Visium/MERFISH)
+        ↓                     ↓
+immunoinformatics → infectious-disease             ← [U 免疫・感染症]
+  (エピトープ予測)    (AMR・系統解析)
+        ↓                     ↓
+microbiome-metagenomics → environmental-ecology    ← [V マイクロバイオーム・環境]
+  (16S/メタゲノム)         (SDM・生物多様性)
+        ↓                     ↓
+systems-biology           population-genetics       ← [W+Y モデル・集団]
+  (SBML/FBA/GRN)           (Fst/ADMIXTURE)
+        ↓                     ↓
+epidemiology-public-health → text-mining-nlp       ← [X+Z 疫学・NLP]
+  (RR/OR/空間クラスタ)       (NER/KG/BERTopic)
+```
+
 | フェーズ | 生成ファイル | 参照先 |
 |---|---|---|
 | 仮説立案 | `docs/hypothesis.{md,json}`, `docs/workflow_design.{md,json}` | → scaffold, writing |
@@ -86,10 +105,20 @@ quantum-computing → bayesian-statistics → graph-neural-networks
 | 説明可能 AI | `results/xai_report.json`, `figures/shap_summary.png` | → clinical-decision |
 | 深層学習 | `results/dl_training_log.json`, `models/model.onnx` | → GNN, medical-imaging |
 | 医用イメージング | `results/imaging_report.{md,json}`, `results/radiomics_features.json` | → precision-oncology |
+| scRNA-seq 解析 | `results/sc_markers.json`, `figures/umap_clusters.png`, `results/rna_velocity.json` | → spatial, systems-biology |
+| 空間トランスクリプトミクス | `results/spatial_domains.json`, `figures/spatial_svg_map.png` | → single-cell, systems-biology |
+| 免疫情報学 | `results/epitope_candidates.json`, `results/tcr_diversity.json` | → infectious-disease, drug-target |
+| 感染症ゲノミクス | `results/amr_report.json`, `results/mlst_profile.json`, `results/sir_simulation.json` | → epidemiology, microbiome |
+| マイクロバイオーム | `results/asv_table.json`, `results/diversity_metrics.json`, `results/da_results.json` | → environmental-ecology |
+| 環境生態学 | `results/sdm_predictions.json`, `results/biodiversity_indices.json` | → microbiome, text-mining |
+| システム生物学 | `results/sbml_timecourse.json`, `results/fba_fluxes.json`, `results/grn_edges.json` | → multi-omics, network-analysis |
+| 疫学・公衆衛生 | `results/epi_risk_measures.json`, `results/spatial_clusters.json`, `results/dag_analysis.json` | → survival-clinical, causal-inference |
+| 集団遺伝学 | `results/pop_structure.json`, `results/fst_matrix.json`, `results/selection_scan.json` | → disease-research, variant-interpretation |
+| テキストマイニング | `results/ner_entities.json`, `results/knowledge_graph.json`, `results/topic_model.json` | → deep-research, meta-analysis |
 
 ### ToolUniverse MCP ツール連携
 
-22 のスキル（HIGH 13 + MEDIUM 9）は、[ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP サーバー経由で 1,200 以上の外部科学ツールを利用可能です。各 SKILL.md 内の `### 利用可能ツール` セクションに対応ツールが記載されています。
+32 のスキル（HIGH 13 + MEDIUM 9 + 新規 10）は、[ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP サーバー経由で 1,200 以上の外部科学ツールを利用可能です。各 SKILL.md 内の `### 利用可能ツール` セクションに対応ツールが記載されています。
 
 ```
 SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・計算)
@@ -100,11 +129,11 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 │ drug-target-profiling│───MCP──│ UniProt, ChEMBL, DGIdb       │
 │ variant-interpretation│──MCP──│ ClinVar, gnomAD, ClinGen     │
 │ admet-pharmacokinetics│──MCP──│ ADMET-AI, PubChem, ChEMBL    │
-│ ... (22 skills total) │       │ ... (1,200+ tools)           │
+│ ... (32 skills total) │       │ ... (1,200+ tools)           │
 └──────────────────────┘        └─────────────────────────────┘
 ```
 
-スキルは **19 の中区分**に分類されています。
+スキルは **26 の中区分**に分類されています。
 
 | 中区分 | スキル数 | 概要 |
 |---|:---:|---|
@@ -127,6 +156,13 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 | Q. 腫瘍学・疾患研究 | 2 | 精密腫瘍学 (CIViC/OncoKB)・疾患-遺伝子関連 (GWAS/Orphanet) |
 | R. 量子・先端計算 | 5 | 量子計算・GNN・ベイズ統計・説明可能 AI・深層学習 |
 | S. 医用イメージング | 1 | DICOM/NIfTI・WSI 病理画像・Radiomics・MONAI |
+| T. シングルセル・空間オミクス | 2 | scRNA-seq・Visium・MERFISH・CELLxGENE・RNA velocity |
+| U. 免疫・感染症 | 2 | 免疫情報学・MHC 結合予測・病原体ゲノミクス・AMR・IEDB |
+| V. マイクロバイオーム・環境 | 2 | 16S/メタゲノム・α/β 多様性・SDM・OBIS・GBIF |
+| W. システム生物学 | 1 | SBML シミュレーション・FBA・GRN 推定・BioModels |
+| X. 疫学・公衆衛生 | 1 | リスク指標 (RR/OR)・年齢標準化・空間疫学・WHO・CDC |
+| Y. 集団遺伝学 | 1 | HWE・PCA/ADMIXTURE・Fst・選択スキャン・gnomAD・GWAS |
+| Z. 科学テキストマイニング | 1 | NER・関係抽出・知識グラフ・BERTopic・PubTator |
 
 ---
 
@@ -321,6 +357,65 @@ DICOM・WSI 等の医用画像の解析・セグメンテーションを担う�
 |---|---|---|---|
 | 56 | [scientific-medical-imaging](scientific-medical-imaging/SKILL.md) | DICOM/NIfTI 処理・MONAI U-Net/SwinUNETR・WSI パッチ抽出・Radiomics・3D 可視化 | 汎用 |
 
+### T. シングルセル・空間オミクス（2 種）
+
+scRNA-seq・空間トランスクリプトミクスの解析パイプラインを担うスキル群。
+
+| # | Skill | 説明 | 参照 Exp |
+|---|---|---|---|
+| 57 | [scientific-single-cell-genomics](scientific-single-cell-genomics/SKILL.md) | scRNA-seq QC・Scanpy Leiden クラスタリング・DEG・RNA velocity・CellChat 細胞間通信 | 汎用 |
+| 58 | [scientific-spatial-transcriptomics](scientific-spatial-transcriptomics/SKILL.md) | Visium/MERFISH 前処理・Squidpy SVG 検出・空間ドメイン・cell2location デコンボリューション | 汎用 |
+
+### U. 免疫・感染症（2 種）
+
+免疫情報学・病原体ゲノミクスの解析パイプラインを担うスキル群。
+
+| # | Skill | 説明 | 参照 Exp |
+|---|---|---|---|
+| 59 | [scientific-immunoinformatics](scientific-immunoinformatics/SKILL.md) | MHC-I/II 結合予測・B 細胞エピトープ・TCR/BCR レパトア多様性・抗体 CDR 解析・ワクチン候補ランキング | 汎用 |
+| 60 | [scientific-infectious-disease](scientific-infectious-disease/SKILL.md) | 病原体 WGS QC・AMR 遺伝子検出・MLST 型別・系統解析 (IQ-TREE)・SIR/SEIR 数理モデル | 汎用 |
+
+### V. マイクロバイオーム・環境（2 種）
+
+マイクロバイオーム解析と環境・生態系モデリングを担うスキル群。
+
+| # | Skill | 説明 | 参照 Exp |
+|---|---|---|---|
+| 61 | [scientific-microbiome-metagenomics](scientific-microbiome-metagenomics/SKILL.md) | DADA2 ASV パイプライン・MetaPhlAn/Kraken2・α/β 多様性・ANCOM-BC 差次的存在量・HUMAnN 機能プロファイリング | 汎用 |
+| 62 | [scientific-environmental-ecology](scientific-environmental-ecology/SKILL.md) | SDM (MaxEnt/RF/GBM)・生物多様性指数・群集序列化 (NMDS/CCA)・保全優先順位ランキング | 汎用 |
+
+### W. システム生物学（1 種）
+
+SBML 動的シミュレーション・代謝フラックス・遺伝子制御ネットワーク推定を担うスキル。
+
+| # | Skill | 説明 | 参照 Exp |
+|---|---|---|---|
+| 63 | [scientific-systems-biology](scientific-systems-biology/SKILL.md) | SBML/RoadRunner シミュレーション・FBA/pFBA (cobrapy)・GRN 推定 (GENIE3)・Sobol 感度解析 | 汎用 |
+
+### X. 疫学・公衆衛生（1 種）
+
+疫学的リスク指標算出・標準化・空間疫学・DAG 交絡分析を担うスキル。
+
+| # | Skill | 説明 | 参照 Exp |
+|---|---|---|---|
+| 64 | [scientific-epidemiology-public-health](scientific-epidemiology-public-health/SKILL.md) | RR/OR/RD/NNT/AF リスク指標・直接/間接年齢標準化・LISA/Getis-Ord 空間クラスタリング・DAG バックドア基準 | 汎用 |
+
+### Y. 集団遺伝学（1 種）
+
+集団構造推定・分化指標・自然選択検出を担うスキル。
+
+| # | Skill | 説明 | 参照 Exp |
+|---|---|---|---|
+| 65 | [scientific-population-genetics](scientific-population-genetics/SKILL.md) | PLINK2 QC・HWE 検定・PCA/ADMIXTURE・Weir-Cockerham Fst・iHS/Tajima's D 選択スキャン | 汎用 |
+
+### Z. 科学テキストマイニング（1 種）
+
+科学文献からの情報抽出・知識グラフ構築・トピックモデリングを担うスキル。
+
+| # | Skill | 説明 | 参照 Exp |
+|---|---|---|---|
+| 66 | [scientific-text-mining-nlp](scientific-text-mining-nlp/SKILL.md) | BioBERT/SciSpaCy NER・関係抽出・知識グラフ構築 (Louvain)・BERTopic トピックモデリング・引用ネットワーク分析 | 汎用 |
+
 ---
 
 ## インストール
@@ -459,6 +554,30 @@ Skills は `.github/skills/` に配置されているため、Copilot が自動�
 │
 └── [S] 医用イメージング
     └── scientific-medical-imaging/
+│
+│── [T] シングルセル・空間オミクス
+│   ├── scientific-single-cell-genomics/
+│   └── scientific-spatial-transcriptomics/
+│
+│── [U] 免疫・感染症
+│   ├── scientific-immunoinformatics/
+│   └── scientific-infectious-disease/
+│
+│── [V] マイクロバイオーム・環境
+│   ├── scientific-microbiome-metagenomics/
+│   └── scientific-environmental-ecology/
+│
+│── [W] システム生物学
+│   └── scientific-systems-biology/
+│
+│── [X] 疫学・公衆衛生
+│   └── scientific-epidemiology-public-health/
+│
+│── [Y] 集団遺伝学
+│   └── scientific-population-genetics/
+│
+└── [Z] 科学テキストマイニング
+    └── scientific-text-mining-nlp/
 ```
 
 > 注: 実際のファイルシステム上ではすべてのスキルディレクトリは `.github/skills/` 直下にフラットに配置されています。上記の中区分グルーピングは論理的な分類です。

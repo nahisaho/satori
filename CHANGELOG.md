@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.10.0] - 2026-02-15
+
+### Added
+- **7 新カテゴリ (T-Z)・10 新スキル** を追加 — ToolUniverse ギャップ分析に基づくドメイン拡張
+- **T. シングルセル・空間オミクス（2 種）**
+  - **scientific-single-cell-genomics** スキル (#57): scRNA-seq QC (Scanpy)・Leiden クラスタリング・DEG (Wilcoxon)・RNA velocity (scVelo)・CellChat 細胞間通信・CELLxGENE/HCA ツール連携
+  - **scientific-spatial-transcriptomics** スキル (#58): Visium/MERFISH 前処理 (Squidpy)・SVG 検出 (Moran's I)・空間ドメイン検出・cell2location デコンボリューション・空間 L-R 解析
+- **U. 免疫・感染症（2 種）**
+  - **scientific-immunoinformatics** スキル (#59): MHC-I/II 結合予測 (MHCflurry)・B 細胞エピトープ・TCR/BCR レパトア多様性・抗体 CDR 解析 (ANARCI)・ワクチン候補ランキング・IEDB/IMGT/SAbDab ツール連携
+  - **scientific-infectious-disease** スキル (#60): 病原体 WGS QC・AMR 遺伝子検出 (ResFinder/RGI)・MLST/cgMLST 型別・系統解析 (IQ-TREE)・SIR/SEIR 数理モデル・CDC/EUHealthInfo ツール連携
+- **V. マイクロバイオーム・環境（2 種）**
+  - **scientific-microbiome-metagenomics** スキル (#61): DADA2 ASV パイプライン・MetaPhlAn/Kraken2 分類プロファイリング・α/β 多様性 (Shannon/Bray-Curtis/PERMANOVA)・ANCOM-BC 差次的存在量・HUMAnN 機能プロファイリング・MGnify/KEGG ツール連携
+  - **scientific-environmental-ecology** スキル (#62): SDM (MaxEnt/RF/GBM)・生物多様性指数 (α/β/γ)・群集序列化 (NMDS/CCA/RDA)・保全優先順位ランキング・OBIS/GBIF ツール連携
+- **W. システム生物学（1 種）**
+  - **scientific-systems-biology** スキル (#63): SBML/RoadRunner 動的シミュレーション・定常状態/ヤコビアン解析・FBA/pFBA (cobrapy)・GRN 推定 (GENIE3)・Sobol 感度解析 (SALib)・BioModels/Reactome/BiGG ツール連携
+- **X. 疫学・公衆衛生（1 種）**
+  - **scientific-epidemiology-public-health** スキル (#64): RR/OR/RD/NNT/AF リスク指標・直接/間接年齢標準化 (SMR)・LISA/Getis-Ord 空間クラスタリング・DAG バックドア基準交絡分析・WHO/CDC/EUHealthInfo ツール連携
+- **Y. 集団遺伝学（1 種）**
+  - **scientific-population-genetics** スキル (#65): PLINK2 遺伝子型 QC・HWE 検定・PCA/ADMIXTURE 集団構造推定・Weir-Cockerham Fst・iHS/Tajima's D 選択スキャン・gnomAD/GWAS Catalog ツール連携
+- **Z. 科学テキストマイニング（1 種）**
+  - **scientific-text-mining-nlp** スキル (#66): BioBERT/SciSpaCy NER・関係抽出 (PPI/DDI/GDA)・知識グラフ構築 (Louvain)・BERTopic トピックモデリング・引用ネットワーク分析 (PageRank/HITS)・PubTator/PubMed/EuropePMC ツール連携
+
+### Changed
+- **README.md**: スキル数を 56→66 に更新、カテゴリ数を 19→26 に拡張 (T-Z 追加)、ToolUniverse 連携スキル数を 22→32 に更新、次世代オミクス・疫学パイプラインフロー図を追加、ディレクトリ構造に 7 新カテゴリを追加
+
 ## [0.9.0] - 2026-02-14
 
 ### Added
