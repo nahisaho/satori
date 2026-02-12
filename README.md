@@ -7,7 +7,7 @@
 
 ## Overview
 
-このディレクトリには、Exp-01〜13 で蓄積した科学データ解析技法を Agent Skills として体系化した **35 個**のスキルを格納しています。Copilot がプロンプトの文脈に応じて適切なスキルを自動ロードし、各実験で確立した解析パターンを再利用します。
+このディレクトリには、Exp-01〜13 で蓄積した科学データ解析技法を Agent Skills として体系化した **36 個**のスキルを格納しています。Copilot がプロンプトの文脈に応じて適切なスキルを自動ロードし、各実験で確立した解析パターンを再利用します。
 
 ### パイプラインフロー
 
@@ -46,6 +46,7 @@ hypothesis-pipeline → pipeline-scaffold → academic-writing → critical-revi
 | F. 生命科学・オミクス | 5 | バイオインフォ・メタボロ・ゲノム配列・マルチオミクス・ネットワーク |
 | G. 化学・材料・イメージング | 3 | ケモインフォ・材料特性評価・画像解析 |
 | H. 臨床・疫学・メタ科学 | 3 | 生存解析・因果推論・メタアナリシス |
+| I. Deep Research | 1 | 科学文献深層リサーチ・エビデンス階層評価・ソース追跡・交差検証 |
 
 ---
 
@@ -142,6 +143,14 @@ hypothesis-pipeline → pipeline-scaffold → academic-writing → critical-revi
 | 34 | [scientific-causal-inference](scientific-causal-inference/SKILL.md) | PSM 傾向スコア・IPW・DID・RDD・DAG 共変量選択・Rosenbaum 感度分析 | 汎用 |
 | 35 | [scientific-meta-analysis](scientific-meta-analysis/SKILL.md) | 固定/ランダム効果モデル・Forest/Funnel プロット・Egger 検定・サブグループ | 汎用 |
 
+### I. Deep Research（1 種）
+
+科学文献の反復的深層リサーチを担うスキル。SHIKIGAMI の WebResearcher パラダイムを科学研究に適応。
+
+| # | Skill | 説明 | 参照 Exp |
+|---|---|---|---|
+| 36 | [scientific-deep-research](scientific-deep-research/SKILL.md) | SHIKIGAMI 準拠 Think→Search→Evaluate→Synthesize 反復サイクル・学術 DB 検索・エビデンス階層評価・ソース追跡・交差検証・ハルシネーション防止 | 汎用 |
+
 ---
 
 ## インストール
@@ -233,10 +242,13 @@ Skills は `.github/skills/` に配置されているため、Copilot が自動�
 │   ├── scientific-materials-characterization/
 │   └── scientific-image-analysis/
 │
-└── [H] 臨床・疫学・メタ科学
-    ├── scientific-survival-clinical/
-    ├── scientific-causal-inference/
-    └── scientific-meta-analysis/
+├── [H] 臨床・疫学・メタ科学
+│   ├── scientific-survival-clinical/
+│   ├── scientific-causal-inference/
+│   └── scientific-meta-analysis/
+│
+└── [I] Deep Research
+    └── scientific-deep-research/
 ```
 
 > 注: 実際のファイルシステム上ではすべてのスキルディレクトリは `.github/skills/` 直下にフラットに配置されています。上記の中区分グルーピングは論理的な分類です。

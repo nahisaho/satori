@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.6.0] - 2026-02-12
+
+### Added
+- **scientific-deep-research** スキル (#36): SHIKIGAMI の WebResearcher パラダイムを科学研究に適応した深層リサーチスキル
+  - Think→Search→Evaluate→Synthesize 反復サイクル（最大 15 ラウンド）
+  - 学術データベース検索統合（PubMed, Google Scholar, arXiv, Semantic Scholar, CiNii, J-STAGE 等）
+  - エビデンス階層評価（Level 1a〜5 + プレプリント）
+  - ソース信頼性スコアリング（IF, h-index, サンプルサイズ, 統計手法, 再現性, 出版年）
+  - ハルシネーション防止マーキング（✅ 検証済 / 📎 単一ソース / ⚠️ 未査読 / ❓ AI推定 / 🔄 古いデータ / ⚡ 矛盾）
+  - 交差検証（数値乖離率判定・内容矛盾処理）
+  - 品質ゲート（Phase 1→2, 2→3, 3→4, 4 完了）
+  - PICO/PECO/SPIDER 構造化・検索戦略設計
+  - PRISMA 2020 フローテンプレート（Systematic Review 用）
+  - 批判的評価チェックリスト（Cochrane RoB / NOS / AMSTAR-2 準拠）
+  - 日英並列検索必須・学術ドメイン優先
+  - 分野別検索戦略テンプレート（生命科学・材料科学・CS/AI）
+  - 出力ファイル: research_report.md, evidence_table.json, search_log.md, source_registry.json, prisma_flow.md
+
+### Changed
+- **README.md**: スキル数を 35→36 に更新、カテゴリ I (Deep Research) を追加、ディレクトリ構造に [I] Deep Research を追加
+
 ## [0.5.2] - 2026-02-12
 
 ### Fixed
@@ -63,6 +84,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - 8 カテゴリ (A-H) のスキル分類体系
 - 7 種のジャーナルテンプレート (IMRaD, Nature, Science, ACS, IEEE, Elsevier, Qiita)
 
+[0.6.0]: https://github.com/nahisaho/satori/compare/v0.5.2...v0.6.0
+[0.5.2]: https://github.com/nahisaho/satori/compare/v0.5.0...v0.5.2
 [0.5.0]: https://github.com/nahisaho/satori/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/nahisaho/satori/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/nahisaho/satori/compare/v0.2.0...v0.3.0
