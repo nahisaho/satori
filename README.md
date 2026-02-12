@@ -7,7 +7,7 @@
 
 ## Overview
 
-このディレクトリには、Exp-01〜13 で蓄積した科学データ解析技法を Agent Skills として体系化した **132 個**のスキルを格納しています。Copilot がプロンプトの文脈に応じて適切なスキルを自動ロードし、各実験で確立した解析パターンを再利用します。79 のスキルは [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で 1,200 以上の外部科学データベースツールとも連携可能です。
+このディレクトリには、Exp-01〜13 で蓄積した科学データ解析技法を Agent Skills として体系化した **140 個**のスキルを格納しています。Copilot がプロンプトの文脈に応じて適切なスキルを自動ロードし、各実験で確立した解析パターンを再利用します。85 のスキルは [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で 1,200 以上の外部科学データベースツールとも連携可能です。
 
 ### パイプラインフロー
 
@@ -208,7 +208,7 @@ symbolic-mathematics ──→ systems-biology ──→ admet-pharmacokinetics
 
 ### ToolUniverse MCP ツール連携
 
-79 のスキル（HIGH 13 + MEDIUM 9 + Phase 3: 20 + Phase 4: 8 + Phase 5: 9 + Phase 6: 7 + Phase 7: 4 + Phase 8: 4 + Phase 9: 5）は、[ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP サーバー経由で 1,200 以上の外部科学ツールを利用可能です。各 SKILL.md 内の `### 利用可能ツール` セクションに対応ツールが記載されています。
+85 のスキル（HIGH 13 + MEDIUM 9 + Phase 3: 20 + Phase 4: 8 + Phase 5: 9 + Phase 6: 7 + Phase 7: 4 + Phase 8: 4 + Phase 9: 5 + Phase 10: 6）は、[ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP サーバー経由で 1,200 以上の外部科学ツールを利用可能です。各 SKILL.md 内の `### 利用可能ツール` セクションに対応ツールが記載されています。
 
 ```
 SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・計算)
@@ -253,7 +253,13 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 │ human-cell-atlas     │───MCP──│ HCA Data Portal, CELLxGENE    │
 │ geo-expression       │───MCP──│ GEO (NCBI E-utilities)        │
 │ paleobiology         │───MCP──│ Paleobiology Database (PBDB)  │
-│ ... (79 skills total) │       │ ... (1,200+ tools)           │
+│ gwas-catalog           │───MCP──│ GWAS Catalog (EBI)           │
+│ alphafold-structures   │───MCP──│ AlphaFold DB API             │
+│ arrayexpress-expression│───MCP──│ ArrayExpress, BioStudies     │
+│ semantic-scholar       │───MCP──│ Semantic Scholar Graph API   │
+│ pharmgkb-pgx          │───MCP──│ PharmGKB, CPIC Guidelines    │
+│ crossref-metadata     │───MCP──│ CrossRef DOI/Metadata        │
+│ ... (85 skills total) │       │ ... (1,200+ tools)           │
 └──────────────────────┘        └─────────────────────────────┘
 ```
 
@@ -261,23 +267,23 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 
 | 中区分 | スキル数 | 概要 |
 |---|:---:|---|
-| A. 基盤・ワークフロー | 16 | パイプライン構築・前処理・データ生成・図表・執筆・仮説立案・批判的レビュー・SI 生成・LaTeX 変換・引用検証・査読対応・改訂追跡・論文品質・系統的レビュー・BioThings ID マッピング・データ投稿 |
+| A. 基盤・ワークフロー | 17 | パイプライン構築・前処理・データ生成・図表・執筆・仮説立案・批判的レビュー・SI 生成・LaTeX 変換・引用検証・査読対応・改訂追跡・論文品質・系統的レビュー・BioThings ID マッピング・データ投稿・CrossRef メタデータ |
 | B. 統計・探索的解析 | 4 | EDA・仮説検定・次元削減・記号数学 |
 | C. 機械学習・モデリング | 3 | 回帰・分類・特徴量重要度 |
 | D. 実験計画・プロセス最適化 | 2 | DOE・応答曲面法・ベイズ最適化 |
 | E. 信号・スペクトル・時系列 | 4 | スペクトル解析・生体信号・時系列分解・神経電気生理学 |
-| F. 生命科学・オミクス | 20 | バイオインフォ・メタボロ・ゲノム配列・マルチオミクス・ネットワーク・プロテオミクス・トランスクリプトミクス・パスウェイ濃縮・代謝物 DB・HPA・ゲノム配列ツール・非コード RNA・オントロジー・EBI DB 群・Ensembl ゲノミクス・STRING/BioGRID PPI・発現比較・モデル生物 DB・GEO 発現プロファイル・寄生虫ゲノミクス |
+| F. 生命科学・オミクス | 22 | バイオインフォ・メタボロ・ゲノム配列・マルチオミクス・ネットワーク・プロテオミクス・トランスクリプトミクス・パスウェイ濃縮・代謝物 DB・HPA・ゲノム配列ツール・非コード RNA・オントロジー・EBI DB 群・Ensembl ゲノミクス・STRING/BioGRID PPI・発現比較・モデル生物 DB・GEO 発現プロファイル・寄生虫ゲノミクス・ArrayExpress 発現アーカイブ・GTEx 組織発現 |
 | G. 化学・材料・イメージング | 8 | ケモインフォ・材料特性評価・画像形態解析・計算材料科学・ChEMBL アッセイマイニング・MD シミュレーション・高度イメージング・深層化学 |
 | H. 臨床・疫学・メタ科学 | 5 | 生存解析・因果推論・メタアナリシス・臨床試験解析・臨床レポート |
-| I. Deep Research・文献検索 | 3 | 科学文献深層リサーチ・エビデンス階層評価・マルチ DB 文献検索・引用ネットワーク・プレプリント横断検索 |
+| I. Deep Research・文献検索 | 4 | 科学文献深層リサーチ・エビデンス階層評価・マルチ DB 文献検索・引用ネットワーク・プレプリント横断検索・Semantic Scholar 学術グラフ |
 | J. 創薬・ファーマコロジー | 7 | 標的プロファイリング・ADMET/PK・ドラッグリポジショニング・分子ドッキング・薬理学的ターゲット・化合物スクリーニング・NCI-60 スクリーニング |
-| K. 構造生物学・タンパク質工学 | 5 | PDB/AlphaFold 構造解析・de novo タンパク質設計・PPI ネットワーク・ドメイン/ファミリー・構造プロテオミクス |
+| K. 構造生物学・タンパク質工学 | 6 | PDB/AlphaFold 構造解析・de novo タンパク質設計・PPI ネットワーク・ドメイン/ファミリー・構造プロテオミクス・AlphaFold DB 構造予測 |
 | L. 精密医療・臨床意思決定 | 3 | 変異解釈 (ACMG/AMP)・エビデンスベース臨床意思決定・バリアント効果予測 |
 | M. 実験室自動化・データ管理 | 2 | 液体ハンドリング・プロトコル管理・ELN/LIMS 連携・ラボデータ管理 |
 | N. 科学プレゼンテーション・図式 | 2 | 科学スライド・ポスター・ワークフロー図・科学図式 |
 | O. 研究計画・グラント・規制 | 3 | 助成金申請書・研究方法論・倫理審査・規制科学 |
-| P. ファーマコビジランス・薬理ゲノミクス | 2 | FAERS 不均衡分析・MedDRA 階層・安全性シグナル検出・PGx 代謝型 |
-| Q. 腫瘍学・疾患研究 | 5 | 精密腫瘍学 (CIViC/OncoKB)・疾患-遺伝子関連 (GWAS/Orphanet)・がんゲノミクス (COSMIC/DepMap)・希少疾患遺伝学・細胞株リソース |
+| P. ファーマコビジランス・薬理ゲノミクス | 3 | FAERS 不均衡分析・MedDRA 階層・安全性シグナル検出・PGx 代謝型・PharmGKB 臨床アノテーション |
+| Q. 腫瘍学・疾患研究 | 6 | 精密腫瘍学 (CIViC/OncoKB)・疾患-遺伝子関連 (GWAS/Orphanet)・がんゲノミクス (COSMIC/DepMap)・希少疾患遺伝学・細胞株リソース・ICGC がんゲノムデータ |
 | R. 量子・先端計算 | 7 | 量子計算・GNN・ベイズ統計・説明可能 AI・深層学習・ヘルスケア AI・強化学習 |
 | S. 医用イメージング | 1 | DICOM/NIfTI・WSI 病理画像・Radiomics・MONAI |
 | T. シングルセル・空間・エピゲノミクス | 11 | scRNA-seq・Visium・MERFISH・CELLxGENE・RNA velocity・エピゲノミクス・レギュラトリーゲノミクス・摂動解析・scVI 統合・scATAC-seq/Signac・GPU シングルセル・ENCODE/SCREEN・Human Cell Atlas・高度 Squidpy 空間解析 |
@@ -285,14 +291,14 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 | V. マイクロバイオーム・環境 | 8 | 16S/メタゲノム・α/β 多様性・SDM・OBIS・GBIF・系統解析・rRNA 分類学・植物バイオロジー・海洋生態学・環境地理空間データ・古生物学 |
 | W. システム生物学 | 3 | SBML シミュレーション・FBA・GRN 推定・BioModels・代謝モデリング・Metabolic Atlas |
 | X. 疫学・公衆衛生 | 3 | リスク指標 (RR/OR)・年齢標準化・空間疫学・WHO・CDC・公衆衛生データ・環境毒性学 |
-| Y. 集団遺伝学 | 1 | HWE・PCA/ADMIXTURE・Fst・選択スキャン・gnomAD・GWAS |
+| Y. 集団遺伝学 | 2 | HWE・PCA/ADMIXTURE・Fst・選択スキャン・gnomAD・GWAS・GWAS Catalog |
 | Z. 科学テキストマイニング | 2 | NER・関係抽出・知識グラフ・BERTopic・PubTator バイオアノテーション |
 
 ---
 
 ## Skills 一覧
 
-### A. 基盤・ワークフロー（16 種）
+### A. 基盤・ワークフロー（17 種）
 
 全 Exp に共通する横断的な基盤スキル。
 
@@ -314,6 +320,7 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 | 84 | [scientific-systematic-review](scientific-systematic-review/SKILL.md) | PRISMA 2020 系統的レビュー・マルチ DB 検索戦略・スクリーニング・バイアスリスク評価 | 汎用 |
 | 91 | [scientific-biothings-idmapping](scientific-biothings-idmapping/SKILL.md) | BioThings API (MyGene/MyVariant/MyChem) 横断的 ID マッピング・アノテーション | 汎用 |
 | 119 | [scientific-data-submission](scientific-data-submission/SKILL.md) | GenBank/SRA/GEO/BioProject/BioSample データ投稿・FAIR 原則準拠 | 汎用 |
+| 139 | [scientific-crossref-metadata](scientific-crossref-metadata/SKILL.md) | CrossRef REST API DOI 解決・論文メタデータ・引用数・ジャーナル情報 | 汎用 |
 
 ### B. 統計・探索的解析（4 種）
 
@@ -356,9 +363,9 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 | 24 | [scientific-time-series](scientific-time-series/SKILL.md) | STL 分解・SARIMA 予測・変化点検出・FFT 周期解析・Granger 因果 | 汎用 |
 | 67 | [scientific-neuroscience-electrophysiology](scientific-neuroscience-electrophysiology/SKILL.md) | SpikeInterface/Kilosort4 スパイクソート・MNE EEG/ERP・NeuroKit2 HRV/EDA・脳機能結合 | 汎用 |
 
-### F. 生命科学・オミクス（20 種）
+### F. 生命科学・オミクス（22 種）
 
-バイオ・オミクス・ネットワーク解析・オントロジー・EBI データベース・ゲノミクス・PPI・発現比較・モデル生物 DB・GEO 発現プロファイル・寄生虫ゲノミクスを担うスキル群。
+バイオ・オミクス・ネットワーク解析・オントロジー・EBI データベース・ゲノミクス・PPI・発現比較・モデル生物 DB・GEO 発現プロファイル・寄生虫ゲノミクス・ArrayExpress 発現アーカイブ・GTEx 組織発現を担うスキル群。
 
 | # | Skill | 説明 | 参照 Exp |
 |---|---|---|---|
@@ -382,6 +389,8 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 | 111 | [scientific-model-organism-db](scientific-model-organism-db/SKILL.md) | FlyBase/WormBase/ZFIN/RGD/MGI モデル生物データベース・種間オーソログ検索 | 汎用 |
 | 127 | [scientific-geo-expression](scientific-geo-expression/SKILL.md) | GEO REST API 発現プロファイル・マトリクス取得・差次的発現解析 | 汎用 |
 | 132 | [scientific-parasite-genomics](scientific-parasite-genomics/SKILL.md) | PlasmoDB/VectorBase/ToxoDB 寄生虫ゲノミクス・薬剤標的同定 | 汎用 |
+| 135 | [scientific-arrayexpress-expression](scientific-arrayexpress-expression/SKILL.md) | ArrayExpress/BioStudies REST API 発現実験検索・SDRF メタデータ・データ再解析 | 汎用 |
+| 137 | [scientific-gtex-tissue-expression](scientific-gtex-tissue-expression/SKILL.md) | GTEx Portal REST API v2 組織特異的発現・eQTL・多組織比較 | 汎用 |
 
 ### G. 化学・材料・イメージング（8 種）
 
@@ -410,15 +419,16 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 | 71 | [scientific-clinical-trials-analytics](scientific-clinical-trials-analytics/SKILL.md) | ClinicalTrials.gov API v2 検索・競合ランドスケープ・AE/アウトカム抽出 | 汎用 |
 | 85 | [scientific-clinical-reporting](scientific-clinical-reporting/SKILL.md) | SOAP ノート・バイオマーカーレポート・ファーマコゲノミクス・FHIR JSON | 汎用 |
 
-### I. Deep Research・文献検索（3 種）
+### I. Deep Research・文献検索（4 種）
 
-科学文献の反復的深層リサーチとマルチ DB 文献検索・プレプリント横断検索を担うスキル群。
+科学文献の反復的深層リサーチとマルチ DB 文献検索・プレプリント横断検索・Semantic Scholar 学術グラフを担うスキル群。
 
 | # | Skill | 説明 | 参照 Exp |
 |---|---|---|---|
 | 36 | [scientific-deep-research](scientific-deep-research/SKILL.md) | SHIKIGAMI 準拠 Think→Search→Evaluate→Synthesize 反復サイクル・学術 DB 検索・エビデンス階層評価・ソース追跡・交差検証・ハルシネーション防止 | 汎用 |
 | 78 | [scientific-literature-search](scientific-literature-search/SKILL.md) | PubMed/Semantic Scholar/OpenAlex/EuropePMC/CrossRef マルチ DB 検索・引用ネットワーク | 汎用 |
 | 97 | [scientific-preprint-archive](scientific-preprint-archive/SKILL.md) | bioRxiv/medRxiv/arXiv/PMC/CORE/Zenodo/OpenAIRE/Unpaywall プレプリント・OA 横断検索 | 汎用 |
+| 136 | [scientific-semantic-scholar](scientific-semantic-scholar/SKILL.md) | Semantic Scholar Academic Graph API 論文検索・引用グラフ・著者プロファイル・TLDR | 汎用 |
 
 ### J. 創薬・ファーマコロジー（7 種）
 
@@ -434,9 +444,9 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 | 94 | [scientific-compound-screening](scientific-compound-screening/SKILL.md) | ZINC 化合物ライブラリ検索・バーチャルスクリーニング前処理 | 汎用 |
 | 120 | [scientific-nci60-screening](scientific-nci60-screening/SKILL.md) | NCI-60/CellMiner/DepMap がん細胞株薬剤応答スクリーニング | 汎用 |
 
-### K. 構造生物学・タンパク質工学（5 種）
+### K. 構造生物学・タンパク質工学（6 種）
 
-タンパク質構造解析・設計・PPI ネットワーク・ドメイン解析・構造プロテオミクスを担うスキル群。
+タンパク質構造解析・設計・PPI ネットワーク・ドメイン解析・構造プロテオミクス・AlphaFold DB 構造予測を担うスキル群。
 
 | # | Skill | 説明 | 参照 Exp |
 |---|---|---|---|
@@ -445,6 +455,7 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 | 79 | [scientific-protein-interaction-network](scientific-protein-interaction-network/SKILL.md) | STRING/IntAct/STITCH PPI ネットワーク・トポロジー解析・コミュニティ検出 | 汎用 |
 | 86 | [scientific-protein-domain-family](scientific-protein-domain-family/SKILL.md) | InterPro/InterProScan ドメイン予測・ファミリー分類・アーキテクチャ可視化 | 汎用 |
 | 93 | [scientific-structural-proteomics](scientific-structural-proteomics/SKILL.md) | EMDB/PDBe/Proteins API/Complex Portal/DeepGO/EVE 構造プロテオミクス | 汎用 |
+| 134 | [scientific-alphafold-structures](scientific-alphafold-structures/SKILL.md) | AlphaFold DB REST API 構造予測取得・pLDDT 信頼度・PAE 解析 | 汎用 |
 
 ### L. 精密医療・臨床意思決定（3 種）
 
@@ -482,18 +493,19 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 | 47 | [scientific-research-methodology](scientific-research-methodology/SKILL.md) | SCAMPER/TRIZ ブレインストーミング・研究デザインマトリクス・FINER 基準・IRB 倫理チェック | 汎用 |
 | 74 | [scientific-regulatory-science](scientific-regulatory-science/SKILL.md) | FDA Orange Book/医療機器 510(k)/ISO 13485 QMS/CAPA/USPTO 特許検索 | 汎用 |
 
-### P. ファーマコビジランス・薬理ゲノミクス（2 種）
+### P. ファーマコビジランス・薬理ゲノミクス（3 種）
 
-市販後医薬品安全性監視と薬理ゲノミクスのためのシグナル検出・定量評価を担うスキル群。
+市販後医薬品安全性監視と薬理ゲノミクス・PharmGKB 臨床アノテーションのためのシグナル検出・定量評価を担うスキル群。
 
 | # | Skill | 説明 | 参照 Exp |
 |---|---|---|---|
 | 48 | [scientific-pharmacovigilance](scientific-pharmacovigilance/SKILL.md) | FAERS 不均衡分析 (PRR/ROR/IC/EBGM)・MedDRA 階層・時系列トレンド・Naranjo 因果評価 | 汎用 |
 | 75 | [scientific-pharmacogenomics](scientific-pharmacogenomics/SKILL.md) | PharmGKB/CPIC ガイドライン・Star アレル・代謝型・FDA PGx バイオマーカー | 汎用 |
+| 138 | [scientific-pharmgkb-pgx](scientific-pharmgkb-pgx/SKILL.md) | PharmGKB REST API 臨床アノテーション・薬物遺伝子関連・投与量ガイドライン | 汎用 |
 
-### Q. 腫瘍学・疾患研究（5 種）
+### Q. 腫瘍学・疾患研究（6 種）
 
-精密腫瘍学・疾患-遺伝子関連研究・がんゲノミクス・希少疾患遺伝学・細胞株リソースを担うスキル群。
+精密腫瘍学・疾患-遺伝子関連研究・がんゲノミクス・希少疾患遺伝学・細胞株リソース・ICGC がんゲノムデータを担うスキル群。
 
 | # | Skill | 説明 | 参照 Exp |
 |---|---|---|---|
@@ -502,6 +514,7 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 | 81 | [scientific-cancer-genomics](scientific-cancer-genomics/SKILL.md) | COSMIC/cBioPortal/DepMap がんゲノミクス・変異シグネチャー解析 | 汎用 |
 | 87 | [scientific-rare-disease-genetics](scientific-rare-disease-genetics/SKILL.md) | OMIM/Orphanet/DisGeNET/IMPC 希少疾患遺伝学・統合解析 | 汎用 |
 | 101 | [scientific-cell-line-resources](scientific-cell-line-resources/SKILL.md) | Cellosaurus 細胞株検索・STR プロファイル検証・コンタミネーション検出 | 汎用 |
+| 140 | [scientific-icgc-cancer-data](scientific-icgc-cancer-data/SKILL.md) | ICGC DCC API 国際がんゲノムデータ・体細胞変異・がん種統計 | 汎用 |
 
 ### R. 量子・先端計算（7 種）
 
@@ -587,13 +600,14 @@ SBML 動的シミュレーション・代謝フラックス・遺伝子制御ネ
 | 98 | [scientific-public-health-data](scientific-public-health-data/SKILL.md) | NHANES/MedlinePlus/RxNorm/ODPHP 公衆衛生データアクセス・健康格差API | 汎用 |
 | 117 | [scientific-toxicology-env](scientific-toxicology-env/SKILL.md) | CTD/Tox21/ToxCast/T3DB/EPA IRIS 環境毒性学・化学物質健康影響解析 | 汎用 |
 
-### Y. 集団遺伝学（1 種）
+### Y. 集団遺伝学（2 種）
 
-集団構造推定・分化指標・自然選択検出を担うスキル。
+集団構造推定・分化指標・自然選択検出・GWAS Catalog を担うスキル群。
 
 | # | Skill | 説明 | 参照 Exp |
 |---|---|---|---|
 | 65 | [scientific-population-genetics](scientific-population-genetics/SKILL.md) | PLINK2 QC・HWE 検定・PCA/ADMIXTURE・Weir-Cockerham Fst・iHS/Tajima's D 選択スキャン | 汎用 |
+| 133 | [scientific-gwas-catalog](scientific-gwas-catalog/SKILL.md) | NHGRI-EBI GWAS Catalog REST API 関連解析・研究検索・PheWAS | 汎用 |
 
 ### Z. 科学テキストマイニング（2 種）
 
@@ -665,7 +679,8 @@ Skills は `.github/skills/` に配置されているため、Copilot が自動�
 │   ├── scientific-paper-quality/
 │   ├── scientific-systematic-review/
 │   ├── scientific-biothings-idmapping/
-│   └── scientific-data-submission/
+│   ├── scientific-data-submission/
+│   └── scientific-crossref-metadata/
 │
 │── [B] 統計・探索的解析
 │   ├── scientific-eda-correlation/
@@ -708,7 +723,9 @@ Skills は `.github/skills/` に配置されているため、Copilot が自動�
 │   ├── scientific-expression-comparison/
 │   ├── scientific-model-organism-db/
 │   ├── scientific-geo-expression/
-│   └── scientific-parasite-genomics/
+│   ├── scientific-parasite-genomics/
+│   ├── scientific-arrayexpress-expression/
+│   └── scientific-gtex-tissue-expression/
 │
 │── [G] 化学・材料・イメージング
 │   ├── scientific-cheminformatics/
@@ -730,7 +747,8 @@ Skills は `.github/skills/` に配置されているため、Copilot が自動�
 ├── [I] Deep Research・文献検索
 │   ├── scientific-deep-research/
 │   ├── scientific-literature-search/
-│   └── scientific-preprint-archive/
+│   ├── scientific-preprint-archive/
+│   └── scientific-semantic-scholar/
 │
 ├── [J] 創薬・ファーマコロジー
 │   ├── scientific-drug-target-profiling/
@@ -746,7 +764,8 @@ Skills は `.github/skills/` に配置されているため、Copilot が自動�
 │   ├── scientific-protein-design/
 │   ├── scientific-protein-interaction-network/
 │   ├── scientific-protein-domain-family/
-│   └── scientific-structural-proteomics/
+│   ├── scientific-structural-proteomics/
+│   └── scientific-alphafold-structures/
 │
 ├── [L] 精密医療・臨床意思決定
 │   ├── scientific-variant-interpretation/
@@ -768,14 +787,16 @@ Skills は `.github/skills/` に配置されているため、Copilot が自動�
 │
 ├── [P] ファーマコビジランス・薬理ゲノミクス
 │   ├── scientific-pharmacovigilance/
-│   └── scientific-pharmacogenomics/
+│   ├── scientific-pharmacogenomics/
+│   └── scientific-pharmgkb-pgx/
 │
 ├── [Q] 腫瘍学・疾患研究
 │   ├── scientific-precision-oncology/
 │   ├── scientific-disease-research/
 │   ├── scientific-cancer-genomics/
 │   ├── scientific-rare-disease-genetics/
-│   └── scientific-cell-line-resources/
+│   ├── scientific-cell-line-resources/
+│   └── scientific-icgc-cancer-data/
 │
 ├── [R] 量子・先端計算
 │   ├── scientific-quantum-computing/
@@ -827,7 +848,8 @@ Skills は `.github/skills/` に配置されているため、Copilot が自動�
 │   └── scientific-toxicology-env/
 │
 │── [Y] 集団遺伝学
-│   └── scientific-population-genetics/
+│   ├── scientific-population-genetics/
+│   └── scientific-gwas-catalog/
 │
 └── [Z] 科学テキストマイニング
     ├── scientific-text-mining-nlp/

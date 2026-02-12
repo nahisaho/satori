@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.18.0] - 2026-02-23
+
+### Added
+- **8 新スキル (7 カテゴリ拡張)** を追加 — ToolUniverse & K-Dense ギャップ分析に基づく Phase 10 科学スキル拡張 (132→140 スキル、TU 連携 79→85)
+- **A. 基盤・ワークフロー（16→17 種）**
+  - **scientific-crossref-metadata** スキル (#139): CrossRef REST API DOI 解決・論文メタデータ・引用数・ジャーナル情報・助成金レジストリ検索・crossref = TU ツール連携
+- **F. 生命科学・オミクス（20→22 種）**
+  - **scientific-arrayexpress-expression** スキル (#135): BioStudies/ArrayExpress REST API 発現実験検索・SDRF サンプルメタデータ・発現マトリクスダウンロード・データ再解析統合パイプライン・arrayexpress = TU ツール連携
+  - **scientific-gtex-tissue-expression** スキル (#137): GTEx Portal REST API v2 組織特異的遺伝子発現 (中央値 TPM)・eQTL ルックアップ・多組織比較マトリクス・TU 外スキル (直接 API)
+- **I. Deep Research・文献検索（3→4 種）**
+  - **scientific-semantic-scholar** スキル (#136): Semantic Scholar Academic Graph API 論文検索・著者プロファイル (h-index)・引用/被引用グラフ・TLDR 自動要約・年次引用傾向分析・semantic_scholar = TU ツール連携
+- **K. 構造生物学・タンパク質工学（5→6 種）**
+  - **scientific-alphafold-structures** スキル (#134): AlphaFold Protein Structure Database REST API 構造予測取得・pLDDT 残基レベル信頼度プロファイリング・PAE マトリクスドメイン境界推定・バッチパイプライン・alphafold = TU ツール連携
+- **P. ファーマコビジランス・薬理ゲノミクス（2→3 種）**
+  - **scientific-pharmgkb-pgx** スキル (#138): PharmGKB REST API 臨床アノテーション・薬物遺伝子関連・投与量ガイドライン (CPIC/DPWG)・スターアレル表現型対応・pharmgkb = TU ツール連携
+- **Q. 腫瘍学・疾患研究（5→6 種）**
+  - **scientific-icgc-cancer-data** スキル (#140): ICGC DCC API 国際がんゲノムプロジェクト検索・ドナー/検体・体細胞変異 (SSM) 検索・がん種統計・遺伝子変異頻度・TU 外スキル (直接 API)
+- **Y. 集団遺伝学（1→2 種）**
+  - **scientific-gwas-catalog** スキル (#133): NHGRI-EBI GWAS Catalog REST API 関連解析 (P 値フィルタリング)・研究メタデータ検索・バリアント PheWAS (多形質解析)・統合パイプライン・gwas = TU ツール連携
+
+### Changed
+- ToolUniverse SMCP 連携スキル: 79→85 (+6 スキル: gwas-catalog [gwas]、alphafold-structures [alphafold]、arrayexpress-expression [arrayexpress]、semantic-scholar [semantic_scholar]、pharmgkb-pgx [pharmgkb]、crossref-metadata [crossref])
+- README.md: 全カウント・カテゴリ表・スキル一覧・ディレクトリツリー・TU 連携図を更新
+
 ## [0.17.0] - 2026-02-22
 
 ### Added
