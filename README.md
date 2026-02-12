@@ -7,7 +7,7 @@
 
 ## Overview
 
-このディレクトリには、Exp-01〜13 で蓄積した科学データ解析技法を Agent Skills として体系化した **36 個**のスキルを格納しています。Copilot がプロンプトの文脈に応じて適切なスキルを自動ロードし、各実験で確立した解析パターンを再利用します。
+このディレクトリには、Exp-01〜13 で蓄積した科学データ解析技法を Agent Skills として体系化した **47 個**のスキルを格納しています。Copilot がプロンプトの文脈に応じて適切なスキルを自動ロードし、各実験で確立した解析パターンを再利用します。
 
 ### パイプラインフロー
 
@@ -34,7 +34,7 @@ hypothesis-pipeline → pipeline-scaffold → academic-writing → critical-revi
 | 品質評価 | `manuscript/quality_report.json` | → latex-formatter |
 | LaTeX 変換 | `manuscript/manuscript.tex`, `manuscript/references.bib` | — |
 
-スキルは **8 つの中区分**に分類されています。
+スキルは **15 の中区分**に分類されています。
 
 | 中区分 | スキル数 | 概要 |
 |---|:---:|---|
@@ -47,6 +47,12 @@ hypothesis-pipeline → pipeline-scaffold → academic-writing → critical-revi
 | G. 化学・材料・イメージング | 3 | ケモインフォ・材料特性評価・画像解析 |
 | H. 臨床・疫学・メタ科学 | 3 | 生存解析・因果推論・メタアナリシス |
 | I. Deep Research | 1 | 科学文献深層リサーチ・エビデンス階層評価・ソース追跡・交差検証 |
+| J. 創薬・ファーマコロジー | 3 | 標的プロファイリング・ADMET/PK・ドラッグリポジショニング |
+| K. 構造生物学・タンパク質工学 | 2 | PDB/AlphaFold 構造解析・de novo タンパク質設計 |
+| L. 精密医療・臨床意思決定 | 2 | 変異解釈 (ACMG/AMP)・エビデンスベース臨床意思決定 |
+| M. 実験室自動化 | 1 | 液体ハンドリング・プロトコル管理・ELN/LIMS 連携 |
+| N. 科学プレゼンテーション | 1 | 科学スライド・ポスター・ワークフロー図 |
+| O. 研究計画・グラント | 2 | 助成金申請書・研究方法論・倫理審査 |
 
 ---
 
@@ -151,6 +157,59 @@ hypothesis-pipeline → pipeline-scaffold → academic-writing → critical-revi
 |---|---|---|---|
 | 36 | [scientific-deep-research](scientific-deep-research/SKILL.md) | SHIKIGAMI 準拠 Think→Search→Evaluate→Synthesize 反復サイクル・学術 DB 検索・エビデンス階層評価・ソース追跡・交差検証・ハルシネーション防止 | 汎用 |
 
+### J. 創薬・ファーマコロジー（3 種）
+
+ドラッグディスカバリーの標的評価・薬物動態・リポジショニングを担うスキル群。
+
+| # | Skill | 説明 | 参照 Exp |
+|---|---|---|---|
+| 37 | [scientific-drug-target-profiling](scientific-drug-target-profiling/SKILL.md) | 9-path 標的プロファイリング・TDL 分類・ドラッガビリティ評価・競合ランドスケープ | 汎用 |
+| 38 | [scientific-admet-pharmacokinetics](scientific-admet-pharmacokinetics/SKILL.md) | 5 段階 ADMET パイプライン・Lipinski/Veber ルール・CYP 予測・PK モデリング | 汎用 |
+| 39 | [scientific-drug-repurposing](scientific-drug-repurposing/SKILL.md) | 7 戦略ドラッグリポジショニング・ネットワーク近接解析・多基準候補スコアリング | 汎用 |
+
+### K. 構造生物学・タンパク質工学（2 種）
+
+タンパク質構造解析と de novo 設計を担うスキル群。
+
+| # | Skill | 説明 | 参照 Exp |
+|---|---|---|---|
+| 40 | [scientific-protein-structure-analysis](scientific-protein-structure-analysis/SKILL.md) | PDB/AlphaFold 構造検索・品質評価 (pLDDT/R-factor)・結合サイト検出 | 汎用 |
+| 41 | [scientific-protein-design](scientific-protein-design/SKILL.md) | ESM-2 変異スキャン・RFdiffusion/ProteinMPNN de novo 設計・バインダー/酵素設計 | 汎用 |
+
+### L. 精密医療・臨床意思決定（2 種）
+
+バリアント解釈とエビデンスベース臨床判断を担うスキル群。
+
+| # | Skill | 説明 | 参照 Exp |
+|---|---|---|---|
+| 42 | [scientific-variant-interpretation](scientific-variant-interpretation/SKILL.md) | ACMG/AMP 28 基準・薬理ゲノミクス (CPIC)・OncoKB 体細胞変異レベル | 汎用 |
+| 43 | [scientific-clinical-decision-support](scientific-clinical-decision-support/SKILL.md) | GRADE エビデンス枠組・精密腫瘍学ワークフロー・臨床試験マッチング | 汎用 |
+
+### M. 実験室自動化（1 種）
+
+ラボ実験の自動化とプロトコル管理を担うスキル。
+
+| # | Skill | 説明 | 参照 Exp |
+|---|---|---|---|
+| 44 | [scientific-lab-automation](scientific-lab-automation/SKILL.md) | PyLabRobot/Opentrons プロトコル・SOP テンプレート・ELN/LIMS 連携・QC 検証 | 汎用 |
+
+### N. 科学プレゼンテーション（1 種）
+
+学会発表用スライド・ポスター・ワークフロー図のデザインを担うスキル。
+
+| # | Skill | 説明 | 参照 Exp |
+|---|---|---|---|
+| 45 | [scientific-presentation-design](scientific-presentation-design/SKILL.md) | 15 スライド構成テンプレート・tikzposter・matplotlib ワークフロー図・アクセシビリティ | 汎用 |
+
+### O. 研究計画・グラント（2 種）
+
+助成金申請書と研究方法論の設計を担うスキル群。
+
+| # | Skill | 説明 | 参照 Exp |
+|---|---|---|---|
+| 46 | [scientific-grant-writing](scientific-grant-writing/SKILL.md) | NIH Specific Aims テンプレート・JSPS 科研費・予算計画・Budget Justification | 汎用 |
+| 47 | [scientific-research-methodology](scientific-research-methodology/SKILL.md) | SCAMPER/TRIZ ブレインストーミング・研究デザインマトリクス・FINER 基準・IRB 倫理チェック | 汎用 |
+
 ---
 
 ## インストール
@@ -247,8 +306,31 @@ Skills は `.github/skills/` に配置されているため、Copilot が自動�
 │   ├── scientific-causal-inference/
 │   └── scientific-meta-analysis/
 │
-└── [I] Deep Research
-    └── scientific-deep-research/
+├── [I] Deep Research
+│   └── scientific-deep-research/
+│
+├── [J] 創薬・ファーマコロジー
+│   ├── scientific-drug-target-profiling/
+│   ├── scientific-admet-pharmacokinetics/
+│   └── scientific-drug-repurposing/
+│
+├── [K] 構造生物学・タンパク質工学
+│   ├── scientific-protein-structure-analysis/
+│   └── scientific-protein-design/
+│
+├── [L] 精密医療・臨床意思決定
+│   ├── scientific-variant-interpretation/
+│   └── scientific-clinical-decision-support/
+│
+├── [M] 実験室自動化
+│   └── scientific-lab-automation/
+│
+├── [N] 科学プレゼンテーション
+│   └── scientific-presentation-design/
+│
+└── [O] 研究計画・グラント
+    ├── scientific-grant-writing/
+    └── scientific-research-methodology/
 ```
 
 > 注: 実際のファイルシステム上ではすべてのスキルディレクトリは `.github/skills/` 直下にフラットに配置されています。上記の中区分グルーピングは論理的な分類です。
