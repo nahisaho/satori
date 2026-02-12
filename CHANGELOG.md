@@ -5,6 +5,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.14.0] - 2026-02-19
+
+### Added
+- **10 新スキル (9 カテゴリ拡張)** を追加 — ToolUniverse & K-Dense ギャップ分析に基づく Phase 6 ドメイン拡張 (96→106 スキル、TU 連携 59→66)
+- **パイプライン統合アーキテクチャ**を README.md に新設 — データアクセス・パイプライン統合図でスキル間連携フローを明示
+- **B. 統計・探索的解析（3→4 種）**
+  - **scientific-symbolic-mathematics** スキル (#105): SymPy ODE ソルバー・記号微積分・線形代数・PK 区画モデル・LaTeX エクスポート・K-Dense: sympy
+- **F. 生命科学・オミクス（12→14 種）**
+  - **scientific-ontology-enrichment** スキル (#99): EFO 形質オントロジー・OLS API オントロジー横断検索・Enrichr 遺伝子セット解析・UMLS メタシソーラスクロスウォーク・efo (2)/ols (2)/enrichr (1)/umls (1) = 6 TU ツール連携
+  - **scientific-ebi-databases** スキル (#100): EBI Search・ENA Browser・BioStudies・dbfetch・MetaboLights・ebi_search (2)/ena_browser (1)/biostudies (1)/dbfetch (1)/metabolights (1) = 6 TU ツール連携・K-Dense: ena-database
+- **I. Deep Research・文献検索（2→3 種）**
+  - **scientific-preprint-archive** スキル (#97): bioRxiv/medRxiv/arXiv/PMC/DOAJ/Unpaywall/HAL/CORE/Zenodo/OpenAIRE/OSF/Fatcat/DBLP 横断プレプリント検索・biorxiv (2)/medrxiv (1)/arxiv (1)/pmc (2)/doaj (1)/unpaywall (1)/hal (1)/core (1)/zenodo (1)/openaire (1)/osf_preprints (1)/fatcat (1)/dblp (1) = 16 TU ツール連携
+- **Q. 腫瘍学・疾患研究（4→5 種）**
+  - **scientific-cell-line-resources** スキル (#101): Cellosaurus 細胞株同定・STR プロファイル検証・HeLa 汚染チェック・cellosaurus (3) = 3 TU ツール連携
+- **R. 量子・先端計算（6→7 種）**
+  - **scientific-reinforcement-learning** スキル (#104): Stable-Baselines3 RL エージェント訓練・Gymnasium カスタム環境・PufferLib マルチエージェント・分子設計 RL・実験最適化ベイズ RL・K-Dense: stable-baselines3, pufferlib
+- **T. シングルセル・空間・エピゲノミクス（3→4 種）**
+  - **scientific-regulatory-genomics** スキル (#102): RegulomeDB バリアントスコアリング・ReMap 転写因子 ChIP-seq アトラス・4DN Portal 三次元ゲノム構造・regulomedb (1)/remap (1)/fourdn_portal (1) = 3 TU ツール連携
+- **V. マイクロバイオーム・環境（2→3 種）**
+  - **scientific-phylogenetics** スキル (#103): ETE3 系統樹構築・scikit-bio Faith's PD/UniFrac・分岐年代推定・祖先配列復元・K-Dense: etetoolkit, scikit-bio
+- **X. 疫学・公衆衛生（1→2 種）**
+  - **scientific-public-health-data** スキル (#98): NHANES XPT データアクセス・MedlinePlus 健康情報・RxNorm 医薬品正規化・ODPHP ガイドライン・Health Disparities API・nhanes (2)/medlineplus (2)/rxnorm (2)/health_disparities (2)/odphp (2)/guidelines_tools (2) = 12 TU ツール連携
+- **Z. 科学テキストマイニング（1→2 種）**
+  - **scientific-biomedical-pubtator** スキル (#106): PubTator3 バイオメディカル NER (Gene/Disease/Chemical/Species/Variant)・エンティティ関係抽出・知識グラフ構築・pubtator (2) = 2 TU ツール連携
+
+### Changed
+- ToolUniverse SMCP 連携スキル: 59→66 (+7 スキル、~48 新規 TU ツール統合、~33 新規 TU config keys)
+- K-Dense 新規カバー: ena-database, etetoolkit, stable-baselines3, pufferlib, sympy (+5、推定 ~123/140)
+- README.md: 全カウント・カテゴリ表・スキル一覧・ディレクトリツリー・TU 連携図・パイプライン統合図を更新
+
 ## [0.13.0] - 2026-02-18
 
 ### Added
