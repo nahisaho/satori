@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.17.0] - 2026-02-22
+
+### Added
+- **8 新スキル (4 カテゴリ拡張)** を追加 — ToolUniverse & K-Dense ギャップ分析に基づく Phase 9 科学スキル拡張 (124→132 スキル、TU 連携 74→79)
+- **F. 生命科学・オミクス（18→20 種）**
+  - **scientific-geo-expression** スキル (#127): GEO REST API (E-utilities) データセット検索・GSE 発現マトリクス取得 (GEOparse)・差次的発現解析 (t-test/Wilcoxon/BH-FDR)・発現プロファイリング統合パイプライン・geo (3) = 3 TU ツール連携
+  - **scientific-parasite-genomics** スキル (#132): VEuPathDB (PlasmoDB/VectorBase/ToxoDB/TriTrypDB) 遺伝子検索・機能アノテーション (GO/InterPro)・薬剤標的候補スクリーニング (キナーゼ/プロテアーゼ/トランスポーター)・TU 外スキル (直接 API)
+- **T. シングルセル・空間・エピゲノミクス（8→11 種）**
+  - **scientific-encode-screen** スキル (#125): ENCODE REST API 実験/ファイル検索・SCREEN cCRE 候補シス制御エレメント検索・ChIP-Atlas エンリッチメント解析・制御ゲノミクス統合パイプライン・encode (5)/chipatlas (1) = 6 TU ツール連携
+  - **scientific-human-cell-atlas** スキル (#126): HCA Data Portal プロジェクト/ファイル検索・CELLxGENE Census 大規模アトラスクエリ・細胞タイプ組成分析・統合アトラスパイプライン・hca_tools (1) = 1 TU ツール連携
+  - **scientific-squidpy-advanced** スキル (#131): Squidpy 空間自己相関 (Moran's I/Geary's C)・空間共起解析・近傍エンリッチメント・空間ニッチ同定 (KMeans)・中心性スコア・K-Dense: squidpy-advanced
+- **V. マイクロバイオーム・環境（6→8 種）**
+  - **scientific-environmental-geodata** スキル (#128): SoilGrids REST API (ISRIC) 土壌特性取得・WorldClim バイオクリマティック変数 (BIO1-19)・SDM 環境変数スタック・TU 外スキル (直接 API)
+  - **scientific-paleobiology** スキル (#129): Paleobiology Database (PBDB) REST API 化石産出記録/分類群検索・地質年代多様性曲線・古地理サマリ・paleobiology (1) = 1 TU ツール連携
+- **W. システム生物学（2→3 種）**
+  - **scientific-metabolic-atlas** スキル (#130): Metabolic Atlas/Human-GEM REST API 代謝反応/代謝産物検索・代謝ネットワーク (NetworkX DiGraph) 構築・ハブ代謝産物同定・K-Dense: metabolic-atlas
+
+### Changed
+- ToolUniverse SMCP 連携スキル: 74→79 (+5 スキル: geo-expression [geo]、encode-screen [encode, chipatlas]、human-cell-atlas [hca_tools]、paleobiology [paleobiology])
+- K-Dense 新規カバー: squidpy-advanced, metabolic-atlas (+2)
+- README.md: 全カウント・カテゴリ表・スキル一覧・ディレクトリツリー・TU 連携図を更新
+
 ## [0.16.0] - 2026-02-21
 
 ### Added
