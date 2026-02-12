@@ -6,6 +6,10 @@ description: |
   ネットワーク構築・解析パイプライン。GO/KEGG 富化、相互作用パートナー発見、
   組織特異的ネットワーク (HumanBase)、化合物-標的ネットワーク対応。
   14 の ToolUniverse SMCP ツールと連携。
+tu_tools:
+  - key: intact
+    name: IntAct
+    description: 分子相互作用データベース (EBI)
 ---
 
 # Scientific Protein Interaction Network

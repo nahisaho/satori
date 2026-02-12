@@ -5,6 +5,39 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.19.0] - 2025-07-24
+
+### Added
+- **Phase 11: 8 新スキル + 6 既存 TU key 追加** — ToolUniverse & K-Dense ギャップ分析に基づく v0.19.0 科学スキル拡張 (140→148 スキル、TU 連携 85→99)
+
+#### Track A: 既存スキル TU key 追加 (6 件)
+- **scientific-rare-disease-genetics** に `tu_tools: orphanet` (希少疾患分類・遺伝子関連・有病率データベース) を追加
+- **scientific-disease-research** に `tu_tools: disgenet` (疾患-遺伝子関連スコア GDA データベース) を追加
+- **scientific-protein-interaction-network** に `tu_tools: intact` (分子相互作用データベース EBI) を追加
+- **scientific-metabolomics-databases** に `tu_tools: metacyc` (代謝パスウェイ・反応・化合物データベース) を追加
+- **scientific-compound-screening** に `tu_tools: zinc` (購入可能化合物データベース) を追加
+- **scientific-variant-interpretation** に `tu_tools: clinvar` (臨床的バリアント解釈データベース) を追加
+
+#### Track B: 新規 TU 連携スキル (8 件)
+- **F. 生命科学・オミクス（22→24 種）**
+  - **scientific-uniprot-proteome** スキル (#141): UniProt REST API プロテオーム検索・Swiss-Prot フィルタ・エントリ詳細・非同期 ID マッピング・ドメイン/特徴抽出・uniprot = TU ツール連携
+  - **scientific-reactome-pathways** スキル (#144): Reactome Content Service REST API パスウェイ検索・UniProt→パスウェイマッピング・参加者取得・reactome = TU ツール連携
+- **J. 創薬・ファーマコロジー（7→8 種）**
+  - **scientific-drugbank-resources** スキル (#146): DrugBank API 薬剤テキスト検索・薬理 MOA・標的タンパク質逆引き・薬物相互作用 (DDI)・drugbank = TU ツール連携
+- **K. 構造生物学・タンパク質工学（6→7 種）**
+  - **scientific-rcsb-pdb-search** スキル (#142): RCSB PDB Search API + Data API テキスト/解像度/実験手法検索・エントリメタデータ・リガンド情報・rcsb_pdb, rcsb_search = TU ツール連携
+- **L. 精密医療・臨床意思決定（3→5 種）**
+  - **scientific-civic-evidence** スキル (#147): CIViC REST API がんバリアント臨床解釈・エビデンスアイテム・遺伝子サマリー・アサーション・civic = TU ツール連携
+  - **scientific-gnomad-variants** スキル (#148): gnomAD GraphQL API 集団アレル頻度・遺伝子制約 (pLI/LOEUF)・リージョンクエリ・gnomad = TU ツール連携
+- **Q. 腫瘍学・疾患研究（6→8 種）**
+  - **scientific-opentargets-genetics** スキル (#143): Open Targets Platform GraphQL API 標的-疾患アソシエーション・薬剤エビデンス・L2G 遺伝的関連・opentarget = TU ツール連携
+  - **scientific-depmap-dependencies** スキル (#145): DepMap Portal API / Sanger Cell Model Passports CRISPR/RNAi 遺伝子依存性・薬剤感受性・depmap = TU ツール連携
+
+### Changed
+- ToolUniverse SMCP 連携スキル: 85→99 (+8 新規: uniprot, rcsb_pdb/rcsb_search, opentarget, reactome, depmap, drugbank, civic, gnomad + 6 既存追加: orphanet, disgenet, intact, metacyc, zinc, clinvar)
+- README.md: 全カウント・カテゴリ表・スキル一覧・ディレクトリツリー・TU 連携図を更新
+- カテゴリ数: 26 (A-Z) — 変更なし
+
 ## [0.18.0] - 2026-02-23
 
 ### Added

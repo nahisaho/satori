@@ -6,6 +6,10 @@ description: |
   (NIH メタボロミクスリポジトリ) の 3 大メタボロミクス DB を統合した
   代謝物同定、パスウェイマッピング、バイオマーカー発見、
   RefMet 標準化命名パイプライン。13 の ToolUniverse SMCP ツールと連携。
+tu_tools:
+  - key: metacyc
+    name: MetaCyc
+    description: 代謝パスウェイ・反応・化合物データベース
 ---
 
 # Scientific Metabolomics Databases

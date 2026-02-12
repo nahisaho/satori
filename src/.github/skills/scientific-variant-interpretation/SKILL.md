@@ -5,6 +5,10 @@ description: |
   基づく病原性評価、薬理ゲノミクス（PharmGKB/ClinPGx）、バリアント-表現型相関の
   エビデンスグレーディング。ToolUniverse の Variant Interpretation パラダイムを統合。
   「バリアントの病原性を評価して」「pharmacogenomics 解析して」で発火。
+tu_tools:
+  - key: clinvar
+    name: ClinVar
+    description: 臨床的バリアント解釈データベース
 ---
 
 # Scientific Variant Interpretation

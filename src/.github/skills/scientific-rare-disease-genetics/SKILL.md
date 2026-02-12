@@ -4,6 +4,10 @@ description: |
   希少疾患遺伝学スキル。OMIM 遺伝子-疾患マッピング、Orphanet 希少疾患
   分類・遺伝子照会、DisGeNET 疾患-遺伝子関連スコア、IMPC マウス表現型
   参照、遺伝子-表現型統合解析パイプライン。
+tu_tools:
+  - key: orphanet
+    name: Orphanet
+    description: 希少疾患分類・遺伝子関連・有病率データベース
 ---
 
 # Scientific Rare Disease Genetics

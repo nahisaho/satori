@@ -4,6 +4,10 @@ description: |
   化合物スクリーニングスキル。ZINC データベースを活用した購入可能化合物検索、
   SMILES/名前ベースの類似性検索、カタログフィルタリング、
   バーチャルスクリーニング前処理パイプライン。
+tu_tools:
+  - key: zinc
+    name: ZINC
+    description: 購入可能化合物データベース
 ---
 
 # Scientific Compound Screening

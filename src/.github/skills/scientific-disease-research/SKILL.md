@@ -5,6 +5,10 @@ description: |
   疾患-遺伝子関連解析・希少疾患診断支援・表現型-遺伝型マッピング・
   疫学的特性評価を支援。
   「疾患と遺伝子の関連を調べて」「希少疾患を診断して」「GWAS 結果を解析して」で発火。
+tu_tools:
+  - key: disgenet
+    name: DisGeNET
+    description: 疾患-遺伝子関連スコア (GDA) データベース
 ---
 
 # Scientific Disease Research
