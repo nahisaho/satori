@@ -5,6 +5,33 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.12.0] - 2026-02-17
+
+### Added
+- **10 新スキル (8 カテゴリ拡張)** を追加 — ToolUniverse & K-Dense-AI/claude-scientific-skills ギャップ分析に基づく Phase 4 ドメイン拡張 (76→86 スキル)
+- **A. 基盤・ワークフロー（13→14 種）**
+  - **scientific-systematic-review** スキル (#84): PRISMA 2020 系統的レビュー・マルチ DB 検索戦略・タイトル/抄録スクリーニング・RoB 2/ROBINS-I/NOS バイアスリスク評価・PRISMA フロー図自動生成
+- **F. 生命科学・オミクス（7→9 種）**
+  - **scientific-pathway-enrichment** スキル (#77): ORA (超幾何検定)・GSEA (running sum)・KEGG/Reactome/GO/WikiPathways 統合パスウェイ濃縮解析・統合ヒートマップ・kegg (5)/reactome (20)/go (5)/wikipathways (2)/pathway_commons (2) = 34 TU ツール連携
+  - **scientific-metabolomics-databases** スキル (#82): HMDB XML 検索・MetaCyc パスウェイ・Metabolomics Workbench REST API・m/z ベース多 DB 同定・RefMet 標準化・hmdb (3)/metacyc (4)/metabolomics_workbench (6) = 13 TU ツール連携
+- **H. 臨床・疫学・メタ科学（4→5 種）**
+  - **scientific-clinical-reporting** スキル (#85): SOAP ノート生成・バイオマーカープロファイルレポート・CPIC 準拠ファーマコゲノミクスレポート・HL7 FHIR DiagnosticReport・HTML/LaTeX/FHIR JSON 出力
+- **I. Deep Research・文献検索（1→2 種）**
+  - **scientific-literature-search** スキル (#78): PubMed E-utilities・Semantic Scholar API・OpenAlex・EuropePMC・CrossRef メタデータ・引用ネットワーク構築・pubmed (6)/europepmc (7)/semantic_scholar (2)/openalex (8)/crossref (6) = 29 TU ツール連携
+- **J. 創薬・ファーマコロジー（3→4 種）**
+  - **scientific-molecular-docking** スキル (#83): AutoDock Vina (Python API + CLI)・DiffDock AI 推論・受容体/リガンド前処理・バーチャルスクリーニングパイプライン
+- **K. 構造生物学・タンパク質工学（2→4 種）**
+  - **scientific-protein-interaction-network** スキル (#79): STRING v12 API・IntAct REST・STITCH 化学-タンパク質ネットワーク・PPI トポロジー解析 (中心性/コミュニティ検出)・ネットワーク可視化・intact (8)/ppi (2)/stitch (3)/humanbase (1) = 14 TU ツール連携
+  - **scientific-protein-domain-family** スキル (#86): InterPro REST API ドメイン検索・InterProScan シーケンスベース予測・ドメインアーキテクチャ可視化・ファミリー比較・interpro (3)/interproscan (3) = 6 TU ツール連携
+- **L. 精密医療・臨床意思決定（2→3 種）**
+  - **scientific-variant-effect-prediction** スキル (#80): AlphaMissense 病原性スコア (>0.564 pathogenic)・CADD PHRED スコア (≥20 deleterious)・SpliceAI デルタスコア 4 チャネル・コンセンサス病原性判定・alphamissense (3)/cadd (3)/spliceai (3) = 9 TU ツール連携
+- **Q. 腫瘍学・疾患研究（2→3 種）**
+  - **scientific-cancer-genomics** スキル (#81): COSMIC CGC 変異検索・cBioPortal REST API がん研究照会・DepMap 遺伝子依存性 (Chronos スコア)・変異シグネチャー解析 (NMF)・cosmic (2)/cbioportal (6)/depmap (5) = 13 TU ツール連携
+
+### Changed
+- **README.md**: スキル数を 76→86 に更新、カテゴリ数 26 (変更なし, 既存カテゴリ拡張)、ToolUniverse 連携スキル数を 42→50 に更新、各カテゴリのスキル数・説明・ディレクトリ構造・ファイル I/O テーブルを更新
+- **docs/GAP_ANALYSIS_v0.12.md**: v0.12.0 ギャップ分析ドキュメント新規追加
+
 ## [0.11.0] - 2026-02-16
 
 ### Added
