@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.8.0] - 2026-02-13
+
+### Added
+- **4 新カテゴリ (P-S)・9 新スキル** を追加 — ToolUniverse (mims-harvard) と claude-scientific-skills (K-Dense-AI) のギャップ分析 Tier-1 に基づく MECE 設計
+- **P. ファーマコビジランス（1 種）**
+  - **scientific-pharmacovigilance** スキル (#48): FAERS 不均衡分析 (PRR/ROR/IC/EBGM)・MedDRA 階層構造 (LLT→PT→HLT→HLGT→SOC)・時系列トレンド・人口統計層別化・Naranjo 因果評価スケール・安全性シグナルレポート生成
+- **Q. 腫瘍学・疾患研究（2 種）**
+  - **scientific-precision-oncology** スキル (#49): CIViC GraphQL API・OncoKB Annotation API・cBioPortal TCGA 変異頻度・TMB/MSI 判定・AMP/ASCO/CAP Tiering (I-IV)・分子腫瘍ボード (MTB) レポート生成
+  - **scientific-disease-research** スキル (#50): GWAS Catalog (EBI) 検索・DisGeNET GDA スコア・Orphanet 希少疾患カタログ・HPO 表現型マッチング・Polygenic Risk Score (PRS) 算出
+- **R. 量子・先端計算（5 種）**
+  - **scientific-quantum-computing** スキル (#51): Qiskit VQE (H₂ 基底エネルギー)・PennyLane 量子 ML (VQC)・Cirq ノイズモデリング・QAOA MaxCut・QuTiP Jaynes-Cummings ダイナミクス
+  - **scientific-graph-neural-networks** スキル (#52): PyG GCN/GAT/GIN 分子特性予測・TorchDrug MoleculeNet ベンチマーク・知識グラフ推論 (TransE/RotatE)・Scaffold Split・GNNExplainer
+  - **scientific-bayesian-statistics** スキル (#53): PyMC/Stan 階層ベイズ回帰・NUTS MCMC サンプリング・事後予測チェック (PPC)・WAIC/LOO-CV モデル比較・Gaussian Process ベイズ最適化
+  - **scientific-explainable-ai** スキル (#54): TreeSHAP/KernelSHAP/DeepSHAP 特徴量寄与分解・LIME ローカル説明・Captum Integrated Gradients・反実仮想説明・公平性監査
+  - **scientific-deep-learning** スキル (#55): PyTorch Lightning 構造化パイプライン・timm 事前学習 CNN/ViT・HuggingFace Transformer Fine-tune・Optuna HPO (Hyperband Pruning)・ONNX/TorchScript エクスポート
+- **S. 医用イメージング（1 種）**
+  - **scientific-medical-imaging** スキル (#56): DICOM/NIfTI 読み込み・HU ウィンドウ処理・Isotropic リサンプリング・MONAI U-Net/SwinUNETR 3D セグメンテーション・WSI パッチ抽出 (openslide)・PyRadiomics 特徴量抽出
+
+### Changed
+- **README.md**: スキル数を 47→56 に更新、カテゴリ数を 15→19 に拡張 (P-S 追加)、先端計算・医用パイプラインフロー図を追加、ディレクトリ構造に 4 新カテゴリを追加
+
+## [0.7.1] - 2026-02-13
+
+### Fixed
+- J-O カテゴリ 11 スキル全てに `## References` セクション（Output Files + 参照スキル テーブル）を追加 — パイプライン連携の欠落を修正
+
 ## [0.7.0] - 2026-02-13
 
 ### Added
@@ -109,6 +135,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - 8 カテゴリ (A-H) のスキル分類体系
 - 7 種のジャーナルテンプレート (IMRaD, Nature, Science, ACS, IEEE, Elsevier, Qiita)
 
+[0.8.0]: https://github.com/nahisaho/satori/compare/v0.7.1...v0.8.0
+[0.7.1]: https://github.com/nahisaho/satori/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/nahisaho/satori/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/nahisaho/satori/compare/v0.5.2...v0.6.0
 [0.5.2]: https://github.com/nahisaho/satori/compare/v0.5.0...v0.5.2

@@ -7,7 +7,7 @@
 
 ## Overview
 
-このディレクトリには、Exp-01〜13 で蓄積した科学データ解析技法を Agent Skills として体系化した **47 個**のスキルを格納しています。Copilot がプロンプトの文脈に応じて適切なスキルを自動ロードし、各実験で確立した解析パターンを再利用します。
+このディレクトリには、Exp-01〜13 で蓄積した科学データ解析技法を Agent Skills として体系化した **56 個**のスキルを格納しています。Copilot がプロンプトの文脈に応じて適切なスキルを自動ロードし、各実験で確立した解析パターンを再利用します。
 
 ### パイプラインフロー
 
@@ -36,6 +36,24 @@ variant-interpretation → clinical-decision-support → presentation-design
 
 各ステップで生成されるファイルが次のステップに自動的に引き継がれます：
 
+**先端計算・医用パイプライン（P-S）**
+
+```
+pharmacovigilance ← admet-pharmacokinetics       ← [P 安全性監視]
+  (市販後安全性)     (前臨床 ADMET)                   ↓
+precision-oncology → clinical-decision-support → medical-imaging
+  (腫瘍プロファイル)  (臨床意思決定)            (画像診断)
+        ↓                                           ↓
+disease-research → variant-interpretation      → deep-learning
+  (疾患-遺伝子)    (バリアント解釈)            (DL フレームワーク)
+                                                     ↓
+quantum-computing → bayesian-statistics → graph-neural-networks
+  (量子計算)       (ベイズ推論)          (GNN 分子予測)
+                                               ↓
+                  explainable-ai ← deep-learning ← [R 先端計算]
+                  (XAI 説明可能性)  (DL パイプライン)
+```
+
 | フェーズ | 生成ファイル | 参照先 |
 |---|---|---|
 | 仮説立案 | `docs/hypothesis.{md,json}`, `docs/workflow_design.{md,json}` | → scaffold, writing |
@@ -59,8 +77,17 @@ variant-interpretation → clinical-decision-support → presentation-design
 | プレゼンテーション | `presentation/slides.md`, `presentation/poster.tex` | — |
 | 研究方法論 | `docs/methodology_design.md`, `docs/study_design.json` | → grant-writing, doe |
 | グラント | `grants/specific_aims.md`, `grants/research_strategy.md` | → hypothesis-pipeline |
+| ファーマコビジランス | `results/pv_signal_report.{md,json}`, `figures/pv_temporal_trend.png` | → clinical-decision |
+| 精密腫瘍学 | `results/mtb_report.{md,json}`, `results/variant_actionability.json` | → clinical-decision, writing |
+| 疾患研究 | `results/disease_research_report.{md,json}`, `results/gwas_significant_loci.json` | → variant-interpretation |
+| 量子計算 | `results/quantum_result.json`, `figures/quantum_convergence.png` | → bayesian, cheminformatics |
+| GNN | `results/gnn_predictions.json`, `figures/gnn_training_curve.png` | → drug-target, admet |
+| ベイズ統計 | `results/bayesian_summary.json`, `figures/bayesian_trace.png` | → doe, meta-analysis |
+| 説明可能 AI | `results/xai_report.json`, `figures/shap_summary.png` | → clinical-decision |
+| 深層学習 | `results/dl_training_log.json`, `models/model.onnx` | → GNN, medical-imaging |
+| 医用イメージング | `results/imaging_report.{md,json}`, `results/radiomics_features.json` | → precision-oncology |
 
-スキルは **15 の中区分**に分類されています。
+スキルは **19 の中区分**に分類されています。
 
 | 中区分 | スキル数 | 概要 |
 |---|:---:|---|
@@ -79,6 +106,10 @@ variant-interpretation → clinical-decision-support → presentation-design
 | M. 実験室自動化 | 1 | 液体ハンドリング・プロトコル管理・ELN/LIMS 連携 |
 | N. 科学プレゼンテーション | 1 | 科学スライド・ポスター・ワークフロー図 |
 | O. 研究計画・グラント | 2 | 助成金申請書・研究方法論・倫理審査 |
+| P. ファーマコビジランス | 1 | FAERS 不均衡分析・MedDRA 階層・安全性シグナル検出 |
+| Q. 腫瘍学・疾患研究 | 2 | 精密腫瘍学 (CIViC/OncoKB)・疾患-遺伝子関連 (GWAS/Orphanet) |
+| R. 量子・先端計算 | 5 | 量子計算・GNN・ベイズ統計・説明可能 AI・深層学習 |
+| S. 医用イメージング | 1 | DICOM/NIfTI・WSI 病理画像・Radiomics・MONAI |
 
 ---
 
@@ -236,6 +267,43 @@ variant-interpretation → clinical-decision-support → presentation-design
 | 46 | [scientific-grant-writing](scientific-grant-writing/SKILL.md) | NIH Specific Aims テンプレート・JSPS 科研費・予算計画・Budget Justification | 汎用 |
 | 47 | [scientific-research-methodology](scientific-research-methodology/SKILL.md) | SCAMPER/TRIZ ブレインストーミング・研究デザインマトリクス・FINER 基準・IRB 倫理チェック | 汎用 |
 
+### P. ファーマコビジランス（1 種）
+
+市販後医薬品安全性監視のためのシグナル検出・定量評価を担うスキル。
+
+| # | Skill | 説明 | 参照 Exp |
+|---|---|---|---|
+| 48 | [scientific-pharmacovigilance](scientific-pharmacovigilance/SKILL.md) | FAERS 不均衡分析 (PRR/ROR/IC/EBGM)・MedDRA 階層・時系列トレンド・Naranjo 因果評価 | 汎用 |
+
+### Q. 腫瘍学・疾患研究（2 種）
+
+精密腫瘍学と疾患-遺伝子関連研究を担うスキル群。
+
+| # | Skill | 説明 | 参照 Exp |
+|---|---|---|---|
+| 49 | [scientific-precision-oncology](scientific-precision-oncology/SKILL.md) | CIViC/OncoKB/cBioPortal 統合・TMB/MSI 判定・AMP Tiering・MTB レポート | 汎用 |
+| 50 | [scientific-disease-research](scientific-disease-research/SKILL.md) | GWAS Catalog・DisGeNET GDA・Orphanet/OMIM/HPO 表現型マッチング・PRS 算出 | 汎用 |
+
+### R. 量子・先端計算（5 種）
+
+量子計算・GNN・ベイズ統計・XAI・深層学習など次世代計算手法を担うスキル群。
+
+| # | Skill | 説明 | 参照 Exp |
+|---|---|---|---|
+| 51 | [scientific-quantum-computing](scientific-quantum-computing/SKILL.md) | Qiskit/Cirq/PennyLane VQE・QAOA・量子 ML・QuTiP 量子ダイナミクス | 汎用 |
+| 52 | [scientific-graph-neural-networks](scientific-graph-neural-networks/SKILL.md) | PyG GCN/GAT/GIN・TorchDrug 分子特性予測・知識グラフ推論・Scaffold Split | 汎用 |
+| 53 | [scientific-bayesian-statistics](scientific-bayesian-statistics/SKILL.md) | PyMC/Stan 階層ベイズ・MCMC 診断・PPC・WAIC/LOO-CV モデル比較・ベイズ最適化 | 汎用 |
+| 54 | [scientific-explainable-ai](scientific-explainable-ai/SKILL.md) | SHAP/LIME/Captum 特徴量寄与・反実仮想説明・公平性監査・DeepSHAP | 汎用 |
+| 55 | [scientific-deep-learning](scientific-deep-learning/SKILL.md) | Lightning/timm/Transformers・CNN/ViT/BERT Fine-tune・Optuna HPO・ONNX エクスポート | 汎用 |
+
+### S. 医用イメージング（1 種）
+
+DICOM・WSI 等の医用画像の解析・セグメンテーションを担うスキル。
+
+| # | Skill | 説明 | 参照 Exp |
+|---|---|---|---|
+| 56 | [scientific-medical-imaging](scientific-medical-imaging/SKILL.md) | DICOM/NIfTI 処理・MONAI U-Net/SwinUNETR・WSI パッチ抽出・Radiomics・3D 可視化 | 汎用 |
+
 ---
 
 ## インストール
@@ -357,6 +425,23 @@ Skills は `.github/skills/` に配置されているため、Copilot が自動�
 └── [O] 研究計画・グラント
     ├── scientific-grant-writing/
     └── scientific-research-methodology/
+│
+├── [P] ファーマコビジランス
+│   └── scientific-pharmacovigilance/
+│
+├── [Q] 腫瘍学・疾患研究
+│   ├── scientific-precision-oncology/
+│   └── scientific-disease-research/
+│
+├── [R] 量子・先端計算
+│   ├── scientific-quantum-computing/
+│   ├── scientific-graph-neural-networks/
+│   ├── scientific-bayesian-statistics/
+│   ├── scientific-explainable-ai/
+│   └── scientific-deep-learning/
+│
+└── [S] 医用イメージング
+    └── scientific-medical-imaging/
 ```
 
 > 注: 実際のファイルシステム上ではすべてのスキルディレクトリは `.github/skills/` 直下にフラットに配置されています。上記の中区分グルーピングは論理的な分類です。
