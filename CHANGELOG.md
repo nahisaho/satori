@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.16.0] - 2026-02-21
+
+### Added
+- **8 新スキル (5 カテゴリ拡張)** を追加 — ToolUniverse & K-Dense ギャップ分析に基づく Phase 8 科学スキル拡張 (116→124 スキル、TU 連携 70→74)
+- **A. 基盤・ワークフロー（15→16 種）**
+  - **scientific-data-submission** スキル (#119): GenBank/SRA/GEO/BioProject/BioSample データ投稿・Aspera アップロード・GEO SOFT フォーマット・FAIR 原則準拠チェックリスト (F/A/I/R スコアリング)・TU 外スキル (直接 API)
+- **J. 創薬・ファーマコロジー（6→7 種）**
+  - **scientific-nci60-screening** スキル (#120): CellMiner NCI-60 薬剤活性 (GI50/TGI/LC50)・組織別応答パターン・薬剤-分子マーカー相関 (Pearson/Bonferroni)・DepMap CRISPR/RNAi 依存性統合・TU 外スキル (直接 API)
+- **T. シングルセル・空間・エピゲノミクス（6→8 種）**
+  - **scientific-scatac-signac** スキル (#123): SnapATAC2 scATAC-seq 前処理・ピークコーリング (MACS2/Tile)・chromVAR モチーフエンリッチメント・Gene Activity スコア・RNA+ATAC WNN マルチモーダル統合 (muon)・K-Dense: signac
+  - **scientific-gpu-singlecell** スキル (#124): rapids-singlecell GPU 前処理・cuML GPU PCA/kNN・cuGraph Leiden/Louvain クラスタリング・GPU UMAP/t-SNE・CPU vs GPU ベンチマーク・大規模 (>1M cells) パイプライン・K-Dense: rapids-singlecell
+- **V. マイクロバイオーム・環境（3→6 種）**
+  - **scientific-rrna-taxonomy** スキル (#118): SILVA SSU/LSU rRNA リファレンスダウンロード (v138.1)・Greengenes2 分類体系・MGnify メタゲノム検索/分類・QIIME2 sklearn 分類器・マルチ分類器コンセンサス・mgnify (1) = 1 TU ツール連携
+  - **scientific-plant-biology** スキル (#121): Plant Reactome 代謝パスウェイ検索・TAIR Arabidopsis 遺伝子/発現情報・Ensembl Plants 種間オーソログ・Phytozome 比較ゲノミクス・TU 外スキル (直接 API)
+  - **scientific-marine-ecology** スキル (#122): OBIS 海洋生物出現記録/チェックリスト・WoRMS 分類学検索/階層・GBIF 種検索/出現記録・FishBase 魚類データ・obis (1)/worms (1)/gbif (1) = 3 TU ツール連携
+- **X. 疫学・公衆衛生（2→3 種）**
+  - **scientific-toxicology-env** スキル (#117): CTD 化学物質-遺伝子/疾患相互作用・CompTox Dashboard Tox21/ToxCast アッセイ・T3DB 毒素検索・EPA IRIS リスク評価・毒性パスウェイ統合解析・TU 外スキル (直接 API)
+
+### Changed
+- ToolUniverse SMCP 連携スキル: 70→74 (+4 スキル: rrna-taxonomy [mgnify]、marine-ecology [obis, worms, gbif])
+- K-Dense 新規カバー: signac, rapids-singlecell (+2)
+- README.md: 全カウント・カテゴリ表・スキル一覧・ディレクトリツリー・TU 連携図を更新
+
 ## [0.15.0] - 2026-02-20
 
 ### Added
