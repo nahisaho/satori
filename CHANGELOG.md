@@ -5,6 +5,40 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.22.0] - 2025-07-27
+
+### Added
+- **Phase 14: 6 新スキル + 8 既存 TU key 追加** — ToolUniverse & K-Dense ギャップ分析に基づく v0.22.0 科学スキル拡張 (160→166 スキル、TU 連携 124→131)
+
+#### Track A: 既存スキル TU key 追加 (8 件、うち 6 件が新規 TU 連携化)
+- **scientific-epigenomics-chromatin** に `tu_tools: chipatlas` (ChIP-Atlas エピゲノミクスエンリッチメント解析) を追加 ★新規 TU 連携
+- **scientific-metabolomics** に `tu_tools: metabolomics_workbench` (Metabolomics Workbench REST API メタボロームデータ・RefMet) を追加 (既存 hmdb に併記)
+- **scientific-systems-biology** に `tu_tools: bigg_models, complex_portal, wikipathways` (ゲノムスケール代謝モデル、EBI タンパク質複合体、コミュニティパスウェイ) を追加 ★新規 TU 連携
+- **scientific-immunoinformatics** に `tu_tools: imgt, sabdab, therasabdab` (国際免疫遺伝学情報システム、構造抗体データベース、治療用抗体構造データベース) を追加 (既存 iedb に併記)
+- **scientific-public-health-data** に `tu_tools: nhanes, medlineplus, odphp` (全米健康栄養調査、NLM 健康情報 API、Healthy People ガイドライン) を追加 ★新規 TU 連携
+- **scientific-epidemiology-public-health** に `tu_tools: who_gho` (WHO Global Health Observatory 健康統計 API) を追加 ★新規 TU 連携
+- **scientific-model-organism-db** に `tu_tools: impc, mpd` (国際マウス表現型解析コンソーシアム、Mouse Phenome Database) を追加 ★新規 TU 連携
+- **scientific-environmental-ecology** に `tu_tools: gbif` (地球規模生物多様性情報ファシリティ) を追加 ★新規 TU 連携
+
+#### Track B: 新規スキル (6 件、うち 1 件 TU 連携)
+- **F. 生命科学・オミクス（26→28 種）**
+  - **scientific-glycomics** スキル (#161): GlyGen/GlyConnect/GlyCosmos 糖鎖データベース統合・糖タンパク質部位検索・MS 断片化予測
+  - **scientific-lipidomics** スキル (#162): LipidMAPS/SwissLipids 脂質構造検索・サブクラス分類・脂質差次解析・脂質エンリッチメント
+- **V. マイクロバイオーム・環境（8→9 種）**
+  - **scientific-metagenome-assembled-genomes** スキル (#163): MetaBAT2/CONCOCT ビニング・CheckM2 品質評価・GTDB-Tk 分類・MAG パイプライン
+- **M. 実験室自動化・データ管理（2→3 種）**
+  - **scientific-crispr-design** スキル (#164): CRISPR gRNA 設計・Cas9/Cas12a PAM 検索・オフターゲットスコアリング・sgRNA ライブラリ構築
+- **P. ファーマコビジランス・薬理ゲノミクス（3→4 種）**
+  - **scientific-clinical-pharmacology** スキル (#165): PopPK NLME・PBPK シミュレーション・TDM 投与量最適化・Emax PD モデリング
+- **H. 臨床・疫学・メタ科学（6→7 種）**
+  - **scientific-clinical-standards** スキル (#166): LOINC/ICD-10/ICD-11 臨床標準コード検索・FHIR R4 マッピング・用語相互運用・loinc, icd = TU ツール連携
+
+### Changed
+- ToolUniverse SMCP 連携スキル: 124→131 (+1 新規 TU 連携: clinical-standards + 6 既存新規 TU 連携化: epigenomics-chromatin, systems-biology, public-health-data, epidemiology-public-health, model-organism-db, environmental-ecology + 2 既存 TU key 追加: metabolomics, immunoinformatics)
+- README.md: 全カウント・カテゴリ表・スキル一覧・ディレクトリツリー・TU 連携図を更新
+- カテゴリ数: 26 (A-Z) — 変更なし
+- カテゴリ展開: F(26→28), H(6→7), M(2→3), P(3→4), V(8→9)
+
 ## [0.21.0] - 2025-07-26
 
 ### Added

@@ -4,6 +4,17 @@ description: |
   公衆衛生データアクセススキル。NHANES 疫学調査データ、MedlinePlus 一般向け
   健康情報、RxNorm 薬剤標準語彙、ODPHP 健康目標・ガイドライン、
   Health Disparities 健康格差データ統合パイプライン。
+  ToolUniverse 連携: nhanes, medlineplus, odphp。
+tu_tools:
+  - key: nhanes
+    name: NHANES
+    description: 全米健康栄養調査データ
+  - key: medlineplus
+    name: MedlinePlus
+    description: NLM 一般向け健康情報 API
+  - key: odphp
+    name: ODPHP
+    description: Healthy People 健康目標・ガイドライン
 ---
 
 # Scientific Public Health Data

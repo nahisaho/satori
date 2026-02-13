@@ -5,6 +5,14 @@ description: |
   WormBase (線虫)、ZFIN (ゼブラフィッシュ)、RGD (ラット)、
   MGI (マウス) の REST API を統合した
   モデル生物遺伝子・表現型・疾患モデル横断検索パイプライン。
+  ToolUniverse 連携: impc, mpd。
+tu_tools:
+  - key: impc
+    name: IMPC
+    description: 国際マウス表現型解析コンソーシアム
+  - key: mpd
+    name: MPD
+    description: Mouse Phenome Database マウス表現型
 ---
 
 # Scientific Model Organism Database

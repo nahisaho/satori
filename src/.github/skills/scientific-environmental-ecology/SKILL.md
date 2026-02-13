@@ -4,6 +4,11 @@ description: |
   環境科学・生態学解析スキル。種分布モデリング（SDM / MaxEnt）・
   生物多様性指標（α/β/γ 多様性）・群集構造解析（NMDS/CCA/RDA）・
   生態学的ニッチモデリング・保全優先順位評価・OBIS/GBIF データ統合パイプライン。
+  ToolUniverse 連携: gbif。
+tu_tools:
+  - key: gbif
+    name: GBIF
+    description: 地球規模生物多様性情報ファシリティ
 ---
 
 # Scientific Environmental Ecology

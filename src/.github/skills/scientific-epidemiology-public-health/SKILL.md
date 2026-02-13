@@ -5,6 +5,11 @@ description: |
   リスク指標（RR/OR/HR/NNT）・標準化死亡比（SMR）・年齢調整率・
   空間疫学（GIS / 空間クラスタリング）・因果推論ダイアグラム（DAG）・
   WHO/CDC/EU 公衆衛生データ統合パイプライン。
+  ToolUniverse 連携: who_gho。
+tu_tools:
+  - key: who_gho
+    name: WHO GHO
+    description: WHO Global Health Observatory 健康統計 API
 ---
 
 # Scientific Epidemiology & Public Health

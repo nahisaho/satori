@@ -6,6 +6,11 @@ description: |
   ヒストン修飾クロマチン状態モデリング (ChromHMM)、Hi-C 接触マップ・TAD 検出、
   転写因子結合サイト予測 (モチーフ濃縮)、差次結合解析 (DiffBind) を統合した
   計算エピゲノミクスパイプライン。ChIP-Atlas 43 万+実験との連携対応。
+  ToolUniverse 連携: chipatlas。
+tu_tools:
+  - key: chipatlas
+    name: ChIP-Atlas
+    description: ChIP-Atlas エピゲノミクスエンリッチメント解析 (43万+実験)
 ---
 
 # Scientific Epigenomics & Chromatin Biology

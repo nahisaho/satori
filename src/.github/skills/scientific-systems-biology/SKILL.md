@@ -5,6 +5,17 @@ description: |
   代謝フラックス解析（FBA / pFBA）・遺伝子制御ネットワーク推定（GRN）・
   シグナル伝達経路モデリング・パラメータ推定・感度解析・
   BioModels/Reactome/KEGG/BiGG 統合パイプライン。
+  ToolUniverse 連携: bigg_models, complex_portal, wikipathways。
+tu_tools:
+  - key: bigg_models
+    name: BiGG Models
+    description: ゲノムスケール代謝モデル BiGG REST API
+  - key: complex_portal
+    name: Complex Portal
+    description: EBI タンパク質複合体データベース
+  - key: wikipathways
+    name: WikiPathways
+    description: WikiPathways コミュニティパスウェイ
 ---
 
 # Scientific Systems Biology

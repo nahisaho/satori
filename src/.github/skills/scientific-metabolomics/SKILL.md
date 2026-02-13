@@ -9,6 +9,9 @@ tu_tools:
   - key: hmdb
     name: HMDB
     description: ヒトメタボロームデータベース
+  - key: metabolomics_workbench
+    name: Metabolomics Workbench
+    description: Metabolomics Workbench REST API メタボロームデータ・RefMet
 ---
 
 # Scientific Metabolomics Analysis
