@@ -7,7 +7,7 @@
 
 ## Overview
 
-このディレクトリには、Exp-01〜13 で蓄積した科学データ解析技法を Agent Skills として体系化した **182 個**のスキルを格納しています。Copilot がプロンプトの文脈に応じて適切なスキルを自動ロードし、各実験で確立した解析パターンを再利用します。131 のスキルは [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で 1,200 以上の外部科学データベースツールとも連携可能です。
+このディレクトリには、Exp-01〜13 で蓄積した科学データ解析技法を Agent Skills として体系化した **190 個**のスキルを格納しています。Copilot がプロンプトの文脈に応じて適切なスキルを自動ロードし、各実験で確立した解析パターンを再利用します。131 のスキルは [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) SMCP 経由で 1,200 以上の外部科学データベースツールとも連携可能です。
 
 ### パイプラインフロー
 
@@ -286,9 +286,9 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 | 中区分 | スキル数 | 概要 |
 |---|:---:|---|
 | A. 基盤・ワークフロー | 17 | パイプライン構築・前処理・データ生成・図表・執筆・仮説立案・批判的レビュー・SI 生成・LaTeX 変換・引用検証・査読対応・改訂追跡・論文品質・系統的レビュー・BioThings ID マッピング・データ投稿・CrossRef メタデータ |
-| B. 統計・探索的解析 | 9 | EDA・仮説検定・次元削減・記号数学・欠損データ解析・高度可視化・データプロファイリング・地理空間解析・ネットワーク可視化 |
-| C. 機械学習・モデリング | 9 | 回帰・分類・特徴量重要度・アクティブラーニング・AutoML・アンサンブル学習・異常検知・因果 ML・モデル監視 |
-| D. 実験計画・プロセス最適化 | 2 | DOE・応答曲面法・ベイズ最適化 |
+| B. 統計・探索的解析 | 11 | EDA・仮説検定・次元削減・記号数学・欠損データ解析・高度可視化・データプロファイリング・地理空間解析・ネットワーク可視化・統計シミュレーション・ストリーミング解析 |
+| C. 機械学習・モデリング | 11 | 回帰・分類・特徴量重要度・アクティブラーニング・AutoML・アンサンブル学習・異常検知・因果 ML・モデル監視・半教師あり学習・マルチタスク学習 |
+| D. 実験計画・プロセス最適化 | 3 | DOE・応答曲面法・ベイズ最適化・適応的実験計画 |
 | E. 信号・スペクトル・時系列 | 5 | スペクトル解析・生体信号・時系列分解・神経電気生理学・ML 時系列予測 |
 | F. 生命科学・オミクス | 28 | バイオインフォ・メタボロ・ゲノム配列・マルチオミクス・ネットワーク・プロテオミクス・トランスクリプトミクス・パスウェイ濃縮・代謝物 DB・HPA・ゲノム配列ツール・非コード RNA・オントロジー・EBI DB 群・Ensembl ゲノミクス・STRING/BioGRID PPI・発現比較・モデル生物 DB・GEO 発現プロファイル・寄生虫ゲノミクス・ArrayExpress 発現アーカイブ・GTEx 組織発現・UniProt プロテオーム・Reactome パスウェイ・HGNC 命名法・代謝ネットワーク・糖鎖解析・リピドミクス |
 | G. 化学・材料・イメージング | 9 | ケモインフォ・材料特性評価・画像形態解析・計算材料科学・ChEMBL アッセイマイニング・MD シミュレーション・高度イメージング・深層化学・STITCH 化学-タンパク質ネットワーク |
@@ -302,8 +302,8 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 | O. 研究計画・グラント・規制 | 3 | 助成金申請書・研究方法論・倫理審査・規制科学 |
 | P. ファーマコビジランス・薬理ゲノミクス | 4 | FAERS 不均衡分析・MedDRA 階層・安全性シグナル検出・PGx 代謝型・PharmGKB 臨床アノテーション・臨床薬理学 PopPK/PBPK |
 | Q. 腫瘍学・疾患研究 | 10 | 精密腫瘍学 (CIViC/OncoKB)・疾患-遺伝子関連 (GWAS/Orphanet)・がんゲノミクス (COSMIC/DepMap)・希少疾患遺伝学・細胞株リソース・ICGC がんゲノムデータ・Open Targets 遺伝学・DepMap 依存性・Monarch オントロジー・GDC ポータル |
-| R. 量子・先端計算 | 9 | 量子計算・GNN・ベイズ統計・説明可能 AI・深層学習・ヘルスケア AI・強化学習・転移学習・不確実性定量化 |
-| S. 医用イメージング | 1 | DICOM/NIfTI・WSI 病理画像・Radiomics・MONAI |
+| R. 量子・先端計算 | 11 | 量子計算・GNN・ベイズ統計・説明可能 AI・深層学習・ヘルスケア AI・強化学習・転移学習・不確実性定量化・連合学習・NAS |
+| S. 医用イメージング | 2 | DICOM/NIfTI・WSI 病理画像・Radiomics・MONAI・放射線診断支援 AI |
 | T. シングルセル・空間・エピゲノミクス | 13 | scRNA-seq・Visium・MERFISH・CELLxGENE・RNA velocity・エピゲノミクス・レギュラトリーゲノミクス・摂動解析・scVI 統合・scATAC-seq/Signac・GPU シングルセル・ENCODE/SCREEN・Human Cell Atlas・高度 Squidpy 空間解析・空間マルチオミクス・CELLxGENE Census |
 | U. 免疫・感染症 | 2 | 免疫情報学・MHC 結合予測・病原体ゲノミクス・AMR・IEDB |
 | V. マイクロバイオーム・環境 | 9 | 16S/メタゲノム・α/β 多様性・SDM・OBIS・GBIF・系統解析・rRNA 分類学・植物バイオロジー・海洋生態学・環境地理空間データ・古生物学・MAG 再構築 |
@@ -340,9 +340,9 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 | 119 | [scientific-data-submission](scientific-data-submission/SKILL.md) | GenBank/SRA/GEO/BioProject/BioSample データ投稿・FAIR 原則準拠 | 汎用 |
 | 139 | [scientific-crossref-metadata](scientific-crossref-metadata/SKILL.md) | CrossRef REST API DOI 解決・論文メタデータ・引用数・ジャーナル情報 | 汎用 |
 
-### B. 統計・探索的解析（9 種）
+### B. 統計・探索的解析（11 種）
 
-データの理解・検定・次元削減・記号数学・欠損データ解析・高度可視化・データプロファイリング・地理空間解析・ネットワーク可視化を担うスキル群。
+データの理解・検定・次元削減・記号数学・欠損データ解析・高度可視化・データプロファイリング・地理空間解析・ネットワーク可視化・統計シミュレーション・ストリーミング解析を担うスキル群。
 
 | # | Skill | 説明 | 参照 Exp |
 |---|---|---|---|
@@ -355,10 +355,12 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 | 179 | [scientific-data-profiling](scientific-data-profiling/SKILL.md) | ydata-profiling 自動 EDA・データ品質スコア (5 次元)・Great Expectations バリデーション | 汎用 |
 | 180 | [scientific-geospatial-analysis](scientific-geospatial-analysis/SKILL.md) | GeoPandas 地理空間処理・Moran's I/LISA 空間自己相関・Kriging 補間・Folium 地図 | 汎用 |
 | 181 | [scientific-network-visualization](scientific-network-visualization/SKILL.md) | NetworkX グラフ構築・Louvain/Leiden コミュニティ検出・中心性分析・PyVis インタラクティブ | 汎用 |
+| 187 | [scientific-statistical-simulation](scientific-statistical-simulation/SKILL.md) | Monte Carlo シミュレーション・Bootstrap 推論 (BCa)・Permutation Test・検出力分析 | 汎用 |
+| 188 | [scientific-streaming-analytics](scientific-streaming-analytics/SKILL.md) | River オンライン学習・ストリーミング異常検知・概念ドリフト検出 (ADWIN/DDM) | 汎用 |
 
-### C. 機械学習・モデリング（9 種）
+### C. 機械学習・モデリング（11 種）
 
-教師あり学習・特徴量解釈・アクティブラーニング・AutoML・アンサンブル学習・異常検知・因果 ML・モデル監視を担うスキル群。
+教師あり学習・特徴量解釈・アクティブラーニング・AutoML・アンサンブル学習・異常検知・因果 ML・モデル監視・半教師あり学習・マルチタスク学習を担うスキル群。
 
 | # | Skill | 説明 | 参照 Exp |
 |---|---|---|---|
@@ -371,15 +373,18 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 | 175 | [scientific-anomaly-detection](scientific-anomaly-detection/SKILL.md) | Isolation Forest/LOF/OCSVM アンサンブル異常検知・Autoencoder 異常・SPC 管理図 | 汎用 |
 | 176 | [scientific-causal-ml](scientific-causal-ml/SKILL.md) | DoWhy 因果推論・EconML Double ML/Causal Forest・S/T/X-Learner メタラーナー | 汎用 |
 | 177 | [scientific-model-monitoring](scientific-model-monitoring/SKILL.md) | データドリフト検出 (KS/PSI/Wasserstein)・性能劣化検出・A/B テスト統計 | 汎用 |
+| 185 | [scientific-semi-supervised-learning](scientific-semi-supervised-learning/SKILL.md) | Self-Training・Label Propagation・Pseudo-Labeling 品質評価・ラベル効率化 | 汎用 |
+| 186 | [scientific-multi-task-learning](scientific-multi-task-learning/SKILL.md) | Hard/Soft Parameter Sharing MTL・GradNorm 動的タスクバランシング・PCGrad | 汎用 |
 
-### D. 実験計画・プロセス最適化（2 種）
+### D. 実験計画・プロセス最適化（3 種）
 
-実験設計と応答曲面最適化を担うスキル群。
+実験設計・応答曲面最適化・適応的実験計画を担うスキル群。
 
 | # | Skill | 説明 | 参照 Exp |
 |---|---|---|---|
 | 20 | [scientific-doe](scientific-doe/SKILL.md) | 田口直交表・CCD/Box-Behnken・ANOVA 因子効果・ベイズ最適化 | 汎用 |
 | 21 | [scientific-process-optimization](scientific-process-optimization/SKILL.md) | 応答曲面法 (ML-RSM)・パレート最適化・プロセスウィンドウ | 12, 13 |
+| 190 | [scientific-adaptive-experiments](scientific-adaptive-experiments/SKILL.md) | Thompson Sampling/UCB バンディット・SPRT 逐次検定・ベイズ適応用量探索 | 汎用 |
 
 ### E. 信号・スペクトル・時系列（5 種）
 
@@ -570,9 +575,9 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 | 149 | [scientific-monarch-ontology](scientific-monarch-ontology/SKILL.md) | Monarch Initiative 疾患-遺伝子-表現型オントロジー・HPO・エンティティ検索 | 汎用 |
 | 150 | [scientific-gdc-portal](scientific-gdc-portal/SKILL.md) | NCI Genomic Data Commons REST API・プロジェクト/ケース/SSM 検索 | 汎用 |
 
-### R. 量子・先端計算（9 種）
+### R. 量子・先端計算（11 種）
 
-量子計算・GNN・ベイズ統計・XAI・深層学習・ヘルスケア AI・強化学習・転移学習・不確実性定量化など次世代計算手法を担うスキル群。
+量子計算・GNN・ベイズ統計・XAI・深層学習・ヘルスケア AI・強化学習・転移学習・不確実性定量化・連合学習・NAS など次世代計算手法を担うスキル群。
 
 | # | Skill | 説明 | 参照 Exp |
 |---|---|---|---|
@@ -585,14 +590,17 @@ SATORI Skill (方法論・判断)        ToolUniverse SMCP (データ取得・�
 | 104 | [scientific-reinforcement-learning](scientific-reinforcement-learning/SKILL.md) | Stable-Baselines3/PufferLib RL エージェント訓練・分子設計/実験最適化 RL | 汎用 |
 | 170 | [scientific-transfer-learning](scientific-transfer-learning/SKILL.md) | Vision/NLP ファインチューニング・Few-shot・知識蒸留・ドメイン適応 | 汎用 |
 | 171 | [scientific-uncertainty-quantification](scientific-uncertainty-quantification/SKILL.md) | Conformal Prediction・MC Dropout・深層アンサンブル・Calibration・ECE | 汎用 |
+| 183 | [scientific-federated-learning](scientific-federated-learning/SKILL.md) | Flower FL パイプライン・FedAvg/FedProx 集約・DP-SGD 差分プライバシー・非 IID 分割 | 汎用 |
+| 184 | [scientific-neural-architecture-search](scientific-neural-architecture-search/SKILL.md) | Optuna NAS・Pareto 多目的探索 (精度 vs サイズ)・探索空間定義・枝刈り | 汎用 |
 
-### S. 医用イメージング（1 種）
+### S. 医用イメージング（2 種）
 
-DICOM・WSI 等の医用画像の解析・セグメンテーションを担うスキル。
+DICOM・WSI 等の医用画像解析・セグメンテーション・放射線診断支援 AI を担うスキル群。
 
 | # | Skill | 説明 | 参照 Exp |
 |---|---|---|---|
 | 56 | [scientific-medical-imaging](scientific-medical-imaging/SKILL.md) | DICOM/NIfTI 処理・MONAI U-Net/SwinUNETR・WSI パッチ抽出・Radiomics・3D 可視化 | 汎用 |
+| 189 | [scientific-radiology-ai](scientific-radiology-ai/SKILL.md) | MONAI CADe/CADx パイプライン・CT/MRI 分類・Grad-CAM 説明可能性・構造化レポート | 汎用 |
 
 ### T. シングルセル・空間・エピゲノミクス（13 種）
 
@@ -752,7 +760,9 @@ Skills は `.github/skills/` に配置されているため、Copilot が自動�
 │   ├── scientific-advanced-visualization/
 │   ├── scientific-data-profiling/
 │   ├── scientific-geospatial-analysis/
-│   └── scientific-network-visualization/
+│   ├── scientific-network-visualization/
+│   ├── scientific-statistical-simulation/
+│   └── scientific-streaming-analytics/
 │
 │── [C] 機械学習・モデリング
 │   ├── scientific-ml-regression/
@@ -763,11 +773,14 @@ Skills は `.github/skills/` に配置されているため、Copilot が自動�
 │   ├── scientific-ensemble-methods/
 │   ├── scientific-anomaly-detection/
 │   ├── scientific-causal-ml/
-│   └── scientific-model-monitoring/
+│   ├── scientific-model-monitoring/
+│   ├── scientific-semi-supervised-learning/
+│   └── scientific-multi-task-learning/
 │
 │── [D] 実験計画・プロセス最適化
 │   ├── scientific-doe/
-│   └── scientific-process-optimization/
+│   ├── scientific-process-optimization/
+│   └── scientific-adaptive-experiments/
 │
 │── [E] 信号・スペクトル・時系列
 │   ├── scientific-spectral-signal/
@@ -903,10 +916,13 @@ Skills は `.github/skills/` に配置されているため、Copilot が自動�
 │   ├── scientific-healthcare-ai/
 │   ├── scientific-reinforcement-learning/
 │   ├── scientific-transfer-learning/
-│   └── scientific-uncertainty-quantification/
+│   ├── scientific-uncertainty-quantification/
+│   ├── scientific-federated-learning/
+│   └── scientific-neural-architecture-search/
 │
-└── [S] 医用イメージング
-    └── scientific-medical-imaging/
+├── [S] 医用イメージング
+│   ├── scientific-medical-imaging/
+│   └── scientific-radiology-ai/
 │
 │── [T] シングルセル・空間・エピゲノミクス
 │   ├── scientific-single-cell-genomics/

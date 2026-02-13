@@ -5,6 +5,37 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.25.0] - 2026-02-13
+
+### Added
+- **Phase 17: 8 新スキル — ML/AI 先端手法・統計シミュレーション・適応実験・放射線 AI 拡張** (182→190 スキル、TU 連携 131 維持)
+
+#### R. 量子・先端計算（9→11 種、+2 新スキル）
+- **scientific-federated-learning** スキル (#183): Flower FL パイプライン・FedAvg/FedProx 集約戦略・Opacus DP-SGD 差分プライバシー・Dirichlet 非 IID 分割
+- **scientific-neural-architecture-search** スキル (#184): Optuna NAS 構造探索・Pareto 多目的最適化 (精度 vs サイズ)・探索空間定義・枝刈り
+
+#### C. 機械学習・モデリング（9→11 種、+2 新スキル）
+- **scientific-semi-supervised-learning** スキル (#185): Self-Training パイプライン・Label Propagation/Spreading・Pseudo-Labeling 品質評価・ラベル効率化
+- **scientific-multi-task-learning** スキル (#186): Hard Parameter Sharing MTL・GradNorm 動的タスクバランシング・マルチ出力回帰/分類
+
+#### B. 統計・探索的解析（9→11 種、+2 新スキル）
+- **scientific-statistical-simulation** スキル (#187): Monte Carlo シミュレーション・Bootstrap BCa 信頼区間・Permutation Test・統計的検出力分析
+- **scientific-streaming-analytics** スキル (#188): River オンライン学習 (HT/ARF)・ストリーミング異常検知 (Z-score/IQR/EWMA)・概念ドリフト検出 (ADWIN/DDM)
+
+#### S. 医用イメージング（1→2 種、+1 新スキル）
+- **scientific-radiology-ai** スキル (#189): MONAI CADe/CADx パイプライン・CT/MRI 分類・Grad-CAM 説明可能性・構造化放射線レポート・AI-RADS
+
+#### D. 実験計画・プロセス最適化（2→3 種、+1 新スキル）
+- **scientific-adaptive-experiments** スキル (#190): Thompson Sampling/UCB バンディット・Wald SPRT 逐次検定・ベイズ適応用量探索 (CRM)
+
+### Changed
+- README.md: 全カウント・カテゴリ表・スキル一覧・ディレクトリツリーを更新
+- カテゴリ数: 26 (A-Z) — 変更なし
+- カテゴリ展開: R(9→11), C(9→11), B(9→11), S(1→2), D(2→3)
+- パイプライン統合: deep-learning→federated-learning→model-monitoring, automl→neural-architecture-search→deep-learning, active-learning→semi-supervised-learning→ml-classification, deep-learning→multi-task-learning→feature-importance, doe→statistical-simulation→statistical-testing, anomaly-detection→streaming-analytics→model-monitoring, medical-imaging→radiology-ai→clinical-report, doe→adaptive-experiments→statistical-testing
+
+---
+
 ## [0.24.0] - 2025-07-27
 
 ### Added
