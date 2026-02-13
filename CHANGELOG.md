@@ -5,6 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.23.0] - 2025-07-27
+
+### Added
+- **Phase 15: 8 新スキル — ML/AI・データ解析・可視化スキル拡張** (166→174 スキル、TU 連携 131 維持)
+
+#### C. 機械学習・モデリング（3→6 種、+3 新スキル）
+- **scientific-active-learning** スキル (#167): 不確実性サンプリング・QBC・バッチ AL・能動学習ループ・停止基準・戦略比較
+- **scientific-automl** スキル (#168): Optuna HPO・マルチモデル AutoML・自動特徴量エンジニアリング・AutoML レポート
+- **scientific-ensemble-methods** スキル (#169): XGBoost/LightGBM/CatBoost 比較・Stacking OOF・Voting アンサンブル・多様性評価
+
+#### R. 量子・先端計算（7→9 種、+2 新スキル）
+- **scientific-transfer-learning** スキル (#170): Vision/NLP ファインチューニング・Few-shot (Prototypical Net)・知識蒸留・ドメイン適応
+- **scientific-uncertainty-quantification** スキル (#171): Conformal Prediction・MC Dropout・深層アンサンブル不確実性・Calibration 評価・ECE
+
+#### B. 統計・探索的解析（4→6 種、+2 新スキル）
+- **scientific-missing-data-analysis** スキル (#172): 欠損パターン診断 (MCAR/MAR/MNAR)・Little's MCAR テスト・MICE 多重代入・KNN/MissForest 補完・Rubin's Rules
+- **scientific-advanced-visualization** スキル (#173): Plotly 3D・Altair 宣言的可視化・Parallel Coordinates・Radar・出版品質図 (Nature/Science style)・アニメーション
+
+#### N. 科学プレゼンテーション・図式（2→3 種、+1 新スキル）
+- **scientific-interactive-dashboard** スキル (#174): Streamlit/Dash/Panel/Voilà 科学データダッシュボード・パラメータ探索 UI・ウィジェット連動
+
+### Changed
+- README.md: 全カウント・カテゴリ表・スキル一覧・ディレクトリツリーを更新
+- カテゴリ数: 26 (A-Z) — 変更なし
+- カテゴリ展開: B(4→6), C(3→6), N(2→3), R(7→9)
+- パイプライン統合: eda→missing-data→ml, eda→automl→ensemble→uncertainty-quantification→explainable-ai, advanced-visualization→interactive-dashboard→presentation-design
+
+---
+
 ## [0.22.0] - 2025-07-27
 
 ### Added
