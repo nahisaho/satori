@@ -5,6 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.24.0] - 2025-07-27
+
+### Added
+- **Phase 16: 8 新スキル — ML/AI インフラ・データ解析・可視化スキル拡張** (174→182 スキル、TU 連携 131 維持)
+
+#### C. 機械学習・モデリング（6→9 種、+3 新スキル）
+- **scientific-anomaly-detection** スキル (#175): Isolation Forest/LOF/OCSVM アンサンブル異常検知・Autoencoder 異常検出・SPC 管理図 (Individuals-MR/CUSUM)
+- **scientific-causal-ml** スキル (#176): DoWhy 因果推論フレームワーク・EconML Double ML/Causal Forest・S/T/X-Learner メタラーナー・CATE 推定
+- **scientific-model-monitoring** スキル (#177): データドリフト検出 (KS/PSI/Wasserstein)・性能劣化検出 (スライディングウィンドウ)・A/B テストモデル比較 (Bootstrap CI)
+
+#### E. 信号・スペクトル・時系列（4→5 種、+1 新スキル）
+- **scientific-time-series-forecasting** スキル (#178): Prophet/NeuralProphet ML 予測・時系列特徴量エンジニアリング (ラグ/ローリング)・バックテストフレームワーク
+
+#### B. 統計・探索的解析（6→9 種、+3 新スキル）
+- **scientific-data-profiling** スキル (#179): ydata-profiling 自動 EDA・データ品質スコア (5 次元)・Great Expectations バリデーション
+- **scientific-geospatial-analysis** スキル (#180): GeoPandas 地理空間処理・Moran's I/LISA 空間自己相関・Kriging 補間・Folium インタラクティブ地図
+- **scientific-network-visualization** スキル (#181): NetworkX グラフ構築・Louvain/Leiden コミュニティ検出・中心性分析 (5 指標)・PyVis インタラクティブネットワーク
+
+#### N. 科学プレゼンテーション・図式（3→4 種、+1 新スキル）
+- **scientific-reproducible-reporting** スキル (#182): Quarto 科学文書テンプレート・Jupyter Book 多章構成・Papermill パラメトリック実行・nbconvert 一括変換
+
+### Changed
+- README.md: 全カウント・カテゴリ表・スキル一覧・ディレクトリツリーを更新
+- カテゴリ数: 26 (A-Z) — 変更なし
+- カテゴリ展開: B(6→9), C(6→9), E(4→5), N(3→4)
+- パイプライン統合: eda→data-profiling→eda-correlation, eda→anomaly-detection→ml-classification, causal-inference→causal-ml→feature-importance, time-series→time-series-forecasting→model-monitoring, environmental-geodata→geospatial-analysis→advanced-visualization, eda-correlation→network-visualization→advanced-visualization, interactive-dashboard→reproducible-reporting→presentation-design, ensemble-methods→model-monitoring→anomaly-detection
+
+---
+
 ## [0.23.0] - 2025-07-27
 
 ### Added
