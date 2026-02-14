@@ -399,6 +399,28 @@ def preprocessing_pipeline(df, target_col=None, config=None):
 
     print(f"  Preprocessing complete: {df.shape}")
 
+    # チェックポイント: 前処理済みデータを永続化（パイプライン連携用）
+    from pathlib import Path
+    results_dir = Path("results")
+    results_dir.mkdir(parents=True, exist_ok=True)
+    df.to_csv(results_dir / "preprocessed_data.csv", index=False)
+    print(f"  ✔ Preprocessed data saved: results/preprocessed_data.csv ({df.shape})")
+
+    # 前処理サマリーをJSONに保存
+    import json
+    summary = {
+        "original_shape": [n_original, len(df.columns)],
+        "processed_shape": list(df.shape),
+        "duplicates_removed": n_original - len(df) if config.get("drop_duplicates", True) else 0,
+        "numeric_columns": len(df.select_dtypes(include=[np.number]).columns),
+        "categorical_columns": len(df.select_dtypes(include=["object", "category"]).columns),
+        "scaling_method": config.get("scaling_method", "standard"),
+        "missing_strategy": config.get("missing_strategy", "auto"),
+    }
+    with open(results_dir / "preprocessing_summary.json", "w") as f:
+        json.dump(summary, f, indent=2, ensure_ascii=False)
+    print(f"  ✔ Preprocessing summary saved: results/preprocessing_summary.json")
+
     return df, {"encoders": encoders, "scaler": scaler}
 ```
 

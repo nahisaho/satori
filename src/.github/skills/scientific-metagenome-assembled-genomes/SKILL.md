@@ -268,6 +268,46 @@ def mag_pipeline(assembly_fasta, bam_file,
           f"{len(quality)} QC passed → "
           f"{len(derep)} dereplicated")
 
+    # === パイプライン連携用の構造化出力 ===
+    results = Path(output_dir) / "results"
+    results.mkdir(parents=True, exist_ok=True)
+
+    # 1) MAG品質サマリーCSV (→ phylogenetics, environmental-ecology)
+    quality.to_csv(results / "mag_quality_summary.csv", index=False)
+    print(f"  ✔ MAG quality summary: {results / 'mag_quality_summary.csv'}")
+
+    # 2) 分類学サマリーCSV (→ phylogenetics)
+    if not taxonomy.empty:
+        taxonomy.to_csv(results / "mag_taxonomy.csv", index=False)
+        print(f"  ✔ MAG taxonomy: {results / 'mag_taxonomy.csv'}")
+
+    # 3) 代表MAGをFASTAに統合 (→ phylogenetics, annotation)
+    representative_fasta = results / "representative_mags.fasta"
+    with open(representative_fasta, "w") as f:
+        for mag_path in derep:
+            mag_name = Path(mag_path).stem
+            with open(mag_path) as mag_f:
+                for line in mag_f:
+                    if line.startswith(">"):
+                        f.write(f">{mag_name}_{line[1:]}")
+                    else:
+                        f.write(line)
+    print(f"  ✔ Representative MAGs FASTA: {representative_fasta}")
+
+    # 4) パイプラインサマリーJSON
+    import json
+    pipeline_summary = {
+        "total_bins": len(bins),
+        "quality_passed": len(quality),
+        "high_quality": int((quality["quality"] == "high").sum()) if "quality" in quality.columns else 0,
+        "medium_quality": int((quality["quality"] == "medium").sum()) if "quality" in quality.columns else 0,
+        "dereplicated": len(derep),
+        "classified": len(taxonomy) if not taxonomy.empty else 0,
+    }
+    with open(results / "mag_pipeline_summary.json", "w") as f:
+        json.dump(pipeline_summary, f, indent=2)
+    print(f"  ✔ Pipeline summary: {results / 'mag_pipeline_summary.json'}")
+
     return {
         "bins": bins,
         "checkm": checkm,

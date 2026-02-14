@@ -1,6 +1,6 @@
 {
   "name": "@nahisaho/satori",
-  "version": "0.25.4",
+  "version": "0.25.5",
   "description": "SATORI — Agent Skills for Science. GitHub Copilot Agent Skills collection for scientific data analysis.",
   "main": "index.js",
   "bin": {

@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.25.5] - 2026-02-14
+
+### Added
+- **`satori pipeline suggest`** コマンド: キーワード入力でインタラクティブにパイプラインを推薦
+- **`satori pipeline list`** コマンド: 全 26 ドメインパイプラインの一覧表示
+- **パイプラインドキュメント** (`docs/SATORI_PIPELINE_EXAMPLES.md`): 50 パイプライン（26 ドメイン + 15 クロスドメイン + 5 産業特化 + 4 方法論特化）の完全ガイド
+- **逆引き辞典** (`docs/SATORI_REVERSE_INDEX.md`): スキル名・TU キー・成果物パスからの逆引き検索
+- **エラーハンドリング指針** (Section 5): チェックポイント戦略・フォールバック戦略・ロギング標準
+- **共有スキルカスタマイズ指針** (Section 6): `publication-figures`/`statistical-testing`/`data-preprocessing` のパイプライン別パラメータ推奨
+
+### Changed
+- **`data-preprocessing`**: チェックポイント永続化を追加 — `preprocessed_data.csv` と `preprocessing_summary.json` を `results/` に自動保存
+- **`metagenome-assembled-genomes`**: 構造化出力を追加 — `mag_quality_summary.csv`, `mag_taxonomy.csv`, `representative_mags.fasta`, `mag_pipeline_summary.json`
+
+### Fixed
+- Pipeline #21 ステップ詳細: `clinical-standards` の TU ツール欄を `—` → `loinc`, `icd` に修正
+- Pipeline #1, #8, #18 の「期待される成果物」に新規出力ファイルを追記
+
+### Docs
+- `docs/GAPs/` にギャップ分析ドキュメントを整理・移動
+
+---
+
 ## [0.25.0] - 2026-02-13
 
 ### Added
