@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.27.1] - 2026-02-15
+
+### Changed
+- **ドキュメント統一**: v0.26.0 → v0.27.0 対応
+  - `docs/SATORI_REVERSE_INDEX.md`: パイプライン 26 → 50、TU キー統計更新
+  - `docs/SATORI_PIPELINE_EXAMPLES.md`: タイトル・バージョン更新
+  - `docs/qiita/SATORI_PIPELINE_EXAMPLES_QIITA.md`: v0.26.0 → v0.27.0、50 パイプライン記載
+  - `docs/qiita/SATORI_REVERSE_INDEX_QIITA.md`: v0.26.0 → v0.27.0、50 パイプライン記載
+
+### Documentation
+- v0.27.0 の新機能（skill search/info、50 パイプライン）をドキュメント全体で反映
+- Qiita 記事をバージョンアップ（日本語テクニカルライティング）
+
 ## [0.27.0] - 2026-02-15
 
 ### Added
