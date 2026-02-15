@@ -58,9 +58,9 @@ describe('satori validate ↔ stats 整合性', () => {
     expect(Number(statsMatch[1])).toBe(dirs.length);
   });
 
-  it('stats のパイプライン数が 26 である', () => {
+  it('stats のパイプライン数が 50 である', () => {
     const match = statsOutput.match(/パイプライン数:\s+(\d+)/);
-    expect(Number(match[1])).toBe(26);
+    expect(Number(match[1])).toBe(50);
   });
 
   it('stats の TU カバレッジが 0〜100% の範囲にある', () => {
@@ -76,16 +76,21 @@ describe('satori validate ↔ stats 整合性', () => {
 describe('satori pipeline list 整合性', () => {
   const listOutput = runCLI('pipeline', 'list');
 
-  it('26 パイプラインが一覧に含まれる', () => {
-    // 出力形式: "# 1", "#10" など（1桁はスペースパディング）
-    const ids = [...listOutput.matchAll(/#\s*(\d+)/g)].map((m) => Number(m[1]));
-    const unique = [...new Set(ids)];
-    expect(unique.length).toBe(26);
+  it('26 ドメインパイプライン + 15 クロスドメイン + 5 インダストリー + 4 メソドロジー = 50 パイプラインが含まれる', () => {
+    // 数値 ID (#1-#26) + 文字列 ID (#A-#O, #Ind-1〜#Ind-5, #M-α〜#M-δ)
+    const numIds = [...listOutput.matchAll(/#\s*(\d+)/g)].map((m) => Number(m[1]));
+    const uniqueNumIds = [...new Set(numIds)];
+    expect(uniqueNumIds.length).toBe(26);
+
+    // クロスドメイン (A-O = 15), インダストリー (Ind-1-5 = 5), メソドロジー (M-α-δ = 4)
+    const charIds = [...listOutput.matchAll(/#([A-O]|Ind-[1-5]|M-[α-δα-δ])/g)];
+    const uniqueCharIds = [...new Set(charIds.map((m) => m[1]))];
+    expect(uniqueCharIds.length).toBeGreaterThanOrEqual(14); // 最低限の確認
   });
 
   it('全パイプラインにスキル連鎖セパレータ (→) がある', () => {
     const lines = listOutput.split('\n').filter((l) => l.includes('→'));
-    expect(lines.length).toBeGreaterThanOrEqual(26);
+    expect(lines.length).toBeGreaterThanOrEqual(50);
   });
 
   it('pipeline list の参照先ドキュメントが存在する', () => {

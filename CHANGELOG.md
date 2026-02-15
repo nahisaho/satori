@@ -5,6 +5,91 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.27.0] - 2026-02-15
+
+### Added
+- **`satori skill search` コマンド**: キーワードでスキルを検索
+  - 対話的検索: 名前・説明・TU キーでマッチング
+  -複数キーワード対応（スペース区切り）
+  - トップ 10 件を表示し、詳細は `satori skill info` で確認可能
+  - 使用例: `satori skill search 創薬`, `satori skill search machine learning`
+
+- **`satori skill info` コマンド**: スキルの詳細情報を表示
+  - スキル説明（説明フィールドから抽出）
+  - When to Use セクション
+  - ToolUniverse 連携ツール（tu_tools セクション）
+  - 関連パイプライン（最大 5 件）
+  - ファイル位置
+  - 使用例: `satori skill info deep-learning`, `satori skill info drug-target-profiling`
+
+- **パイプラインカタログの大幅拡張**: 26 → 50 パイプライン
+  - 既存ドメインパイプライン: 26 
+  - クロスドメインパイプライン: 15 (A-O)
+    - ゲノム創薬統合（A）
+    - AI 駆動臨床意思決定（B）
+    - 研究自動化（C）
+    - マルチオミクス疾患解明（D）
+    - 個別化薬物療法（E）
+    - バイオインフォマティクス完全（F）
+    - がん精密医療 End-to-End（G）
+    - マルチオミクス縦断統合（H）
+    - 環境メタボ・マイクロバイオーム One Health（I）
+    - AI 駆動マテリアルズインフォマティクス（J）
+    - 研究ライフサイクル完全自動化（K）
+    - AI 駆動エビデンス合成（L）
+    - がんマルチレイヤーゲノム創薬（M）
+    - 臨床→規制→出版バリューチェーン（N）
+    - シングルセルプロテオーム統合（O）
+  - インダストリーパイプライン: 5 (Ind-1～Ind-5)
+    - 製薬企業レギュラトリー
+    - 農業バイオテクノロジー
+    - 臨床検査室ワークフロー
+    - 食品安全・毒性評価
+    - 法医・公衆衛生
+  - メソドロジーパイプライン: 4 (M-α～M-δ)
+    - ベイズ推論ワークフロー
+    - 因果推論パイプライン
+    - 時系列予測パイプライン
+    - テキストマイニング・NLP
+
+- **GitHub コミュニティステンプレート**
+  - `.github/ISSUE_TEMPLATE/bug_report.md`: バグ報告テンプレート
+  - `.github/ISSUE_TEMPLATE/feature_request.md`: 機能リクエストテンプレート
+  - `.github/PULL_REQUEST_TEMPLATE.md`: プルリクエストテンプレート
+
+- **CODE_OF_CONDUCT.md**: Contributor Covenant ベースの行動規範
+  - コミュニティの価値観（敬意・包括性・透明性・協力）
+  - 許容されない行為の明示
+  - 問題報告と調査プロセス
+  - 処分の段階
+
+### Changed
+- **`satori pipeline list` コマンド**: 50 パイプラインを分類表示
+  - ドメインパイプライン (26) セクション
+  - クロスドメインパイプライン (15) セクション
+  - インダストリーパイプライン (5) セクション
+  - メソドロジーパイプライン (4) セクション
+  - 各セクション内でパイプラインを整理
+
+- **パイプライン推奨システム**: 拡張キーワード＆スコアリング
+  - クロスドメイン・インダストリー・メソドロジーパイプラインも対象
+  - `satori pipeline suggest` でインタラクティブ推奨が改善
+
+- **ヘルプテキスト更新**: `skill search` / `skill info` コマンド追加
+
+- **統計レポート更新**
+  - パイプライン数: 26 → 50
+  - ユニーク TU キー: 325 (v0.26.0 より増加)
+
+### Fixed
+- テスト: `satori stats` でパイプライン数が 50 と表示されることを確認
+- テスト: `satori init --dry-run` のファイル数マッチング正規表現改善
+
+### Testing
+- 12 新規 unit テスト追加（`skill search` 4 件、`skill info` 6 件、エッジケース 2 件）
+- 統合テスト更新: パイプライン カウント検証を 26 → 50 に更新
+- 全テスト: 1,382 テスト (1,383 → 1,382 テスト実行、36 unit + 11 integration + 1,333 validation + 2 tu-coverage)
+
 ## [0.26.0] - 2026-02-15
 
 ### Added

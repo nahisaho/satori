@@ -71,6 +71,8 @@ SATORI — Agent Skills for Science
 
 Usage:
   satori init [--force] [--dry-run]   Install .github/ skills into current directory
+  satori skill search <query>         Search skills by keyword
+  satori skill info <name>            Show detailed skill information
   satori pipeline suggest             Interactive pipeline recommendation
   satori pipeline list                List all available pipelines
   satori validate [--verbose]         Validate all SKILL.md files
@@ -275,6 +277,200 @@ const PIPELINES = [
     keywords: ['教育', 'education', 'カリキュラム'],
     skills: 'science-education → reproducibility-assessment',
   },
+  // ── クロスドメインパイプライン ──
+  {
+    id: 'A',
+    name: 'ゲノム創薬統合',
+    domain: 'cross-domain',
+    keywords: ['ゲノム創薬', 'GWAS', '創薬ターゲット', 'drug target', 'biobank'],
+    skills:
+      'biobank-cohort → population-genetics → drug-target-profiling → compound-screening → molecular-docking → admet-pharmacokinetics',
+  },
+  {
+    id: 'B',
+    name: 'AI 駆動臨床意思決定',
+    domain: 'cross-domain',
+    keywords: ['臨床AI', '予後予測', 'SHAP', '患者', 'clinical AI'],
+    skills: 'clinical-decision-support → healthcare-ai → explainable-ai → pharmacovigilance → regulatory-science',
+  },
+  {
+    id: 'C',
+    name: '研究自動化',
+    domain: 'cross-domain',
+    keywords: ['研究自動化', '論文化', '仮説', 'research automation'],
+    skills:
+      'deep-research → hypothesis-pipeline → pipeline-scaffold → data-preprocessing → statistical-testing → publication-figures → academic-writing → systematic-review',
+  },
+  {
+    id: 'D',
+    name: 'マルチオミクス疾患解明',
+    domain: 'cross-domain',
+    keywords: ['マルチオミクス', '疾患', 'scRNA-seq', 'GRN', 'multi-omics'],
+    skills:
+      'single-cell-genomics → spatial-transcriptomics → disease-research → systems-biology → multi-omics → network-analysis',
+  },
+  {
+    id: 'E',
+    name: '個別化薬物療法',
+    domain: 'cross-domain',
+    keywords: ['個別化医療', 'PGx', 'Star アレル', '投与量最適化', 'pharmacogenomics'],
+    skills:
+      'variant-interpretation → pharmacogenomics → drug-target-profiling → admet-pharmacokinetics → clinical-decision-support → pharmacovigilance',
+  },
+  {
+    id: 'F',
+    name: 'バイオインフォマティクス完全',
+    domain: 'cross-domain',
+    keywords: ['バイオインフォマティクス', 'FASTQ', '配列解析', '統合パイプライン'],
+    skills:
+      'bioinformatics → single-cell-genomics → biobank-cohort → multi-omics → population-genetics → systems-biology → hypothesis-pipeline → academic-writing',
+  },
+  {
+    id: 'G',
+    name: 'がん精密医療 End-to-End',
+    domain: 'cross-domain',
+    keywords: ['がん精密医療', 'GDC', 'DepMap', '精密腫瘍学', 'TCGA'],
+    skills:
+      'gdc-portal → cancer-genomics → depmap-dependencies → civic-evidence → pharos-targets → compound-screening → precision-oncology → clinical-decision-support → healthcare-ai → survival-clinical',
+  },
+  {
+    id: 'H',
+    name: 'マルチオミクス縦断統合',
+    domain: 'cross-domain',
+    keywords: ['縦断統合', 'エピゲノム', 'プロテオーム', 'パスウェイ', 'VEP'],
+    skills:
+      'genome-sequence-tools → bioinformatics → variant-effect-prediction → epigenomics-chromatin → regulatory-genomics → cellxgene-census → scvi-integration → uniprot-proteome → alphafold-structures → protein-interaction-network → pathway-enrichment → reactome-pathways → network-visualization',
+  },
+  {
+    id: 'I',
+    name: '環境メタボ・マイクロバイオーム One Health',
+    domain: 'cross-domain',
+    keywords: ['One Health', '環境メタボ', '土壌', '微生物群集', 'SDM'],
+    skills:
+      'environmental-ecology → environmental-geodata → geospatial-analysis → microbiome-metagenomics → metagenome-assembled-genomes → phylogenetics → metabolomics-databases → metabolomics-network → metabolic-modeling → toxicology-env → publication-figures',
+  },
+  {
+    id: 'J',
+    name: 'AI 駆動マテリアルズインフォマティクス',
+    domain: 'cross-domain',
+    keywords: ['マテリアルズインフォマティクス', 'GNN', '能動学習', 'Materials Project', '材料探索'],
+    skills:
+      'computational-materials → cheminformatics → automl → graph-neural-networks → uncertainty-quantification → active-learning → doe → bayesian-statistics → adaptive-experiments → materials-characterization → advanced-visualization',
+  },
+  {
+    id: 'K',
+    name: '研究ライフサイクル完全自動化',
+    domain: 'cross-domain',
+    keywords: ['研究ライフサイクル', 'ラボ自動化', 'LIMS', 'ダッシュボード', 'グラント'],
+    skills:
+      'lab-automation → lab-data-management → streaming-analytics → model-monitoring → data-profiling → advanced-visualization → interactive-dashboard → scientific-schematics → reproducible-reporting → paper-quality → latex-formatter → peer-review-response → grant-writing → preprint-archive',
+  },
+  {
+    id: 'L',
+    name: 'AI 駆動エビデンス合成',
+    domain: 'cross-domain',
+    keywords: ['エビデンス合成AI', 'DL文献', 'AutoML', 'スクリーニング'],
+    skills:
+      'deep-research → literature-search → text-mining-nlp → deep-learning → transfer-learning → automl → meta-analysis → explainable-ai → systematic-review → academic-writing',
+  },
+  {
+    id: 'M',
+    name: 'がんマルチレイヤーゲノム創薬',
+    domain: 'cross-domain',
+    keywords: ['がんゲノム創薬', 'ICGC', 'ChEMBL', 'エピゲノム'],
+    skills:
+      'gdc-portal → cancer-genomics → icgc-cancer-data → ensembl-genomics → variant-effect-prediction → epigenomics-chromatin → gwas-catalog → pharos-targets → chembl-assay-mining → compound-screening',
+  },
+  {
+    id: 'N',
+    name: '臨床→規制→出版バリューチェーン',
+    domain: 'cross-domain',
+    keywords: ['バリューチェーン', 'EHR', '規制報告', '学術出版', 'HL7'],
+    skills:
+      'clinical-standards → clinical-nlp → clinical-reporting → healthcare-ai → pharmacovigilance → regulatory-science → reproducible-reporting → paper-quality → latex-formatter → peer-review-response',
+  },
+  {
+    id: 'O',
+    name: 'シングルセルプロテオーム統合',
+    domain: 'cross-domain',
+    keywords: ['シングルセルプロテオーム', '質量分析', '代謝モデル', 'MOFA+'],
+    skills:
+      'single-cell-genomics → spatial-transcriptomics → proteomics-mass-spectrometry → structural-proteomics → alphafold-structures → metabolomics-databases → metabolic-modeling → systems-biology → multi-omics',
+  },
+  // ── インダストリーパイプライン ──
+  {
+    id: 'Ind-1',
+    name: '製薬企業レギュラトリー',
+    domain: 'industry',
+    keywords: ['製薬', 'CTD', 'レギュラトリー', '規制申請', 'regulatory'],
+    skills:
+      'drug-target-profiling → molecular-docking → admet-pharmacokinetics → clinical-trials-analytics → pharmacovigilance → regulatory-science → reproducible-reporting → paper-quality',
+  },
+  {
+    id: 'Ind-2',
+    name: '農業バイオテクノロジー',
+    domain: 'industry',
+    keywords: ['農業バイオ', '土壌微生物', 'CRISPR', '圃場', 'ゲノム編集'],
+    skills:
+      'environmental-ecology → microbiome-metagenomics → geospatial-analysis → plant-biology → crispr-design → gene-expression-transcriptomics → doe → publication-figures',
+  },
+  {
+    id: 'Ind-3',
+    name: '臨床検査室ワークフロー',
+    domain: 'industry',
+    keywords: ['臨床検査', 'NGS', 'ACMG', 'PGx', '臨床レポート'],
+    skills:
+      'genome-sequence-tools → variant-interpretation → pharmacogenomics → clinical-decision-support → clinical-standards → clinical-nlp → clinical-reporting',
+  },
+  {
+    id: 'Ind-4',
+    name: '食品安全・毒性評価',
+    domain: 'industry',
+    keywords: ['食品安全', '毒性', '残留農薬', 'フードセーフティ', 'food safety'],
+    skills:
+      'microbiome-metagenomics → rrna-taxonomy → metabolomics-databases → metabolomics-network → toxicology-env → data-profiling → regulatory-science → publication-figures',
+  },
+  {
+    id: 'Ind-5',
+    name: '法医・公衆衛生',
+    domain: 'industry',
+    keywords: ['法医学', '公衆衛生', 'アウトブレイク', 'サーベイランス', 'forensic'],
+    skills:
+      'variant-interpretation → population-genetics → infectious-disease → phylogenetics → immunoinformatics → epidemiology-public-health → public-health-data → biobank-cohort',
+  },
+  // ── メソドロジーパイプライン ──
+  {
+    id: 'M-α',
+    name: 'ベイズ推論ワークフロー',
+    domain: 'methodology',
+    keywords: ['ベイズ', 'MCMC', '事後分布', 'Bayesian', '事前分布'],
+    skills:
+      'data-preprocessing → bayesian-statistics → statistical-simulation → uncertainty-quantification → doe → adaptive-experiments',
+  },
+  {
+    id: 'M-β',
+    name: '因果推論パイプライン',
+    domain: 'methodology',
+    keywords: ['因果推論', 'DAG', '傾向スコア', 'CATE', 'causal'],
+    skills:
+      'data-preprocessing → missing-data-analysis → causal-inference → causal-ml → explainable-ai → statistical-testing → publication-figures',
+  },
+  {
+    id: 'M-γ',
+    name: '時系列予測パイプライン',
+    domain: 'methodology',
+    keywords: ['時系列', 'Prophet', 'ARIMA', 'LSTM', '異常検知', 'forecasting'],
+    skills:
+      'data-preprocessing → time-series → time-series-forecasting → anomaly-detection → streaming-analytics → model-monitoring',
+  },
+  {
+    id: 'M-δ',
+    name: 'テキストマイニング・NLP',
+    domain: 'methodology',
+    keywords: ['テキストマイニング', 'NLP', 'PubTator', '引用ネットワーク', 'NER'],
+    skills:
+      'deep-research → literature-search → text-mining-nlp → biomedical-pubtator → clinical-nlp → semantic-scholar → citation-checker',
+  },
 ];
 
 function pipelineSuggest() {
@@ -326,6 +522,7 @@ function pipelineSuggest() {
         console.log(`  ... 他 ${scored.length - 5} 件`);
       }
       console.log('詳細は docs/SATORI_PIPELINE_EXAMPLES.md を参照してください。');
+      console.log('全パイプライン一覧は `satori pipeline list` で確認できます。');
     }
 
     rl.close();
@@ -333,14 +530,42 @@ function pipelineSuggest() {
 }
 
 function pipelineList() {
-  console.log('\n📋 SATORI パイプライン一覧 (26 ドメインパイプライン)\n');
-  for (const p of PIPELINES) {
+  const domain = PIPELINES.filter((p) => typeof p.id === 'number');
+  const cross = PIPELINES.filter((p) => p.domain === 'cross-domain');
+  const industry = PIPELINES.filter((p) => p.domain === 'industry');
+  const methodology = PIPELINES.filter((p) => p.domain === 'methodology');
+
+  console.log(`\n📋 SATORI パイプライン一覧 (全 ${PIPELINES.length} パイプライン)\n`);
+
+  console.log('── ドメインパイプライン (26) ──\n');
+  for (const p of domain) {
     console.log(`  #${String(p.id).padStart(2, ' ')}  ${p.name}`);
     console.log(`       ${p.skills}`);
     console.log('');
   }
-  console.log('クロスドメイン (15), 産業特化 (5), 方法論特化 (4) パイプラインは');
-  console.log('docs/SATORI_PIPELINE_EXAMPLES.md を参照してください。');
+
+  console.log('── クロスドメインパイプライン (15) ──\n');
+  for (const p of cross) {
+    console.log(`  #${p.id}   ${p.name}`);
+    console.log(`       ${p.skills}`);
+    console.log('');
+  }
+
+  console.log('── インダストリーパイプライン (5) ──\n');
+  for (const p of industry) {
+    console.log(`  #${p.id}  ${p.name}`);
+    console.log(`       ${p.skills}`);
+    console.log('');
+  }
+
+  console.log('── メソドロジーパイプライン (4) ──\n');
+  for (const p of methodology) {
+    console.log(`  #${p.id}  ${p.name}`);
+    console.log(`       ${p.skills}`);
+    console.log('');
+  }
+
+  console.log('詳細は docs/SATORI_PIPELINE_EXAMPLES.md を参照してください。');
 }
 
 function showVersion() {
@@ -480,9 +705,210 @@ function stats() {
 `);
 }
 
+// ── Skill Search / Info ──
+
+function loadAllSkills() {
+  const skillsDir = path.join(SOURCE_DIR, 'skills');
+  if (!fs.existsSync(skillsDir)) {
+    console.error('Error: skills directory not found:', skillsDir);
+    process.exit(1);
+  }
+  const dirs = fs
+    .readdirSync(skillsDir)
+    .filter((d) => d.startsWith('scientific-'))
+    .sort();
+  const skills = [];
+  for (const dir of dirs) {
+    const filePath = path.join(skillsDir, dir, 'SKILL.md');
+    if (!fs.existsSync(filePath)) continue;
+    const content = fs.readFileSync(filePath, 'utf-8');
+    const fm = parseFrontmatter(content);
+    const descMatch = content.match(/^description:\s*\|?\s*\n([\s\S]*?)(?=\n\w|\n---)/m);
+    const description = descMatch ? descMatch[1].replace(/^\s+/gm, '').trim() : fm?.hasDescription ? '' : '';
+    const tuKeyPattern = /`([A-Z][a-zA-Z]*_[a-z]+_[a-z_]+)`/g;
+    const tuKeys = [];
+    for (const m of content.matchAll(tuKeyPattern)) {
+      tuKeys.push(m[1]);
+    }
+    const h1Match = content.match(/^# (.+)$/m);
+    const title = h1Match ? h1Match[1].trim() : dir;
+    skills.push({ dir, name: fm?.name || dir, title, description, content, tuKeys });
+  }
+  return skills;
+}
+
+function skillSearch() {
+  const query = process.argv.slice(4).join(' ').toLowerCase();
+  if (!query) {
+    console.error('Error: 検索クエリを指定してください。');
+    console.log('Usage: satori skill search <query>');
+    process.exit(1);
+  }
+
+  const skills = loadAllSkills();
+  const scored = skills
+    .map((s) => {
+      let score = 0;
+      // 名前の完全一致
+      if (s.name.toLowerCase() === query) score += 10;
+      // 名前に含まれる
+      else if (s.name.toLowerCase().includes(query)) score += 5;
+      // タイトルに含まれる
+      if (s.title.toLowerCase().includes(query)) score += 3;
+      // 説明に含まれる
+      if (s.description.toLowerCase().includes(query)) score += 2;
+      // TU キーに含まれる
+      for (const k of s.tuKeys) {
+        if (k.toLowerCase().includes(query)) score += 1;
+      }
+      return { ...s, score };
+    })
+    .filter((s) => s.score > 0)
+    .sort((a, b) => b.score - a.score);
+
+  console.log(`\n🔍 "${process.argv.slice(4).join(' ')}" の検索結果\n`);
+  if (scored.length === 0) {
+    console.log('❌ 該当するスキルが見つかりませんでした。');
+    console.log('');
+    console.log('ヒント: 英語名（例: deep-learning, cancer-genomics）や');
+    console.log('       日本語キーワード（例: 創薬, 機械学習）で検索してみてください。');
+  } else {
+    const top = scored.slice(0, 10);
+    for (const s of top) {
+      const desc = s.description ? s.description.split('\n')[0].substring(0, 60) : '';
+      console.log(`  📖 ${s.name}`);
+      if (desc) console.log(`     ${desc}`);
+      console.log('');
+    }
+    if (scored.length > 10) {
+      console.log(`  ... 他 ${scored.length - 10} 件`);
+    }
+    console.log(`合計 ${scored.length} 件がヒットしました。`);
+    console.log('詳細は `satori skill info <name>` で確認できます。');
+  }
+}
+
+function skillInfo() {
+  const name = process.argv[4];
+  if (!name) {
+    console.error('Error: スキル名を指定してください。');
+    console.log('Usage: satori skill info <name>');
+    console.log('スキル検索は `satori skill search <query>` を使ってください。');
+    process.exit(1);
+  }
+
+  const skillsDir = path.join(SOURCE_DIR, 'skills');
+  // scientific- プレフィックスを自動補完
+  const dirName = name.startsWith('scientific-') ? name : `scientific-${name}`;
+  const filePath = path.join(skillsDir, dirName, 'SKILL.md');
+
+  if (!fs.existsSync(filePath)) {
+    console.error(`Error: スキル "${name}" が見つかりません。`);
+    console.log('');
+    // 部分一致候補を提示
+    if (fs.existsSync(skillsDir)) {
+      const dirs = fs
+        .readdirSync(skillsDir)
+        .filter((d) => d.startsWith('scientific-') && d.includes(name))
+        .slice(0, 5);
+      if (dirs.length > 0) {
+        console.log('もしかして:');
+        for (const d of dirs) {
+          console.log(`  - ${d.replace('scientific-', '')}`);
+        }
+      }
+    }
+    process.exit(1);
+  }
+
+  const content = fs.readFileSync(filePath, 'utf-8');
+  const fm = parseFrontmatter(content);
+  const h1Match = content.match(/^# (.+)$/m);
+  const title = h1Match ? h1Match[1].trim() : dirName;
+
+  // 説明抽出
+  const descMatch = content.match(/^description:\s*\|?\s*\n([\s\S]*?)(?=\n\w|\n---)/m);
+  const description = descMatch ? descMatch[1].replace(/^\s+/gm, '').trim() : '';
+
+  // When to Use セクション抽出
+  const whenMatch = content.match(/^## When to Use\s*\n([\s\S]*?)(?=\n## )/m);
+  const whenToUse = whenMatch ? whenMatch[1].trim() : '';
+
+  // TU ツール
+  const tuKeyPattern = /`([A-Z][a-zA-Z]*_[a-z]+_[a-z_]+)`/g;
+  const tuKeys = new Set();
+  for (const m of content.matchAll(tuKeyPattern)) {
+    tuKeys.add(m[1]);
+  }
+
+  // tu_tools from frontmatter
+  const tuToolMatches = content.match(/^tu_tools:\s*\n([\s\S]*?)(?=\n---|\n[a-z])/m);
+  const tuToolNames = [];
+  if (tuToolMatches) {
+    const toolLines = tuToolMatches[1].matchAll(/name:\s*(.+)/g);
+    for (const m of toolLines) {
+      tuToolNames.push(m[1].trim());
+    }
+  }
+
+  // 関連パイプライン
+  const shortName = dirName.replace('scientific-', '');
+  const relatedPipelines = PIPELINES.filter((p) => p.skills.includes(shortName));
+
+  console.log(`\n📖 ${title}`);
+  console.log(`   名前: ${fm?.name || dirName}`);
+  if (description) {
+    console.log(`   説明: ${description}`);
+  }
+  console.log('');
+
+  if (whenToUse) {
+    console.log('── When to Use ──');
+    console.log(whenToUse);
+    console.log('');
+  }
+
+  if (tuKeys.size > 0 || tuToolNames.length > 0) {
+    console.log('── ToolUniverse 連携 ──');
+    if (tuToolNames.length > 0) {
+      for (const t of tuToolNames) {
+        console.log(`  🔧 ${t}`);
+      }
+    }
+    if (tuKeys.size > 0) {
+      console.log(`  TU キー: ${[...tuKeys].join(', ')}`);
+    }
+    console.log('');
+  }
+
+  if (relatedPipelines.length > 0) {
+    console.log('── 関連パイプライン ──');
+    for (const p of relatedPipelines.slice(0, 5)) {
+      console.log(`  📋 #${p.id}: ${p.name}`);
+    }
+    if (relatedPipelines.length > 5) {
+      console.log(`  ... 他 ${relatedPipelines.length - 5} 件`);
+    }
+    console.log('');
+  }
+
+  console.log(`ファイル: src/.github/skills/${dirName}/SKILL.md`);
+}
+
 switch (COMMAND) {
   case 'init':
     init();
+    break;
+  case 'skill':
+    if (SUBCOMMAND === 'search') {
+      skillSearch();
+    } else if (SUBCOMMAND === 'info') {
+      skillInfo();
+    } else {
+      console.error(`Unknown skill subcommand: ${SUBCOMMAND || '(none)'}`);
+      console.log('Usage: satori skill search <query> | satori skill info <name>');
+      process.exit(1);
+    }
     break;
   case 'pipeline':
     if (SUBCOMMAND === 'suggest') {

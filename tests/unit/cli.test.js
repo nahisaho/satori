@@ -57,6 +57,8 @@ describe('satori help', () => {
     const { stdout, exitCode } = run('help');
     expect(exitCode).toBe(0);
     expect(stdout).toContain('satori init');
+    expect(stdout).toContain('satori skill search');
+    expect(stdout).toContain('satori skill info');
     expect(stdout).toContain('satori pipeline suggest');
     expect(stdout).toContain('satori pipeline list');
   });
@@ -84,8 +86,8 @@ describe('satori init --dry-run', () => {
 
   it('ファイル数が 0 より大きい', () => {
     const { stdout } = run('init', '--dry-run');
-    // "190 skills" or ファイル数の出力を検証
-    const match = stdout.match(/(\d+)/);
+    // "(\d+ files)" のパターンを検索
+    const match = stdout.match(/\((\d+) files\)/);
     expect(match).not.toBeNull();
     expect(Number(match[1])).toBeGreaterThan(0);
   });
@@ -227,9 +229,9 @@ describe('satori stats', () => {
     expect(stdout).toContain('190');
   });
 
-  it('パイプライン数が 26 と表示される', () => {
+  it('パイプライン数が 50 と表示される', () => {
     const { stdout } = run('stats');
-    expect(stdout).toContain('26');
+    expect(stdout).toContain('50');
   });
 
   it('TU カバレッジが表示される', () => {
@@ -242,6 +244,83 @@ describe('satori stats', () => {
     const pkg = JSON.parse(fs.readFileSync(path.join(PACKAGE_ROOT, 'package.json'), 'utf-8'));
     const { stdout } = run('stats');
     expect(stdout).toContain(pkg.version);
+  });
+});
+
+// =============================================================
+describe('satori skill search', () => {
+  it('キーワード検索でスキルを検索する', () => {
+    const { stdout, exitCode } = run('skill', 'search', '創薬');
+    expect(exitCode).toBe(0);
+    expect(stdout).toContain('検索結果');
+    expect(stdout).toContain('📖');
+  });
+
+  it('マッチしない検索は空結果を返す', () => {
+    const { stdout, exitCode } = run('skill', 'search', 'nonexistent-keyword-xyz');
+    expect(exitCode).toBe(0);
+    expect(stdout).toContain('見つかりませんでした');
+  });
+
+  it('検索クエリなしでエラー終了する', () => {
+    const { exitCode } = run('skill', 'search');
+    expect(exitCode).not.toBe(0);
+  });
+
+  it('複数単語での検索が可能', () => {
+    const { stdout, exitCode } = run('skill', 'search', '機械', '学習');
+    expect(exitCode).toBe(0);
+    expect(stdout).toContain('検索結果');
+  });
+});
+
+// =============================================================
+describe('satori skill info', () => {
+  it('スキルの詳細情報を表示する', () => {
+    const { stdout, exitCode } = run('skill', 'info', 'deep-learning');
+    expect(exitCode).toBe(0);
+    expect(stdout).toContain('Scientific Deep Learning');
+    expect(stdout).toContain('When to Use');
+  });
+
+  it('scientific- プレフィックスなしで検索できる', () => {
+    const { stdout, exitCode } = run('skill', 'info', 'deep-learning');
+    expect(exitCode).toBe(0);
+    expect(stdout).toContain('Papers with Code');
+  });
+
+  it('存在しないスキル名でエラー終了する', () => {
+    const { exitCode } = run('skill', 'info', 'nonexistent-skill');
+    expect(exitCode).not.toBe(0);
+  });
+
+  it('スキル名なしでエラー終了する', () => {
+    const { exitCode } = run('skill', 'info');
+    expect(exitCode).not.toBe(0);
+  });
+
+  it('ToolUniverse 連携情報を表示する', () => {
+    const { stdout } = run('skill', 'info', 'drug-target-profiling');
+    expect(stdout).toContain('ToolUniverse');
+  });
+
+  it('関連パイプラインを表示する', () => {
+    const { stdout } = run('skill', 'info', 'deep-learning');
+    // AI駆動エビデンス合成パイプラインが関連
+    expect(stdout).toContain('関連パイプライン');
+  });
+});
+
+// =============================================================
+describe('satori skill (不正なサブコマンド)', () => {
+  it('不明なサブコマンドでエラー終了する', () => {
+    const { exitCode } = run('skill', 'unknown');
+    expect(exitCode).not.toBe(0);
+  });
+
+  it('サブコマンドなしでエラー終了する', () => {
+    const { exitCode } = run('skill');
+    expect(exitCode).not.toBe(0);
   });
 });
 
