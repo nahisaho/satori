@@ -4,6 +4,10 @@ description: |
   強化学習スキル。Stable-Baselines3 による RL エージェント訓練、
   Gymnasium 環境構築、PufferLib 大規模マルチエージェント、
   科学応用 (分子生成・実験最適化・ロボット制御) パイプライン。
+tu_tools:
+  - key: papers_with_code
+    name: Papers with Code
+    description: 強化学習環境・ベンチマーク検索
 ---
 
 # Scientific Reinforcement Learning
@@ -278,3 +282,9 @@ doe ──→ reinforcement-learning ──→ lab-automation
                     ├──→ protein-design (構造最適化 RL)
                     └──→ deep-learning (DRL パイプライン)
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `papers_with_code` | Papers with Code | 強化学習環境・ベンチマーク検索 |

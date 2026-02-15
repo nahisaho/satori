@@ -6,6 +6,10 @@ description: |
   ビジュアルアブストラクトの作成を支援。claude-scientific-skills の
   Scientific Communication カテゴリ（slides, posters, schematics）を統合。
   「学会スライドを作成して」「ポスターのレイアウトを設計して」で発火。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: プレゼンテーション可視化ツール検索
 ---
 
 # Scientific Presentation Design
@@ -316,6 +320,12 @@ def create_workflow_schematic(steps, title="Workflow"):
 3. **カラーバリアフリー**: viridis/cividis 系パレットを推奨
 4. **3 メートルルール**: ポスターは遠距離から読めること
 5. **10-20-30 ルール**: 10 slides, 20 min, 30pt font (Kawasaki)
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | プレゼンテーション可視化ツール検索 |
 
 ## References
 

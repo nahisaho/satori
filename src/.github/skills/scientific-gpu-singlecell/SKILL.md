@@ -5,6 +5,10 @@ description: |
   rapids-singlecell / cuML / cuGraph による GPU 並列処理。
   大規模 (>1M cells) データの高速前処理・クラスタリング・
   次元削減。K-Dense: rapids-singlecell。
+tu_tools:
+  - key: cellxgene
+    name: CellxGene
+    description: シングルセルデータセット検索
 ---
 
 # Scientific GPU Single-Cell
@@ -294,3 +298,9 @@ single-cell-genomics → gpu-singlecell → scvi-integration
 | `results/gpu_singlecell.h5ad` | GPU 処理済み AnnData | → scvi-integration |
 | `results/markers.csv` | マーカー遺伝子 | → cell-type-annotation |
 | `results/benchmark.json` | CPU/GPU 比較結果 | → atlas-construction |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `cellxgene` | CellxGene | シングルセルデータセット検索 |

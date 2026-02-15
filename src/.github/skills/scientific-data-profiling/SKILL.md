@@ -4,6 +4,10 @@ description: |
   データプロファイリング・品質スキル。ydata-profiling 自動 EDA ・
   Great Expectations データバリデーション・データ品質スコア・
   型推論・相関検出・外れ値フラグ・データカタログ生成。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: データプロファイリングツール検索
 ---
 
 # Scientific Data Profiling
@@ -245,3 +249,9 @@ def _auto_generate_expectations(df):
 | `profile_report.html` | ydata-profiling レポート | → EDA |
 | `quality_score.json` | データ品質スコア | → 品質管理 |
 | `validation_results.csv` | バリデーション結果 | → データ修正 |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | データプロファイリングツール検索 |

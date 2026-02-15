@@ -6,6 +6,10 @@ description: |
   グリコシル化部位予測・レクチンバインディング・
   糖鎖マスフラグメンテーション解析パイプライン。
   TU 外スキル (直接 REST API + Python ライブラリ)。
+tu_tools:
+  - key: glygen
+    name: GlyGen
+    description: 糖鎖構造・機能データベース検索
 ---
 
 # Scientific Glycomics
@@ -272,3 +276,9 @@ proteomics-mass-spectrometry → glycomics → pathway-enrichment
 |---------|------|---------|
 | `results/glycosites.csv` | グリコシル化部位 | → protein-structure-analysis |
 | `results/glycan_details.csv` | 糖鎖詳細 | → pathway-enrichment |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `glygen` | GlyGen | 糖鎖構造・機能データベース検索 |

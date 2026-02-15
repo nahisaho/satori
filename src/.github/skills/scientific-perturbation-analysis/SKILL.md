@@ -4,6 +4,10 @@ description: |
   シングルセル摂動解析スキル。pertpy による CRISPR スクリーン解析・
   薬剤応答分析・scGen 摂動予測・Augur 摂動応答性スコアリング・
   scIB 統合ベンチマーク・差次的摂動応答パイプライン。
+tu_tools:
+  - key: cellxgene
+    name: CellxGene
+    description: 摂動解析データセット検索
 ---
 
 # Scientific Perturbation Analysis
@@ -295,3 +299,9 @@ spatial-transcriptomics ──┘      │            disease-research
 | `results/augur_scores.csv` | Augur 応答性スコア | → single-cell-genomics |
 | `results/perturbation_signatures.json` | 摂動シグネチャ | → drug-target-profiling |
 | `results/scib_benchmark.json` | 統合ベンチマーク | → spatial-transcriptomics |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `cellxgene` | CellxGene | 摂動解析データセット検索 |

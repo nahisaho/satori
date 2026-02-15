@@ -4,6 +4,10 @@ description: |
   統計検定・多重比較・エンリッチメント解析のスキル。t検定、カイ二乗検定、ANOVA、
   Bonferroni/BH 補正、Fisher 正確検定、ベイズ推論を行う際に使用。
   Scientific Skills Exp-03, 04, 06, 07 で確立したパターン。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: 統計検定ツールレジストリ
 ---
 
 # Scientific Statistical Testing & Enrichment Analysis
@@ -220,6 +224,12 @@ def survival_analysis(df, time_col, event_col, group_col):
 
     return lr.p_value if len(groups) == 2 else None
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | 統計検定ツールレジストリ |
 
 ## References
 

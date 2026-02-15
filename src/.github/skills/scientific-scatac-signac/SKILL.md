@@ -4,6 +4,10 @@ description: |
   scATAC-seq 解析スキル (Signac/SnapATAC2/episcanpy)。
   ピークコーリング・モチーフ解析・Gene Activity スコア・
   RNA+ATAC マルチモーダル統合 (WNN)。K-Dense: signac。
+tu_tools:
+  - key: encode
+    name: ENCODE
+    description: scATAC-seq 参照エピゲノムデータ
 ---
 
 # Scientific scATAC-seq / Signac
@@ -298,3 +302,9 @@ epigenomics-chromatin → scatac-signac → single-cell-genomics
 | `results/scatac_clustered.h5ad` | クラスタリング済み scATAC | → single-cell-genomics |
 | `results/motif_enrichment.csv` | モチーフエンリッチメント | → gene-regulatory-network |
 | `results/multimodal_wnn.h5mu` | RNA+ATAC 統合 | → spatial-transcriptomics |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `encode` | ENCODE | scATAC-seq 参照エピゲノムデータ |

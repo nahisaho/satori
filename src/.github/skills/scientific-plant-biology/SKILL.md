@@ -4,6 +4,10 @@ description: |
   植物バイオロジー統合スキル。Plant Reactome 代謝パスウェイ・
   TAIR Arabidopsis ゲノム情報・Phytozome 比較ゲノミクス・
   Ensembl Plants 種間オーソログ解析。
+tu_tools:
+  - key: tair
+    name: TAIR
+    description: シロイヌナズナゲノム・植物データ検索
 ---
 
 # Scientific Plant Biology
@@ -319,3 +323,9 @@ pathway-enrichment → plant-biology → environmental-ecology
 | `results/plant_pathways.csv` | Plant Reactome パスウェイ | → pathway-enrichment |
 | `results/tair_genes.csv` | TAIR Arabidopsis 遺伝子 | → gene-annotation |
 | `results/orthologs.csv` | 種間オーソログ | → comparative-genomics |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `tair` | TAIR | シロイヌナズナゲノム・植物データ検索 |

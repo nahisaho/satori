@@ -5,6 +5,10 @@ description: |
   フレームワーク、批判的思考法、研究倫理・IRB、先行研究評価、
   クロスドメイン着想法を含む研究者のメタスキル群。
   「研究計画を立てて」「ブレインストーミングして」「研究デザインを設計して」で発火。
+tu_tools:
+  - key: open_alex
+    name: OpenAlex
+    description: 研究方法論の文献ベース構築
 ---
 
 # Scientific Research Methodology
@@ -313,6 +317,12 @@ BIAS_TYPES = {
 3. **Pilot study**: 本研究前にパイロットで feasibility 確認
 4. **バイアスを列挙**: 排除できないバイアスは limitation に明記
 5. **再現性を設計**: プロトコル・データ・コードの公開計画を含める
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `open_alex` | OpenAlex | 研究方法論の文献ベース構築 |
 
 ## References
 

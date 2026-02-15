@@ -3,6 +3,10 @@ name: scientific-eda-correlation
 description: |
   探索的データ解析（EDA）と相関分析のスキル。データの分布可視化、相関ヒートマップ、
   散布図行列の作成を行う際に使用。Scientific Skills Exp-02, 12, 13 で確立したパターン。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: 統計解析ツール検索
 ---
 
 # Scientific EDA & Correlation Analysis
@@ -122,6 +126,12 @@ def psp_block_correlation(df, process_cols, structure_cols, property_cols):
 
     return ps_corr, sp_corr, pp_corr
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | 統計解析ツール検索 |
 
 ## References
 

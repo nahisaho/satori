@@ -1,4 +1,3 @@
-```skill
 ---
 name: scientific-hypothesis-pipeline
 description: |
@@ -6,6 +5,10 @@ description: |
   検証用の解析パイプラインを自動生成するスキル。PICO/PECO フレームワークによる
   仮説構造化、適切な統計検定の選択、パイプラインコード生成を行う。
   「仮説を立てて」「このデータで何がわかる？」「解析パイプラインを作って」で発火。
+tu_tools:
+  - key: open_alex
+    name: OpenAlex
+    description: 仮説関連文献の網羅的検索
 ---
 
 # Scientific Hypothesis-Driven Pipeline Generator
@@ -749,6 +752,12 @@ def manage_hypotheses(hypotheses_list):
 
     return sorted_h
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `open_alex` | OpenAlex | 仮説関連文献の網羅的検索 |
 
 ## References
 

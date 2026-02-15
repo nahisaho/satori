@@ -4,6 +4,10 @@ description: |
   科学データ高度可視化スキル。Plotly インタラクティブ 3D ・
   Altair 宣言的可視化・Seaborn 統計プロット・
   アニメーション・Parallel Coordinates・出版品質図。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: 高度可視化ツール検索
 ---
 
 # Scientific Advanced Visualization
@@ -308,3 +312,9 @@ eda-correlation → advanced-visualization → presentation-design
 | `publication_fig.pdf` | 出版品質図 | → presentation |
 | `parallel_coordinates.html` | 多変量可視化 | → reporting |
 | `animation.html` | アニメーション | → presentation |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | 高度可視化ツール検索 |

@@ -4,6 +4,10 @@ description: |
   科学データ解析パイプラインの基盤スキル。ディレクトリ構造の自動構築、再現性のためのシード管理、
   進捗ログ出力、実行時間計測、JSON サマリー生成、ダッシュボード総括図の作成を行う際に使用。
   全 13 実験に共通する足場パターンを統合。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: パイプライン構成ツール検索
 ---
 
 # Scientific Pipeline Scaffold
@@ -341,6 +345,12 @@ Exp-XX/
     ├── feature_importance.csv
     └── analysis_summary.json  # JSON サマリー
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | パイプライン構成ツール検索 |
 
 ## References
 

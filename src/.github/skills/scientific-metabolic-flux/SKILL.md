@@ -4,6 +4,10 @@ description: |
   代謝フラックス解析スキル。13C/15N 安定同位体トレーサー
   データを用いた代謝フラックス推定・EMU モデリング・
   フラックスバランス制約統合パイプライン。
+tu_tools:
+  - key: bigg
+    name: BiGG Models
+    description: 代謝フラックスモデル検索
 ---
 
 # Scientific Metabolic Flux
@@ -304,3 +308,9 @@ flux-balance-analysis ───┘    pathway-enrichment
 |---------|------|---------|
 | `results/mid_corrected.csv` | 補正済み MID | → metabolic-modeling |
 | `results/fluxes.csv` | 推定フラックス | → systems-biology |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `bigg` | BiGG Models | 代謝フラックスモデル検索 |

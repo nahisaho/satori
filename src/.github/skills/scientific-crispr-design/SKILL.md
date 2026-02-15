@@ -6,6 +6,10 @@ description: |
   CRISPRscan/Rule Set 2 活性予測・検証プライマー設計・
   sgRNA スクリーニングライブラリ構築パイプライン。
   TU 外スキル (Python ライブラリ + ローカル解析)。
+tu_tools:
+  - key: ensembl
+    name: Ensembl
+    description: gRNA 設計用ゲノム配列参照
 ---
 
 # Scientific CRISPR Design
@@ -367,3 +371,9 @@ genome-sequence-tools → crispr-design → perturbation-analysis
 | `grna_candidates.csv` | gRNA 候補リスト | → ランキング |
 | `off_target_report.csv` | オフターゲット評価 | → 安全性確認 |
 | `sgrna_library.csv` | sgRNA ライブラリ | → perturbation-analysis |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `ensembl` | Ensembl | gRNA 設計用ゲノム配列参照 |

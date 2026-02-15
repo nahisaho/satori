@@ -4,6 +4,10 @@ description: |
   マルチタスク学習スキル。Hard/Soft Parameter Sharing・
   GradNorm 勾配正規化・PCGrad 勾配投影・
   タスクバランシング・補助タスク設計。
+tu_tools:
+  - key: openml
+    name: OpenML
+    description: マルチタスク学習データセット参照
 ---
 
 # Scientific Multi-Task Learning
@@ -236,3 +240,9 @@ def gradnorm_balance(model, task_losses, train_loader,
 | `mtl_model.pt` | MTL モデル | → 推論 |
 | `mtl_history.csv` | タスク別学習履歴 | → 可視化 |
 | `gradnorm_weights.csv` | 動的タスク重み推移 | → バランシング分析 |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `openml` | OpenML | マルチタスク学習データセット参照 |

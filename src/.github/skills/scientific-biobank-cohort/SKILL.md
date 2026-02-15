@@ -4,6 +4,10 @@ description: |
   バイオバンク・大規模コホートデータ解析スキル。UK Biobank /
   BBJ / All of Us 等の大規模コホートデータに対するフェノタイプ
   辞書検索・GWAS サマリー統計処理・PheWAS パイプライン。
+tu_tools:
+  - key: clinvar
+    name: ClinVar
+    description: バリアント臨床的意義データ検索
 ---
 
 # Scientific Biobank Cohort
@@ -266,3 +270,9 @@ epidemiology-public-health → biobank-cohort → population-genetics
 | `results/gwas_significant.csv` | Genome-wide significant SNP | → population-genetics |
 | `results/manhattan_data.csv` | Manhattan プロットデータ | → GWAS 可視化 |
 | `results/phenotype_dict.csv` | フェノタイプ辞書 | → PheWAS |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `clinvar` | ClinVar | バリアント臨床的意義データ検索 |

@@ -5,6 +5,10 @@ description: |
   適合するフォーマッティングを行うスキル。数式・図表・引用・相互参照の LaTeX 構文変換、
   ジャーナル別スタイル適用、コンパイル可能な .tex ファイル生成を担う。
   「LaTeX に変換して」「投稿用 TeX を作って」「ジャーナルフォーマットにして」で発火。
+tu_tools:
+  - key: crossref
+    name: Crossref
+    description: 参考文献メタデータ・DOI 解決
 ---
 
 # Scientific LaTeX Formatter
@@ -498,6 +502,12 @@ def run_latex_pipeline(manuscript_path, journal_format="elsevier",
 
     return tex_path
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `crossref` | Crossref | 参考文献メタデータ・DOI 解決 |
 
 ## References
 

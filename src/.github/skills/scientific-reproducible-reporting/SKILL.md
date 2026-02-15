@@ -4,6 +4,10 @@ description: |
   再現可能レポーティングスキル。Quarto 科学文書・
   Jupyter Book 多章構成・Papermill パラメトリック実行・
   nbconvert 自動変換・Sphinx-Gallery コード例ドキュメント。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: 再現可能レポーティングツール検索
 ---
 
 # Scientific Reproducible Reporting
@@ -132,6 +136,12 @@ plt.show()
 ## 結論
 
 解析結果のサマリーを記載する。
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | 再現可能レポーティングツール検索 |
 
 ## References
 """

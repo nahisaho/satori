@@ -4,6 +4,10 @@ description: |
   科学画像解析スキル。顕微鏡画像のセグメンテーション（Otsu/Watershed/Felzenszwalb）、
   粒径分布解析、形態計測（面積・周囲長・真円度・アスペクト比）、テクスチャ解析
   （GLCM/LBP）、強度プロファイル、マルチチャネル蛍光画像合成の解析テンプレート。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: 画像解析ツールレジストリ検索
 ---
 
 # Scientific Image Analysis
@@ -288,6 +292,12 @@ def merge_fluorescence_channels(channels, colors=None, figsize=(10, 10)):
 
     return np.clip(merged, 0, 1)
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | 画像解析ツールレジストリ検索 |
 
 ## References
 

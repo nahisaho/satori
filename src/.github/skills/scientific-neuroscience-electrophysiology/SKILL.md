@@ -6,6 +6,10 @@ description: |
   EEG マイクロステート・事象関連電位 (MNE-Python)、ECG HRV 解析、
   EDA 皮膚コンダクタンス応答、EMG 筋活動解析 (NeuroKit2)、
   脳結合性解析 (機能的/実効的) を統合した神経科学パイプライン。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: 電気生理学解析ツール検索
 ---
 
 # Scientific Neuroscience & Electrophysiology
@@ -367,6 +371,12 @@ def graph_theory_brain_network(conn_matrix, ch_names, threshold=0.3):
 
     return G
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | 電気生理学解析ツール検索 |
 
 ## References
 

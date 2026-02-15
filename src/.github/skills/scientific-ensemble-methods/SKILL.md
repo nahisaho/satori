@@ -5,6 +5,10 @@ description: |
   Boosting (XGBoost/LightGBM/CatBoost) 勾配ブースティング・
   Bagging/Random Subspace・Voting 分類器/回帰器・
   アンサンブル多様性評価・モデル統合パイプライン。
+tu_tools:
+  - key: openml
+    name: OpenML
+    description: アンサンブル手法ベンチマーク参照
 ---
 
 # Scientific Ensemble Methods
@@ -261,3 +265,9 @@ automl → ensemble-methods → uncertainty-quantification
 | `stacking_meta.pkl` | Stacking メタモデル | → 予測 |
 | `boosting_comparison.csv` | ブースティング比較 | → レポート |
 | `ensemble_diversity.json` | 多様性指標 | → モデル改善 |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `openml` | OpenML | アンサンブル手法ベンチマーク参照 |

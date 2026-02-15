@@ -5,6 +5,10 @@ description: |
   FLAML 高速 AutoML・Auto-sklearn モデル選択・
   NAS (Neural Architecture Search)・
   特徴量エンジニアリング自動化・モデル比較パイプライン。
+tu_tools:
+  - key: openml
+    name: OpenML
+    description: AutoML ベンチマーク・タスク参照
 ---
 
 # Scientific AutoML
@@ -262,3 +266,9 @@ eda-correlation → automl → ensemble-methods
 | `optuna_trials.csv` | 試行履歴 | → 可視化 |
 | `param_importance.png` | パラメータ重要度 | → レポート |
 | `model_comparison.csv` | モデル比較 | → ensemble-methods |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `openml` | OpenML | AutoML ベンチマーク・タスク参照 |

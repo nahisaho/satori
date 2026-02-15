@@ -4,6 +4,10 @@ description: |
   系統解析スキル。ete3/ETE Toolkit による系統樹構築・可視化、
   scikit-bio 系統的多様性、配列アライメントベース進化解析、
   分子時計・分岐年代推定、祖先配列再構成パイプライン。
+tu_tools:
+  - key: ncbi_taxonomy
+    name: NCBI Taxonomy
+    description: 系統分類・分岐学データ検索
 ---
 
 # Scientific Phylogenetics
@@ -295,3 +299,9 @@ sequence-analysis ──→ phylogenetics ──→ infectious-disease
                            ├──→ population-genetics (分岐推定)
                            └──→ environmental-ecology (系統的多様性)
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `ncbi_taxonomy` | NCBI Taxonomy | 系統分類・分岐学データ検索 |

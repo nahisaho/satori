@@ -4,6 +4,10 @@ description: |
   連合学習スキル。Flower フレームワークによる FL パイプライン・
   FedAvg/FedProx/FedOpt 集約戦略・差分プライバシー (DP-SGD)・
   非 IID データ分割・通信効率化。
+tu_tools:
+  - key: papers_with_code
+    name: Papers with Code
+    description: 連合学習フレームワーク・ベンチマーク
 ---
 
 # Scientific Federated Learning
@@ -239,3 +243,9 @@ def create_non_iid_splits(dataset_labels, n_clients=5,
 | `fl_strategy_config.json` | FL 集約設定 | → サーバー起動 |
 | `dp_training_history.csv` | DP 学習履歴 | → model-monitoring |
 | `client_splits.json` | 非 IID 分割情報 | → FL クライアント |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `papers_with_code` | Papers with Code | 連合学習フレームワーク・ベンチマーク |

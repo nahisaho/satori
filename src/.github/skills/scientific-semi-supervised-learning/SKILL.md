@@ -3,6 +3,10 @@ name: scientific-semi-supervised-learning
 description: |
   半教師あり学習スキル。Self-Training・Label Propagation・
   MixMatch/FixMatch・Pseudo-Labeling・ラベル効率評価。
+tu_tools:
+  - key: openml
+    name: OpenML
+    description: 半教師あり学習ベンチマーク
 ---
 
 # Scientific Semi-Supervised Learning
@@ -208,3 +212,9 @@ def evaluate_pseudo_labels(y_true_unlabeled, pseudo_labels,
 | `self_training_history.csv` | 反復学習履歴 | → 収束分析 |
 | `pseudo_label_quality.csv` | 疑似ラベル品質 | → 閾値選択 |
 | `propagated_labels.npy` | 伝播ラベル | → ml-classification |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `openml` | OpenML | 半教師あり学習ベンチマーク |

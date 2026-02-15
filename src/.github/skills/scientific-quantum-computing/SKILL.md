@@ -5,6 +5,10 @@ description: |
   量子回路設計・シミュレーション・変分量子アルゴリズム（VQE/QAOA）・
   量子化学計算・量子機械学習を支援。
   「量子回路を設計して」「VQE で基底エネルギーを求めて」「量子シミュレーションして」で発火。
+tu_tools:
+  - key: papers_with_code
+    name: Papers with Code
+    description: 量子計算論文・ベンチマーク検索
 ---
 
 # Scientific Quantum Computing
@@ -318,6 +322,12 @@ plt.show()
 - [ ] 古典手法とのベンチマーク比較
 - [ ] エラー緩和手法適用（実機の場合）
 - [ ] 結果レポート・収束プロット生成
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `papers_with_code` | Papers with Code | 量子計算論文・ベンチマーク検索 |
 
 ## References
 

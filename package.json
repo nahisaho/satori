@@ -1,6 +1,6 @@
 {
   "name": "@nahisaho/satori",
-  "version": "0.25.5",
+  "version": "0.26.0",
   "description": "SATORI — Agent Skills for Science. GitHub Copilot Agent Skills collection for scientific data analysis.",
   "main": "index.js",
   "bin": {
@@ -11,7 +11,17 @@
     "src/.github/"
   ],
   "scripts": {
-    "test": "node bin/satori.js init --dry-run"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:unit": "vitest run tests/unit/",
+    "test:validation": "vitest run tests/validation/",
+    "test:coverage": "vitest run --coverage",
+    "validate:skills": "vitest run tests/validation/skill-format.test.js",
+    "validate:tu": "vitest run tests/validation/tu-coverage.test.js",
+    "lint": "biome check bin/ tests/ vitest.config.js",
+    "lint:fix": "biome check --write bin/ tests/ vitest.config.js",
+    "format": "biome format --write bin/ tests/ vitest.config.js",
+    "prepare": "husky"
   },
   "keywords": [
     "copilot",
@@ -25,5 +35,25 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nahisaho/satori.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.15",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "vitest": "^4.0.18"
+  },
+  "lint-staged": {
+    "bin/**/*.js": [
+      "biome check --write"
+    ],
+    "tests/**/*.js": [
+      "biome check --write"
+    ],
+    "vitest.config.js": [
+      "biome check --write"
+    ]
   }
 }

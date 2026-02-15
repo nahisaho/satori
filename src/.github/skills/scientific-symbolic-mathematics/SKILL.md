@@ -4,6 +4,10 @@ description: |
   記号数学スキル。SymPy による解析的微積分・線形代数・微分方程式求解、
   記号式の LaTeX 変換、数値計算との統合、科学モデリング用
   記号計算パイプライン。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: 数式処理・解析ツール検索
 ---
 
 # Scientific Symbolic Mathematics
@@ -275,3 +279,9 @@ systems-biology ──→ symbolic-mathematics ──→ latex-formatter
                            ├──→ bayesian-statistics (尤度導出)
                            └──→ computational-materials (バンド理論)
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | 数式処理・解析ツール検索 |

@@ -5,6 +5,10 @@ description: |
   Query-by-Committee・期待モデル変化・プール型/ストリーム型・
   バッチアクティブラーニング・停止基準判定・
   モデル改善パイプライン。
+tu_tools:
+  - key: openml
+    name: OpenML
+    description: 能動学習データセット・評価指標
 ---
 
 # Scientific Active Learning
@@ -287,3 +291,9 @@ eda-correlation → active-learning → ml-classification
 | `al_history.csv` | AL ラウンド履歴 | → 停止判定 |
 | `selected_samples.csv` | 選択サンプル | → ラベル付け |
 | `strategy_comparison.csv` | 戦略比較 | → advanced-visualization |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `openml` | OpenML | 能動学習データセット・評価指標 |

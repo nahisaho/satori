@@ -4,6 +4,10 @@ description: |
   地理空間データ解析スキル。GeoPandas ベクターデータ処理・
   Rasterio ラスター解析・Folium/Kepler.gl インタラクティブ地図・
   空間自己相関 (Moran's I)・クリギング補間・CRS 変換。
+tu_tools:
+  - key: gbif
+    name: GBIF
+    description: 地理空間生物多様性データ取得
 ---
 
 # Scientific Geospatial Analysis
@@ -272,3 +276,9 @@ environmental-geodata → geospatial-analysis → advanced-visualization
 | `spatial_autocorrelation.png` | Moran's I + LISA | → reporting |
 | `kriging_result.png` | クリギング補間 | → visualization |
 | `interactive_map.html` | Folium 地図 | → dashboard |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `gbif` | GBIF | 地理空間生物多様性データ取得 |

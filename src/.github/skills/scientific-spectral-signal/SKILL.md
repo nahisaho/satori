@@ -4,6 +4,10 @@ description: |
   分光スペクトルおよび生体信号の前処理・解析スキル。ベースライン補正、フィルタリング、
   ピーク検出、帯域パワー解析を行う際に使用。
   Scientific Skills Exp-08（ECG/EEG）、Exp-11（ラマン分光）で確立したパターン。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: スペクトル信号処理ツール検索
 ---
 
 # Scientific Spectral & Signal Processing
@@ -207,6 +211,12 @@ def spectral_similarity_matrix(spectra_dict, method="cosine"):
 
     return pd.DataFrame(sim_matrix, index=names, columns=names)
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | スペクトル信号処理ツール検索 |
 
 ## References
 

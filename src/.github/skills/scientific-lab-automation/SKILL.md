@@ -6,6 +6,10 @@ description: |
   Opentrons（ロボティクス）による実験自動化と再現性確保を支援。
   claude-scientific-skills の Lab Automation カテゴリを統合。
   「実験プロトコルを作成して」「液体ハンドリングを自動化して」で発火。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: 実験自動化ツールレジストリ検索
 ---
 
 # Scientific Lab Automation
@@ -251,6 +255,12 @@ def create_protocol_io_entry(protocol_data):
 3. **Dead volume を計算**: リザーバの dead volume を考慮した余裕量
 4. **ピペッティング精度を検証**: 蛍光色素/重量法で実測値を確認
 5. **バージョン管理**: プロトコルの変更を Git で追跡
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | 実験自動化ツールレジストリ検索 |
 
 ## References
 

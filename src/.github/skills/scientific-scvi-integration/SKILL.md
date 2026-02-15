@@ -4,6 +4,10 @@ description: |
   scvi-tools シングルセル統合スキル。scVI 変分オートエンコーダ統合・
   scANVI 半教師有りアノテーション・totalVI CITE-seq
   RNA+タンパク質結合解析・SOLO ダブレット検出・潜在空間解析。
+tu_tools:
+  - key: cellxgene
+    name: CellxGene
+    description: scVI 統合用データセット検索
 ---
 
 # Scientific scVI Integration
@@ -342,3 +346,9 @@ perturbation-analysis ────────┘               gene-expression
 | `results/scvi_model/` | scVI 訓練済みモデル | → perturbation-analysis |
 | `results/de_results.csv` | 差次的発現結果 | → gene-expression |
 | `results/annotations.csv` | scANVI アノテーション | → expression-comparison |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `cellxgene` | CellxGene | scVI 統合用データセット検索 |

@@ -4,6 +4,10 @@ description: |
   適応的実験計画スキル。多腕バンディット (Thompson Sampling/UCB)・
   ベイズ適応設計・逐次検定 (SPRT)・
   Response-Adaptive Randomization・早期停止規則。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: 適応的実験設計ツール検索
 ---
 
 # Scientific Adaptive Experiments
@@ -285,3 +289,9 @@ def bayesian_adaptive_dose_finding(dose_levels, n_patients=30,
 | `bandit_summary.csv` | バンディット結果 | → 最適アーム |
 | `sprt_history.csv` | SPRT 検定履歴 | → 判定結果 |
 | `dose_finding.csv` | 用量探索結果 | → MTD 推定 |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | 適応的実験設計ツール検索 |

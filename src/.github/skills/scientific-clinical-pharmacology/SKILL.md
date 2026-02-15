@@ -6,6 +6,10 @@ description: |
   Emax/Sigmoid PD モデリング・薬物間相互作用予測・
   臨床薬理パイプライン。
   TU 外スキル (Python + nlmixr2/mrgsolve ラッパー)。
+tu_tools:
+  - key: drugbank
+    name: DrugBank
+    description: 薬物動態・相互作用データ検索
 ---
 
 # Scientific Clinical Pharmacology
@@ -359,3 +363,9 @@ admet-pharmacokinetics → clinical-pharmacology → pharmacogenomics
 | `pk_simulation.csv` | PK シミュレーション | → dose-response |
 | `popk_estimates.json` | PopPK パラメータ | → pharmacogenomics |
 | `tdm_recommendation.json` | TDM 推奨用量 | → clinical-decision |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `drugbank` | DrugBank | 薬物動態・相互作用データ検索 |

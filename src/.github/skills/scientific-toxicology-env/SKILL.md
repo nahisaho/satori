@@ -4,6 +4,10 @@ description: |
   毒性学・環境衛生スキル。CTD (Comparative Toxicogenomics Database)
   化学-遺伝子-疾患関連・ToxCast/Tox21 高スループット毒性スクリーニング・
   IRIS ヒトリスク評価・T3DB 食品/環境毒性物質・PubChem BioAssay 毒性データ。
+tu_tools:
+  - key: ctd
+    name: CTD
+    description: 化学物質-疾患-遺伝子関連データ検索
 ---
 
 # Scientific Toxicology & Environmental Health
@@ -307,3 +311,9 @@ cheminformatics ───────────────┘           disea
 | `results/ctd_disease_associations.csv` | CTD 化学-疾患関連 | → disease-research |
 | `results/tox21_assays.csv` | Tox21/ToxCast アッセイ結果 | → admet-pharmacokinetics |
 | `results/toxicity_pathways.json` | 毒性パスウェイ解析結果 | → pharmacovigilance |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `ctd` | CTD | 化学物質-疾患-遺伝子関連データ検索 |

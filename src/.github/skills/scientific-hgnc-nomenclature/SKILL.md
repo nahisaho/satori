@@ -6,6 +6,10 @@ description: |
   遺伝子ファミリー/グループクエリ・ID クロスリファレンス
   パイプライン。
   TU 外スキル (直接 REST API)。
+tu_tools:
+  - key: hgnc
+    name: HGNC
+    description: 遺伝子命名法・シンボル検索
 ---
 
 # Scientific HGNC Nomenclature
@@ -280,3 +284,9 @@ biothings-idmapping → hgnc-nomenclature → genome-sequence-tools
 | `results/hgnc_details.csv` | 遺伝子詳細 | → gene-expression |
 | `results/hgnc_alias_resolved.csv` | エイリアス解決 | → biothings-idmapping |
 | `results/hgnc_xref.csv` | ID 相互参照 | → genome-sequence-tools |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `hgnc` | HGNC | 遺伝子命名法・シンボル検索 |

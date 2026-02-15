@@ -4,6 +4,10 @@ description: |
   物理・化学・生物学に基づく合成データ生成のスキル。実験データが不足する場合に、
   ドメイン知識を反映したシミュレーションデータを生成する際に使用。
   Scientific Skills Exp-06, 07, 08, 09, 12, 13 で確立したパターン。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: シミュレーションツールレジストリ検索
 ---
 
 # Scientific Data Simulation & Generation
@@ -225,6 +229,12 @@ def generate_ecg_beat(t, hr=72):
 - [ ] 外れ値の割合が現実的か（通常 1-5%）
 - [ ] 変数間の相関構造が既知の物理法則と一致するか
 - [ ] 群間差が効果量として検出可能な水準か
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | シミュレーションツールレジストリ検索 |
 
 ## References
 

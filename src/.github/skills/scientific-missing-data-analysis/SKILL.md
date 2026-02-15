@@ -4,6 +4,10 @@ description: |
   欠損データ解析スキル。欠損パターン診断 (MCAR/MAR/MNAR) ・
   Little's MCAR テスト・多重代入法 (MICE) ・KNN 補完・
   MissForest・VAE/GAIN 補完・欠損パターン可視化・Rubin's Rules。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: 欠損データ処理ツール検索
 ---
 
 # Scientific Missing Data Analysis
@@ -310,3 +314,9 @@ eda-correlation → missing-data-analysis → ml-classification
 | `mcar_test_result.json` | Little's MCAR テスト | → 補完戦略選択 |
 | `imputed_datasets/` | MICE 多重代入データ | → ml-classification |
 | `imputation_comparison.csv` | 補完手法比較 | → 最終選択 |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | 欠損データ処理ツール検索 |

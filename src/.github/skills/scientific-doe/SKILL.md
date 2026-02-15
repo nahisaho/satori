@@ -5,6 +5,10 @@ description: |
   Box-Behnken 設計、D-最適計画、応答曲面法（RSM）、交互作用解析、
   ベイズ最適化（Gaussian Process）、効果プロット（主効果/交互作用/pareto）の
   テンプレートを提供。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: 実験計画法ツールレジストリ検索
 ---
 
 # Scientific Design of Experiments (DOE)
@@ -338,6 +342,12 @@ def interaction_plot(design_df, response_col, factor1, factor2, figsize=(8, 6)):
     plt.savefig("figures/interaction_plot.png", dpi=300, bbox_inches="tight")
     plt.close()
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | 実験計画法ツールレジストリ検索 |
 
 ## References
 

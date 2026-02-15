@@ -4,6 +4,10 @@ description: |
   ML 時系列予測スキル。Prophet/NeuralProphet・N-BEATS・
   Temporal Fusion Transformer (TFT)・時系列特徴量エンジニアリング・
   バックテスト・多段階予測・アンサンブル予測。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: 時系列予測ツール検索
 ---
 
 # Scientific Time Series Forecasting
@@ -244,3 +248,9 @@ time-series → time-series-forecasting → model-monitoring
 | `prophet_forecast.png` | Prophet 予測結果 | → presentation |
 | `ts_features.csv` | 時系列特徴量 | → ml-regression |
 | `backtest_results.csv` | バックテスト結果 | → model selection |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | 時系列予測ツール検索 |

@@ -5,6 +5,10 @@ description: |
   NN アーキテクチャ設計・転移学習・分散トレーニング・ハイパーパラメータ最適化・
   モデルデプロイを支援。
   「ニューラルネットで学習して」「Transformer を Fine-tune して」「深層学習モデルを構築して」で発火。
+tu_tools:
+  - key: papers_with_code
+    name: Papers with Code
+    description: 深層学習モデル・ベンチマーク検索
 ---
 
 # Scientific Deep Learning
@@ -350,6 +354,12 @@ def export_model(model, sample_input, export_dir="models"):
 - [ ] ハイパーパラメータ最適化
 - [ ] モデルエクスポート (ONNX)
 - [ ] モデルカード作成
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `papers_with_code` | Papers with Code | 深層学習モデル・ベンチマーク検索 |
 
 ## References
 

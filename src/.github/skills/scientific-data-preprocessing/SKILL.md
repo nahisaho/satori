@@ -4,6 +4,10 @@ description: |
   科学データの前処理パイプラインスキル。欠損値補完（KNNImputer/SimpleImputer）、
   エンコーディング（LabelEncoder/OneHot/ダミー変数）、スケーリング（Standard/MinMax/Robust/Pareto）、
   対数変換、外れ値処理のテンプレートを提供。全 Exp-01〜13 に横断的に適用される基盤スキル。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: データ前処理ツールレジストリ検索
 ---
 
 # Scientific Data Preprocessing
@@ -423,6 +427,12 @@ def preprocessing_pipeline(df, target_col=None, config=None):
 
     return df, {"encoders": encoders, "scaler": scaler}
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | データ前処理ツールレジストリ検索 |
 
 ## References
 

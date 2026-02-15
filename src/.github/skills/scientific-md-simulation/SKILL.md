@@ -4,6 +4,10 @@ description: |
   分子動力学シミュレーション解析スキル。MDAnalysis によるトラジェクトリ解析・
   RMSD/RMSF/Rg 時系列指標・水素結合解析・二次構造変化追跡・
   OpenFF Toolkit力場パラメータ化・溶媒和自由エネルギー推定パイプライン。
+tu_tools:
+  - key: pdb
+    name: PDB
+    description: 分子構造データベース参照
 ---
 
 # Scientific MD Simulation
@@ -313,3 +317,9 @@ protein-structure ──┘        │              drug-target-profiling
 | `results/rmsf_per_residue.csv` | RMSF 残基別 | → protein-structure-analysis |
 | `results/hbond_analysis.csv` | 水素結合解析 | → molecular-docking |
 | `results/md_summary.json` | 統合サマリ | → admet-pharmacokinetics |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `pdb` | PDB | 分子構造データベース参照 |

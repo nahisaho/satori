@@ -4,6 +4,10 @@ description: |
   因果推論スキル。傾向スコアマッチング（PSM）、逆確率重み付け（IPW / IPTW）、
   操作変数法（2SLS）、差分の差分法（DID）、回帰不連続デザイン（RDD）、
   DAG ベースの共変量選択（backdoor criterion）、感度分析テンプレートを提供。
+tu_tools:
+  - key: open_alex
+    name: OpenAlex
+    description: 因果推論関連文献検索
 ---
 
 # Scientific Causal Inference
@@ -324,6 +328,12 @@ def rosenbaum_sensitivity(matched_outcomes_treated, matched_outcomes_control,
 
     return pd.DataFrame(results)
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `open_alex` | OpenAlex | 因果推論関連文献検索 |
 
 ## References
 

@@ -4,8 +4,13 @@ description: |
   高度 Squidpy 空間解析スキル。空間自己相関・共起解析・空間
   近傍・リガンド受容体空間マッピング・ニッチ同定。
   K-Dense 連携: squidpy-advanced。
+  ToolUniverse 連携: cellxgene。
 tu_tools: []
 kdense_ref: squidpy-advanced
+tu_tools:
+  - key: cellxgene
+    name: CellxGene
+    description: 空間トランスクリプトミクスデータ検索
 ---
 
 # Scientific Squidpy Advanced
@@ -249,3 +254,9 @@ spatial-transcriptomics → squidpy-advanced → single-cell-genomics
 | `results/niche_composition.csv` | ニッチ組成 | → single-cell-genomics |
 | `results/centrality_scores.csv` | 中心性スコア | → spatial-transcriptomics |
 | `results/adata_spatial.h5ad` | AnnData (全結果) | → multi-omics |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `cellxgene` | CellxGene | 空間トランスクリプトミクスデータ検索 |

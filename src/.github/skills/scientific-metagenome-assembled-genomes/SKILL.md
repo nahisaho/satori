@@ -6,6 +6,10 @@ description: |
   GTDB-Tk 分類学的分類・dRep 脱重複・Prokka アノテーション・
   MAG アセンブリ品質レポートパイプライン。
   TU 外スキル (CLI ラッパー + Python ライブラリ)。
+tu_tools:
+  - key: mgnify
+    name: MGnify
+    description: メタゲノムアセンブル・MAG データ検索
 ---
 
 # Scientific Metagenome-Assembled Genomes
@@ -337,3 +341,9 @@ microbiome-metagenomics → metagenome-assembled-genomes → environmental-ecolo
 | `checkm2_out/quality_report.tsv` | 品質レポート | → フィルタリング |
 | `gtdbtk_out/*.summary.tsv` | 分類結果 | → phylogenomics |
 | `drep_out/dereplicated_genomes/` | 脱重複 MAG | → environmental-ecology |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `mgnify` | MGnify | メタゲノムアセンブル・MAG データ検索 |

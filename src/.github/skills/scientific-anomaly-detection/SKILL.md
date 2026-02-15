@@ -4,6 +4,10 @@ description: |
   異常検知・外れ値検出スキル。Isolation Forest・LOF・
   One-Class SVM・Autoencoder 異常検知・統計的工程管理 (SPC)・
   多変量異常検知・異常スコアリング・閾値最適化。
+tu_tools:
+  - key: openml
+    name: OpenML
+    description: 異常検知ベンチマーク・データセット
 ---
 
 # Scientific Anomaly Detection
@@ -294,3 +298,9 @@ eda-correlation → anomaly-detection → ml-classification
 | `anomaly_ensemble.csv` | アンサンブル異常検知結果 | → EDA |
 | `autoencoder_anomaly.json` | AE 異常スコア | → reporting |
 | `spc_control_chart.png` | SPC 管理図 | → process-optimization |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `openml` | OpenML | 異常検知ベンチマーク・データセット |

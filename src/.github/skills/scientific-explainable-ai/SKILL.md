@@ -4,6 +4,10 @@ description: |
   説明可能 AI (XAI) スキル。SHAP・LIME・Captum・InterpretML を活用し、
   モデル予測の根拠説明・特徴量寄与分解・反実仮想説明・公平性監査を支援。
   「モデルの予測を説明して」「SHAP 値を計算して」「LIME で説明して」で発火。
+tu_tools:
+  - key: papers_with_code
+    name: Papers with Code
+    description: XAI 手法・ベンチマーク検索
 ---
 
 # Scientific Explainable AI
@@ -333,6 +337,12 @@ def fairness_audit(model, X_test, y_test, sensitive_feature,
 - [ ] 反実仮想説明（必要に応じて）
 - [ ] 公平性監査（機密属性がある場合）
 - [ ] 説明レポート生成
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `papers_with_code` | Papers with Code | XAI 手法・ベンチマーク検索 |
 
 ## References
 

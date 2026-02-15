@@ -4,6 +4,10 @@ description: |
   PCA・t-SNE・UMAP による次元削減と空間マッピングのスキル。化学空間・特徴量空間・
   多技法融合空間の可視化を行う際に使用。Scientific Skills Exp-02, 03, 05, 07, 11, 13
   で汎用的に使用されたパターン。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: 次元削減・可視化ツール検索
 ---
 
 # Scientific Dimensionality Reduction & Space Mapping
@@ -212,6 +216,12 @@ def hierarchical_clustering(X_scaled, method="ward", max_k=10, figsize=(12, 5)):
     plt.close()
     return Z, int(best_k)
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | 次元削減・可視化ツール検索 |
 
 ## References
 

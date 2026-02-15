@@ -4,6 +4,10 @@ description: |
   機械学習分類パイプラインのスキル。複数の分類モデル（Logistic Regression, Random Forest,
   SVM, XGBoost）を StratifiedKFold 交差検証で比較し、ROC 曲線・混同行列で評価する際に使用。
   Scientific Skills Exp-03, 05 で確立したパターン。
+tu_tools:
+  - key: openml
+    name: OpenML
+    description: 分類ベンチマーク・データセット取得
 ---
 
 # Scientific ML Classification Pipeline
@@ -245,6 +249,12 @@ def volcano_plot(df, group_col, value_cols, group1, group2,
     plt.close()
     return vdf
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `openml` | OpenML | 分類ベンチマーク・データセット取得 |
 
 ## References
 

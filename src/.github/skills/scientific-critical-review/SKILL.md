@@ -1,4 +1,3 @@
-```skill
 ---
 name: scientific-critical-review
 description: |
@@ -6,6 +5,10 @@ description: |
   データ解釈の妥当性、先行研究との整合性、統計的主張の正確性を多角的に検証し、
   具体的な修正案を生成する。「論文をレビューして」「考察を深めて」「草稿を改善して」で発火。
   scientific-academic-writing で草稿を作成した後のセルフレビューに使用。
+tu_tools:
+  - key: crossref
+    name: Crossref
+    description: 論文検証・引用メタデータ参照
 ---
 
 # Scientific Critical Review & Revision
@@ -738,6 +741,12 @@ def run_review_pipeline(manuscript_path):
 
 **修正理由:** [理由の説明]
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `crossref` | Crossref | 論文検証・引用メタデータ参照 |
 
 ## References
 

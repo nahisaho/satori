@@ -4,6 +4,10 @@ description: |
   論文品質（Nature/Science/Cell レベル）の科学図表を作成するスキル。matplotlib rcParams 設定、
   DPI 300、spines 制御、カラーパレット選択、マルチパネル構成を行う際に使用。
   Scientific Skills Exp-10 で確立し、Exp-11〜13 で継承したパターン。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: 可視化ツールレジストリ検索
 ---
 
 # Scientific Publication-Quality Figure Generation
@@ -191,6 +195,12 @@ def create_composite_figure(plot_functions, layout=(2, 3),
 | 1.5 カラム | (5.5, 4.0) | 中間サイズ |
 | 2 カラム | (7.0, 5.0) | Nature 2 カラム幅 ≈ 183 mm |
 | フルページ | (7.0, 9.0) | A4 の余白を除いた高さ |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | 可視化ツールレジストリ検索 |
 
 ## References
 

@@ -4,6 +4,10 @@ description: |
   深層学習分子特性予測スキル。DeepChem による GCN/MPNN/AttentiveFP
   分子特性予測・MoleculeNet ベンチマーク・ChemBERTa/GROVER
   事前学習モデル・分子フィンガープリントフィーチャライザ。
+tu_tools:
+  - key: chembl
+    name: ChEMBL
+    description: 化学的活性・化合物データ検索
 ---
 
 # Scientific Deep Chemistry
@@ -348,3 +352,9 @@ molecular-docking ───────┘         admet-pharmacokinetics
 | `results/benchmark.json` | モデルベンチマーク結果 | — |
 | `results/embeddings.npy` | ChemBERTa 埋込み | → cheminformatics |
 | `results/model/` | 訓練済みモデル | → admet-pharmacokinetics |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `chembl` | ChEMBL | 化学的活性・化合物データ検索 |

@@ -5,6 +5,10 @@ description: |
   Elsevier 系のジャーナル形式に対応した論文構成・セクション設計・文章パターンを提供。
   「論文を書いて」「Abstract を作成して」「Methods セクションを書いて」で発火。
   assets/ に主要ジャーナル形式の Markdown テンプレートを同梱。
+tu_tools:
+  - key: crossref
+    name: Crossref
+    description: 論文メタデータ検索・引用情報取得
 ---
 
 # Scientific Academic Writing
@@ -463,6 +467,12 @@ needed and take full responsibility for the content of the publication.
 
 [SI 内でのみ引用した文献]
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `crossref` | Crossref | 論文メタデータ検索・引用情報取得 |
 
 ## References
 

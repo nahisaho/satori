@@ -4,8 +4,13 @@ description: |
   代謝アトラススキル。Metabolic Atlas / Human-GEM REST API による
   代謝反応・代謝産物・コンパートメント検索、フラックス解析統合、
   代謝ネットワーク可視化。K-Dense 連携: metabolic-atlas。
+  ToolUniverse 連携: metabolic_atlas。
 tu_tools: []
 kdense_ref: metabolic-atlas
+tu_tools:
+  - key: metabolic_atlas
+    name: Metabolic Atlas
+    description: ヒトゲノム規模代謝モデル検索
 ---
 
 # Scientific Metabolic Atlas
@@ -261,3 +266,9 @@ metabolic-modeling → metabolic-atlas → systems-biology
 | `results/metabolites.csv` | 代謝産物一覧 | → pathway-enrichment |
 | `results/metabolic_network.graphml` | 代謝ネットワーク | → systems-biology |
 | `results/hub_metabolites.csv` | ハブ代謝産物 | → multi-omics |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `metabolic_atlas` | Metabolic Atlas | ヒトゲノム規模代謝モデル検索 |

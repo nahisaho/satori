@@ -4,6 +4,10 @@ description: |
   MLOps モデル監視スキル。データドリフト検出 (Evidently/NannyML)・
   モデル性能劣化検出・特徴量ドリフト・コンセプトドリフト・
   A/B テスト統計・モデルレジストリ・再学習トリガー。
+tu_tools:
+  - key: openml
+    name: OpenML
+    description: モデルモニタリング指標・ベンチマーク
 ---
 
 # Scientific Model Monitoring
@@ -245,3 +249,9 @@ ensemble-methods → model-monitoring → anomaly-detection
 | `drift_report.csv` | ドリフト検出結果 | → 再学習判断 |
 | `performance_monitoring.png` | 性能推移 | → reporting |
 | `ab_test_result.json` | A/B テスト結果 | → デプロイ判断 |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `openml` | OpenML | モデルモニタリング指標・ベンチマーク |

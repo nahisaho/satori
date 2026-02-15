@@ -5,6 +5,10 @@ description: |
   EEG（マルチチャネル・バンドパワーδ/θ/α/β/γ・スペクトログラム・ERP）、
   EMG（バースト検出・包絡線）、呼吸信号（RSA）の解析パイプライン。
   Scientific Skills Exp-08 で確立したパターン。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: 生体信号処理ツール検索
 ---
 
 # Scientific Biosignal Processing
@@ -351,6 +355,12 @@ def detect_muscle_bursts(envelope, fs, threshold_factor=2.0,
 
     return bursts
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | 生体信号処理ツール検索 |
 
 ## References
 

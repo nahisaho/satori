@@ -4,6 +4,10 @@ description: |
   転移学習・ドメイン適応スキル。事前学習モデルファインチューニング・
   Few-shot / Zero-shot 学習・ドメイン適応 (DA)・
   知識蒸留・マルチタスク学習・科学ドメイン特化モデル転移。
+tu_tools:
+  - key: papers_with_code
+    name: Papers with Code
+    description: 転移学習モデル・事前学習済みモデル検索
 ---
 
 # Scientific Transfer Learning
@@ -296,3 +300,9 @@ deep-learning → transfer-learning → active-learning
 | `ft_model.pt` | ファインチューニング済みモデル | → 推論 |
 | `ft_history.csv` | 学習履歴 | → visualization |
 | `few_shot_predictions.csv` | Few-shot 予測 | → 評価 |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `papers_with_code` | Papers with Code | 転移学習モデル・事前学習済みモデル検索 |

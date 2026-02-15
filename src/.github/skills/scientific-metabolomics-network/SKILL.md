@@ -6,6 +6,10 @@ description: |
   ハブ代謝物同定・MetaboAnalyst 統合エンリッチメント
   パイプライン。
   TU 外スキル (直接 Python ライブラリ + REST API)。
+tu_tools:
+  - key: hmdb
+    name: HMDB
+    description: 代謝物ネットワーク・代謝経路検索
 ---
 
 # Scientific Metabolomics Network
@@ -309,3 +313,9 @@ metabolomics → metabolomics-network → pathway-enrichment
 | `results/metabolite_network.graphml` | 相関ネットワーク | → systems-biology |
 | `results/hub_metabolites.csv` | ハブ代謝物 | → biomarker-discovery |
 | `results/pathway_enrichment.csv` | パスウェイエンリッチメント | → pathway-enrichment |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `hmdb` | HMDB | 代謝物ネットワーク・代謝経路検索 |

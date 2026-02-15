@@ -4,6 +4,10 @@ description: |
   因果機械学習スキル。DoWhy 因果モデル・EconML CATE 推定・
   Double/Debiased ML・Causal Forest・メタラーナー (S/T/X)・
   異質的処置効果 (HTE)・因果特徴量選択。
+tu_tools:
+  - key: openml
+    name: OpenML
+    description: 因果推論 ML データセット参照
 ---
 
 # Scientific Causal ML
@@ -238,3 +242,9 @@ causal-inference → causal-ml → feature-importance
 | `dowhy_causal_model.json` | DoWhy 因果モデル | → reporting |
 | `cate_estimates.csv` | CATE 推定値 | → precision-medicine |
 | `causal_feature_importance.csv` | 因果特徴量重要度 | → explainable-ai |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `openml` | OpenML | 因果推論 ML データセット参照 |

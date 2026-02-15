@@ -4,6 +4,7 @@ description: |
   臨床標準用語・コードマッピングスキル。LOINC 臨床検査コード・
   ICD-10/ICD-11 疾病分類・FHIR R4 リソースマッピング・
   SNOMED CT 用語変換・臨床用語相互運用パイプライン。
+  ToolUniverse 連携: loinc。
 tu_tools:
   - key: loinc
     name: LOINC
@@ -11,6 +12,10 @@ tu_tools:
   - key: icd
     name: ICD
     description: WHO 国際疾病分類 ICD-10/ICD-11
+tu_tools:
+  - key: loinc
+    name: LOINC
+    description: 臨床検査コード標準検索
 ---
 
 # Scientific Clinical Standards
@@ -442,3 +447,9 @@ clinical-reporting → clinical-standards → clinical-decision-support
 | `loinc_mappings.csv` | LOINC コードマッピング | → clinical-decision |
 | `icd_mappings.csv` | ICD コードマッピング | → epidemiology |
 | `fhir_bundle.json` | FHIR R4 バンドル | → EHR 統合 |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `loinc` | LOINC | 臨床検査コード標準検索 |

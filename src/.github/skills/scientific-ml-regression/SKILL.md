@@ -4,6 +4,10 @@ description: |
   マルチターゲット回帰モデルの学習・評価・比較スキル。複数の回帰モデル（Ridge, Lasso,
   Random Forest, Gradient Boosting, Extra Trees）を KFold 交差検証で比較する際に使用。
   Scientific Skills Exp-12, 13 で確立したパターン。
+tu_tools:
+  - key: openml
+    name: OpenML
+    description: 回帰ベンチマーク・データセット取得
 ---
 
 # Scientific ML Regression Pipeline
@@ -196,6 +200,12 @@ def plot_radar_comparison(results_df, target_name, figsize=(8, 8)):
     plt.savefig(f"figures/radar_{target_name}.png", dpi=300, bbox_inches="tight")
     plt.close()
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `openml` | OpenML | 回帰ベンチマーク・データセット取得 |
 
 ## References
 

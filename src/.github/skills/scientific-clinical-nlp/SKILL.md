@@ -6,6 +6,10 @@ description: |
   ICD-10/SNOMED-CT エンティティリンキング、
   匿名化 (De-identification) パイプライン。
   TU 外スキル (直接 Python ライブラリ)。
+tu_tools:
+  - key: umls
+    name: UMLS
+    description: 医学用語統一システム検索
 ---
 
 # Scientific Clinical NLP
@@ -248,3 +252,9 @@ text-mining-nlp → clinical-nlp → clinical-reporting
 | `results/clinical_ner.csv` | 臨床エンティティ+否定 | → phenotype-hpo |
 | `results/clinical_sections.csv` | セクション分類 | → clinical-reporting |
 | `results/entity_linking.csv` | UMLS/SNOMED リンキング | → disease-research |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `umls` | UMLS | 医学用語統一システム検索 |

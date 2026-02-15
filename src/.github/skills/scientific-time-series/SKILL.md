@@ -4,6 +4,10 @@ description: |
   時系列解析・予測スキル。ARIMA/SARIMA/Prophet モデリング、変化点検出（PELT/Bayesian）、
   周期解析（FFT/ウェーブレット）、季節分解（STL）、異常検出、Granger 因果性検定の
   テンプレートを提供。実験データのトレンド解析・予測モデリングに適用。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: 時系列解析ツール検索
 ---
 
 # Scientific Time Series Analysis
@@ -266,6 +270,12 @@ def anomaly_detection_zscore(series, window=30, threshold=3.0):
     anomalies = series[np.abs(z_scores) > threshold]
     return anomalies, z_scores
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | 時系列解析ツール検索 |
 
 ## References
 

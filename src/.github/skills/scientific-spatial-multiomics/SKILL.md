@@ -4,6 +4,10 @@ description: |
   空間マルチオミクス統合スキル。MERFISH/Visium 等の空間
   トランスクリプトームと空間プロテオミクスのマルチモーダル
   統合・空間共検出解析・セル近傍グラフ構築パイプライン。
+tu_tools:
+  - key: cellxgene
+    name: CellxGene
+    description: 空間マルチオミクスデータ検索
 ---
 
 # Scientific Spatial Multi-omics
@@ -291,3 +295,9 @@ spatial-transcriptomics → spatial-multiomics → multi-omics
 | `results/alignment.csv` | モダリティ間アライメント | → multi-omics |
 | `results/codetection.csv` | 共検出ペア | → pathway-analysis |
 | `results/communities.csv` | 空間コミュニティ | → spatial-transcriptomics |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `cellxgene` | CellxGene | 空間マルチオミクスデータ検索 |

@@ -4,6 +4,10 @@ description: |
   応答曲面法（ML-RSM）とパレート多目的最適化のスキル。プロセスパラメータの最適条件探索、
   コンターマップ、プロセスウィンドウ可視化を行う際に使用。
   Scientific Skills Exp-12, 13 で確立したパターン。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: プロセス最適化ツール検索
 ---
 
 # Scientific Process Optimization (RSM & Pareto)
@@ -197,6 +201,12 @@ def grid_search_optimum(model, feature_names, bounds,
 
     return optimal_conditions
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | プロセス最適化ツール検索 |
 
 ## References
 

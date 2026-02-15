@@ -6,6 +6,10 @@ description: |
   ポイント・バイ・ポイント回答生成、改訂箇所マッピング、
   複数ラウンド対応を行う。
   「査読に回答して」「reviewer response を作成して」「リバッタルを書いて」で発火。
+tu_tools:
+  - key: crossref
+    name: Crossref
+    description: 査読指摘の文献裏付け検索
 ---
 
 # Scientific Peer Review Response
@@ -612,6 +616,12 @@ def _generate_template_responses(parsed):
             })
     return responses
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `crossref` | Crossref | 査読指摘の文献裏付け検索 |
 
 ## References
 

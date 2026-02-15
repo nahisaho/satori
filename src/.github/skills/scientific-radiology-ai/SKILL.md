@@ -6,6 +6,10 @@ description: |
   構造化レポート・AI-RADS グレーディング。
   ※ scientific-medical-imaging (DICOM/WSI/Radiomics) の
   放射線診断 AI 特化拡張。
+tu_tools:
+  - key: tcia
+    name: TCIA
+    description: 放射線画像データセット検索
 ---
 
 # Scientific Radiology AI
@@ -283,3 +287,9 @@ Age: {patient_info.get('age', 'N/A')} | Sex: {patient_info.get('sex', 'N/A')}
 | `best_radiology_model.pt` | 学習済み分類モデル | → 推論 |
 | `gradcam_radiology.png` | Grad-CAM 可視化 | → レポート |
 | `structured_report.md` | 構造化レポート | → clinical-report |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `tcia` | TCIA | 放射線画像データセット検索 |

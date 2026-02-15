@@ -4,6 +4,10 @@ description: |
   薄膜・材料キャラクタリゼーション解析のスキル。Thornton-Anders 構造ゾーンモデル（SZM）、
   XRD 結晶子サイズ解析（Scherrer 方程式）、Williamson-Hall プロット、多技法融合データ解析、
   PSP フレームワーク設計を行う際に使用。Scientific Skills Exp-13 で確立したパターン。
+tu_tools:
+  - key: materials_project
+    name: Materials Project
+    description: 材料特性データベース検索
 ---
 
 # Scientific Materials Characterization
@@ -347,6 +351,12 @@ def tauc_plot_bandgap(wavelength_nm, transmittance_pct, thickness_nm,
 
     return energy_eV, tauc
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `materials_project` | Materials Project | 材料特性データベース検索 |
 
 ## References
 

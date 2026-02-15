@@ -6,6 +6,10 @@ description: |
   脂質 MS/MS スペクトル同定・脂質パスウェイエンリッチメント・
   脂質プロファイリングパイプライン。
   TU 外スキル (直接 REST API + Python ライブラリ)。
+tu_tools:
+  - key: lipidmaps
+    name: LIPID MAPS
+    description: 脂質構造・分類データベース検索
 ---
 
 # Scientific Lipidomics
@@ -282,3 +286,9 @@ metabolomics → lipidomics → pathway-enrichment
 |---------|------|---------|
 | `results/lipid_da.csv` | 差次脂質 | → biomarker-discovery |
 | `results/lipid_annotations.csv` | LipidMAPS 注釈 | → pathway-enrichment |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `lipidmaps` | LIPID MAPS | 脂質構造・分類データベース検索 |

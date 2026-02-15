@@ -3,6 +3,10 @@ name: scientific-statistical-simulation
 description: |
   統計シミュレーションスキル。Monte Carlo 法・Bootstrap 推論・
   Permutation Test・統計的検出力分析・確率的リスク評価。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: 統計シミュレーションツール検索
 ---
 
 # Scientific Statistical Simulation
@@ -225,3 +229,9 @@ def power_analysis(effect_size_range=None, n_range=None,
 | `mc_results.npz` | Monte Carlo 結果 | → リスク評価 |
 | `bootstrap_ci.csv` | 信頼区間 | → 統計レポート |
 | `power_analysis.csv` | 検出力カーブ | → DOE サンプルサイズ |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | 統計シミュレーションツール検索 |

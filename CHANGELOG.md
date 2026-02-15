@@ -5,6 +5,85 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.26.0] - 2026-02-15
+
+### Added
+- **テストフレームワーク導入**: Vitest テストフレームワークを導入（devDependencies）
+  - `vitest.config.js`: テスト設定ファイル（unit / integration / validation の 3 カテゴリ）
+  - `npm test`: 全テスト実行、`npm run test:unit` / `npm run test:validation` で個別実行
+- **CLI ユニットテスト** (`tests/unit/cli.test.js`): 24 テストケース
+  - `--version` / `-v`: バージョン出力検証
+  - `help` / `--help` / `-h`: ヘルプ表示検証
+  - `init --dry-run`: ドライラン動作検証
+  - `init`: 実際のインストール・`--force` 上書き検証
+  - `pipeline list`: 26 パイプライン一覧表示検証
+  - `pipeline (不正サブコマンド)`: エラーハンドリング検証
+  - `validate`: 190 スキル検証 / `--verbose` 出力検証（3 テスト）
+  - `stats`: 統計表示・スキル数・パイプライン数・TU カバレッジ・バージョン検証（5 テスト）
+  - 不明コマンド・引数なし: エッジケース検証
+- **SKILL.md フォーマット検証テスト** (`tests/validation/skill-format.test.js`): 190 × 7 = 1,330 テストケース
+  - 全 190 スキルの YAML Frontmatter（name + description）整合性検証
+  - `## When to Use` / `## Quick Start` セクション存在検証
+  - コードブロック（python/markdown/json）存在検証
+  - Frontmatter name ↔ ディレクトリ名一致検証
+  - TU 参照統計（80+ スキルが TU 連携）
+- **TU カバレッジ分析テスト** (`tests/validation/tu-coverage.test.js`)
+  - 全 190 スキルの ToolUniverse 連携状況を自動検出・レポート生成
+  - カテゴリ別 TU 未連携スキル一覧出力
+  - カバレッジベースライン: 54.2%（自動検出ベース）
+- **GitHub Actions CI** (`.github/workflows/ci.yml`)
+  - Node.js 18/20/22 マトリクスでの全テスト実行
+  - SKILL.md フォーマット検証ジョブ
+  - CLI スモークテストジョブ（version / help / init --dry-run / pipeline list / validate / stats）
+  - Biome lint チェックジョブ
+- **`engines` フィールド追加**: `"node": ">=18"` を package.json に明記
+- **`satori validate` コマンド**: 全 190 SKILL.md の自動検証（Frontmatter / セクション / コードブロック）
+  - `--verbose` オプション対応
+  - パス/フェイル数の集計表示
+  - 不合格スキルの問題点一覧出力
+- **`satori stats` コマンド**: プロジェクト統計ダッシュボード
+  - スキル総数 / パイプライン数 / TU 連携率 / ユニーク TU キー数 / コードブロック数
+- **Biome v2.3 リンター/フォーマッター導入** (`biome.json`)
+  - `@biomejs/biome` を devDependencies に追加
+  - `npm run lint` / `npm run lint:fix` / `npm run format` スクリプト追加
+  - recommended ルールセット + `useConst` / `noUnusedVariables` / `noUnusedImports` 有効化
+  - シングルクォート / トレイリングカンマ / セミコロン / 120 桁幅
+
+### Fixed
+- `scientific-critical-review/SKILL.md`: 1 行目の不正な ` ```skill ` ラッパーを除去（Frontmatter 解析不能の原因）
+- `scientific-hypothesis-pipeline/SKILL.md`: 同上の不正ラッパーを除去
+
+### Changed
+- `package.json`: `scripts.test` を `"node bin/satori.js init --dry-run"` → `"vitest run"` に変更
+- `package.json`: 10 の npm scripts 追加（test:watch / test:unit / test:validation / test:coverage / validate:skills / validate:tu / lint / lint:fix / format）
+- `.gitignore`: `coverage/` / OS 一時ファイル / IDE 設定ファイルの除外ルール追加
+- **README 更新**: CI バッジ追加、CLI コマンド一覧テーブル、開発セクション（テスト・リント・CI 構成）追加
+- **CONTRIBUTING.md 新設**: コントリビューションガイド（SKILL.md フォーマット要件・テスト構成・コードスタイル・コミット規約・CI 説明）
+- **統合テスト** (`tests/integration/cli-integration.test.js`): 11 テストケース
+  - `validate` ↔ `stats` 出力整合性検証（スキル数一致）
+  - `stats` 出力とファイルシステム実数との照合
+  - `pipeline list` 26 パイプライン完全性・スキル連鎖セパレータ検証
+  - `validate --verbose` 全スキル ✔ マーク検証
+  - `init --dry-run` ファイル数とファイルシステム実数の照合
+  - `help` 全コマンド記載検証
+- **GAP ANALYSIS v0.26** (`docs/GAPs/GAP_ANALYSIS_v0.26.md`): v0.25→v0.26 差分分析・7 ギャップ中 6 解消記録・TU ベースライン確立・v0.27 ロードマップ
+- **TU カバレッジ 100% 達成**: 全 87 未連携スキルに ToolUniverse 連携セクション + frontmatter `tu_tools` を一括追加
+  - カバレッジ: 54.2% (103/190) → **100.0% (190/190)**
+  - 追加スクリプト: `scripts/add-tu-keys.js`（ドメイン別 TU key マッピング定義）
+  - 使用 TU key 例: `openml` (ML), `biotools` (統計/基盤), `papers_with_code` (先端計算), `cellxgene` (シングルセル), `tcia` (医用画像) 等
+  - TU カバレッジテストのアサーションを `>=50%` → `100%` に引き上げ
+- **pre-commit hooks** (`husky` + `lint-staged`): コミット時に Biome 自動チェック
+  - `husky` v9 + `lint-staged` v16 を devDependencies に追加
+  - `.husky/pre-commit`: `npx lint-staged` 実行
+  - `"prepare": "husky"` スクリプト自動追加
+  - `lint-staged` 設定: `bin/`, `tests/`, `vitest.config.js` に `biome check --write` 適用
+- **npm publish ワークフロー** (`.github/workflows/publish.yml`)
+  - GitHub Release 作成時に自動で `npm publish --provenance --access public`
+  - テスト → validate → lint → publish の安全なパイプライン
+  - npm provenance (SLSA) 対応
+
+---
+
 ## [0.25.5] - 2026-02-14
 
 ### Added

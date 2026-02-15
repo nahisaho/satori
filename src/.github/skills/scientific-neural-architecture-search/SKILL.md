@@ -4,6 +4,10 @@ description: |
   ニューラルアーキテクチャ探索 (NAS) スキル。DARTS 微分可能 NAS・
   Optuna NAS 統合・効率的ネットワーク設計・探索空間定義・
   Pareto 最適化 (精度 vs FLOPS)。
+tu_tools:
+  - key: papers_with_code
+    name: Papers with Code
+    description: NAS 探索空間・ベンチマーク検索
 ---
 
 # Scientific Neural Architecture Search
@@ -204,3 +208,9 @@ def nas_pareto_search(train_loader, val_loader,
 | `nas_study.pkl` | Optuna Study | → 最良構造抽出 |
 | `pareto_front.csv` | Pareto 最適解群 | → モデル選択 |
 | `best_architecture.json` | 最良アーキテクチャ | → deep-learning |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `papers_with_code` | Papers with Code | NAS 探索空間・ベンチマーク検索 |

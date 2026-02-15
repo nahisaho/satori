@@ -2,8 +2,8 @@
 
 | 項目 | 値 |
 |------|----|
-| SATORI バージョン | **v0.25.4** |
-| 生成日 | 2026-02-14 |
+| SATORI バージョン | **v0.26.0** |
+| 生成日 | 2026-02-15 |
 | 参照元 | `src/.github/skills/*/SKILL.md` |
 
 ## 概要
@@ -11,8 +11,8 @@
 | 指標 | 件数 |
 |------|------|
 | スキル数 | **190** |
-| ToolUniverse 連携スキル数 | **57** |
-| ToolUniverse キー数（ユニーク） | **72** |
+| ToolUniverse 連携スキル数 | **190** |
+| ToolUniverse キー数（ユニーク） | **93** |
 | 成果物パス数（ユニーク） | **648** |
 
 > **使い方**
@@ -232,61 +232,79 @@
 ## ToolUniverse key → スキル
 
 ToolUniverse API キーから対応スキルを検索できる。1 キーが複数スキルにまたがる場合もある。
+v0.26.0 で全 190 スキルに TU 連携を追加。汎用キー `biotools` / `openml` / `papers_with_code` / `open_alex` はドメイン横断で多数のスキルが共有する。
 
 - **alphafold**: [scientific-alphafold-structures](../src/.github/skills/scientific-alphafold-structures/SKILL.md)
 - **arrayexpress**: [scientific-arrayexpress-expression](../src/.github/skills/scientific-arrayexpress-expression/SKILL.md)
+- **bigg**: [scientific-metabolic-flux](../src/.github/skills/scientific-metabolic-flux/SKILL.md)
 - **bigg_models**: [scientific-systems-biology](../src/.github/skills/scientific-systems-biology/SKILL.md)
 - **bindingdb**: [scientific-pharmacology-targets](../src/.github/skills/scientific-pharmacology-targets/SKILL.md)
 - **biomodels**: [scientific-metabolic-modeling](../src/.github/skills/scientific-metabolic-modeling/SKILL.md)
 - **biothings**: [scientific-biothings-idmapping](../src/.github/skills/scientific-biothings-idmapping/SKILL.md)
+- **biotools**: [scientific-adaptive-experiments](../src/.github/skills/scientific-adaptive-experiments/SKILL.md), [scientific-advanced-imaging](../src/.github/skills/scientific-advanced-imaging/SKILL.md), [scientific-advanced-visualization](../src/.github/skills/scientific-advanced-visualization/SKILL.md), [scientific-bayesian-statistics](../src/.github/skills/scientific-bayesian-statistics/SKILL.md), [scientific-biosignal-processing](../src/.github/skills/scientific-biosignal-processing/SKILL.md), [scientific-data-preprocessing](../src/.github/skills/scientific-data-preprocessing/SKILL.md), [scientific-data-profiling](../src/.github/skills/scientific-data-profiling/SKILL.md), [scientific-data-simulation](../src/.github/skills/scientific-data-simulation/SKILL.md), [scientific-doe](../src/.github/skills/scientific-doe/SKILL.md), [scientific-eda-correlation](../src/.github/skills/scientific-eda-correlation/SKILL.md), [scientific-image-analysis](../src/.github/skills/scientific-image-analysis/SKILL.md), [scientific-interactive-dashboard](../src/.github/skills/scientific-interactive-dashboard/SKILL.md), [scientific-lab-automation](../src/.github/skills/scientific-lab-automation/SKILL.md), [scientific-missing-data-analysis](../src/.github/skills/scientific-missing-data-analysis/SKILL.md), [scientific-neuroscience-electrophysiology](../src/.github/skills/scientific-neuroscience-electrophysiology/SKILL.md), [scientific-pca-tsne](../src/.github/skills/scientific-pca-tsne/SKILL.md), [scientific-pipeline-scaffold](../src/.github/skills/scientific-pipeline-scaffold/SKILL.md), [scientific-presentation-design](../src/.github/skills/scientific-presentation-design/SKILL.md), [scientific-process-optimization](../src/.github/skills/scientific-process-optimization/SKILL.md), [scientific-publication-figures](../src/.github/skills/scientific-publication-figures/SKILL.md), [scientific-reproducible-reporting](../src/.github/skills/scientific-reproducible-reporting/SKILL.md), [scientific-spectral-signal](../src/.github/skills/scientific-spectral-signal/SKILL.md), [scientific-statistical-simulation](../src/.github/skills/scientific-statistical-simulation/SKILL.md), [scientific-statistical-testing](../src/.github/skills/scientific-statistical-testing/SKILL.md), [scientific-streaming-analytics](../src/.github/skills/scientific-streaming-analytics/SKILL.md), [scientific-symbolic-mathematics](../src/.github/skills/scientific-symbolic-mathematics/SKILL.md), [scientific-time-series](../src/.github/skills/scientific-time-series/SKILL.md), [scientific-time-series-forecasting](../src/.github/skills/scientific-time-series-forecasting/SKILL.md)
 - **brenda**: [scientific-pharmacology-targets](../src/.github/skills/scientific-pharmacology-targets/SKILL.md)
 - **cadd**: [scientific-variant-effect-prediction](../src/.github/skills/scientific-variant-effect-prediction/SKILL.md)
 - **cbioportal**: [scientific-cancer-genomics](../src/.github/skills/scientific-cancer-genomics/SKILL.md)
 - **cellosaurus**: [scientific-cell-line-resources](../src/.github/skills/scientific-cell-line-resources/SKILL.md)
+- **cellxgene**: [scientific-gpu-singlecell](../src/.github/skills/scientific-gpu-singlecell/SKILL.md), [scientific-perturbation-analysis](../src/.github/skills/scientific-perturbation-analysis/SKILL.md), [scientific-scvi-integration](../src/.github/skills/scientific-scvi-integration/SKILL.md), [scientific-spatial-multiomics](../src/.github/skills/scientific-spatial-multiomics/SKILL.md), [scientific-squidpy-advanced](../src/.github/skills/scientific-squidpy-advanced/SKILL.md)
 - **cellxgene_census**: [scientific-cellxgene-census](../src/.github/skills/scientific-cellxgene-census/SKILL.md), [scientific-human-cell-atlas](../src/.github/skills/scientific-human-cell-atlas/SKILL.md)
-- **chembl**: [scientific-chembl-assay-mining](../src/.github/skills/scientific-chembl-assay-mining/SKILL.md)
+- **chembl**: [scientific-chembl-assay-mining](../src/.github/skills/scientific-chembl-assay-mining/SKILL.md), [scientific-deep-chemistry](../src/.github/skills/scientific-deep-chemistry/SKILL.md)
 - **chipatlas**: [scientific-encode-screen](../src/.github/skills/scientific-encode-screen/SKILL.md), [scientific-epigenomics-chromatin](../src/.github/skills/scientific-epigenomics-chromatin/SKILL.md)
 - **civic**: [scientific-civic-evidence](../src/.github/skills/scientific-civic-evidence/SKILL.md)
 - **clingen**: [scientific-clingen-curation](../src/.github/skills/scientific-clingen-curation/SKILL.md)
-- **clinvar**: [scientific-variant-interpretation](../src/.github/skills/scientific-variant-interpretation/SKILL.md)
+- **clinvar**: [scientific-biobank-cohort](../src/.github/skills/scientific-biobank-cohort/SKILL.md), [scientific-variant-interpretation](../src/.github/skills/scientific-variant-interpretation/SKILL.md)
 - **complex_portal**: [scientific-systems-biology](../src/.github/skills/scientific-systems-biology/SKILL.md)
 - **cosmic**: [scientific-cancer-genomics](../src/.github/skills/scientific-cancer-genomics/SKILL.md)
-- **crossref**: [scientific-crossref-metadata](../src/.github/skills/scientific-crossref-metadata/SKILL.md)
+- **crossref**: [scientific-academic-writing](../src/.github/skills/scientific-academic-writing/SKILL.md), [scientific-critical-review](../src/.github/skills/scientific-critical-review/SKILL.md), [scientific-crossref-metadata](../src/.github/skills/scientific-crossref-metadata/SKILL.md), [scientific-latex-formatter](../src/.github/skills/scientific-latex-formatter/SKILL.md), [scientific-paper-quality](../src/.github/skills/scientific-paper-quality/SKILL.md), [scientific-peer-review-response](../src/.github/skills/scientific-peer-review-response/SKILL.md), [scientific-revision-tracker](../src/.github/skills/scientific-revision-tracker/SKILL.md), [scientific-supplementary-generator](../src/.github/skills/scientific-supplementary-generator/SKILL.md)
+- **ctd**: [scientific-toxicology-env](../src/.github/skills/scientific-toxicology-env/SKILL.md)
 - **depmap**: [scientific-depmap-dependencies](../src/.github/skills/scientific-depmap-dependencies/SKILL.md)
 - **dgidb**: [scientific-drug-target-profiling](../src/.github/skills/scientific-drug-target-profiling/SKILL.md)
 - **disgenet**: [scientific-disease-research](../src/.github/skills/scientific-disease-research/SKILL.md)
-- **drugbank**: [scientific-drugbank-resources](../src/.github/skills/scientific-drugbank-resources/SKILL.md)
-- **encode**: [scientific-encode-screen](../src/.github/skills/scientific-encode-screen/SKILL.md)
+- **drugbank**: [scientific-clinical-pharmacology](../src/.github/skills/scientific-clinical-pharmacology/SKILL.md), [scientific-drugbank-resources](../src/.github/skills/scientific-drugbank-resources/SKILL.md)
+- **ena**: [scientific-data-submission](../src/.github/skills/scientific-data-submission/SKILL.md)
+- **encode**: [scientific-encode-screen](../src/.github/skills/scientific-encode-screen/SKILL.md), [scientific-scatac-signac](../src/.github/skills/scientific-scatac-signac/SKILL.md)
+- **ensembl**: [scientific-crispr-design](../src/.github/skills/scientific-crispr-design/SKILL.md)
 - **fda_pharmacogenomic_biomarkers**: [scientific-pharmacogenomics](../src/.github/skills/scientific-pharmacogenomics/SKILL.md)
-- **gbif**: [scientific-environmental-ecology](../src/.github/skills/scientific-environmental-ecology/SKILL.md), [scientific-marine-ecology](../src/.github/skills/scientific-marine-ecology/SKILL.md)
+- **gbif**: [scientific-environmental-ecology](../src/.github/skills/scientific-environmental-ecology/SKILL.md), [scientific-geospatial-analysis](../src/.github/skills/scientific-geospatial-analysis/SKILL.md), [scientific-marine-ecology](../src/.github/skills/scientific-marine-ecology/SKILL.md)
 - **gdc**: [scientific-gdc-portal](../src/.github/skills/scientific-gdc-portal/SKILL.md)
 - **geo**: [scientific-geo-expression](../src/.github/skills/scientific-geo-expression/SKILL.md)
+- **glygen**: [scientific-glycomics](../src/.github/skills/scientific-glycomics/SKILL.md)
 - **gnomad**: [scientific-gnomad-variants](../src/.github/skills/scientific-gnomad-variants/SKILL.md)
 - **gtex_v2**: [scientific-gtex-tissue-expression](../src/.github/skills/scientific-gtex-tissue-expression/SKILL.md)
 - **gtopdb**: [scientific-pharmacology-targets](../src/.github/skills/scientific-pharmacology-targets/SKILL.md)
 - **gwas**: [scientific-gwas-catalog](../src/.github/skills/scientific-gwas-catalog/SKILL.md)
 - **hca_tools**: [scientific-human-cell-atlas](../src/.github/skills/scientific-human-cell-atlas/SKILL.md)
-- **hmdb**: [scientific-metabolomics](../src/.github/skills/scientific-metabolomics/SKILL.md)
+- **hgnc**: [scientific-hgnc-nomenclature](../src/.github/skills/scientific-hgnc-nomenclature/SKILL.md)
+- **hmdb**: [scientific-metabolomics](../src/.github/skills/scientific-metabolomics/SKILL.md), [scientific-metabolomics-network](../src/.github/skills/scientific-metabolomics-network/SKILL.md)
 - **hpa**: [scientific-human-protein-atlas](../src/.github/skills/scientific-human-protein-atlas/SKILL.md)
 - **icd**: [scientific-clinical-standards](../src/.github/skills/scientific-clinical-standards/SKILL.md)
 - **iedb**: [scientific-immunoinformatics](../src/.github/skills/scientific-immunoinformatics/SKILL.md)
 - **imgt**: [scientific-immunoinformatics](../src/.github/skills/scientific-immunoinformatics/SKILL.md)
 - **impc**: [scientific-model-organism-db](../src/.github/skills/scientific-model-organism-db/SKILL.md)
 - **intact**: [scientific-protein-interaction-network](../src/.github/skills/scientific-protein-interaction-network/SKILL.md)
+- **lipidmaps**: [scientific-lipidomics](../src/.github/skills/scientific-lipidomics/SKILL.md)
 - **loinc**: [scientific-clinical-standards](../src/.github/skills/scientific-clinical-standards/SKILL.md)
+- **materials_project**: [scientific-materials-characterization](../src/.github/skills/scientific-materials-characterization/SKILL.md)
 - **medlineplus**: [scientific-public-health-data](../src/.github/skills/scientific-public-health-data/SKILL.md)
+- **metabolic_atlas**: [scientific-metabolic-atlas](../src/.github/skills/scientific-metabolic-atlas/SKILL.md)
 - **metabolomics_workbench**: [scientific-metabolomics](../src/.github/skills/scientific-metabolomics/SKILL.md)
 - **metacyc**: [scientific-metabolomics-databases](../src/.github/skills/scientific-metabolomics-databases/SKILL.md)
-- **mgnify**: [scientific-microbiome-metagenomics](../src/.github/skills/scientific-microbiome-metagenomics/SKILL.md)
+- **mgnify**: [scientific-metagenome-assembled-genomes](../src/.github/skills/scientific-metagenome-assembled-genomes/SKILL.md), [scientific-microbiome-metagenomics](../src/.github/skills/scientific-microbiome-metagenomics/SKILL.md)
 - **monarch**: [scientific-monarch-ontology](../src/.github/skills/scientific-monarch-ontology/SKILL.md)
 - **mpd**: [scientific-model-organism-db](../src/.github/skills/scientific-model-organism-db/SKILL.md)
+- **ncbi_taxonomy**: [scientific-phylogenetics](../src/.github/skills/scientific-phylogenetics/SKILL.md)
+- **nci60**: [scientific-nci60-screening](../src/.github/skills/scientific-nci60-screening/SKILL.md)
 - **nhanes**: [scientific-public-health-data](../src/.github/skills/scientific-public-health-data/SKILL.md)
 - **obis**: [scientific-marine-ecology](../src/.github/skills/scientific-marine-ecology/SKILL.md)
 - **odphp**: [scientific-public-health-data](../src/.github/skills/scientific-public-health-data/SKILL.md)
 - **oncokb**: [scientific-precision-oncology](../src/.github/skills/scientific-precision-oncology/SKILL.md)
+- **open_alex**: [scientific-causal-inference](../src/.github/skills/scientific-causal-inference/SKILL.md), [scientific-hypothesis-pipeline](../src/.github/skills/scientific-hypothesis-pipeline/SKILL.md), [scientific-research-methodology](../src/.github/skills/scientific-research-methodology/SKILL.md)
+- **openml**: [scientific-active-learning](../src/.github/skills/scientific-active-learning/SKILL.md), [scientific-anomaly-detection](../src/.github/skills/scientific-anomaly-detection/SKILL.md), [scientific-automl](../src/.github/skills/scientific-automl/SKILL.md), [scientific-causal-ml](../src/.github/skills/scientific-causal-ml/SKILL.md), [scientific-ensemble-methods](../src/.github/skills/scientific-ensemble-methods/SKILL.md), [scientific-feature-importance](../src/.github/skills/scientific-feature-importance/SKILL.md), [scientific-ml-classification](../src/.github/skills/scientific-ml-classification/SKILL.md), [scientific-ml-regression](../src/.github/skills/scientific-ml-regression/SKILL.md), [scientific-model-monitoring](../src/.github/skills/scientific-model-monitoring/SKILL.md), [scientific-multi-task-learning](../src/.github/skills/scientific-multi-task-learning/SKILL.md), [scientific-semi-supervised-learning](../src/.github/skills/scientific-semi-supervised-learning/SKILL.md)
 - **opentarget**: [scientific-opentargets-genetics](../src/.github/skills/scientific-opentargets-genetics/SKILL.md)
 - **orphanet**: [scientific-rare-disease-genetics](../src/.github/skills/scientific-rare-disease-genetics/SKILL.md)
 - **paleobiology**: [scientific-paleobiology](../src/.github/skills/scientific-paleobiology/SKILL.md)
+- **papers_with_code**: [scientific-deep-learning](../src/.github/skills/scientific-deep-learning/SKILL.md), [scientific-explainable-ai](../src/.github/skills/scientific-explainable-ai/SKILL.md), [scientific-federated-learning](../src/.github/skills/scientific-federated-learning/SKILL.md), [scientific-neural-architecture-search](../src/.github/skills/scientific-neural-architecture-search/SKILL.md), [scientific-quantum-computing](../src/.github/skills/scientific-quantum-computing/SKILL.md), [scientific-reinforcement-learning](../src/.github/skills/scientific-reinforcement-learning/SKILL.md), [scientific-transfer-learning](../src/.github/skills/scientific-transfer-learning/SKILL.md), [scientific-uncertainty-quantification](../src/.github/skills/scientific-uncertainty-quantification/SKILL.md)
+- **pdb**: [scientific-md-simulation](../src/.github/skills/scientific-md-simulation/SKILL.md)
 - **pharmgkb**: [scientific-pharmgkb-pgx](../src/.github/skills/scientific-pharmgkb-pgx/SKILL.md)
 - **pharos**: [scientific-drug-repurposing](../src/.github/skills/scientific-drug-repurposing/SKILL.md), [scientific-pharos-targets](../src/.github/skills/scientific-pharos-targets/SKILL.md)
 - **ppi**: [scientific-string-network-api](../src/.github/skills/scientific-string-network-api/SKILL.md)
@@ -299,7 +317,11 @@ ToolUniverse API キーから対応スキルを検索できる。1 キーが複�
 - **semantic_scholar**: [scientific-semantic-scholar](../src/.github/skills/scientific-semantic-scholar/SKILL.md)
 - **spliceai**: [scientific-variant-effect-prediction](../src/.github/skills/scientific-variant-effect-prediction/SKILL.md)
 - **stitch**: [scientific-stitch-chemical-network](../src/.github/skills/scientific-stitch-chemical-network/SKILL.md)
+- **string**: [scientific-network-visualization](../src/.github/skills/scientific-network-visualization/SKILL.md)
+- **tair**: [scientific-plant-biology](../src/.github/skills/scientific-plant-biology/SKILL.md)
+- **tcia**: [scientific-medical-imaging](../src/.github/skills/scientific-medical-imaging/SKILL.md), [scientific-radiology-ai](../src/.github/skills/scientific-radiology-ai/SKILL.md)
 - **therasabdab**: [scientific-immunoinformatics](../src/.github/skills/scientific-immunoinformatics/SKILL.md)
+- **umls**: [scientific-clinical-nlp](../src/.github/skills/scientific-clinical-nlp/SKILL.md)
 - **uniprot**: [scientific-uniprot-proteome](../src/.github/skills/scientific-uniprot-proteome/SKILL.md)
 - **who_gho**: [scientific-epidemiology-public-health](../src/.github/skills/scientific-epidemiology-public-health/SKILL.md)
 - **wikipathways**: [scientific-systems-biology](../src/.github/skills/scientific-systems-biology/SKILL.md)

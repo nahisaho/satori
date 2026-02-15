@@ -5,6 +5,10 @@ description: |
   語彙多様性、学術語使用率、冗長表現検出、ジャーナル要件適合チェック、
   再現可能性チェックを実行する。
   「論文の品質をチェックして」「可読性スコアを出して」「投稿前チェック」で発火。
+tu_tools:
+  - key: crossref
+    name: Crossref
+    description: 引用品質・ジャーナルメトリクス参照
 ---
 
 # Scientific Paper Quality
@@ -788,6 +792,12 @@ def _vocabulary_score(vocabulary):
     score -= overclaim * 0.05  # 過剰主張 1 つにつき -0.05
     return max(0.0, round(score, 2))
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `crossref` | Crossref | 引用品質・ジャーナルメトリクス参照 |
 
 ## References
 

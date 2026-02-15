@@ -4,6 +4,10 @@ description: |
   ベイズ統計スキル。PyMC・Stan・ArviZ を活用し、ベイズ回帰・階層モデル・
   MCMC サンプリング・ベイズ最適化・事後予測チェック・モデル比較を支援。
   「ベイズ回帰して」「MCMC で推定して」「事後分布を求めて」で発火。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: ベイズ統計ツールレジストリ検索
 ---
 
 # Scientific Bayesian Statistics
@@ -353,6 +357,12 @@ model {
 - [ ] 事後予測チェック (PPC)
 - [ ] モデル比較 (LOO-CV / WAIC)
 - [ ] 結果レポート・プロット生成
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | ベイズ統計ツールレジストリ検索 |
 
 ## References
 

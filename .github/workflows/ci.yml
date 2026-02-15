@@ -1,0 +1,92 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npx vitest run --reporter=verbose
+
+  validate-skills:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate SKILL.md format
+        run: npx vitest run tests/validation/ --reporter=verbose
+
+  cli-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: CLI --version
+        run: node bin/satori.js --version
+
+      - name: CLI help
+        run: node bin/satori.js help
+
+      - name: CLI init --dry-run
+        run: |
+          tmpdir=$(mktemp -d)
+          cd "$tmpdir"
+          node $GITHUB_WORKSPACE/bin/satori.js init --dry-run
+          rm -rf "$tmpdir"
+
+      - name: CLI pipeline list
+        run: node bin/satori.js pipeline list
+
+      - name: CLI validate
+        run: node bin/satori.js validate
+
+      - name: CLI stats
+        run: node bin/satori.js stats
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Biome lint
+        run: npx biome check bin/ tests/ vitest.config.js

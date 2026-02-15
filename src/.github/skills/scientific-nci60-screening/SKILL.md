@@ -4,6 +4,10 @@ description: |
   NCI-60 がん細胞株薬剤応答スキル。CellMiner API 薬剤感受性・
   NCI-60 GI50/LC50 データ・DepMap cancer dependency 統合・
   薬剤-分子マーカー相関・細胞株パネル比較解析。
+tu_tools:
+  - key: nci60
+    name: NCI-60
+    description: がん細胞株スクリーニングデータ検索
 ---
 
 # Scientific NCI-60 Screening
@@ -305,3 +309,9 @@ drug-target-profiling ──────┘          cancer-genomics
 | `results/tissue_patterns.csv` | 組織別応答パターン | → cancer-genomics |
 | `results/marker_correlations.csv` | 薬剤-マーカー相関 | → drug-target-profiling |
 | `results/depmap_dependency.csv` | DepMap 依存性スコア | → cell-line-resources |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `nci60` | NCI-60 | がん細胞株スクリーニングデータ検索 |

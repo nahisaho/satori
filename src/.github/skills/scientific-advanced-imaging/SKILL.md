@@ -4,6 +4,10 @@ description: |
   高度バイオイメージング解析スキル。CellProfiler によるモフォロジカル
   プロファイリング・Cell Painting 解析、Cellpose による深層学習
   セルセグメンテーション、napari によるインタラクティブ 3D 可視化。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: 高度イメージングツール検索
 ---
 
 # Scientific Advanced Imaging
@@ -380,3 +384,9 @@ fluorescence-microscopy ──┘               drug-target-profiling
 | `results/features.csv` | 形態学的特徴量マトリクス | → cheminformatics |
 | `results/cell_painting.csv` | Cell Painting プロファイル | → drug-target-profiling |
 | `results/model/` | 微調整 Cellpose モデル | — |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | 高度イメージングツール検索 |

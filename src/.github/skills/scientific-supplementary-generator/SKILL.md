@@ -5,6 +5,10 @@ description: |
   本文から溢れた図表・手法詳細・追加データを構造化し、ジャーナル規定に準拠した
   SI ドキュメントを生成する。「SIを作って」「補足資料を生成して」「Supplementary を作成して」で発火。
   scientific-academic-writing で本文を作成した後に使用。
+tu_tools:
+  - key: crossref
+    name: Crossref
+    description: 補足資料の引用メタデータ参照
 ---
 
 # Scientific Supplementary Information Generator
@@ -422,6 +426,12 @@ def run_si_pipeline(manuscript_path, figures_dir=None, results_dir=None,
 
     return {"si_path": si_path, "crossref": crossref}
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `crossref` | Crossref | 補足資料の引用メタデータ参照 |
 
 ## References
 

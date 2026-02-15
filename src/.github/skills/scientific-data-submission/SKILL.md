@@ -4,6 +4,10 @@ description: |
   科学データ登録・アーカイブスキル。GenBank/SRA 配列登録・
   ENA 配列アーカイブ・GEO 発現データ登録・BioProject/BioSample
   メタデータ管理・FAIR 原則準拠データ共有。
+tu_tools:
+  - key: ena
+    name: ENA
+    description: データ登録・アクセッション管理
 ---
 
 # Scientific Data Submission
@@ -355,3 +359,9 @@ lab-data-management ───┘           academic-writing
 | `submission/sra_metadata.tsv` | SRA メタデータ | → ebi-databases |
 | `geo_submission/submission.soft` | GEO SOFT テンプレート | → gene-expression |
 | `submission/fair_report.json` | FAIR チェックリスト結果 | → academic-writing |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `ena` | ENA | データ登録・アクセッション管理 |

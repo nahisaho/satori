@@ -5,6 +5,10 @@ description: |
   Streamlit / Dash / Panel / Voilà による
   科学データダッシュボード構築・リアルタイムパラメータ探索 UI ・
   ウィジェット連動・データアップロード・解析パイプライン UI 化。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: インタラクティブ可視化ツール検索
 ---
 
 # Scientific Interactive Dashboard
@@ -344,3 +348,9 @@ advanced-visualization → interactive-dashboard → presentation-design
 | `dash_app.py` | Dash ダッシュボード | → deployment |
 | `panel_app.py` | Panel ダッシュボード | → deployment |
 | `framework_comparison.csv` | フレームワーク比較 | → 選択指針 |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | インタラクティブ可視化ツール検索 |

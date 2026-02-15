@@ -4,6 +4,10 @@ description: |
   ネットワーク解析・可視化スキル。NetworkX グラフ構築・
   コミュニティ検出 (Louvain/Leiden)・中心性指標・
   PyVis インタラクティブ・ネットワーク統計量・動的ネットワーク。
+tu_tools:
+  - key: string
+    name: STRING
+    description: ネットワーク可視化・相互作用データ
 ---
 
 # Scientific Network Visualization
@@ -276,3 +280,9 @@ eda-correlation → network-visualization → advanced-visualization
 | `network_communities.png` | コミュニティ構造 | → presentation |
 | `centrality_analysis.csv` | 中心性指標 | → feature-importance |
 | `network_interactive.html` | PyVis 図 | → dashboard |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `string` | STRING | ネットワーク可視化・相互作用データ |

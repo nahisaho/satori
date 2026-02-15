@@ -4,6 +4,10 @@ description: |
   不確実性定量化スキル。Conformal Prediction・MC Dropout・
   深層アンサンブル・アレアトリック / エピステミック分離・
   Calibration Curve・予測区間推定・Expected Calibration Error。
+tu_tools:
+  - key: papers_with_code
+    name: Papers with Code
+    description: 不確実性定量化手法・ベンチマーク
 ---
 
 # Scientific Uncertainty Quantification
@@ -284,3 +288,9 @@ ensemble-methods → uncertainty-quantification → explainable-ai
 | `mc_dropout_uncertainty.csv` | MC Dropout 不確実性 | → active-learning |
 | `calibration_analysis.png` | 校正曲線 | → presentation |
 | `uncertainty_decomposition.json` | 分離結果 | → explainable-ai |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `papers_with_code` | Papers with Code | 不確実性定量化手法・ベンチマーク |

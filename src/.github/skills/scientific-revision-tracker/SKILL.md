@@ -5,6 +5,10 @@ description: |
   変更箇所のハイライト（赤字削除/青字追加）、改訂サマリー自動生成、
   査読コメントと改訂箇所のトレーサビリティ管理を行う。
   「改訂をトラッキングして」「変更履歴を作って」「diff を出して」で発火。
+tu_tools:
+  - key: crossref
+    name: Crossref
+    description: 改訂履歴の引用整合性検証
 ---
 
 # Scientific Revision Tracker
@@ -486,6 +490,12 @@ def run_revision_tracker(original_path, revised_path, round_number=1,
 
     return diff, traceability
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `crossref` | Crossref | 改訂履歴の引用整合性検証 |
 
 ## References
 

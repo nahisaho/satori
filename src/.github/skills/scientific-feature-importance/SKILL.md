@@ -4,6 +4,10 @@ description: |
   特徴量重要度分析のスキル。Tree-based Feature Importance と Permutation Importance を
   用いて予測モデルの説明可能性を向上させる際に使用。
   Scientific Skills Exp-05, 12, 13 で確立したパターン。
+tu_tools:
+  - key: openml
+    name: OpenML
+    description: 特徴量選択ベンチマーク参照
 ---
 
 # Scientific Feature Importance Analysis
@@ -188,6 +192,12 @@ def generate_importance_mapping_table(all_fi_df, top_n=3):
             })
     return pd.DataFrame(mapping)
 ```
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `openml` | OpenML | 特徴量選択ベンチマーク参照 |
 
 ## References
 

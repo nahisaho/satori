@@ -4,6 +4,10 @@ description: |
   医用イメージングスキル。DICOM/NIfTI 処理・WSI (Whole Slide Image) 解析・
   PathML・MONAI・3D Slicer 連携・放射線画像解析・病理組織画像解析を支援。
   「DICOM を解析して」「WSI を処理して」「医用画像をセグメンテーションして」で発火。
+tu_tools:
+  - key: tcia
+    name: TCIA
+    description: がん画像アーカイブ検索
 ---
 
 # Scientific Medical Imaging
@@ -426,6 +430,12 @@ def generate_imaging_report(patient_id, modality, findings,
 - [ ] WSI パッチ抽出・組織検出（病理画像の場合）
 - [ ] 3D 可視化
 - [ ] レポート（JSON + Markdown）生成
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `tcia` | TCIA | がん画像アーカイブ検索 |
 
 ## References
 

@@ -4,6 +4,10 @@ description: |
   ストリーミング解析スキル。River オンライン学習・
   リアルタイム異常検知・ストリーミング統計・
   増分データ可視化・概念ドリフト検出。
+tu_tools:
+  - key: biotools
+    name: bio.tools
+    description: ストリーミング解析ツール検索
 ---
 
 # Scientific Streaming Analytics
@@ -219,3 +223,9 @@ def concept_drift_detection(stream_data, target_col="y",
 | `online_model.pkl` | オンラインモデル | → 推論 |
 | `stream_anomalies.csv` | 異常検知結果 | → alerting |
 | `drift_report.csv` | ドリフト検出点 | → model-monitoring |
+
+## ToolUniverse 連携
+
+| TU Key | ツール名 | 連携内容 |
+|--------|---------|--------|
+| `biotools` | bio.tools | ストリーミング解析ツール検索 |
