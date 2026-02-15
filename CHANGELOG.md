@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.28.1] - 2026-02-15
+
+### Added
+- **`satori pipeline custom` コマンド**: カスタムパイプライン管理
+  - `satori pipeline custom list`: 登録済みカスタムパイプライン一覧表示
+  - `satori pipeline custom add <file>`: JSON ファイルからカスタムパイプラインを追加
+  - `satori pipeline custom remove <id>`: カスタムパイプラインを削除
+  - 保存先: `~/.satori/custom-pipelines.json`
+  - スキーマ: `{ id, name, keywords, skills }` (ドメインパイプラインと同じ形式)
+- **`satori docs generate` コマンド**: ドキュメント自動生成
+  - `docs/SATORI_REVERSE_INDEX.md`
+  - `docs/SATORI_PIPELINE_EXAMPLES.md`
+  - `docs/qiita/SATORI_REVERSE_INDEX_QIITA.md`
+  - `docs/qiita/SATORI_PIPELINE_EXAMPLES_QIITA.md`
+  - `--preview` で書き込みせず生成結果の件数を確認
+
+### Changed
+- **パイプラインキーワード改善**: 同義語・英日混在のマッチングを補強
+  - 例: ML/機械学習/AI/深層学習/ゲノム/創薬/ADMET などを正規化
+  - `satori pipeline suggest` の推薦精度を改善
+
+### Testing
+- Unit tests +7 件追加（pipeline custom, docs generate）
+- 全テスト: 1,385 → 1,392 (+7)
+
 ## [0.28.0] - 2026-02-15
 
 ### Added

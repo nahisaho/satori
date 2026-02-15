@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('node:fs');
+const os = require('node:os');
 const path = require('node:path');
 
 const COMMAND = process.argv[2];
@@ -9,6 +10,7 @@ const FLAGS = process.argv.slice(3);
 
 const PACKAGE_ROOT = path.resolve(__dirname, '..');
 const SOURCE_DIR = path.join(PACKAGE_ROOT, 'src', '.github');
+const CUSTOM_PIPELINES_PATH = path.join(process.env.HOME || os.homedir(), '.satori', 'custom-pipelines.json');
 
 function copyDirSync(src, dest) {
   fs.mkdirSync(dest, { recursive: true });
@@ -77,6 +79,7 @@ Usage:
   satori pipeline suggest             Interactive pipeline recommendation
   satori pipeline list                List all available pipelines
   satori pipeline custom <action>     Manage custom pipelines
+  satori docs generate [--preview]    Generate docs/ and docs/qiita/ files
   satori validate [--verbose]         Validate all SKILL.md files
   satori stats                        Show skill/TU coverage statistics
   satori help                         Show this help message
@@ -86,6 +89,7 @@ Options:
   --force     Overwrite existing .github/ directory
   --dry-run   Preview what would be installed without making changes
   --verbose   Show detailed validation output
+  --preview   Show docs generation summary without writing files
 
 Custom Pipelines:
   satori pipeline custom list         List custom pipelines
@@ -480,6 +484,54 @@ const PIPELINES = [
   },
 ];
 
+// ── Synonym Dictionary ──
+const SYNONYM_DICT = {
+  // 機械学習・AI
+  ml: ['machine learning', '機械学習', 'ML'],
+  ai: ['artificial intelligence', '人工知能', 'AI', 'AI'],
+  dl: ['deep learning', '深層学習', 'DL'],
+  'neural network': ['NN', 'ニューラルネットワーク'],
+
+  // バイオインフォマティクス
+  bioinfo: ['バイオインフォマティクス', 'bioinformatics'],
+  genomics: ['ゲノミクス', 'ゲノム', 'genomics'],
+  seq: ['シーケンシング', 'sequencing'],
+  rna: ['RNA', 'RNA-seq', 'トランスクリプトーム'],
+  protein: ['プロテイン', 'タンパク質'],
+
+  // 創薬・化学
+  'drug discovery': ['創薬', '創薬', 'drug-discovery'],
+  admet: ['ADMET', '薬物動態'],
+  docking: ['ドッキング', 'molecular docking'],
+  cheminformatics: ['ケモインフォマティクス'],
+
+  // データ分析
+  'data analysis': ['データ解析', 'data analysis'],
+  statistics: ['統計', '統計学'],
+  visualization: ['可視化', 'ビジュアル'],
+  pipeline: ['パイプライン'],
+
+  // 医療・臨床
+  clinical: ['臨床', 'クリニカル'],
+  precision: ['精密医療', '精密'],
+  oncology: ['腫瘍学', 'がん'],
+};
+
+function normalizeKeyword(keyword) {
+  const lower = keyword.toLowerCase().trim();
+
+  // 同義語チェック
+  for (const [key, synonyms] of Object.entries(SYNONYM_DICT)) {
+    for (const syn of synonyms) {
+      if (lower.includes(syn.toLowerCase()) || syn.toLowerCase().includes(lower)) {
+        return key;
+      }
+    }
+  }
+
+  return lower;
+}
+
 function pipelineSuggest() {
   const readline = require('node:readline');
   const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
@@ -493,15 +545,20 @@ function pipelineSuggest() {
 
     const input = await ask('何を解析しますか？ キーワードや研究テーマを入力してください:\n> ');
     const query = input.toLowerCase();
+    const normalizedQuery = normalizeKeyword(query);
 
-    // Score each pipeline by keyword match
+    // Score each pipeline by keyword match (with synonym support)
     const scored = PIPELINES.map((p) => {
       let score = 0;
       for (const kw of p.keywords) {
+        const normalizedKw = normalizeKeyword(kw);
+        // 完全一致：2点、同義語マッチ：1.5点、部分一致：1点
         if (query.includes(kw.toLowerCase())) score += 2;
+        else if (normalizedQuery === normalizedKw) score += 1.5;
+        else if (normalizedKw.includes(normalizedQuery) || query.includes(normalizedKw)) score += 1;
       }
       // Partial match on name
-      if (query.includes(p.name.toLowerCase()) || p.name.toLowerCase().includes(query)) score += 1;
+      if (query.includes(p.name.toLowerCase()) || p.name.toLowerCase().includes(query)) score += 0.5;
       return { ...p, score };
     })
       .filter((p) => p.score > 0)
@@ -663,7 +720,7 @@ function validate() {
 
 // ── Stats ──
 
-function stats() {
+function collectStats() {
   const skillsDir = path.join(SOURCE_DIR, 'skills');
 
   if (!fs.existsSync(skillsDir)) {
@@ -697,19 +754,140 @@ function stats() {
     }
   }
 
-  const coverage = ((tuLinked / totalSkills) * 100).toFixed(1);
+  const pipelineBreakdown = {
+    domain: PIPELINES.filter((p) => typeof p.id === 'number').length,
+    cross: PIPELINES.filter((p) => p.domain === 'cross-domain').length,
+    industry: PIPELINES.filter((p) => p.domain === 'industry').length,
+    methodology: PIPELINES.filter((p) => p.domain === 'methodology').length,
+  };
+
   const pkg = require(path.join(PACKAGE_ROOT, 'package.json'));
+  const date = new Date().toISOString().slice(0, 10);
+  const coverage = ((tuLinked / totalSkills) * 100).toFixed(1);
+
+  return {
+    version: pkg.version,
+    date,
+    totalSkills,
+    pipelinesCount: PIPELINES.length,
+    pipelineBreakdown,
+    tuLinked,
+    tuKeysCount: allTuKeys.size,
+    totalCodeBlocks,
+    coverage,
+  };
+}
+
+function stats() {
+  const summary = collectStats();
 
   console.log(`
-📊 SATORI v${pkg.version} — 統計
+📊 SATORI v${summary.version} — 統計
 
-  スキル総数:          ${totalSkills}
-  パイプライン数:      ${PIPELINES.length}
-  TU 連携スキル:       ${tuLinked} (${coverage}%)
-  TU 未連携:           ${totalSkills - tuLinked}
-  ユニーク TU キー:    ${allTuKeys.size}
-  コードブロック総数:  ${totalCodeBlocks}
+  スキル総数:          ${summary.totalSkills}
+  パイプライン数:      ${summary.pipelinesCount}
+  TU 連携スキル:       ${summary.tuLinked} (${summary.coverage}%)
+  TU 未連携:           ${summary.totalSkills - summary.tuLinked}
+  ユニーク TU キー:    ${summary.tuKeysCount}
+  コードブロック総数:  ${summary.totalCodeBlocks}
 `);
+}
+
+// ── Docs Generate ──
+
+function updateReverseIndexDoc(content, summary) {
+  const pipelineLine = `| パイプライン数 | **${summary.pipelinesCount}** (ドメイン ${summary.pipelineBreakdown.domain} + クロスドメイン ${summary.pipelineBreakdown.cross} + インダストリー ${summary.pipelineBreakdown.industry} + メソドロジー ${summary.pipelineBreakdown.methodology}) |`;
+
+  return content
+    .replace(/\n\| SATORI バージョン \| \*\*v[^*]+\*\* \|/g, `\n| SATORI バージョン | **v${summary.version}** |`)
+    .replace(/\n\| 生成日 \| .* \|/g, `\n| 生成日 | ${summary.date} |`)
+    .replace(/\n\| スキル数 \| \*\*\d+\*\* \|/g, `\n| スキル数 | **${summary.totalSkills}** |`)
+    .replace(/\n\| パイプライン数 \| .* \|/g, `\n${pipelineLine}`)
+    .replace(
+      /\n\| ToolUniverse 連携スキル数 \| \*\*\d+\*\* \|/g,
+      `\n| ToolUniverse 連携スキル数 | **${summary.tuLinked}** |`,
+    )
+    .replace(
+      /\n\| ToolUniverse キー数（ユニーク） \| \*\*\d+\*\* \|/g,
+      `\n| ToolUniverse キー数（ユニーク） | **${summary.tuKeysCount}** |`,
+    );
+}
+
+function updatePipelineExamplesDoc(content, summary) {
+  const pipelineLine = `| 掲載パイプライン数 | ${summary.pipelineBreakdown.domain} ドメイン + ${summary.pipelineBreakdown.cross} クロスドメイン + ${summary.pipelineBreakdown.industry} インダストリー + ${summary.pipelineBreakdown.methodology} メソドロジー = **${summary.pipelinesCount}** |`;
+
+  return content
+    .replace(
+      /^> \*\*SATORI v[^*]+\*\* — .*$/m,
+      `> **SATORI v${summary.version}** — ${summary.totalSkills} スキル + ${summary.pipelinesCount} パイプラインの連携レシピ集`,
+    )
+    .replace(/\n\| 生成日 \| .* \|/g, `\n| 生成日 | ${summary.date} |`)
+    .replace(/\n\| 対象バージョン \| .* \|/g, `\n| 対象バージョン | v${summary.version} |`)
+    .replace(/\n\| 掲載パイプライン数 \| .* \|/g, `\n${pipelineLine}`)
+    .replace(
+      /\n\| スキル総数 \| \d+ \(.*\) \|/g,
+      `\n| スキル総数 | ${summary.totalSkills} (\`src/.github/skills/scientific-*/SKILL.md\`) |`,
+    )
+    .replace(/\n\| ToolUniverse キー数 \| .* \|/g, `\n| ToolUniverse キー数 | ${summary.tuKeysCount} (ユニーク) |`);
+}
+
+function updateQiitaReverseIndexDoc(content, summary) {
+  const title = `title: 【SATORI v${summary.version}】${summary.totalSkills}スキル×${summary.pipelinesCount}パイプライン逆引き辞書 完全索引`;
+  const intro = `**[SATORI](https://github.com/nahisaho/satori)** は **GitHub Copilot** 上で動作する、${summary.totalSkills} の専門スキルと ${summary.pipelinesCount} の統合パイプライン（${summary.pipelineBreakdown.domain} ドメイン + ${summary.pipelineBreakdown.cross} クロスドメイン + ${summary.pipelineBreakdown.industry} インダストリー + ${summary.pipelineBreakdown.methodology} メソドロジー）により、仮説構築から論文出版まで、あらゆる科学研究ワークフローを自動化するフレームワークです。`;
+
+  return content.replace(/^title: .+$/m, title).replace(/^\*\*\[SATORI\][\s\S]*?フレームワークです。$/m, intro);
+}
+
+function updateQiitaPipelineExamplesDoc(content, summary) {
+  const title = `title: 【SATORI v${summary.version}】${summary.totalSkills}スキル×${summary.pipelinesCount}パイプラインで実現する科学研究自動化 完全ガイド`;
+  const intro = `**[SATORI](https://github.com/nahisaho/satori)** は **GitHub Copilot** 上で動作する、${summary.totalSkills} の専門スキルを組み合わせて構築した ${summary.pipelinesCount} 個のパイプライン（${summary.pipelineBreakdown.domain} ドメイン + ${summary.pipelineBreakdown.cross} クロスドメイン + ${summary.pipelineBreakdown.industry} インダストリー + ${summary.pipelineBreakdown.methodology} メソドロジー）により、仮説構築から論文出版まで、あらゆる科学研究ワークフローを自動化するフレームワークです。`;
+
+  return content.replace(/^title: .+$/m, title).replace(/^\*\*\[SATORI\][\s\S]*?フレームワークです。$/m, intro);
+}
+
+function applyDocUpdate(filePath, updater, summary, preview) {
+  if (!fs.existsSync(filePath)) {
+    console.error(`Error: ドキュメントが見つかりません: ${filePath}`);
+    return false;
+  }
+  const content = fs.readFileSync(filePath, 'utf-8');
+  const updated = updater(content, summary);
+  if (updated !== content && !preview) {
+    fs.writeFileSync(filePath, updated);
+  }
+  return updated !== content;
+}
+
+function docsGenerate() {
+  const summary = collectStats();
+  const docsFlags = process.argv.slice(4);
+  const preview = docsFlags.includes('--preview');
+
+  const targets = [
+    { path: path.join(PACKAGE_ROOT, 'docs', 'SATORI_REVERSE_INDEX.md'), update: updateReverseIndexDoc },
+    { path: path.join(PACKAGE_ROOT, 'docs', 'SATORI_PIPELINE_EXAMPLES.md'), update: updatePipelineExamplesDoc },
+    {
+      path: path.join(PACKAGE_ROOT, 'docs', 'qiita', 'SATORI_REVERSE_INDEX_QIITA.md'),
+      update: updateQiitaReverseIndexDoc,
+    },
+    {
+      path: path.join(PACKAGE_ROOT, 'docs', 'qiita', 'SATORI_PIPELINE_EXAMPLES_QIITA.md'),
+      update: updateQiitaPipelineExamplesDoc,
+    },
+  ];
+
+  let updatedCount = 0;
+  for (const target of targets) {
+    if (applyDocUpdate(target.path, target.update, summary, preview)) {
+      updatedCount++;
+    }
+  }
+
+  if (preview) {
+    console.log(`✔ docs generate (preview) 完了: ${updatedCount} 件更新予定`);
+  } else {
+    console.log(`✔ docs generate 完了: ${updatedCount} 件更新`);
+  }
 }
 
 // ── Skill Search / Info ──
@@ -962,6 +1140,118 @@ function skillRecommend() {
   }
 }
 
+// ── Custom Pipeline Management ──
+
+function loadCustomPipelines() {
+  if (!fs.existsSync(CUSTOM_PIPELINES_PATH)) {
+    return [];
+  }
+  try {
+    const content = fs.readFileSync(CUSTOM_PIPELINES_PATH, 'utf-8');
+    const data = JSON.parse(content);
+    return data.customPipelines || [];
+  } catch (err) {
+    console.error('Warning: Failed to load custom pipelines:', err.message);
+    return [];
+  }
+}
+
+function saveCustomPipelines(pipelines) {
+  const dir = path.dirname(CUSTOM_PIPELINES_PATH);
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(CUSTOM_PIPELINES_PATH, JSON.stringify({ customPipelines: pipelines }, null, 2));
+}
+
+function pipelineCustom() {
+  const action = process.argv[4];
+  const customPipelines = loadCustomPipelines();
+
+  if (action === 'list') {
+    listCustomPipelines(customPipelines);
+  } else if (action === 'add') {
+    addCustomPipeline(customPipelines);
+  } else if (action === 'remove') {
+    removeCustomPipeline(customPipelines);
+  } else {
+    console.error(`Unknown custom pipeline action: ${action || '(none)'}`);
+    console.log('Usage: satori pipeline custom list | add <file> | remove <id>');
+    process.exit(1);
+  }
+}
+
+function listCustomPipelines(pipelines) {
+  if (pipelines.length === 0) {
+    console.log('\n📋 カスタムパイプライン: 0 件\n');
+    console.log('新しいカスタムパイプラインを追加するには:');
+    console.log('  satori pipeline custom add <file>');
+    return;
+  }
+
+  console.log(`\n📋 カスタムパイプライン一覧 (${pipelines.length} 件)\n`);
+  for (const p of pipelines) {
+    console.log(`  🔧 [${p.id}] ${p.name}`);
+    console.log(`     スキル連鎖: ${p.skills}`);
+    console.log('');
+  }
+}
+
+function addCustomPipeline(pipelines) {
+  const filePath = process.argv[5];
+  if (!filePath) {
+    console.error('Error: ファイルパスを指定してください。');
+    console.log('Usage: satori pipeline custom add <file>');
+    process.exit(1);
+  }
+
+  if (!fs.existsSync(filePath)) {
+    console.error(`Error: ファイルが見つかりません: ${filePath}`);
+    process.exit(1);
+  }
+
+  try {
+    const content = fs.readFileSync(filePath, 'utf-8');
+    const pipelineData = JSON.parse(content);
+
+    // バリデーション
+    if (!pipelineData.id || !pipelineData.name || !pipelineData.skills) {
+      console.error('Error: パイプラインは id, name, skills を含む必要があります。');
+      process.exit(1);
+    }
+
+    // 重複チェック
+    if (pipelines.some((p) => p.id === pipelineData.id)) {
+      console.error(`Error: ID "${pipelineData.id}" は既に存在します。`);
+      process.exit(1);
+    }
+
+    pipelines.push(pipelineData);
+    saveCustomPipelines(pipelines);
+    console.log(`✔ カスタムパイプライン "${pipelineData.name}" を追加しました。`);
+  } catch (err) {
+    console.error('Error: パイプラインファイルの解析に失敗しました:', err.message);
+    process.exit(1);
+  }
+}
+
+function removeCustomPipeline(pipelines) {
+  const id = process.argv[5];
+  if (!id) {
+    console.error('Error: パイプライン ID を指定してください。');
+    console.log('Usage: satori pipeline custom remove <id>');
+    process.exit(1);
+  }
+
+  const index = pipelines.findIndex((p) => p.id === id);
+  if (index === -1) {
+    console.error(`Error: パイプライン "${id}" が見つかりません。`);
+    process.exit(1);
+  }
+
+  const removed = pipelines.splice(index, 1)[0];
+  saveCustomPipelines(pipelines);
+  console.log(`✔ カスタムパイプライン "${removed.name}" を削除しました。`);
+}
+
 switch (COMMAND) {
   case 'init':
     init();
@@ -984,9 +1274,20 @@ switch (COMMAND) {
       pipelineSuggest();
     } else if (SUBCOMMAND === 'list') {
       pipelineList();
+    } else if (SUBCOMMAND === 'custom') {
+      pipelineCustom();
     } else {
       console.error(`Unknown pipeline subcommand: ${SUBCOMMAND || '(none)'}`);
-      console.log('Usage: satori pipeline suggest | satori pipeline list');
+      console.log('Usage: satori pipeline suggest | satori pipeline list | satori pipeline custom list|add|remove');
+      process.exit(1);
+    }
+    break;
+  case 'docs':
+    if (SUBCOMMAND === 'generate') {
+      docsGenerate();
+    } else {
+      console.error(`Unknown docs subcommand: ${SUBCOMMAND || '(none)'}`);
+      console.log('Usage: satori docs generate [--preview]');
       process.exit(1);
     }
     break;

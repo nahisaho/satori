@@ -62,6 +62,7 @@ describe('satori help', () => {
     expect(stdout).toContain('satori skill recommend');
     expect(stdout).toContain('satori pipeline suggest');
     expect(stdout).toContain('satori pipeline list');
+    expect(stdout).toContain('satori docs generate');
   });
 
   it('--help フラグでも動作する', () => {
@@ -335,6 +336,49 @@ describe('satori skill recommend', () => {
     const { stdout } = run('skill', 'recommend', 'data-preprocessing');
     // 複数の関連スキルが表示される
     expect(stdout).toMatch(/\d\./);
+  });
+});
+
+// =============================================================
+describe('satori pipeline custom', () => {
+  it('カスタムパイプライン list コマンドが実行可能', () => {
+    const { stdout, exitCode } = run('pipeline', 'custom', 'list');
+    expect(exitCode).toBe(0);
+    expect(stdout).toContain('カスタムパイプライン');
+  });
+
+  it('ファイルなしで add エラー終了する', () => {
+    const { exitCode } = run('pipeline', 'custom', 'add');
+    expect(exitCode).not.toBe(0);
+  });
+
+  it('存在しないファイルで add エラー終了する', () => {
+    const { exitCode } = run('pipeline', 'custom', 'add', '/nonexistent/file.json');
+    expect(exitCode).not.toBe(0);
+  });
+
+  it('ID なしで remove エラー終了する', () => {
+    const { exitCode } = run('pipeline', 'custom', 'remove');
+    expect(exitCode).not.toBe(0);
+  });
+
+  it('不明なアクションでエラー終了する', () => {
+    const { exitCode } = run('pipeline', 'custom', 'unknown');
+    expect(exitCode).not.toBe(0);
+  });
+});
+
+// =============================================================
+describe('satori docs generate', () => {
+  it('preview モードで実行できる', () => {
+    const { stdout, exitCode } = run('docs', 'generate', '--preview');
+    expect(exitCode).toBe(0);
+    expect(stdout).toContain('docs generate');
+  });
+
+  it('不明なサブコマンドでエラー終了する', () => {
+    const { exitCode } = run('docs', 'unknown');
+    expect(exitCode).not.toBe(0);
   });
 });
 

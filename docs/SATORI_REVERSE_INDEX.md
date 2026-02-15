@@ -2,7 +2,7 @@
 
 | 項目 | 値 |
 |------|----|
-| SATORI バージョン | **v0.27.0** |
+| SATORI バージョン | **v0.28.1** |
 | 生成日 | 2026-02-15 |
 | 参照元 | `src/.github/skills/*/SKILL.md` + `bin/satori.js` PIPELINES array |
 
