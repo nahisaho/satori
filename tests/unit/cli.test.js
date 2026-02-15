@@ -59,6 +59,7 @@ describe('satori help', () => {
     expect(stdout).toContain('satori init');
     expect(stdout).toContain('satori skill search');
     expect(stdout).toContain('satori skill info');
+    expect(stdout).toContain('satori skill recommend');
     expect(stdout).toContain('satori pipeline suggest');
     expect(stdout).toContain('satori pipeline list');
   });
@@ -312,13 +313,34 @@ describe('satori skill info', () => {
 });
 
 // =============================================================
-describe('satori skill (不正なサブコマンド)', () => {
-  it('不明なサブコマンドでエラー終了する', () => {
-    const { exitCode } = run('skill', 'unknown');
+describe('satori skill recommend', () => {
+  it('関連スキルを推奨する', () => {
+    const { stdout, exitCode } = run('skill', 'recommend', 'deep-learning');
+    expect(exitCode).toBe(0);
+    expect(stdout).toContain('関連するスキル');
+    expect(stdout).toContain('パイプラインで併用');
+  });
+
+  it('存在しないスキル名でエラー終了する', () => {
+    const { exitCode } = run('skill', 'recommend', 'nonexistent-skill');
     expect(exitCode).not.toBe(0);
   });
 
-  it('サブコマンドなしでエラー終了する', () => {
+  it('スキル名なしでエラー終了する', () => {
+    const { exitCode } = run('skill', 'recommend');
+    expect(exitCode).not.toBe(0);
+  });
+
+  it('複数のスキル推奨候補を表示する', () => {
+    const { stdout } = run('skill', 'recommend', 'data-preprocessing');
+    // 複数の関連スキルが表示される
+    expect(stdout).toMatch(/\d\./);
+  });
+});
+
+// =============================================================
+describe('satori skill (引数なし)', () => {
+  it('エラーとなる', () => {
     const { exitCode } = run('skill');
     expect(exitCode).not.toBe(0);
   });

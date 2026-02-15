@@ -73,8 +73,10 @@ Usage:
   satori init [--force] [--dry-run]   Install .github/ skills into current directory
   satori skill search <query>         Search skills by keyword
   satori skill info <name>            Show detailed skill information
+  satori skill recommend <name>       Get similar/related skills
   satori pipeline suggest             Interactive pipeline recommendation
   satori pipeline list                List all available pipelines
+  satori pipeline custom <action>     Manage custom pipelines
   satori validate [--verbose]         Validate all SKILL.md files
   satori stats                        Show skill/TU coverage statistics
   satori help                         Show this help message
@@ -84,6 +86,11 @@ Options:
   --force     Overwrite existing .github/ directory
   --dry-run   Preview what would be installed without making changes
   --verbose   Show detailed validation output
+
+Custom Pipelines:
+  satori pipeline custom list         List custom pipelines
+  satori pipeline custom add <path>   Add custom pipeline from file
+  satori pipeline custom remove <id>  Remove custom pipeline
 `);
 }
 
@@ -895,6 +902,66 @@ function skillInfo() {
   console.log(`ファイル: src/.github/skills/${dirName}/SKILL.md`);
 }
 
+function skillRecommend() {
+  const name = process.argv[4];
+  if (!name) {
+    console.error('Error: スキル名を指定してください。');
+    console.log('Usage: satori skill recommend <name>');
+    process.exit(1);
+  }
+
+  const skillsDir = path.join(SOURCE_DIR, 'skills');
+  const dirName = name.startsWith('scientific-') ? name : `scientific-${name}`;
+  const filePath = path.join(skillsDir, dirName, 'SKILL.md');
+
+  if (!fs.existsSync(filePath)) {
+    console.error(`Error: スキル "${name}" が見つかりません。`);
+    process.exit(1);
+  }
+
+  // スキル名から短縮形を取得
+  const shortName = dirName.replace('scientific-', '');
+
+  // 全パイプラインから、このスキルを使用するパイプラインを検出
+  const usedInPipelines = PIPELINES.filter((p) => p.skills.includes(shortName));
+
+  // これらのパイプラインで使用される他のスキルをカウント
+  const skillCooccurrence = {};
+  for (const p of usedInPipelines) {
+    const skillNames = p.skills.split(' → ').map((s) => s.trim());
+    for (const sk of skillNames) {
+      if (sk !== shortName && !skillCooccurrence[sk]) {
+        skillCooccurrence[sk] = 0;
+      }
+      if (sk !== shortName) {
+        skillCooccurrence[sk]++;
+      }
+    }
+  }
+
+  // スコア降順にソート
+  const recommended = Object.entries(skillCooccurrence)
+    .map(([skill, count]) => ({ skill, count }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 5);
+
+  console.log(`\n🎯 "${name}" に関連するスキル\n`);
+
+  if (usedInPipelines.length > 0) {
+    console.log(`このスキルが使用されるパイプライン: ${usedInPipelines.length} 件\n`);
+    console.log('関連スキル:');
+    for (let i = 0; i < recommended.length; i++) {
+      const { skill, count } = recommended[i];
+      console.log(`  ${i + 1}. ${skill} (${count} パイプラインで併用)`);
+    }
+    console.log('');
+    console.log('詳細は `satori skill info <related-skill>` で確認できます。');
+  } else {
+    console.log('❌ このスキルが使用されるパイプラインが見つかりませんでした。');
+    console.log('すべてのパイプラインは `satori pipeline list` で確認できます。');
+  }
+}
+
 switch (COMMAND) {
   case 'init':
     init();
@@ -904,9 +971,11 @@ switch (COMMAND) {
       skillSearch();
     } else if (SUBCOMMAND === 'info') {
       skillInfo();
+    } else if (SUBCOMMAND === 'recommend') {
+      skillRecommend();
     } else {
       console.error(`Unknown skill subcommand: ${SUBCOMMAND || '(none)'}`);
-      console.log('Usage: satori skill search <query> | satori skill info <name>');
+      console.log('Usage: satori skill search <query> | satori skill info <name> | satori skill recommend <name>');
       process.exit(1);
     }
     break;

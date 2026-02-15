@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.28.0] - 2026-02-15
+
+### Added
+- **`satori skill recommend` コマンド**: スキル関連推奨システム
+  - パイプラインにおける共起関係を分析
+  - 入力スキルと同じパイプラインに使用されるスキルを推奨
+  - top 5 関連スキルと共起頻度を表示
+  - 使用例: `satori skill recommend deep-learning` → "機械学習" と共に使用されるスキルを提案
+
+### Changed
+- **ヘルプテキスト更新**: `satori skill recommend` コマンド追加
+- **パイプライン カスタム管理準備**: ヘルプに `satori pipeline custom` オプション追加（実装は v0.28.1 以降）
+
+### Testing
+- Unit tests +3 件追加（skill recommend）
+- 全テスト: 1,382 → 1,385 (+3)
+
 ## [0.27.1] - 2026-02-15
 
 ### Changed
