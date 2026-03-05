@@ -480,19 +480,19 @@ graph LR
 
 ```mermaid
 graph TD
-    subgraph メタゲノム解析
-        A[microbiome-metagenomics 🔧] --> B[rrna-taxonomy]
+    subgraph metagenomics["メタゲノム解析"]
+        A[microbiome-metagenomics] --> B[rrna-taxonomy]
         A --> C[metagenome-assembled-genomes]
         C --> D[phylogenetics]
-        D --> E[model-organism-db 🔧]
+        D --> E[model-organism-db]
     end
-    subgraph 生態・多様性
-        F[marine-ecology 🔧]
+    subgraph ecology["生態・多様性"]
+        F[marine-ecology]
         G[plant-biology]
         H[parasite-genomics]
-        I[paleobiology 🔧]
+        I[paleobiology]
     end
-    subgraph 環境データ
+    subgraph envdata["環境データ"]
         J[environmental-geodata]
         K[geospatial-analysis]
         L[toxicology-env]
@@ -545,20 +545,20 @@ graph LR
 
 ```mermaid
 graph TD
-    subgraph 臨床データ AI
-        A[clinical-standards 🔧] --> B[clinical-nlp]
+    subgraph clinicalai["臨床データ AI"]
+        A[clinical-standards] --> B[clinical-nlp]
         B --> C[clinical-reporting]
         C --> D[healthcare-ai]
         D --> E[survival-clinical]
-        E --> F[public-health-data 🔧]
+        E --> F[public-health-data]
     end
-    subgraph 医用画像・生体信号
+    subgraph imaging["医用画像・生体信号"]
         G[medical-imaging] --> H[radiology-ai]
         I[biosignal-processing] --> J[neuroscience-electrophysiology]
     end
-    subgraph 感染症・免疫
-        K[infectious-disease] --> L[immunoinformatics 🔧]
-        L --> M[clingen-curation 🔧]
+    subgraph infectious["感染症・免疫"]
+        K[infectious-disease] --> L[immunoinformatics]
+        L --> M[clingen-curation]
     end
     H --> D
     J --> D
@@ -571,7 +571,7 @@ graph TD
 
 ```mermaid
 graph TD
-    subgraph モデル最適化
+    subgraph modelopt["モデル最適化"]
         A[automl] --> B[neural-architecture-search]
         B --> C[deep-learning]
         C --> D[transfer-learning]
@@ -579,7 +579,7 @@ graph TD
         E --> F[ensemble-methods]
         F --> G[uncertainty-quantification]
     end
-    subgraph 因果・特殊手法
+    subgraph causalmethod["因果・特殊手法"]
         H[causal-inference] --> I[causal-ml]
         J[active-learning] --> K[semi-supervised-learning]
         L[reinforcement-learning]
@@ -631,19 +631,19 @@ graph LR
 
 ```mermaid
 graph TD
-    subgraph 文献・引用
+    subgraph literature["文献・引用"]
         A[research-methodology] --> B[text-mining-nlp]
-        B --> C[semantic-scholar 🔧]
+        B --> C[semantic-scholar]
         C --> D[citation-checker]
-        D --> E[crossref-metadata 🔧]
+        D --> E[crossref-metadata]
     end
-    subgraph 論文品質
+    subgraph paperquality["論文品質"]
         E --> F[latex-formatter]
         F --> G[paper-quality]
         G --> H[supplementary-generator]
         H --> I[reproducible-reporting]
     end
-    subgraph 投稿・申請
+    subgraph submission["投稿・申請"]
         I --> J[data-submission]
         J --> K[preprint-archive]
         G --> L[peer-review-response]
@@ -683,17 +683,17 @@ graph TD
 
 ```mermaid
 graph TD
-    subgraph 疫学・コホート
-        A[biobank-cohort<br/>GWAS] --> B[population-genetics]
+    subgraph epidemiology["疫学・コホート"]
+        A["biobank-cohort<br/>GWAS"] --> B[population-genetics]
     end
-    subgraph 疾患研究
-        B --> C[disease-research 🔧]
+    subgraph diseaseres["疾患研究"]
+        B --> C[disease-research]
         C --> D[network-analysis]
     end
-    subgraph 創薬
-        D --> E[drug-target-profiling 🔧]
+    subgraph drugdev["創薬"]
+        D --> E[drug-target-profiling]
         E --> F[molecular-docking]
-        F --> G[admet-pharmacokinetics 🔧]
+        F --> G[admet-pharmacokinetics]
     end
 ```
 
@@ -801,18 +801,18 @@ graph TD
 
 ```mermaid
 graph TD
-    subgraph がんゲノミクス
-        A[gdc-portal 🔧] --> B[cancer-genomics 🔧]
-        B --> C[depmap-dependencies 🔧]
-        B --> D[civic-evidence 🔧]
+    subgraph cancergen["がんゲノミクス"]
+        A[gdc-portal] --> B[cancer-genomics]
+        B --> C[depmap-dependencies]
+        B --> D[civic-evidence]
     end
-    subgraph 化合物スクリーニング
-        C --> E[pharos-targets 🔧]
-        E --> F[compound-screening 🔧]
+    subgraph compoundscreen["化合物スクリーニング"]
+        C --> E[pharos-targets]
+        E --> F[compound-screening]
         F --> G[deep-chemistry]
     end
-    subgraph 精密医療・臨床
-        D --> H[precision-oncology 🔧]
+    subgraph precisionmed["精密医療・臨床"]
+        D --> H[precision-oncology]
         G --> H
         H --> I[clinical-decision-support]
         I --> J[healthcare-ai]
@@ -826,25 +826,25 @@ graph TD
 
 ```mermaid
 graph TD
-    subgraph ゲノム・エピゲノム層
+    subgraph genomeepigen["ゲノム・エピゲノム層"]
         A[genome-sequence-tools] --> B[bioinformatics]
-        B --> C[variant-effect-prediction 🔧]
-        C --> D[epigenomics-chromatin 🔧]
+        B --> C[variant-effect-prediction]
+        C --> D[epigenomics-chromatin]
         D --> E[regulatory-genomics]
     end
-    subgraph トランスクリプトーム層
-        E --> F[cellxgene-census 🔧]
+    subgraph transcriptome["トランスクリプトーム層"]
+        E --> F[cellxgene-census]
         F --> G[scvi-integration]
         G --> H[expression-comparison]
     end
-    subgraph プロテオーム層
-        H --> I[uniprot-proteome 🔧]
-        I --> J[alphafold-structures 🔧]
-        J --> K[protein-interaction-network 🔧]
+    subgraph proteome["プロテオーム層"]
+        H --> I[uniprot-proteome]
+        I --> J[alphafold-structures]
+        J --> K[protein-interaction-network]
     end
-    subgraph パスウェイ統合
+    subgraph pathwayintegr["パスウェイ統合"]
         K --> L[pathway-enrichment]
-        L --> M[reactome-pathways 🔧]
+        L --> M[reactome-pathways]
         M --> N[network-visualization]
     end
 ```
@@ -853,22 +853,22 @@ graph TD
 
 ```mermaid
 graph TD
-    subgraph 環境・生態学
-        A[environmental-ecology 🔧] --> B[environmental-geodata]
+    subgraph envecology["環境・生態学"]
+        A[environmental-ecology] --> B[environmental-geodata]
         B --> C[geospatial-analysis]
     end
-    subgraph マイクロバイオーム
-        C --> D[microbiome-metagenomics 🔧]
+    subgraph microbiomesub["マイクロバイオーム"]
+        C --> D[microbiome-metagenomics]
         D --> E[metagenome-assembled-genomes]
         E --> F[phylogenetics]
     end
-    subgraph メタボロミクス
-        D --> G[metabolomics-databases 🔧]
+    subgraph metabolomicssub["メタボロミクス"]
+        D --> G[metabolomics-databases]
         G --> H[metabolomics-network]
-        H --> I[metabolic-modeling 🔧]
+        H --> I[metabolic-modeling]
         F --> I
     end
-    subgraph One Health 統合
+    subgraph onehealthintegr["One Health 統合"]
         C --> J[toxicology-env]
         I --> J
         J --> K[publication-figures]
@@ -902,18 +902,18 @@ graph TD
 
 ```mermaid
 graph TD
-    subgraph ラボ運用
+    subgraph labops["ラボ運用"]
         A[lab-automation] --> B[lab-data-management]
         B --> C[streaming-analytics]
         C --> D[model-monitoring]
     end
-    subgraph 可視化・解析
+    subgraph vizviz["可視化・解析"]
         D --> E[data-profiling]
         E --> F[advanced-visualization]
         F --> G[interactive-dashboard]
         F --> H[scientific-schematics]
     end
-    subgraph 出版・申請
+    subgraph pubsub["出版・申請"]
         G --> I[reproducible-reporting]
         H --> J[paper-quality]
         I --> K[latex-formatter]
@@ -927,16 +927,16 @@ graph TD
 
 ```mermaid
 graph TD
-    subgraph 文献探索
+    subgraph literatureindex["文献探索"]
         A[deep-research] --> B[literature-search]
         B --> C[text-mining-nlp]
     end
-    subgraph AI エビデンス評価
+    subgraph aievidenceeval["AI エビデンス評価"]
         C --> D[deep-learning]
         D --> E[transfer-learning]
         E --> F[automl]
     end
-    subgraph 合成・レポート
+    subgraph synthesisreport["合成・レポート"]
         F --> G[meta-analysis]
         G --> H[explainable-ai]
         H --> I[systematic-review]
@@ -948,20 +948,20 @@ graph TD
 
 ```mermaid
 graph TD
-    subgraph がんゲノミクス
-        A[gdc-portal 🔧] --> B[cancer-genomics 🔧]
+    subgraph cancergenomics["がんゲノミクス"]
+        A[gdc-portal] --> B[cancer-genomics]
         B --> C[icgc-cancer-data]
     end
-    subgraph ゲノム・エピゲノム層
+    subgraph genomeepigenomelayer["ゲノム・エピゲノム層"]
         C --> D[ensembl-genomics]
-        D --> E[variant-effect-prediction 🔧]
-        E --> F[epigenomics-chromatin 🔧]
-        F --> G[gwas-catalog 🔧]
+        D --> E[variant-effect-prediction]
+        E --> F[epigenomics-chromatin]
+        F --> G[gwas-catalog]
     end
-    subgraph 化合物ターゲティング
-        G --> H[pharos-targets 🔧]
-        H --> I[chembl-assay-mining 🔧]
-        I --> J[compound-screening 🔧]
+    subgraph compoundtarget["化合物ターゲティング"]
+        G --> H[pharos-targets]
+        H --> I[chembl-assay-mining]
+        I --> J[compound-screening]
     end
 ```
 
@@ -969,16 +969,16 @@ graph TD
 
 ```mermaid
 graph TD
-    subgraph 臨床情報学
-        A[clinical-standards 🔧] --> B[clinical-nlp]
+    subgraph clinicalinformatics["臨床情報学"]
+        A[clinical-standards] --> B[clinical-nlp]
         B --> C[clinical-reporting]
         C --> D[healthcare-ai]
     end
-    subgraph 安全性・規制
+    subgraph safetyreg["安全性・規制"]
         D --> E[pharmacovigilance]
         E --> F[regulatory-science]
     end
-    subgraph 学術出版
+    subgraph scholar["学術出版"]
         F --> G[reproducible-reporting]
         G --> H[paper-quality]
         H --> I[latex-formatter]
@@ -990,18 +990,18 @@ graph TD
 
 ```mermaid
 graph TD
-    subgraph シングルセル層
+    subgraph singlecelllayer["シングルセル層"]
         A[single-cell-genomics] --> B[spatial-transcriptomics]
     end
-    subgraph プロテオーム層
+    subgraph proteomolayer["プロテオーム層"]
         B --> C[proteomics-mass-spectrometry]
         C --> D[structural-proteomics]
-        D --> E[alphafold-structures 🔧]
+        D --> E[alphafold-structures]
     end
-    subgraph メタボローム・統合
-        E --> F[metabolomics-databases 🔧]
-        F --> G[metabolic-modeling 🔧]
-        G --> H[systems-biology 🔧]
+    subgraph metabolomicsintegr["メタボローム・統合"]
+        E --> F[metabolomics-databases]
+        F --> G[metabolic-modeling]
+        G --> H[systems-biology]
         H --> I[multi-omics]
     end
 ```
@@ -1039,16 +1039,16 @@ graph TD
 
 ```mermaid
 graph TD
-    subgraph 土壌・環境
-        A[environmental-ecology 🔧] --> B[microbiome-metagenomics 🔧]
+    subgraph soilenviron["土壌・環境"]
+        A[environmental-ecology] --> B[microbiome-metagenomics]
         B --> C[geospatial-analysis]
     end
-    subgraph 植物ゲノム
+    subgraph plantgenome["植物ゲノム"]
         C --> D[plant-biology]
         D --> E[crispr-design]
         E --> F[gene-expression-transcriptomics]
     end
-    subgraph 最適化
+    subgraph optimization["最適化"]
         F --> G[doe]
         G --> H[publication-figures]
     end
@@ -1364,5 +1364,5 @@ SATORI の 190 スキルは、単体でも強力ですが、**パイプライン
 - **パイプライン選択フローチャート** で最適なパイプラインを見つけられます
 
 :::note info
-**関連ドキュメント**: [SATORI 逆引き辞典](SATORI_REVERSE_INDEX.md) — スキル名・TU キー・成果物パスからの逆引き検索
+**関連ドキュメント**: [SATORI 逆引き辞典](https://qiita.com/hisaho/items/262a5f0fdec6895f3cc8) — スキル名・TU キー・成果物パスからの逆引き検索
 :::
