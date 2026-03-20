@@ -206,11 +206,11 @@ describe('satori validate', () => {
     expect(stdout).toContain('scientific-');
   });
 
-  it('190 スキルを検証する', () => {
+  it('195 スキルを検証する', () => {
     const { stdout } = run('validate');
     const match = stdout.match(/(\d+) pass/);
     expect(match).not.toBeNull();
-    expect(Number(match[1])).toBe(190);
+    expect(Number(match[1])).toBe(195);
   });
 });
 
@@ -226,9 +226,9 @@ describe('satori stats', () => {
     expect(stdout).toContain('TU 連携スキル');
   });
 
-  it('スキル数が 190 と表示される', () => {
+  it('スキル数が 195 と表示される', () => {
     const { stdout } = run('stats');
-    expect(stdout).toContain('190');
+    expect(stdout).toContain('195');
   });
 
   it('パイプライン数が 50 と表示される', () => {

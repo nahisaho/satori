@@ -106,8 +106,8 @@ describe('satori validate --verbose 詳細出力', () => {
   it('各スキルに ✔ マークが出力される', () => {
     const checkmarks = verboseOutput.match(/✔/g);
     expect(checkmarks).not.toBeNull();
-    // 190 スキル + 最終サマリー行の ✔ = 191
-    expect(checkmarks.length).toBe(191);
+    // 195 スキル + 最終サマリー行の ✔ = 196
+    expect(checkmarks.length).toBe(196);
   });
 
   it('✘ マークが出力されない (全スキル合格)', () => {

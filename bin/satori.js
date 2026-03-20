@@ -265,7 +265,8 @@ const PIPELINES = [
     name: '実験計画・統計',
     domain: 'general',
     keywords: ['実験計画', 'DOE', '検出力', 'サンプルサイズ'],
-    skills: 'experimental-design → statistical-testing → reproducibility-assessment → publication-figures',
+    skills:
+      'experimental-design → experiment-fork → statistical-testing → experiment-template → reproducibility-assessment → publication-figures',
   },
   {
     id: 24,
@@ -279,7 +280,7 @@ const PIPELINES = [
     name: '学術出版',
     domain: 'literature',
     keywords: ['論文投稿', 'journal', 'グラント', 'grant'],
-    skills: 'academic-writing → critical-review → citation-network',
+    skills: 'academic-writing → peer-review → latex-export → critical-review → citation-network',
   },
   {
     id: 26,
@@ -310,7 +311,7 @@ const PIPELINES = [
     domain: 'cross-domain',
     keywords: ['研究自動化', '論文化', '仮説', 'research automation'],
     skills:
-      'deep-research → hypothesis-pipeline → pipeline-scaffold → data-preprocessing → statistical-testing → publication-figures → academic-writing → systematic-review',
+      'deep-research → hypothesis-pipeline → experiment-template → pipeline-scaffold → data-preprocessing → statistical-testing → publication-figures → academic-writing → systematic-review',
   },
   {
     id: 'D',
@@ -374,7 +375,7 @@ const PIPELINES = [
     domain: 'cross-domain',
     keywords: ['研究ライフサイクル', 'ラボ自動化', 'LIMS', 'ダッシュボード', 'グラント'],
     skills:
-      'lab-automation → lab-data-management → streaming-analytics → model-monitoring → data-profiling → advanced-visualization → interactive-dashboard → scientific-schematics → reproducible-reporting → paper-quality → latex-formatter → peer-review-response → grant-writing → preprint-archive',
+      'lab-automation → lab-data-management → streaming-analytics → model-monitoring → data-profiling → advanced-visualization → interactive-dashboard → scientific-schematics → reproducible-reporting → audit-report → paper-quality → peer-review → latex-formatter → latex-export → peer-review-response → grant-writing → preprint-archive',
   },
   {
     id: 'L',
@@ -398,7 +399,7 @@ const PIPELINES = [
     domain: 'cross-domain',
     keywords: ['バリューチェーン', 'EHR', '規制報告', '学術出版', 'HL7'],
     skills:
-      'clinical-standards → clinical-nlp → clinical-reporting → healthcare-ai → pharmacovigilance → regulatory-science → reproducible-reporting → paper-quality → latex-formatter → peer-review-response',
+      'clinical-standards → clinical-nlp → clinical-reporting → healthcare-ai → pharmacovigilance → regulatory-science → audit-report → reproducible-reporting → paper-quality → latex-formatter → peer-review-response',
   },
   {
     id: 'O',

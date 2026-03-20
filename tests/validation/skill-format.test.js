@@ -1,7 +1,7 @@
 /**
  * SKILL.md フォーマット検証テスト
  *
- * 全 190 スキルの SKILL.md が以下を満たすこと検証:
+ * 全 195 スキルの SKILL.md が以下を満たすこと検証:
  *   1. YAML Frontmatter (name + description)
  *   2. # タイトル (H1)
  *   3. ## When to Use セクション
@@ -15,7 +15,7 @@ import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 
 const SKILLS_DIR = path.resolve(__dirname, '../../src/.github/skills');
-const EXPECTED_SKILL_COUNT = 190;
+const EXPECTED_SKILL_COUNT = 195;
 
 /** スキルディレクトリ一覧を取得 */
 function getSkillDirs() {
